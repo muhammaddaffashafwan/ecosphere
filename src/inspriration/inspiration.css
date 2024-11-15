@@ -1,0 +1,452 @@
+
+.eco-house-guide-cover {
+  position: relative; /* To control positioning of .eco-house-guide */
+  background-color: #000;
+  height: 583px;
+	width: 100%;
+  overflow: hidden;
+  text-align: center;
+  font-size: 64px;
+  color: #fff;
+	top: -1145px;
+}
+.eco-house-guide-cover img{
+  width: 100%; /* Keeps image within container width */
+  height: 100%;
+  object-fit: cover;
+  object-position: top; /* Positions image content at the top */
+  display: block;
+}
+.eco-house-guide {
+  position: absolute;
+  top: 270px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Optician Sans";
+}
+
+.eco-frame {
+	position: absolute;
+	top: 570px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 1200px;
+	height: 171px;
+}
+.eco-inner-frame {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0%;
+	right: 0%;
+	bottom: 0%;
+	left: 0%;
+	box-shadow: 4px 4px 30px rgba(255, 255, 255, 0.5);
+	border-radius: 24px;
+	background-color: #455a2a;
+}
+.eco-desc {
+	position: absolute;
+	top: 655px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: Poppins;
+	color: #fff;
+	text-align: justify;
+	display: inline-block;
+	width: 1156px;
+	font-size: 23px;
+}
+
+/* 2. benefit */
+.benefits-title {
+	position: absolute;
+	top: 850px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 40px;
+	font-family: "Optician Sans";
+}
+.card-bif-1,
+.card-bif-2,
+.card-bif-3,
+.card-bif-4,
+.card-bif-5,
+.card-bif-6 {
+	position: absolute;
+	width: 185px;
+	height: 346px;
+	border-radius: 24px;
+	overflow: hidden;
+}
+.card-bif-1 {
+	top: 926px;
+	left: 160px;
+}
+.card-bif-2 {
+	top: 926px;
+	left: 361px;
+}
+.card-bif-3 {
+	top: 926px;
+	left: 562px;
+}
+.card-bif-4 {
+	top: 926px;
+	left: 763px;
+}
+.card-bif-5 {
+	top: 926px;
+	left: 964px;
+}
+.card-bif-6 {
+	top: 926px;
+	left: 1165px;
+}
+.card-bif-1-child {
+	width: 100%; 
+	height: 100%; 
+	object-fit: cover; 
+}
+.card-bif-1-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 24px;
+	background-color: rgba(0, 0, 0, 0.5); 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0; 
+	transition: opacity 0.3s ease;
+	font-family: "Optician Sans";
+}
+.card-bif-1:hover .overlay,
+.card-bif-2:hover .overlay,
+.card-bif-3:hover .overlay,
+.card-bif-4:hover .overlay,
+.card-bif-5:hover .overlay,
+.card-bif-6:hover .overlay {
+	opacity: 1; 
+}
+.text {
+	color: white;
+	font-size: 18px; /* Ukuran teks */
+	text-align: center;
+}
+
+/* 3. environtment */
+.environmentally-title {
+	position: absolute;
+	top: 1400px;
+	left: 235px;
+	font-size: 40px;
+	font-family: "Optician Sans";
+}
+.environment-frame {
+	display: flex;
+	overflow-x: scroll;
+	scroll-behavior: smooth;
+	padding: 100px;
+	border-radius: 24px;
+	/* transform: translateY(750px); */
+	/* margin-left: 385px; */
+	white-space: nowrap;
+	cursor: grab;
+	/* width: 100vw; */
+	margin-top: -350px;
+}
+.environment-categories {
+	flex: 0 0 auto;
+	width: 200px;
+	margin-right: 90px;
+	border-radius: 24px;
+	overflow: hidden;
+	position: relative;
+	box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.549);
+}
+.environment-categories img {
+	width: 100%;
+	border-radius: 24px;
+	display: block;
+}
+.recycled-wood,
+.natural-insulation,
+.eco-friendly-paint,
+.clay-brick,
+.energy-saving-glass,
+.bamboo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	text-align: center;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+	padding: 5px;
+	box-sizing: border-box;
+	width: 90%;
+	font-family: "Optician Sans";
+}
+
+/* 4. renewable */
+.renewable-title {
+	position: absolute;
+	top: 2000px;
+	left: 50%; 
+	transform: translateX(-50%); 
+	font-size: 40px;
+	letter-spacing: -0.02em;
+	width: 1082.5px;
+	text-align: center;
+	font-family: "Optician Sans";
+}
+.component-1 {
+	position: absolute;
+	top: 2180px;
+	left: 120px;
+	width: 1200px;
+	height: 368px;
+	text-align: left;
+	font-size: 16px;
+	font-family: Poppins;
+}
+.component-1 img {
+	position: absolute;
+	height: 100%;
+	width: 49.05%;
+	top: 0%;
+	right: 50.95%;
+	bottom: 0%;
+	left: 0%;
+	border-radius: 24px;
+	max-width: 100%;
+	overflow: hidden;
+	max-height: 100%;
+	object-fit: cover;
+}
+.renew-title-wrapper {
+	position: absolute;
+	height: 10.87%;
+	top: 0%;
+	bottom: 89.13%;
+	left: 50.78%;
+	font-size: 40px;
+	font-family: "Optician Sans";
+}
+.renew-title {
+	top: 0px;
+	left: 0px;
+	letter-spacing: -0.02em;
+}
+.comp-type {
+	position: absolute;
+	height: 29.89%;
+	width: 49.22%;
+	top: 27.17%;
+	right: 0%;
+	bottom: 42.93%;
+	left: 50.78%;
+}
+.comp-type-container {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	line-height: 140%;
+	display: inline-block;
+	width: 568px;
+}
+.renew-list {
+	margin: 0;
+	font-size: inherit;
+	padding-left: 21px;
+	font-weight: 500;
+}
+.renew-how {
+	position: absolute;
+	height: 18.21%;
+	width: 48.96%;
+	top: 63.32%;
+	right: 0%;
+	bottom: 18.48%;
+	left: 51.04%;
+	text-align: justify;
+}
+.renew-how-ben-container {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: inline-block;
+	width: 565px;
+	line-height: 140%;
+}
+.renew-how-ben-capture {
+	font-weight: 500;
+}
+.renew-ben {
+	position: absolute;
+	height: 12.23%;
+	width: 48.96%;
+	top: 87.77%;
+	right: 0%;
+	bottom: 0%;
+	left: 51.04%;
+	text-align: justify;
+}
+
+.component-2 {
+	position: absolute;
+	top: 2629px;
+	left: 120px;
+	width: 1200px;
+	height: 368px;
+	text-align: left;
+	font-size: 16px;
+	font-family: Poppins;
+}
+
+.component-3 {
+	position: absolute;
+	top: 3078px;
+	left: 120px;
+	width: 1200px;
+	height: 368px;
+	text-align: left;
+	font-size: 16px;
+	font-family: Poppins;
+}
+
+/* 5. DIY */
+.diy-title {
+	position: absolute;
+	top: 3614px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 40px;
+	letter-spacing: -0.02em;
+	width: 1082.5px;
+	text-align: center;
+	font-family: "Optician Sans";
+}
+.diy-content {
+	display: grid;
+	gap: 60px;
+	padding: 10px;
+	width: 1300px;
+	height: 350px;
+	align-items: center;
+	margin: auto;
+}
+
+@media (min-width: 900px) {
+	.diy-content {
+		grid-template-columns: repeat(3, minmax(250px, 1fr));
+	}
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+	.diy-content {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 599px) {
+	.diy-content {
+		grid-template-columns: 1fr;
+	}
+}
+
+.diy-vid {
+	background-color: #fff;
+	border-radius: 16px;
+	text-align: center;
+	box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+	padding-bottom: 10px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	position: relative;
+	top: 1850px;
+}
+
+.diy-vid:hover {
+	background-color: #739646;
+	color: #fff;
+}
+.diy-vid img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 16px 16px 0 0; 
+}
+.diy-vid h3 {
+	font-size: 24px;
+	margin: 10px 10px;
+	font-family: "Optician Sans";
+	text-decoration: none;
+	padding: 0px;
+	font-weight: 300;
+	margin-top: 16px;
+}
+
+.youtube-icon::before {
+	content: "▶";
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 40px;
+	color: #000000;
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 16%;
+	padding: 15px;
+	padding-left: 40px;
+	padding-right: 40px;
+	z-index: 1;
+}
+
+.youtube-icon:hover:before {
+	color: #ffffff;
+	background: #739646;
+}
+
+.youtube-icon img {
+	display: block;
+}
+
+.hover-more-1 {
+  text-align: center; 
+	overflow: hidden;
+	position: relative;
+	top: 1900px;
+}
+
+.cta-button2 {
+  background-color: #739646;
+  color: #fff;
+  padding: 7px 100px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 18px;
+  border: 2px solid #739646;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  display: inline-block; 
+}
+
+.cta-button2:hover {
+  background-color: #fff;
+  color: #6ea54e;
+}
+
+
+
+

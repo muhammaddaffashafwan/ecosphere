@@ -1,0 +1,142 @@
+
+footer {
+    padding: 0px 100px;
+    padding-bottom: 40px;
+    color: #414958;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: Poppins;
+    letter-spacing: 0.04em;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .footer-container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .footer-background {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    opacity: 0.5; 
+    z-index: 0; 
+  }
+  
+  .footer-background img {
+    padding-left: 100px;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 10px;
+    padding-right: 70px;
+  }
+  
+  .footer-section p {
+    color: #8694b4;
+    font-size: 10px;
+    opacity: 0.75;
+    padding-left: 5px;
+    text-decoration: none;
+  }
+  
+  .footer-section-property {
+    padding-left: 10px;
+    padding-right: 20px;
+    position: relative;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    display: inline-block;
+    color: #414958;
+  }
+  .footer-section-property h4 {
+    color: #414958;
+    margin-bottom: 15px;
+    padding-left: 0px;
+  }
+  .footer-section-property p {
+    font-size: 14px;
+    color: #8694b4;
+    text-decoration: none;
+    align-self: stretch;
+    position: relative;
+    font-weight: 500;
+    padding-left: 0px;
+  }
+  
+  .footer-section-article {
+    padding-left: 30px;
+  }
+  .footer-section-article h4 {
+    color: #414958;
+    margin-bottom: 15px;
+    padding-left: 0px;
+  }
+  .footer-section-article p {
+    font-size: 14px;
+    color: #8694b4;
+    text-decoration: none;
+    align-self: stretch;
+    position: relative;
+    font-weight: 500;
+    padding-left: 0px;
+  }
+  
+  .footer-section-contact {
+    padding-left: 50px;
+    padding-left: 110px;
+  }
+  .footer-section-contact h4 {
+    color: #414958;
+    margin-bottom: 15px;
+    padding-left: 0px;
+  }
+  .footer-section-contact p {
+    font-size: 14px;
+    color: #8694b4;
+    text-decoration: none;
+    align-self: stretch;
+    position: relative;
+    font-weight: 500;
+    padding-left: 0px;
+  }
+  
+  .footer-section img {
+    height: 35px;
+    margin-top: 20px;
+  }
+  
+  footer a {
+    font-size: 14px;
+    color: #8694b4;
+    text-decoration: none;
+    align-self: stretch;
+    position: relative;
+    font-weight: 500;
+  }
+
+  .social-icons {
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-left: 5px;
+  }
+  
+  .social-icons a {
+    color: #82bbff;
+    margin-right: 30px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #0084b4;
+  }
