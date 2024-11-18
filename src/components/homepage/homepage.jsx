@@ -1,5 +1,4 @@
-import { Footer } from "../footer/footer";
-import { Navbar } from "../navbar/navbar";
+
 import "./homepage.css";
 
 export function Homepage() {
@@ -10,7 +9,7 @@ export function Homepage() {
 
         <img className="color-blur-icon" alt="" src="/images/Color BlurHP.png" />
 
-        <Navbar />
+        
 
         <div className="home-page-item"></div>
         <img className="home-page-icon" alt="" src="/images/homepage-plant.png" />
@@ -152,7 +151,6 @@ export function Homepage() {
           <b className="label">click me</b>
         </div> */}
       </div>
-      <Footer/>
     </>
   );
 }
