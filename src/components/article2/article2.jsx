@@ -1,12 +1,9 @@
-import { Footer } from "../footer/footer";
-import { Navbar } from "../navbar/navbar";
 import "./article2.css";
 
 export function Article2() {
   return (
     <>
       <div className="articles-2">
-        <Navbar />
       </div>
 
       <div>
@@ -705,7 +702,6 @@ export function Article2() {
       </div>
 
       <div>
-        <Footer />
       </div>
     </>
   );

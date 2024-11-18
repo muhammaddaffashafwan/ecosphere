@@ -1,6 +1,5 @@
-
 .eco-house-guide-cover {
-  position: relative; /* To control positioning of .eco-house-guide */
+  position: absolute;
   background-color: #000;
   height: 583px;
 	width: 100%;
@@ -8,13 +7,13 @@
   text-align: center;
   font-size: 64px;
   color: #fff;
-	top: -1145px;
+	/* top: -1145px; */
 }
 .eco-house-guide-cover img{
-  width: 100%; /* Keeps image within container width */
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top; /* Positions image content at the top */
+  object-position: top; 
   display: block;
 }
 .eco-house-guide {

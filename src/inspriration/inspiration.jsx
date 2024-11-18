@@ -1,11 +1,9 @@
-import { Footer } from "../components/footer/footer";
-import { Navbar } from "../components/navbar/navbar";
 import "./inspiration.css" ;
 
 export function Inspiration () {
     return (
-<>
-<Navbar/>
+<main>
+
 <img className="vector-icon" alt="" src="/images/vector.png" />
 
 <div className="inspiration-guide-panduan-inner"></div>
@@ -228,7 +226,6 @@ export function Inspiration () {
 <section className="hover-more-1">
   <a href="inspiration2.html" className="cta-button2">see more</a>
 </section> 
-<Footer/>
-</>
+</main>
     ) 
 }
