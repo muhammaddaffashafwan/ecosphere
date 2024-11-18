@@ -697,9 +697,9 @@
     transition: opacity 0.3s ease;
     font-family: "Optician Sans";
   }
-  .card-bif-1:hover .overlay,
-  .card-bif-2:hover .overlay,
-  .card-bif-3:hover .overlay {
+  .card-bif-a:hover .overlay,
+  .card-bif-b:hover .overlay,
+  .card-bif-c:hover .overlay {
     opacity: 1;
   }
   .text {
@@ -834,7 +834,7 @@
     width: 100%;
     position: relative;
     background-color: #fff;
-    height: 4821px;
+    height: 4800px;
   
     text-align: left;
     font-size: 24px;
