@@ -16,9 +16,9 @@ export function Article1() {
 						More Information
 					</a>
 				</div>
-				<img className="img-article1" alt="" src="asset/imgarticle1.jpg" />
+				<img className="img-article1" alt="" src="/images/imgarticle1.jpg" />
 
-				<img className="img-article2" alt="" src="asset/imgarticle2.jpg" />
+				<img className="img-article2" alt="" src="/images/imgarticle2.jpg" />
 			</section>
 
 			<section>
@@ -47,17 +47,17 @@ export function Article1() {
 
 				<div className="news" id="news-img">
 					<div className="image-content">
-						<img src="asset/imgarticle3.jpg" alt="Eco Green House Image" className="img-article3" />
+						<img src="/images/imgarticle3.jpg" alt="Eco Green House Image" className="img-article3" />
 					</div>
 				</div>
 
-				<img className="article-item" alt="" src="asset/imgarticle4.jpg" id="img-article4" />
+				<img className="article-item" alt="" src="/images/imgarticle4.jpg" id="img-article4" />
         
 				<div className="text" id="textContainer">
 					<div className="headline">
 						<div className="bullets">
 							<div className="calendar">
-								<img className="icons-calendar" alt="" src="./asset/calendar.png" />
+								<img className="icons-calendar" alt="" src="/images/calendar.png" />
 
 								<div className="danastra">Jan 12, 2023</div>
 							</div>
@@ -67,7 +67,7 @@ export function Article1() {
 								<div className="advices">Advices</div>
 							</div> */}
 							<div className="calendar">
-								<img className="icons-calendar" alt="" src="./asset/account.png" />
+								<img className="icons-calendar" alt="" src="/images/account.png" />
 
 								<div className="danastra">Danastra</div>
 							</div>
@@ -87,13 +87,13 @@ export function Article1() {
 					</div>
 				</div>
 
-				<img className="article-inner" alt="" src="asset/imgarticle5.jpg" id="frameImage1" />
+				<img className="article-inner" alt="" src="/images/imgarticle5.jpg" id="frameImage1" />
 
 				<div className="text1" id="textContainer1">
 					<div className="headline">
 						<div className="bullets">
 							<div className="calendar">
-								<img className="icons-calendar" alt="" src="asset/calendar.png" />
+								<img className="icons-calendar" alt="" src="/images/calendar.png" />
 
 								<div className="danastra">Mar 30, 2020</div>
 							</div>
@@ -103,7 +103,7 @@ export function Article1() {
 								<div className="advices">Advices</div>
 							</div>
 							<div className="calendar">
-								<img className="icons-calendar" alt="" src="asset/calendar.png" />
+								<img className="icons-calendar" alt="" src="/images/calendar.png" />
 
 								<div className="danastra">Haris Sukarnayudabrata</div>
 							</div>
@@ -118,13 +118,13 @@ export function Article1() {
 						of the housing offered, [...]
 					</div>
 				</div>
-				<img className="frame-icon" alt="" src="asset/imgarticle6.jpg" id="frameImage2" />
+				<img className="frame-icon" alt="" src="/images/imgarticle6.jpg" id="frameImage2" />
 
 				<div className="text2" id="textContainer2">
 					<div className="headline">
 						<div className="bullets">
 							<div className="calendar">
-								<img className="icons-calendar" alt="" src="asset/calendar.png" />
+								<img className="icons-calendar" alt="" src="/images/calendar.png" />
 
 								<div className="danastra">May 29, 2024</div>
 							</div>
@@ -134,7 +134,7 @@ export function Article1() {
 								<div className="advices">Advices</div>
 							</div>
 							<div className="calendar">
-								<img className="icons-calendar" alt="" src="asset/account.png" />
+								<img className="icons-calendar" alt="" src="/images/account.png" />
 
 								<div className="danastra">Biru Cahya Imanda</div>
 							</div>
@@ -155,7 +155,7 @@ export function Article1() {
 			</section>
 
 			<div className="more-articles">More Articles</div>
-			<img className="img-icon" alt="" src="asset/imgarticle7.jpg" id="imgImage" />
+			<img className="img-icon" alt="" src="/images/imgarticle7.jpg" id="imgImage" />
 
 			<div className="body" id="bodyContainer">
 				<div className="headline3">
@@ -169,12 +169,12 @@ export function Article1() {
 					</div>
 					<div className="bullets3">
 						<div className="calendar">
-							<img className="icons-calendar" alt="" src="asset/calendar.png" />
+							<img className="icons-calendar" alt="" src="/images/calendar.png" />
 
 							<div className="danastra">Feb 24, 2022</div>
 						</div>
 						<div className="calendar">
-							<img className="icons-calendar" alt="" src="asset/account.png" />
+							<img className="icons-calendar" alt="" src="/images/account.png" />
 
 							<div className="danastra">Artigianfer</div>
 						</div>
@@ -201,12 +201,12 @@ export function Article1() {
 					</div>
 					<div className="bullets3">
 						<div className="calendar">
-							<img className="icons-calendar" alt="" src="asset/calendar.png" />
+							<img className="icons-calendar" alt="" src="/images/calendar.png" />
 
 							<div className="danastra">Dec 19, 2022</div>
 						</div>
 						<div className="calendar">
-							<img className="icons-calendar" alt="" src="asset/account.png" />
+							<img className="icons-calendar" alt="" src="/images/account.png" />
 
 							<div className="danastra">UPLAND Project</div>
 						</div>
@@ -221,9 +221,9 @@ export function Article1() {
 					better quality and quantity of agricultural products compared to conventional methods. [...]
 				</div>
 			</div>
-			<img className="img-icon1" alt="" src="asset/imgarticle8.jpg" id="imgImage1" />
+			<img className="img-icon1" alt="" src="/images/imgarticle8.jpg" id="imgImage1" />
 
-			<img className="img-icon2" alt="" src="asset/imgarticle9.jpg" id="imgImage2" />
+			<img className="img-icon2" alt="" src="/images/imgarticle9.jpg" id="imgImage2" />
 
 			<div className="body2" id="bodyContainer2">
 				<div className="headline3">
@@ -238,12 +238,12 @@ export function Article1() {
 					</div>
 					<div className="bullets3">
 						<div className="calendar">
-							<img className="icons-calendar" alt="" src="asset/calendar.png" />
+							<img className="icons-calendar" alt="" src="/images/calendar.png" />
 
 							<div className="danastra">Nov 2, 2023</div>
 						</div>
 						<div className="calendar">
-							<img className="icons-calendar" alt="" src="asset/account.png" />
+							<img className="icons-calendar" alt="" src="/images/account.png" />
 
 							<div className="danastra">myeco</div>
 						</div>
@@ -261,7 +261,7 @@ export function Article1() {
 				</div>
 			</div>
 
-			<img className="icon-more" alt="" src="asset/Icon More.png" />
+			<img className="icon-more" alt="" src="/images/Icon More.png" />
       </div>
 		</>
 	);
