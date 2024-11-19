@@ -22,6 +22,7 @@
   align-self: stretch;
   position: relative;
   letter-spacing: -0.02em;
+  line-height: 60px;
 }
 .explore {
   width: 615px;
@@ -79,46 +80,46 @@
 }
 .article-categories-parent {
   position: absolute;
-  top: calc(50% - 1122px);
-  left: calc(50% - 600px);
+  top: 100px;
+  left: -120px;
   width: 1198px;
   height: 24px;
   cursor: pointer;
   font-size: 16px;
   color: #000;
 }
-.article-Allcategorie {
+.article-Allcategories {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 135px;
+  width: 400px;
   height: 24px;
 }
 .article-EcoEssentials {
   position: absolute;
   top: 0px;
   left: 380px;
-  width: 132px;
+  width: 400px;
   height: 24px;
 }
 .article-GreenLiving {
   position: absolute;
   top: 0px;
   left: 757px;
-  width: 113px;
+  width: 400px;
   height: 24px;
 }
 .article-EcoTech {
   position: absolute;
   top: 0px;
   left: 1116px;
-  width: 82px;
+  width: 400px;
   height: 24px;
 }
 .eco-tech1 {
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: 800px;
+  left: 250px;
   text-transform: uppercase;
 }
 .news {
@@ -178,6 +179,7 @@
 .danastra {
   position: relative;
   line-height: 140%;
+  font-size: 12px;
 }
 .bullets {
   width: 420px;
@@ -188,6 +190,7 @@
   gap: 30px;
 }
 .eco-house-environmentally {
+  text-align: left;
   align-self: stretch;
   position: relative;
   font-size: 24px;
@@ -195,6 +198,7 @@
   font-family: 'Optician Sans';
   color: #333;
   text-decoration: none;
+  line-height: 25px;
 }
 .headline {
   align-self: stretch;
@@ -221,7 +225,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 11px;
+  gap: 10px;
   cursor: pointer;
   color: #656565;
 }
@@ -359,6 +363,8 @@
   color: inherit;
   display: inline-block;
   text-decoration: none;
+  text-align: left;
+  line-height: 35px;
 }
 .headline6 {
   display: flex;
