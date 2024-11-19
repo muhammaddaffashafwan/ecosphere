@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Navbar from '../../../components/Navbar/Navbar';
+import { Navbar } from '../../../components/navbar/navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeftLong, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../../components/Button/Button';
