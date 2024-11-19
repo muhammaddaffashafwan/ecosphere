@@ -3,7 +3,7 @@ import "./article1.css";
 export function Article1() {
 	return (
 		<>
-			<div className="article"> 
+			<div className="article-1"> 
 
 			<section>
 				<div className="txt">
