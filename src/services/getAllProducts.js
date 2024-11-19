@@ -1,8 +1,8 @@
 export default function getAllProducts() {
   return [
     {
-      id: 'HS-001',
-      slug: 'apartment-jkt-living-star',
+      id: 'ECO-HS-001',
+      slug: 'eco-house-001',
       name: 'International Eco-Apartment JKT Living Star',
       category: 'House',
       categorySlug: 'house',
@@ -14,8 +14,8 @@ export default function getAllProducts() {
                         making it an ideal choice for individuals who desire a vibrant urban lifestyle. Additionally, the complex provides 24-hour security and attentive service, which contribute to a comfortable and secure living experience.`,
     },
     {
-      id: 'HS-002',
-      slug: 'lavia-living-type-5-citra-garden-city-jakarta',
+      id: 'EC0-HS-002',
+      slug: 'eco-house-002',
       name: 'Lavia Living Type 5 at Citra Garden City Jakarta',
       category: 'House',
       categorySlug: 'house',
@@ -26,8 +26,8 @@ export default function getAllProducts() {
                     Citra Garden City is known for its aesthetic appeal and extensive amenities, including green spaces and convenient access to shopping and transport. The residence is equipped with an advanced security system, ensuring the safety of its occupants. Overall, Lavia Living Type 5 is an excellent choice for quality housing in Jakarta.`,
     },
     {
-      id: 'HS-003',
-      slug: 'avilla-nova-cluster-samanea-hill',
+      id: 'ECO-HS-003',
+      slug: 'eco-house-003',
       name: 'Avilla Nova Cluster at Samanea Hill',
       category: 'House',
       categorySlug: 'house',
@@ -38,8 +38,8 @@ export default function getAllProducts() {
                     Located strategically, Samanea Hill offers easy access to shopping centers, schools, and recreational areas. Surrounded by lush green parks, the cluster provides a tranquil atmosphere. With a secure environment and a friendly community, Avilla Nova is an excellent choice for quality housing in a thriving area.`,
     },
     {
-      id: 'HS-004',
-      slug: 'quantis-signature-type-178-bsd-city',
+      id: 'ECO-HS-004',
+      slug: 'eco-house-004',
       name: 'Quantis Signature Type 178 at BSD City',
       category: 'House',
       categorySlug: 'house',
@@ -51,8 +51,8 @@ export default function getAllProducts() {
     },
 
     {
-      id: 'MT-BMBP-001',
-      slug: 'bamboo-petung-dendrocalamus-asper',
+      id: 'EC0-MT-005',
+      slug: 'eco-material-005',
       name: 'Bamboo Petung (Dendrocalamus asper)',
       category: 'Material',
       categorySlug: 'material',
@@ -62,8 +62,8 @@ export default function getAllProducts() {
       description: `Bamboo Petung (Dendrocalamus asper) is an optimal choice for those who prioritize sustainability and environmental responsibility. As one of the largest and strongest bamboos, Bamboo Petung offers exceptional strength, durability, and the ability to be harvested sustainably. Its rapid growth also makes it an ideal choice for construction, furniture, and decoration projects. By using Bamboo Petung, you can support eco-friendly practices that reduce deforestation and carbon emissions.`,
     },
     {
-      id: 'MT-EIKO-002',
-      slug: 'eiken-oak-tongue-and-groove',
+      id: 'ECO-MT-006',
+      slug: 'eco-material-006',
       name: 'Eiken (Oak) - Tongue and Groove',
       category: 'Material',
       categorySlug: 'material',
@@ -73,8 +73,8 @@ export default function getAllProducts() {
       description: `Eiken (Oak) - Tongue and Groove is the optimal choice for those seeking natural beauty and exceptional durability in their building projects. This oak offers an elegant aesthetic with a tongue and groove system that ensures easy and sturdy installation, and it is sourced from a sustainably managed source. By selecting Eiken (Oak), you are supporting environmentally friendly practices that help preserve forests and reduce carbon footprints. Additionally, oak is renowned for its high resistance to wear and tear, making it an optimal choice for long-lasting flooring and wall panels. Make Eiken (Oak) - Tongue and Groove part of your green solution for your home or project, and enjoy the long-term benefits of this high-quality material.`,
     },
     {
-      id: 'MT-BSTR-003',
-      slug: 'basalt-rock-material',
+      id: 'ECO-MT-007',
+      slug: 'eco-material-007',
       name: 'Basaltic (Fine-Grained) Rock',
       category: 'Material',
       categorySlug: 'material',
@@ -84,8 +84,8 @@ export default function getAllProducts() {
       description: `Basalt rock is the optimal choice for your construction projects that require exceptional strength and durability. Formed from natural volcanic processes, this rock has a dense and hard structure, making it highly resistant to pressure and erosion. Additionally, basalt rock is an eco-friendly material, derived from an abundant and renewable natural resource. By choosing basalt rock, you are not only getting a durable and strong material, but also contributing to the preservation of the environment. Make basalt rock a part of your construction solution for optimal and sustainable results.`,
     },
     {
-      id: 'MT-PVBL-004',
-      slug: 'paving-block-material',
+      id: 'ECO-MT-008',
+      slug: 'eco-material-009',
       name: 'Plastic Waste Recycling Paving Block ',
       category: 'Material',
       categorySlug: 'material',
@@ -95,8 +95,8 @@ export default function getAllProducts() {
       description: `Paving blocks are a great option for landscaping and road projects that need to stand up to a lot of wear and tear and look good doing it. Made from a high-quality concrete mix, paving blocks are strong and can handle heavy loads and extreme weather. Plus, paving blocks come in all kinds of designs and colors, so you can get the look you want. They're also eco-friendly because you can recycle them and they reduce construction waste. When you choose paving blocks, you get a durable and attractive solution that's good for the planet. Make paving blocks part of your construction solution for the best and greenest results.`,
     },
     {
-      id: 'TCH-SMSP-001',
-      slug: 'sunPower-maxeon-solar-panels',
+      id: 'ECO-TC-009',
+      slug: 'eco-technology-009',
       name: 'SunPower Maxeon Solar Panels ',
       category: 'Technology',
       categorySlug: 'technology',
@@ -106,8 +106,8 @@ export default function getAllProducts() {
       description: `SunPower Maxeon solar panels offer the highest energy efficiency of up to 22.8%, producing more energy and reducing your carbon footprint. Designed for durability in extreme weather conditions, the panels are backed by up to a 40-year warranty. Its advanced technology reduces corrosion and damage, making it a safe and environmentally friendly long-term investment. With SunPower Maxeon, you can significantly reduce your electricity costs and contribute to a greener environment.`,
     },
     {
-      id: 'TCH-ELCL-002',
-      slug: 'enrave-large-ceiling-lamp',
+      id: 'ECO-TC-010',
+      slug: 'eco-technology-010',
       name: 'Enrave Large Ceiling Lamp ',
       category: 'Technology',
       categorySlug: 'technology',
@@ -118,8 +118,8 @@ export default function getAllProducts() {
                     Key features include smart control via the Hue app or voice commands with Alexa and Google Assistant, and customizable light with over 50,000 shades of warm to cool white. Choose the Enrave Large Ceiling Lamp for a smart, efficient and eco-friendly lighting solution.`,
     },
     {
-      id: 'TCH-MSS2OSV-003',
-      slug: 'moen-smart-shower-2-Outlet-Shower-Valve',
+      id: 'ECO-TC-011',
+      slug: 'eco-technology-011',
       name: 'Moen Smart Shower 2-Outlet Shower Valve',
       category: 'Technology',
       categorySlug: 'technology',
@@ -130,8 +130,8 @@ export default function getAllProducts() {
                     giving you the sensation of more water while using up to 45% less water than traditional showers. Its modern and elegant design not only enhances the aesthetics of your bathroom, but is also environmentally friendly, reducing water and energy consumption. With smart control via an app and compatibility with Alexa and Google Assistant, Nebia by Moen offers convenience and efficiency in one package. Choose Nebia by Moen for a luxurious, energy-efficient and sustainable bathroom solution.`,
     },
     {
-      id: 'TCH-GNTE-004',
-      slug: 'google-nest-thermostat-e-pro',
+      id: 'ECO-TC-012',
+      slug: 'eco-technology-013',
       name: 'Google Nest Thermostat E Pro',
       category: 'Technology',
       categorySlug: 'technology',

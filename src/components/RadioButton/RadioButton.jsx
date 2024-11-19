@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function RadioButton({ options, defaultValue, onChange }) {
   const [selected, setSelected] = useState(defaultValue || options[0]?.value);
