@@ -255,7 +255,6 @@ body {
   position: relative;
   z-index: 1; /* Ensures this content sits above the gradient background */
 }
-
 .property img {
   width: 100%;
   height: auto;
