@@ -1,5 +1,4 @@
 import "./inspiration.css";
-import Inspiration2 from "../inpiration2/inspiration2";
 
 export function Inspiration() {
   return (
