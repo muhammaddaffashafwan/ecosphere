@@ -10,14 +10,14 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Navbar />
-
+			
 			<Routes>
 				<Route path="/" element={<Homepage />} />
-				<Route path="article2" element={<Article2 />} />
+				<Route path="article1" element={<Article1 />} />
 				<Route path="inspiration" element={<Inspiration />} />
 				<Route path="login" element={<Login />} />
 			</Routes>
-
+			
 			<Footer />
 		</BrowserRouter>
 	);
