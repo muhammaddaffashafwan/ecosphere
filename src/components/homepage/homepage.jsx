@@ -15,10 +15,10 @@ export function Homepage() {
         <img className="home-page-icon" alt="" src="/images/homepage-plant.png" />
         <div className="home-page-title">Smart Living, Greener Future</div>
         <div className="at-ecosmophere">
-          "At Ecosmophere, we empower you with the knowledge to create an
+          &quot;At Ecosmophere, we empower you with the knowledge to create an
           eco-friendly home. Explore smart solutions, sustainable practices, and
           practical tips to reduce your environmental footprint while enhancing
-          your living space. Start your journey toward greener living today".
+          your living space. Start your journey toward greener living today&qu0t;.
         </div>
         <section className="hover-more-s">
           <a href="#" className="cta-buttons">

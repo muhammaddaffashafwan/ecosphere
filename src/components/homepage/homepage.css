@@ -54,7 +54,7 @@ body {
 
 body {
   font-family: Arial, sans-serif;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
