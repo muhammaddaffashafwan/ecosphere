@@ -68,7 +68,7 @@ export function Homepage() {
           </div>
 
           <div className="left-side">
-            <div className="article-1">
+            <div className="article-a">
               <img src="/images/homearticle1.jpg" />
               <div className="article-content">
                 <div className="article-title">
@@ -83,7 +83,7 @@ export function Homepage() {
               </div>
             </div>
 
-            <div className="article-2">
+            <div className="article-b">
               <img src="/images/homearticle2.jpg" />
 
               <div className="article-content">
@@ -100,7 +100,7 @@ export function Homepage() {
               </div>
             </div>
 
-            <div className="article-3">
+            <div className="article-c">
               <img src="/images/homearticle3.jpg" />
               <div className="article-content">
                 <div className="article-title">

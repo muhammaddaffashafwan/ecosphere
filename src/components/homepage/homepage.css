@@ -44,7 +44,7 @@ body {
   width: 100%;
   position: relative;
   background-color: #fff;
-  height: 3443px;
+  height: 3100px;
   overflow: hidden;
   text-align: left;
   font-size: 16px;
@@ -346,6 +346,7 @@ body {
   letter-spacing: -0.02em;
   display: inline-block;
   width: 548px;
+  line-height: 40px;
 }
 
 .left-side {
@@ -355,7 +356,7 @@ body {
   width: 572px;
   height: 520px;
 }
-.article-1 {
+.article-a {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -390,7 +391,7 @@ body {
   font-size: 14px;
   color: #888b97;
 }
-.article-2 {
+.article-b {
   position: absolute;
   top: 188px;
   left: 0px;
@@ -401,7 +402,7 @@ body {
   gap: 32px;
   cursor: pointer;
 }
-.article-3 {
+.article-c {
   position: absolute;
   top: 376px;
   left: 0px;
