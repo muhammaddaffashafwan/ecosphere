@@ -3,7 +3,8 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Mengisi tinggi layar sepenuhnya */
+  min-height: 600vh; 
+	background-color: #fff;
 }
 
 .eco-house-guide-cover {
@@ -61,7 +62,7 @@
   width: 90%;
   max-width: 1156px;
   font-size: 23px;
-  margin-top: -65px;
+  margin-top: 550px;
   left: 183px;
 }
 
@@ -349,13 +350,16 @@
 }
 
 .diy-content {
-	display: grid;
+	position: absolute;
+	display: flex;
 	gap: 60px;
 	padding: 10px;
 	width: 1300px;
 	height: 350px;
 	align-items: center;
-	margin: auto;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 1850px;
 }
 
 @media (min-width: 900px) {
@@ -436,8 +440,10 @@
 .hover-more-1 {
   text-align: center; 
 	overflow: hidden;
-	position: relative;
-	top: 1900px;
+	position: absolute;
+	top: 4100px;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .cta-button2 {

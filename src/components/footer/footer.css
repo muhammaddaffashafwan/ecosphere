@@ -10,6 +10,7 @@ footer {
     letter-spacing: 0.04em;
     position: relative;
     overflow: hidden;
+    background: #fff;
   }
   
   .footer-container {
