@@ -3,7 +3,7 @@ import "./article1.css";
 export function Article1() {
 	return (
 		<>
-			<div className="article"> </div>
+			<div className="article"> 
 
 			<section>
 				<div className="txt">
@@ -22,36 +22,29 @@ export function Article1() {
 			</section>
 
 			<section>
-				<div className="article-categories-parent" id="AllCategories">
-					<div className="article-Allcategorie">
-						<div
-							className="eco-tech1"
-							onClick={() => (window.location.href = "article2.html")}
-							style={{ cursor: "pointer" }}
-						>All Categories</div>
-					</div>
+      <div className="article-categories-parent">
+				<div className="article-Allcategories">
+					<a className="eco-tech1" href="/Article2">
+						All Categories
+					</a>
 				</div>
 				<div className="article-EcoEssentials">
-        <div
-							className="eco-tech1"
-							onClick={() => (window.location.href = "article2.html")}
-							style={{ cursor: "pointer" }}
-						>Eco Essentials</div>
-					</div>
+					<a className="eco-tech1" href="/Article2">
+						Eco Essentials
+					</a>
+				</div>
 				<div className="article-GreenLiving">
-        <div
-							className="eco-tech1"
-							onClick={() => (window.location.href = "article2.html")}
-							style={{ cursor: "pointer" }}
-						>Green Living</div>
-					</div>
+					<a className="eco-tech1" href="/Article2">
+						Green Living
+					</a>
+				</div>
 				<div className="article-EcoTech">
-        <div
-							className="eco-tech1"
-							onClick={() => (window.location.href = "article2.html")}
-							style={{ cursor: "pointer" }}
-						>ECO TECH</div>
-					</div>
+					<a className="eco-tech1" href="/Article2">
+						Eco Tech
+					</a>
+				</div>
+</div>
+
 				<div className="news" id="news-img">
 					<div className="image-content">
 						<img src="asset/imgarticle3.jpg" alt="Eco Green House Image" className="img-article3" />
@@ -59,6 +52,7 @@ export function Article1() {
 				</div>
 
 				<img className="article-item" alt="" src="asset/imgarticle4.jpg" id="img-article4" />
+        
 				<div className="text" id="textContainer">
 					<div className="headline">
 						<div className="bullets">
@@ -67,11 +61,11 @@ export function Article1() {
 
 								<div className="danastra">Jan 12, 2023</div>
 							</div>
-							<div className="category">
+							{/* <div className="category">
 								<img className="icons-calendar" alt="" src="./asset/imgarticle3.jpg" />
 
 								<div className="advices">Advices</div>
-							</div>
+							</div> */}
 							<div className="calendar">
 								<img className="icons-calendar" alt="" src="./asset/account.png" />
 
@@ -167,12 +161,10 @@ export function Article1() {
 				<div className="headline3">
 					<div className="headline4">
 						<a
-							className="title"
+							className="title1"
 							href="https://artigianfer.com/en/news/greenhouses-how-to-reduce-pallution-and-waste/"
 							target="_blank"
-						>
-							<p className="eco-greenhouses">Eco-greenhouses:</p>
-							<p className="eco-greenhouses">how to reduce environmental impact</p>
+						>Eco-greenhouses: <br />how to reduce environmental impact
 						</a>
 					</div>
 					<div className="bullets3">
@@ -270,6 +262,7 @@ export function Article1() {
 			</div>
 
 			<img className="icon-more" alt="" src="asset/Icon More.png" />
+      </div>
 		</>
 	);
 }
