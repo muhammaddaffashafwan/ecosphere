@@ -12,9 +12,7 @@ export function Navbar () {
             <a href="#properti">PROPERTY</a>
             <Link to ='/article2'>ARTICLE</Link>
             <a href="#artikel">FORUM</a>
-            <a href="#login" className="login-button">
-              LOG IN
-            </a>
+            <Link to ='/login' className="login-button">LOG IN</Link>
           </nav>
         </header>
         </>

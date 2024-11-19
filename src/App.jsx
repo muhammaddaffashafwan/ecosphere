@@ -1,11 +1,10 @@
 import { Navbar } from "./components/navbar/navbar";
 import { Footer } from "./components/footer/footer";
-
 import { Homepage } from "./components/homepage/homepage";
 import { Inspiration } from "./inspriration/inspiration";
 import { Article2 } from "./components/article2/article2";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Login } from "./components/login/login";
 
 function App() {
 	return (
@@ -16,6 +15,7 @@ function App() {
 				<Route path="/" element={<Homepage />} />
 				<Route path="article2" element={<Article2 />} />
 				<Route path="inspiration" element={<Inspiration />} />
+				<Route path="login" element={<Login />} />
 			</Routes>
 
 			<Footer />
