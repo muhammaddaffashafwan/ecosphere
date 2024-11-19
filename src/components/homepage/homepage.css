@@ -153,6 +153,7 @@ body {
   font-family: "Optician Sans";
   display: inline-block;
   width: 588px;
+  line-height: 70px;
 }
 .at-ecosmophere {
   position: absolute;
