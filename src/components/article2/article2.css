@@ -1,5 +1,5 @@
 /* body {
-    overflow-x: hidden;
+    min-height: 500px;
   } */
   
   .yellow-and-green-modern-logo {
@@ -262,7 +262,7 @@
     left: 120px;
     border-radius: 24px;
     width: 588px;
-    height: 588px;
+    height: 635px;
     overflow: hidden;
     object-fit: cover;
   }
@@ -280,7 +280,7 @@
   }
   .echnology-is-changing {
     position: absolute;
-    top: 0px;
+    top: 40px;
     left: 82.75px;
     line-height: 140%;
     font-weight: 500;
@@ -290,7 +290,7 @@
   }
   .t {
     position: absolute;
-    top: 7px;
+    top: 45px;
     left: 0px;
     font-size: 135px;
     line-height: 140%;
@@ -319,7 +319,7 @@
   }
   .in-the-last-container {
     position: absolute;
-    top: 581px;
+    top: 615px;
     left: 735px;
     font-size: 16px;
     line-height: 140%;
@@ -335,7 +335,7 @@
   }
   .recent-trends-show-container {
     position: absolute;
-    top: 462px;
+    top: 500px;
     left: 1039px;
     font-size: 16px;
     line-height: 140%;
@@ -371,7 +371,8 @@
     font-family: Optician Sans;
     display: inline-block;
     width: 585px;
-    padding-top: 70px;
+    padding-top: 50px;
+    line-height: 40px;
   }
   .image-child {
     position: absolute;
@@ -459,7 +460,7 @@
   }
   .spacexs-starship-spacecraft {
     position: absolute;
-    top: 55px;
+    top: 65px;
     left: 0px;
     font-size: 14px;
     line-height: 140%;
@@ -506,7 +507,7 @@
   }
   .category-and-est-read-time1 {
     position: absolute;
-    top: 142px;
+    top: 150px;
     left: 0px;
     width: 250px;
     height: 16px;
@@ -514,7 +515,7 @@
     color: rgba(0, 0, 0, 0.72);
     font-family: Poppins;
   }
-  .texts {
+  .desc-arc {
     align-self: stretch;
     position: relative;
     height: 158px;
@@ -540,7 +541,7 @@
   }
   .spacexs-starship-spacecraft-container {
     position: absolute;
-    top: 55px;
+    top: 65px;
     left: 0px;
     font-size: 14px;
     line-height: 140%;
@@ -702,7 +703,7 @@
   .card-bif-c:hover .overlay {
     opacity: 1;
   }
-  .text {
+  .text-article {
     color: white;
     font-size: 18px;
     text-align: center;
@@ -834,7 +835,7 @@
     width: 100%;
     position: relative;
     background-color: #fff;
-    height: 4800px;
+    height: 4500px;
   
     text-align: left;
     font-size: 24px;
