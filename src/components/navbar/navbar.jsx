@@ -10,7 +10,7 @@ export function Navbar () {
           <nav className="nav">
             <Link to ='/inspiration'>INSPIRATION</Link>
             <a href="#properti">PROPERTY</a>
-            <Link to ='/article2'>ARTICLE</Link>
+            <Link to ='/article1'>ARTICLE</Link>
             <a href="#artikel">FORUM</a>
             <a href="#login" className="login-button">
               LOG IN

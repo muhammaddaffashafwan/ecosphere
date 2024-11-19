@@ -1,0 +1,597 @@
+.article {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  height: 3950px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 11px;
+  color: #333;
+  font-family: Poppins;
+}
+.article-child {
+  position: absolute;
+  top: 3774px;
+  left: 826px;
+  width: 50px;
+  height: 503px;
+}
+
+/* Indepth article */
+.in-depth-article {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.02em;
+}
+.explore {
+  width: 615px;
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: Poppins;
+  display: inline-block;
+}
+.txt {
+  position: absolute;
+  top: 150px;
+  left: 120px;
+  width: 690px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 60px;
+  font-size: 64px;
+  font-family: 'Optician Sans';
+}
+.img-article1 {
+  position: absolute;
+  top: 150px;
+  left: 1116px;
+  border-radius: 24px;
+  width: 202px;
+  height: 460px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.img-article2 {
+  position: absolute;
+  top: 240px;
+  left: 834px;
+  border-radius: 24px;
+  width: 204px;
+  height: 460px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+/* All category */
+.article-item {
+  position: absolute;
+  top: 970px;
+  left: 706px;
+  border-radius: 24px;
+  width: 204px;
+  height: 204px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+}
+.article-categories-parent {
+  position: absolute;
+  top: calc(50% - 1122px);
+  left: calc(50% - 600px);
+  width: 1198px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #000;
+}
+.article-Allcategorie {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 135px;
+  height: 24px;
+}
+.article-EcoEssentials {
+  position: absolute;
+  top: 0px;
+  left: 380px;
+  width: 132px;
+  height: 24px;
+}
+.article-GreenLiving {
+  position: absolute;
+  top: 0px;
+  left: 757px;
+  width: 113px;
+  height: 24px;
+}
+.article-EcoTech {
+  position: absolute;
+  top: 0px;
+  left: 1116px;
+  width: 82px;
+  height: 24px;
+}
+.eco-tech1 {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  text-transform: uppercase;
+}
+.news {
+  position: absolute;
+  top: 1000px;
+  left: 123px;
+  border-radius: 24px;
+  width: 571px;
+  height: 716px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 30px;
+  box-sizing: border-box;
+  /* background-image: url('./asset/imgarticle3.jpg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+  font-family: 'Optician Sans';
+}
+.img-article3 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.calendar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+.icons-calendar {
+  width: 20px;
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.advices {
+  position: relative;
+  line-height: 18px;
+}
+.category {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  font-size: 12px;
+  font-family: Lato;
+}
+.danastra {
+  position: relative;
+  line-height: 140%;
+}
+.bullets {
+  width: 420px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+}
+.eco-house-environmentally {
+  align-self: stretch;
+  position: relative;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  font-family: 'Optician Sans';
+  color: #333;
+  text-decoration: none;
+}
+.headline {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.have-you-ever {
+  align-self: stretch;
+  position: relative;
+  font-size: 14px;
+  line-height: 140%;
+  color: #333;
+  text-align: justify;
+}
+.text {
+  position: absolute;
+  top: 982px;
+  left: 936px;
+  width: 382px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 11px;
+  cursor: pointer;
+  color: #656565;
+}
+.article-inner {
+  position: absolute;
+  top: 1235px;
+  left: 715px;
+  border-radius: 24px;
+  width: 204px;
+  height: 203px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+}
+.text1 {
+  position: absolute;
+  top: 1240px;
+  left: 938px;
+  width: 379px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  color: #656565;
+}
+.frame-icon {
+  position: absolute;
+  top: 1481px;
+  left: 715px;
+  border-radius: 24px;
+  width: 203px;
+  height: 201px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+}
+.text2 {
+  position: absolute;
+  top: 1490px;
+  left: 936px;
+  width: 381px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+  cursor: pointer;
+  color: #656565;
+}
+
+/* More Article */
+.more-articles {
+  position: absolute;
+  top: 2000px;
+  left: 120px;
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  font-family: 'Optician Sans';
+  display: inline-block;
+  width: 467px;
+}
+.img-icon {
+  position: absolute;
+  top: 2150px;
+  left: 121px;
+  border-radius: 32px;
+  width: 587px;
+  height: 345px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+}
+.eco-greenhouses {
+  margin: 0;
+}
+.title {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.02em;
+  color: inherit;
+  text-decoration: none;
+}
+.headline4 {
+  width: 585px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.bullets3 {
+  width: 585px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 60px;
+  font-size: 11px;
+  font-family: Poppins;
+}
+.headline3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.our-age-is {
+  align-self: stretch;
+  position: relative;
+  font-size: 14px;
+  line-height: 140%;
+  font-family: Poppins;
+  text-align: justify;
+}
+.body {
+  position: absolute;
+  top: 2150px;
+  left: 735px;
+  width: 586px;
+  height: 345px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 40px;
+  font-family: 'Optician Sans';
+}
+.title1 {
+  width: 574px;
+  position: relative;
+  letter-spacing: -0.02em;
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+}
+.headline6 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.body1 {
+  position: absolute;
+  top: 2600px;
+  left: 121px;
+  width: 587px;
+  height: 344px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 40px;
+  font-family: 'Optician Sans';
+}
+.img-icon1 {
+  position: absolute;
+  top: 2600px;
+  left: 735px;
+  border-radius: 32px;
+  width: 587px;
+  height: 345px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+}
+.img-icon2 {
+  position: absolute;
+  top: 3050px;
+  left: 121px;
+  border-radius: 32px;
+  width: 587px;
+  height: 345px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+}
+.healthy-living-can-container {
+  align-self: stretch;
+  position: relative;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: justify;
+  display: inline-block;
+  height: 172px;
+  flex-shrink: 0;
+  font-family: Poppins;
+}
+.body2 {
+  position: absolute;
+  top: 3050px;
+  left: 737px;
+  width: 583px;
+  height: 344px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 40px;
+  font-family: 'Optician Sans';
+}
+.Logo {
+  width: 168px;
+  position: relative;
+  height: 32px;
+  object-fit: cover;
+}
+.we-provide-information {
+  position: absolute;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  line-height: 140%;
+  display: inline-block;
+  opacity: 0.75;
+}
+.brandicofacebook-icon {
+  width: 32px;
+  position: relative;
+  height: 32px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.brandicofacebook-parent {
+  position: absolute;
+  height: 25%;
+  width: 45%;
+  top: 75%;
+  right: 55%;
+  bottom: 0%;
+  left: 0%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.bio {
+  width: 320px;
+  position: relative;
+  height: 128px;
+}
+.group-logo {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.property1 {
+  width: 94px;
+  position: relative;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-block;
+  color: #414958;
+}
+.discover {
+  align-self: stretch;
+  position: relative;
+  font-weight: 500;
+}
+.property {
+  width: 176px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.article2 {
+  align-self: stretch;
+  position: relative;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #414958;
+}
+.eco-tech {
+  align-self: stretch;
+  position: relative;
+  text-transform: capitalize;
+  font-family: Lexend;
+}
+
+.hover-more {
+  position: absolute;
+  top: 728px;
+  left: 120px;
+  border-radius: 50px;
+  background-color: #739646;
+  color: white;
+  box-sizing: border-box;
+  width: 276px;
+  height: 36px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 24px;
+  font-size: 14px;
+  color: #fbfbfb;
+}
+.icon-more {
+  position: absolute;
+  top: 2000px;
+  left: 1287px;
+  width: 30.3px;
+  height: 30.3px;
+}
+
+.the-concept-of-green {
+  align-self: stretch;
+  position: relative;
+  font-size: 14px;
+  line-height: 140%;
+  font-family: Poppins;
+  display: inline-block;
+  height: 48px;
+  flex-shrink: 0;
+}
+.title3 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 15px;
+}
+.bullets6 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 60px;
+  font-size: 11px;
+  font-family: Poppins;
+}
+.content {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+#newsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.image-content {
+  flex: 0 0 400px; /* Tentukan ukuran lebar gambar */
+}
