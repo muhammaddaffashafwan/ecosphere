@@ -2,8 +2,8 @@ import { Navbar } from "./components/navbar/navbar";
 import { Footer } from "./components/footer/footer";
 
 import { Homepage } from "./components/homepage/homepage";
-import { Inspiration } from "./inspriration/inspiration";
-import { Article2 } from "./components/article2/article2";
+import { Inspiration } from "./components/inspiration/inspiration";
+import { Article1 } from "./components/article1/article1";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
