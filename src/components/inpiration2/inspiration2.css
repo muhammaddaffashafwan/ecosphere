@@ -196,7 +196,7 @@ body {
   z-index: 1; /* Ensures this content sits above the gradient background */
 }
 
-.property-insp img {
+.property img {
   width: 100%;
   height: auto;
   padding-left: 5px;

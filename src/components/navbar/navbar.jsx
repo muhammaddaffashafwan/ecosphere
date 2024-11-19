@@ -9,9 +9,9 @@ export function Navbar() {
         </div>
         <nav className='nav'>
           <Link to='/inspiration'>INSPIRATION</Link>
-          <a href='#properti'>PROPERTY</a>
+          <Link to='/property'>PROPERTY</Link>
           <Link to='/article1'>ARTICLE</Link>
-          <a href='#artikel'>FORUM</a>
+          <Link to='/forum1'>FORUM</Link>
           <Link to='/login' className='login-button'>
             LOG IN
           </Link>
