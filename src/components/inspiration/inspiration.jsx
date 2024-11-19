@@ -2,12 +2,11 @@ import "./inspiration.css" ;
 
 export function Inspiration () {
     return (
-<main>
+<div className="body-inspiration1">
 
 <img className="vector-icon" alt="" src="/images/vector.png" />
 
 <div className="inspiration-guide-panduan-inner"></div>
- <img className="group-icon" alt="" src="/images/FooterBlurry.png" /> 
 
 <div className="eco-house-guide-cover">
   <img src="/images/ecohouseguide.png" />
@@ -222,10 +221,9 @@ export function Inspiration () {
     <h3>Mini Vertical Garden</h3>
   </div>
 </div>
-
 <section className="hover-more-1">
   <a href="inspiration2.html" className="cta-button2">see more</a>
 </section> 
-</main>
+</div>
     ) 
 }
