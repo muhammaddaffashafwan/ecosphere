@@ -79,6 +79,7 @@ export default function Property() {
   return (
     <div className="bg-white min-h-screen text-white">
       {/* <Navbar onSearchChange={handleSearchChange}></Navbar> */}
+
       <div className="px-24 py-4 gap-4 mt-4 flex-wrap">
         <h3 className="font-medium text-black">Filter</h3>
         <div className="flex gap-2 flex-wrap ">

@@ -1,7 +1,7 @@
 export default function getAllProducts() {
   return [
     {
-      id: 'HS-APT-1-07-HOUSE-001',
+      id: 'HS-001',
       slug: 'apartment-jkt-living-star',
       name: 'International Eco-Apartment JKT Living Star',
       category: 'House',
@@ -14,7 +14,7 @@ export default function getAllProducts() {
                         making it an ideal choice for individuals who desire a vibrant urban lifestyle. Additionally, the complex provides 24-hour security and attentive service, which contribute to a comfortable and secure living experience.`,
     },
     {
-      id: 'HS-LVT-5-CGJ-002',
+      id: 'HS-002',
       slug: 'lavia-living-type-5-citra-garden-city-jakarta',
       name: 'Lavia Living Type 5 at Citra Garden City Jakarta',
       category: 'House',
@@ -26,7 +26,7 @@ export default function getAllProducts() {
                     Citra Garden City is known for its aesthetic appeal and extensive amenities, including green spaces and convenient access to shopping and transport. The residence is equipped with an advanced security system, ensuring the safety of its occupants. Overall, Lavia Living Type 5 is an excellent choice for quality housing in Jakarta.`,
     },
     {
-      id: 'HS-AVN-SH-003',
+      id: 'HS-003',
       slug: 'avilla-nova-cluster-samanea-hill',
       name: 'Avilla Nova Cluster at Samanea Hill',
       category: 'House',
@@ -38,7 +38,7 @@ export default function getAllProducts() {
                     Located strategically, Samanea Hill offers easy access to shopping centers, schools, and recreational areas. Surrounded by lush green parks, the cluster provides a tranquil atmosphere. With a secure environment and a friendly community, Avilla Nova is an excellent choice for quality housing in a thriving area.`,
     },
     {
-      id: 'HS-QST-178-BSD-004',
+      id: 'HS-004',
       slug: 'quantis-signature-type-178-bsd-city',
       name: 'Quantis Signature Type 178 at BSD City',
       category: 'House',
