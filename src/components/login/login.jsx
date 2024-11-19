@@ -1,6 +1,8 @@
 import styles from './login.module.css';
 export function Login() {
+    
     return (
+        <>
         <div className={styles['body-login']}>
             <div className={styles['content-spacing']}></div>
             <div className={styles['container-login']}> 
@@ -25,5 +27,6 @@ export function Login() {
                 </div>
             </div>
         </div>
+        </>
     );
 }
