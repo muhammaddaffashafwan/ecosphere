@@ -125,7 +125,7 @@
 	height: 100%;
 }
 .overlay {
-	position: absolute;
+	/* position: absolute; */
 	top: 0;
 	left: 0;
 	right: 0;
@@ -147,7 +147,7 @@
 .card-bif-6:hover .overlay {
 	opacity: 1; 
 }
-.text {
+.text-bif {
 	color: white;
 	font-size: 18px; /* Ukuran teks */
 	text-align: center;
@@ -254,6 +254,7 @@
 	left: 50.78%;
 	font-size: 40px;
 	font-family: "Optician Sans";
+	line-height: 40px;
 }
 .renew-title {
 	top: 0px;
@@ -280,7 +281,6 @@
 .renew-list {
 	margin: 0;
 	font-size: inherit;
-	padding-left: 21px;
 	font-weight: 500;
 }
 .renew-how {
