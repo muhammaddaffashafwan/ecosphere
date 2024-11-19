@@ -40,7 +40,6 @@ export default function Property() {
     fetchAllProducts();
   }, []);
 
-
   // useEffect(() => {
   //   startTransition(() => {
   //     const filtered = originalProducts.current.filter((product) => {
