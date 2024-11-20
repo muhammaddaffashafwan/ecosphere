@@ -46,30 +46,35 @@ export default function Property() {
             </p>
           </div>
         </div>
-
         <div className="numbers mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="property-return-rate flex items-center space-x-4">
-            <img className="icon h-12" alt="Property Icon" src="assets/Icon_prop.jpg" />
-            <div>
-              <p className="property-return-rate1 text-gray-700 font-medium">Property Return Rate</p>
-              <p className="b text-xl font-bold">7.4%</p>
-            </div>
-          </div>
-          <div className="daily-completed-transactions flex items-center space-x-4">
-            <img className="icon1 h-12" alt="Experience Icon" src="assets/Icon_estate.jpg" />
-            <div>
-              <p className="b1 text-xl font-bold">10</p>
-              <p className="years-experience-in text-gray-700">Years experience in real estate</p>
-            </div>
-          </div>
-          <div className="property-in-sell-rent flex items-center space-x-4">
-            <img className="icon2 h-12" alt="Customer Icon" src="assets/Icon_customers.jpg" />
-            <div>
-              <p className="b2 text-xl font-bold">3,856</p>
-              <p className="text3 text-gray-700">Happy Customers</p>
-            </div>
-          </div>
-        </div>
+  {/* Property Return Rate */}
+  <div className="property-return-rate flex flex-col items-center space-y-4">
+    <img className="icon h-12 " alt="Property Icon" src="assets/Icon_prop.jpg" />
+    <div className='text-[12px]'>
+      <p className="b text-xl text-center font-bold">7.4%</p>
+      <p className="property-return-rate1 text-gray-700 font-medium">Property Return Rate</p>
+    </div>
+  </div>
+
+  {/* Years of Experience in Real Estate */}
+  <div className="daily-completed-transactions flex flex-col items-center space-y-4">
+    <img className="icon1 h-12" alt="Experience Icon" src="assets/Icon_estate.jpg" />
+    <div className='text-[12px]'>
+      <p className="b1 text-xl text-center font-bold">10</p>
+      <p className="years-experience-in text-gray-700">Years experience in real estate</p>
+    </div>
+  </div>
+
+  {/* Happy Customers */}
+  <div className="property-in-sell-rent flex flex-col items-center space-y-4">
+    <img className="icon2 h-12" alt="Customer Icon" src="assets/Icon_customers.jpg" />
+    <div className='text-[12px`1]'>
+      <p className="b2 text-xl text-center font-bold">3,856</p>
+      <p className="text3 text-gray-700">Happy Customers</p>
+    </div>
+  </div>
+</div>
+
       </div>
 
       {/* Partners Section */}
@@ -96,6 +101,7 @@ export default function Property() {
       </div>
 
       <div className="px-24 pt-[1000px] pb-[4px] gap-4 mt-4 flex-wrap">
+        <h2 className='text-center text-30'>PROPERTY RECOMMENDATION</h2>
         <h3 className="font-medium text-black">Filter</h3>
         <div className="flex gap-2 flex-wrap">
           <RadioButton options={radioButtonOpts.current} defaultValue={'all'} />
