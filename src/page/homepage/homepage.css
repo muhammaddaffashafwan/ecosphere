@@ -154,6 +154,7 @@ body {
   display: inline-block;
   width: 588px;
   line-height: 70px;
+  text-align: left;
 }
 .at-ecosmophere {
   position: absolute;
@@ -175,7 +176,7 @@ body {
 .cta-buttons {
   background-color: #739646;
   color: #fff;
-  padding: 7px 50px;
+  padding: 7px 100px;
   border-radius: 50px;
   text-decoration: none;
   font-size: 18px;
@@ -183,6 +184,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: "Poppins", sans-serif;
   display: inline-block;
+  margin-bottom: 20px;
 }
 
 .cta-buttons:hover {
@@ -347,7 +349,9 @@ body {
   display: inline-block;
   width: 548px;
   line-height: 40px;
+  text-align: center;
 }
+
 
 .left-side {
   position: absolute;
@@ -460,6 +464,7 @@ body {
   color: #fff;
   padding: 12px 24px;
   border-radius: 50px;
+  margin-left: 37px;
   text-decoration: none;
   font-weight: 600;
   font-size: 20px;
