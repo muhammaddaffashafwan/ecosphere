@@ -19,7 +19,7 @@ export function Signup () {
             <label for="username">Username</label>
             <input type="text" id="username" placeholder="Enter Your Email" />
           </div>
-          <div className="form-group">
+          <div className="form-group-1">
             <label for="password">Password</label>
             <input type="password" id="password" placeholder="Enter Your Password" />
           </div>
@@ -27,7 +27,7 @@ export function Signup () {
             <label for="password">Confirm Password</label>
             <input type="password" id="password" placeholder="Confirm Your Password" />
           </div>
-          <button type="submit" className="login-button-main">SIGN UP</button>
+          <button type="submit" className="login-button-main-up">SIGN UP</button>
         </form>
         <div className="signup">Already have an account? <a href="/Login">Login</a></div>
       </div>
