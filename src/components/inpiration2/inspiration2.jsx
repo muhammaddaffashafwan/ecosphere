@@ -3,10 +3,10 @@ import "./inspiration2.css";
 export function Inspiration2() {
   return (
     <>
-      <div class='inspiration-guide-diy-2'></div>
-      <div class='inspiration-guide-diy-2-child'></div>
-      <div class='inspiration-guide-diy-2-item'></div>
-      <section class='hero'>
+      <div className='inspiration-guide-diy-2'></div>
+      <div className='inspiration-guide-diy-2-child'></div>
+      <div className='inspiration-guide-diy-2-item'></div>
+      <section className='hero'>
         <h2>
           DIY (Do It Yourself) <br />&<br />
           Inspiration
@@ -14,9 +14,9 @@ export function Inspiration2() {
       </section>
 
       <section>
-        <h2 class='section-title'>Simple DIY Projects</h2>
-        <div class='diy-projects'>
-          <div class='diy-project'>
+        <h2 className='section-title'>Simple DIY Projects</h2>
+        <div className='diy-projects'>
+          <div className='diy-project'>
             <a
               href='https://youtu.be/kwajGch9cKA?si=gY1VakIGPPfGOGOU'
               target='_blank'
@@ -112,31 +112,31 @@ export function Inspiration2() {
       <section class='gradient-bg'>
         <h2 class='section-title'>Environmentally Friendly Home Design Inspiration</h2>
         <div class='property-grid'>
-          <div class='property'>
+          <div class='property-insp'>
             <img src='/images/inspiration2/home 1.png' alt='Property' />
           </div>
-          <div class='property'>
+          <div class='property-insp'>
             <img src='/images/inspiration2/home 2.png' alt='Property' />
           </div>
-          <div class='property'>
+          <div class='property-insp'>
             <img src='/images/inspiration2/home 3.png' alt='Property' />
           </div>
-          <div class='property'>
+          <div class='property-insp'>
             <img src='/images/inspiration2/home 4.png' alt='Property' />
           </div>
-          <div class='property'>
+          <div class='property-insp'>
             <img src='/images/inspiration2/home 5.png' alt='Property' />
           </div>
-          <div class='property'>
+          <div class='property-insp'>
             <img src='/images/inspiration2/home 6.png' alt='Property' />
           </div>
-          <div class='property'>
+          <div class='property-insp'>
             <img src='/images/inspiration2/home 7.png' alt='Property' />
           </div>
-          <div class='property'>
+          <div class='property-insp'>
             <img src='/images/inspiration2/home 8.png' alt='Property' />
           </div>
-          <div class='property'>
+          <div class='property-insp'>
             <img src='/images/inspiration2/home 9.png' alt='Property' />
           </div>
         </div>
