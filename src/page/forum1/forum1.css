@@ -1,0 +1,672 @@
+.main-content-post {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 10px;
+  padding-top: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* Main Post Container */
+.main-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* Jarak antar section */
+  margin-top: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.main-post-link {
+  text-decoration: none; /* Hilangkan garis bawah */
+  color: inherit; /* Warna teks mengikuti warna bawaan */
+  display: block; /* Memastikan elemen mengambil seluruh area kontainer */
+}
+.main-post {
+  flex: 2;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  font-family: Poppins;
+}
+
+.main-post-1 {
+  flex: 2;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  font-family: Poppins;
+  margin-top: 10px;
+}
+
+.main-post-2 {
+  flex: 2;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  font-family: Poppins;
+  cursor: pointer;
+}
+
+.main-post-link:hover .main-post-2 {
+  background-color: #f9f9f9; /* Opsional: Tambahkan efek hover */
+}
+
+/* Title */
+.title-section2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #000000;
+  font-family: "Optician Sans";
+}
+
+/* Post Content */
+.post-container {
+  background-color: #f7ffec;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #739646;
+}
+
+.post-content img.post-image {
+  width: 100%; /* Membuat gambar responsif dan mengikuti lebar kontainer */
+  max-width: 610px; /* Membatasi lebar gambar jika terlalu besar */
+  height: auto; /* Memastikan tinggi gambar otomatis mengikuti proporsi */
+  margin-top: 0px; /* Memberikan jarak antara judul dan gambar */
+  margin-bottom: 15px; /* Memberikan jarak antara gambar dan teks */
+  border-radius: 8px; /* Menambahkan sudut yang sedikit melengkung pada gambar */
+}
+
+/* Judul Content */
+.judul-content {
+  font-size: 22px; /* Ukuran lebih besar */
+  font-weight: bold; /* Bold agar lebih menonjol */
+  color: #333; /* Warna lebih gelap */
+  margin-top: 10px;
+  margin-bottom: 10x; /* Memberi jarak ke teks berikutnya */
+  margin-top: 20px;
+  line-height: 1.5; /* Menambahkan jarak antar baris jika ada */
+  text-align: left; /* Posisi teks rata kiri */
+  font-family: "Optician Sans";
+}
+
+.post-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.post-tags {
+  font-size: 14px;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* Post Footer */
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.post-user {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.post-date {
+  font-size: 10px;
+  color: #999;
+}
+
+/* Actions */
+.post-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  position: relative;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.action-button i {
+  font-size: 20px;
+  color: #000000;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Sembunyikan ikon hati penuh saat tombol belum diklik */
+.action-button .bi-heart-fill {
+  display: none;
+}
+
+/* Menampilkan ikon hati penuh saat tombol diklik */
+.action-button.clicked .bi-heart {
+  display: none; /* Sembunyikan hati kosong */
+}
+
+.action-button.clicked .bi-heart-fill {
+  display: inline; /* Tampilkan hati penuh */
+  color: red; /* Ubah warna hati menjadi merah muda saat diklik */
+}
+
+.action-button:hover {
+  color: #007bff;
+}
+
+.action-button .bi-chat-text {
+  margin-left: 30px;
+}
+.action-count {
+  font-size: 16px;
+  color: #000000;
+  margin-left: 3px;
+  transition: color 0.3s ease;
+}
+
+/* Ubah warna angka saat tombol love diklik */
+.action-button.clicked .action-count {
+  color: black; /* Ubah warna angka menjadi merah muda ketika diklik */
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: absolute;
+  left: 410%;
+  top: 50%;
+  transform: translateY(-50%); /* Ratakan vertikal dengan tombol lainnya */
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu .dropdown-item {
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+  background-color: #fff;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Menampilkan menu dropdown saat tombol ditekan */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* On top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal body styles */
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.comment-input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  resize: none;
+  outline: none;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.add-comment-btn {
+  align-self: flex-end;
+  background-color: #739646;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  border: 2px solid #739646;
+}
+
+.add-comment-btn:hover {
+  background-color: #fff;
+  color: #739646;
+  /* border: 2px solid #739646; */
+  font-weight: bold;
+}
+
+/* Container untuk Question Section */
+.boq-question {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  font-family: Poppins;
+}
+
+/* Question Box Wrapper */
+.question-box-wrapper {
+  display: flex;
+  align-items: center; /* Avatar dan kotak sejajar horizontal */
+  gap: 15px;
+  background-color: #c9dbb2;
+  padding-left: 10px;
+  padding-right: 20%;
+  padding-right: 20%;
+  padding-top: 10px;
+  border-radius: 10px;
+}
+
+.question-box {
+  padding: 5px 10px;
+  border-radius: 100px;
+  flex: 1;
+}
+
+.question-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Avatar berbentuk bulat */
+}
+
+.question-textarea {
+  width: 100%;
+  padding: 8px 20px;
+  padding-top: 10px;
+  /* background-color: #f7ffec; */
+  border-radius: 10px;
+  font-size: 12px;
+  color: black;
+  resize: none;
+  font-family: Poppins, sans-serif;
+}
+
+.question-textarea:focus {
+  outline: none;
+  border-color: #739646; /* Warna border tetap */
+  background-color: #fff; /* Latar belakang terang saat fokus */
+}
+
+/* Question Box Styling */
+.question-box-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f7ffec;
+  cursor: pointer; /* Menunjukkan area dapat diklik */
+  transition: background-color 0.3s ease;
+}
+
+.question-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.question-box {
+  flex: 1;
+  padding: 10px;
+  background-color: #f7ffec;
+  border-radius: 10px;
+}
+
+.question-placeholder {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  margin: 0;
+}
+
+.question-box-wrapper:hover {
+  background-color: #eaf3d6;
+}
+
+/* Pop-Up Styling */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.close-popup {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  float: right;
+  cursor: pointer;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="file"] {
+  margin-bottom: 15px;
+}
+
+.submit-post {
+  background-color: #739646;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-post:hover {
+  background-color: #5b793a;
+}
+
+/* Suggestions Wrapper */
+.suggestion-wrapper {
+  margin-top: 20px;
+}
+
+.suggestion {
+  background-color: #f7ffec;
+  border-radius: 10px;
+  padding: 15px;
+  /* border: 1px solid #739646; */
+}
+
+.suggestion-header {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000000;
+  font-family: "Optician Sans";
+}
+
+/* Suggestion Items */
+.suggestion-item {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #666;
+  border-radius: 8px;
+  flex-direction: column;
+}
+
+.cta-container {
+  width: 100%; /* Tombol mengambil lebar penuh */
+  display: flex;
+  justify-content: left; /* Tombol di tengah */
+  margin-top: 20px; /* Tambahkan jarak ke atas */
+  margin-bottom: 10px;
+}
+.suggestion-item .cta-button {
+  background-color: #739646;
+  color: #fff;
+  padding: 7px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 2px solid #739646;
+}
+
+.suggestion-item .cta-button:hover {
+  background-color: #fff;
+  color: #6ea54e;
+}
+
+.details {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #777;
+}
+
+.answer-count {
+  font-weight: 600;
+}
+
+.last-answer {
+  margin-left: 5px;
+  color: #999;
+}
+
+.suggestion-desc {
+  font-size: 14px;
+  margin-top: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Pop-up Background */
+.popup {
+  display: none; /* Tersembunyi secara default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Warna gelap dengan transparansi */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Pop-up Content */
+.popup-content-1 {
+  background-color: #fff;
+  padding: 70px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-question {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Close Button */
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Form Elements */
+#answerForm label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#answerForm input,
+#answerForm textarea {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.submit-answer {
+  background-color: #739646;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.submit-answer:hover {
+  background-color: #5a7b36;
+}
+
+/* Pop-up Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

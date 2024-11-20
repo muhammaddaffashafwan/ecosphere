@@ -14,7 +14,8 @@ import { Forum2 } from "./page/forum2/forum2";
 import { Profile } from "./page/profile/profile";
 import { ForgotPassword } from "./page/forgotPassword/forgotpassword";
 import { Signup } from "./page/signup/signup";
-
+import ForumPost from "./components/ForumPost/ForumPost";
+import Modal from "./components/Modal/Modal";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
 
 function AppContent() {
   const location = useLocation();
+
+  console.log("Current location:", location.pathname); // Log rute saat ini
 
   const showFooter = 
     location.pathname.toLowerCase() !== '/login' && 
@@ -50,6 +53,8 @@ function AppContent() {
         <Route path="profile" element={<Profile />} />
         <Route path="forgotpassword" element={<ForgotPassword />} />
         <Route path="signup" element={<Signup />} />
+        <Route path="forumpost" element={<ForumPost />} />
+        <Route path="modal" element={<Modal />} />
       </Routes>
 
       {/* Footer hanya ditampilkan jika bukan halaman login */}
