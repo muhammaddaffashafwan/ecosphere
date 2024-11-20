@@ -76,6 +76,7 @@
 
         .form-group-1 {
             margin-bottom: 15px;
+            font-size: 13px;
         }
 
         .form-group-1 label {
@@ -85,16 +86,17 @@
 
         .form-group-1 input {
             width: 100%;
-            padding: 8px;
+            padding: 7px;
             margin-top: 5px;
             border-radius: 35px;
             border: 1px solid #ccc;
         }
 
 
-        .login-button-main {
+        .login-button-main-up {
             width: 100%;
-            padding: 8px;
+            padding:7px;
+            margin-top: 5px;
             background-color: #6d9b5d;
             color: white;
             font-weight: bold;
@@ -102,6 +104,7 @@
             border-radius: 35px;
             cursor: pointer;
             font-size: 16px;
+            text-align: center;
         }
 
         .signup {

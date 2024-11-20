@@ -75,6 +75,7 @@
   
   .form-group {
     margin-bottom: 15px;
+    font-size: 13px;
   }
   
   .form-group label {
@@ -84,7 +85,7 @@
   
   .form-group input {
     width: 100%;
-    padding: 8px;
+    padding: 7px;
     margin-top: 5px;
     border-radius: 35px;
     border: 1px solid #ccc;
@@ -101,7 +102,8 @@
   
   .login-button-main {
     width: 100%;
-    padding: 8px;
+    padding: 7px;
+    margin-top: 5px;
     background-color: #6d9b5d;
     color: white;
     font-weight: bold;
