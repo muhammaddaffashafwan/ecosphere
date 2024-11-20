@@ -9,6 +9,7 @@ import { Article2 } from './components/article2/article2';
 import { Article1 } from './components/article1/article1';
 import Property from "./page/property/Property";
 import ProductDetail from "./page/ProductDetail/ProductDetail";
+import { Signup } from './components/signup/signup';
 
 function App() {
   return (
@@ -21,8 +22,9 @@ function App() {
 function AppContent() {
   const location = useLocation();
 
-  // Menentukan apakah Footer harus ditampilkan (bukan pada halaman login)
-  const showFooter = location.pathname !== '/login';
+  const showFooter = 
+    location.pathname.toLowerCase() !== '/login' && 
+    location.pathname.toLowerCase() !== '/signup';
 
   return (
     <>
@@ -37,6 +39,7 @@ function AppContent() {
         <Route path="article2" element={<Article2 />} />
         <Route path="/products/:slug" element={<ProductDetail />} />
         <Route path="property" element={<Property />} />
+        <Route path="signup" element={<Signup />} />
       </Routes>
 
       {/* Footer hanya ditampilkan jika bukan halaman login */}

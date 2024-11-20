@@ -22,7 +22,7 @@ export function Login() {
                         <button type="submit" className={styles['login-button-main']}>LOGIN</button>
                     </form>
                     <div className={styles['signup']}>
-                        Don&apos;t have an account? <a href="#signup">Sign Up Now</a>
+                        Don&apos;t have an account? <a href="/Signup">Sign Up Now</a>
                     </div>
                 </div>
             </div>
