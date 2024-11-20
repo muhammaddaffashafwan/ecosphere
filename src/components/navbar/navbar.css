@@ -1,4 +1,4 @@
-.header {
+ .header {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -10,10 +10,11 @@
     z-index: 1000; 
     padding-inline: 90px; 
     box-sizing: border-box; 
-    padding-bottom: 5px;
+    height: 80px;
+    /* padding-bottom: 5px; */
   }
   
-  .logo {
+  /*.logo {
     display: flex;
     align-items: center;
   }
@@ -71,4 +72,4 @@
     background-color: #fff;
     color: #6ea54e;
   }
-  
+   */

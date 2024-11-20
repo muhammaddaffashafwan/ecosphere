@@ -2,7 +2,7 @@
   width: 100%;
   position: relative;
   background-color: #fff;
-  height: 3950px;
+  height: 3610px;
   overflow: hidden;
   text-align: left;
   font-size: 11px;
@@ -21,9 +21,12 @@
 .in-depth-article {
   align-self: stretch;
   position: relative;
-  letter-spacing: -0.02em;
+  letter-spacing: 0em;
   line-height: 60px;
+  word-spacing: normal;
+  text-align: left;
 }
+
 .explore {
   width: 615px;
   position: relative;
@@ -599,4 +602,9 @@
 
 .image-content {
   flex: 0 0 400px; /* Tentukan ukuran lebar gambar */
+}
+
+a.eco-tech1 {
+  color: #000;
+  text-decoration: none;
 }

@@ -411,9 +411,10 @@
 	padding: 0px;
 	font-weight: 300;
 	margin-top: 16px;
+	text-align: center;
 }
 
-.youtube-icon::before {
+.youtube-icon-1:before {
 	content: "▶";
 	position: absolute;
 	top: 40%;
@@ -429,9 +430,9 @@
 	z-index: 1;
 }
 
-.youtube-icon:hover:before {
+.youtube-icon-1:hover:before {
 	color: #ffffff;
-	background: #739646;
+ 	background: #739646;
 }
 
 .youtube-icon img {
@@ -443,7 +444,7 @@
 	overflow: hidden;
 	position: absolute;
 	top: 4100px;
-	left: 50%;
+	left: 700px;
 	transform: translateX(-50%);
 }
 

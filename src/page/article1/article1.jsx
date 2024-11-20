@@ -47,7 +47,7 @@ export function Article1() {
 
 				<div className="news" id="news-img">
 					<div className="image-content">
-						<img src="/images/imgarticle3.jpg" alt="Eco Green House Image" className="img-article3" />
+						<img src="/images/News.jpg" alt="Eco Green House Image" className="img-article3" />
 					</div>
 				</div>
 
@@ -261,7 +261,9 @@ export function Article1() {
 				</div>
 			</div>
 
-			<img className="icon-more" alt="" src="/images/Icon More.png" />
+			<a href="/article2">
+  			<img className="icon-more" alt="" src="/images/Icon More.png" />
+			</a>
       </div>
 		</>
 	);
