@@ -12,10 +12,10 @@ export function Signup () {
       <div className="image-section-signup"> </div>
      
 
-      <div className="login-section">
+      <div className="login-section-3">
         <h2>SIGN UP</h2>
         <form>
-          <div className="form-group">
+          <div className="form-group-1">
             <label for="username">Username</label>
             <input type="text" id="username" placeholder="Enter Your Email" />
           </div>
@@ -23,7 +23,7 @@ export function Signup () {
             <label for="password">Password</label>
             <input type="password" id="password" placeholder="Enter Your Password" />
           </div>
-          <div className="form-group">
+          <div className="form-group-1">
             <label for="password">Confirm Password</label>
             <input type="password" id="password" placeholder="Confirm Your Password" />
           </div>
