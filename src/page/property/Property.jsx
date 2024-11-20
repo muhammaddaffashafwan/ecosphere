@@ -35,9 +35,9 @@ export default function Property() {
 
   return (
     <div className="bg-white min-h-screen text-black">
-      <div className="absolute top-[100px] left-[40px] w-[544.1px] h-[411.8px] text-left text-black font-[Optician Sans]">
+      <div className="absolute top-[100px] left-[150px] w-[544.1px] h-[411.8px] text-left text-black font-[Optician Sans]">
         <div className="discovery flex flex-col md:flex-row items-center">
-          <img className="w-[678px] h-[550px] absolute ml-[700px] top-0 left-0 z-0" alt="Eco Discovery" src="assets/prop_illus.jpg" />
+          <img className=" absolute ml-[700px] top-0 left-0 z-0" alt="Eco Discovery" src="assets/prop_illus.jpg" />
           <div className="mt-[-20px] tracking-[-0.02em] pt-[30px] leading-[20px] text-black ">
             <h1 className=" font-bold  text-[36px]">Discover eco-friendly homes and products</h1>
             <p className="mt-4 ">
@@ -93,7 +93,7 @@ export default function Property() {
         </div>
       </div>
 
-      <div className="px-24 pt-[100px] pb-[4px] gap-4 mt-4 flex-wrap">
+      <div className="px-24 pt-[1000px] pb-[4px] gap-4 mt-4 flex-wrap">
         <h3 className="font-medium text-black">Filter</h3>
         <div className="flex gap-2 flex-wrap">
           <RadioButton options={radioButtonOpts.current} defaultValue={'all'} />
