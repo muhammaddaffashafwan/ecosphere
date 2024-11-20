@@ -1,19 +1,20 @@
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { Navbar } from './components/navbar/navbar';
 import { Footer } from './components/footer/footer';
-import { Login } from "./page/login/login";
+import { Login } from './page/login/login';
 import { Homepage } from './page/homepage/homepage';
 import { Inspiration } from './page/inspiration/inspiration';
-import { Inspiration2 } from "./page/inpiration2/inspiration2";
+import { Inspiration2 } from './page/inpiration2/inspiration2';
 import { Article2 } from './page/article2/article2';
 import { Article1 } from './page/article1/article1';
-import Property from "./page/property/Property";
-import ProductDetail from "./page/ProductDetail/ProductDetail";
-import { Forum1 } from "./page/forum1/forum1";
-import { Forum2 } from "./page/forum2/forum2";
-import { Profile } from "./page/profile/profile";
-import { ForgotPassword } from "./page/forgotPassword/forgotpassword";
+import Property from './page/property/Property';
+import ProductDetail from './page/ProductDetail/ProductDetail';
+import { Forum1 } from './page/forum1/forum1';
+import { Forum2 } from './page/forum2/forum2';
+import { Profile } from './page/profile/profile';
+import { ForgotPassword } from './page/forgotPassword/forgotpassword';
 import { Signup } from './components/signup/signup';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -26,9 +27,7 @@ function App() {
 function AppContent() {
   const location = useLocation();
 
-  const showFooter = 
-    location.pathname.toLowerCase() !== '/login' && 
-    location.pathname.toLowerCase() !== '/signup';
+  const showFooter = location.pathname.toLowerCase() !== '/login' && location.pathname.toLowerCase() !== '/signup';
 
   return (
     <>
@@ -57,9 +56,6 @@ function AppContent() {
 }
 
 export default App;
-
-
-
 
 // import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import { Navbar } from './components/navbar/navbar';
