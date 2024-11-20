@@ -1,6 +1,8 @@
 import styles from './login.module.css';
 export function Login() {
+    
     return (
+        <>
         <div className={styles['body-login']}>
             <div className={styles['content-spacing']}></div>
             <div className={styles['container-login']}> 
@@ -16,14 +18,15 @@ export function Login() {
                             <label htmlFor="password">Password</label>
                             <input type="password" id="password" placeholder="Enter Your Password" />
                         </div>
-                        <a href="#forgot-password" className={styles['forgot-password']}>Forgot Password?</a>
+                        <a href="/forgotpassword" className={styles['forgot-password']}>Forgot Password?</a>
                         <button type="submit" className={styles['login-button-main']}>LOGIN</button>
                     </form>
                     <div className={styles['signup']}>
-                        Don&apos;t have an account? <a href="#signup">Sign Up Now</a>
+                        Don&apos;t have an account? <a href="/Signup">Sign Up Now</a>
                     </div>
                 </div>
             </div>
         </div>
+        </>
     );
 }

@@ -12,7 +12,7 @@ export function Article2() {
 
         <a
           className="how-technology-is"
-          href="https://www.planradar.com/au/technology-revolutionizing-homebuilding-iot-ai/#:~:text=Advanced%20data%20analytics%20and%20machine,suited%20to%20future%20generations'%20needs."
+          href="https://www.planradar.com/au/technology-revolutionizing-homebuilding-iot-ai/#:~:text-article=Advanced%20data%20analytics%20and%20machine,suited%20to%20future%20generations'%20needs."
           target="_blank"
         >
           How technology is revolutionizing homebuilding: From IoT to AI
@@ -69,7 +69,7 @@ export function Article2() {
               />
 
               <div className="overlay">
-                <div className="text">CLICK ME</div>
+                <div className="text-article">CLICK ME</div>
               </div>
             </div>
             <div className="research-institute-wins">
@@ -117,7 +117,7 @@ export function Article2() {
                 src="/images/Image_daffa2.jpg"
               />
               <div className="overlay">
-                <div className="text">CLICK ME</div>
+                <div className="text-article">CLICK ME</div>
               </div>
             </div>
 
@@ -170,7 +170,7 @@ export function Article2() {
                 src="/images/Image_daffa3.jpg"
               />
               <div className="overlay">
-                <div className="text">CLICK ME</div>
+                <div className="text-article">CLICK ME</div>
               </div>
             </div>
             <div className="research-institute-wins">
@@ -224,10 +224,10 @@ export function Article2() {
               <div className="image-1">
                 <img className="image-child" alt="" src="/images/1.png" />
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     10 ways to make your home more sustainable
@@ -250,10 +250,10 @@ export function Article2() {
               <div className="image-2">
                 <img className="image-child" alt="" src="/images/2.png" />
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     Eco House: Environmentally Friendly House, Here are the
@@ -277,10 +277,10 @@ export function Article2() {
               <div className="image-3">
                 <img className="image-child" alt="" src="/images/3.png" />
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     Cornerstone Pieces: Building a Sustainable Home around
@@ -310,10 +310,10 @@ export function Article2() {
               <div className="image-4">
                 <img className="image-child" alt="" src="/images/4.png" />
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     Sustainable Home Design: Building a Greener Future
@@ -334,10 +334,10 @@ export function Article2() {
               <div className="image-5">
                 <img className="image-child" alt="" src="/images/5.png" />
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     Waste Recycling and Efforts to Overcome Waste Accumulation
@@ -366,10 +366,10 @@ export function Article2() {
               <div className="image-6">
                 <img className="image-child" alt="" src="/images/6.png" />
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     5 Environmentally Friendly Home Features That Boost Property
@@ -394,10 +394,10 @@ export function Article2() {
               <div className="image-7">
                 <img className="image-child" alt="" src="/images/7.png" />
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     Understanding carbon offsetting and your footprint
@@ -419,10 +419,10 @@ export function Article2() {
               <div className="image-8">
                 <img className="image-child" alt="" src="/images/8.png" />
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     Sustainable Interior Design: Eco-Friendly Materials and
@@ -453,10 +453,10 @@ export function Article2() {
                 <img className="image-child" alt="" src="/images/9.png" />
 
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     5 Ways to Reduce Your Energy Bill Using Smart IoT Devices
@@ -480,10 +480,10 @@ export function Article2() {
                 <img className="image-child" alt="" src="/images/10.png" />
 
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     Indoor plants that will purify the air in your home or
@@ -509,10 +509,10 @@ export function Article2() {
                 <img className="image-child" alt="" src="/images/11.png" />
 
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     What is rainwater harvesting and why is it important?
@@ -537,10 +537,10 @@ export function Article2() {
                 <img className="image-child" alt="" src="/images/12.png" />
 
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     How to Be a Zero Waste Kitchen
@@ -579,10 +579,10 @@ export function Article2() {
                 <img className="image-child" alt="" src="/images/13.png" />
 
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     What Are the Latest Innovations in Energy-Efficient Window
@@ -621,10 +621,10 @@ export function Article2() {
                 <img className="image-child" alt="" src="/images/14.png" />
 
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     Why do a Green Roof? The Surprising Benefits of Green Roofs
@@ -649,10 +649,10 @@ export function Article2() {
                 <img className="image-child" alt="" src="/images/15.png" />
 
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     Solar 101: a beginners guide to understanding solar panels
@@ -675,10 +675,10 @@ export function Article2() {
                 <img className="image-child" alt="" src="/images/16.png" />
 
                 <div className="overlay">
-                  <div className="text">CLICK ME</div>
+                  <div className="text-article">CLICK ME</div>
                 </div>
               </div>
-              <div className="texts">
+              <div className="desc-arc">
                 <div className="title-and-descriptions">
                   <div className="long-march-9">
                     CFL vs. LED Lights: Which is the Energy Efficient Light

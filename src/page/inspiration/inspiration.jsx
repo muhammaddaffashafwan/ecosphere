@@ -27,7 +27,7 @@ export function Inspiration() {
         <img className='card-bif-1-child' alt='' src='/images/cardbif1.png' />
         <div className='card-bif-1-item'>
           <div className='overlay'>
-            <div className='text'>
+            <div className='text-bif'>
               ENERGY
               <br />
               AND
@@ -42,7 +42,7 @@ export function Inspiration() {
         <img className='card-bif-1-child' alt='' src='/images/cardbif2.png' />
         <div className='card-bif-1-item'>
           <div className='overlay'>
-            <div className='text'>
+            <div className='text-bif'>
               OCCUPANT
               <br />
               HELP
@@ -55,7 +55,7 @@ export function Inspiration() {
         <img className='card-bif-1-child' alt='' src='/images/cardbif3.png' />
         <div className='card-bif-1-item'>
           <div className='overlay'>
-            <div className='text'>MINIMAL ENVIRONTMENTAL IMPACT</div>
+            <div className='text-bif'>MINIMAL ENVIRONTMENTAL IMPACT</div>
           </div>
         </div>
       </div>
@@ -64,7 +64,7 @@ export function Inspiration() {
         <img className='card-bif-1-child' alt='' src='/images/cardbif4.png' />
         <div className='card-bif-1-item'>
           <div className='overlay'>
-            <div className='text'>
+            <div className='text-bif'>
               HIGHER
               <br />
               PROPERTY
@@ -79,7 +79,7 @@ export function Inspiration() {
         <img className='card-bif-1-child' alt='' src='/images/cardbif5.png' />
         <div className='card-bif-1-item'>
           <div className='overlay'>
-            <div className='text'>
+            <div className='text-bif'>
               SUPPORT LOCAL
               <br />
               COMMUNITIES
@@ -94,7 +94,7 @@ export function Inspiration() {
         <img className='card-bif-1-child' alt='' src='/images/cardbif6.png' />
         <div className='card-bif-1-item'>
           <div className='overlay'>
-            <div className='text'>SUSTAINABLE MATERIALS</div>
+            <div className='text-bif'>SUSTAINABLE MATERIALS</div>
           </div>
         </div>
       </div>

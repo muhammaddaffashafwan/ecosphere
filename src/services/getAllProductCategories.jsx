@@ -10,6 +10,11 @@ const getAllProductCategories = () => {
       slug: 'material',
       name: `Material`,
     },
+    {
+      id: 'TC',
+      slug: 'technology',
+      name: `Technology`,
+    },
   ];
 };
 
