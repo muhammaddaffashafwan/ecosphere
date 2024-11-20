@@ -15,6 +15,23 @@ export default function ProductDetail() {
     setProduct(product);
   }, [slug]);
 
+  // Fungsi untuk menampilkan bintang berdasarkan rating
+  const renderStars = (rating) => {
+    const fullStars = Math.floor(rating); // Bintang penuh
+    const emptyStars = 5 - fullStars; // Bintang kosong
+
+    return (
+      <div className="stars flex">
+        {Array.from({ length: fullStars }).map((_, index) => (
+          <span key={index} className="text-yellow-500">★</span> // Bintang penuh
+        ))}
+        {Array.from({ length: emptyStars }).map((_, index) => (
+          <span key={index} className="text-gray-300">★</span> // Bintang kosong
+        ))}
+      </div>
+    );
+  };
+
   if (!product) {
     return (
       <>
@@ -22,35 +39,33 @@ export default function ProductDetail() {
       </>
     );
   }
+
   return (
     <>
       <div className="pb-10 pt-10">
         <div className="flex px-24 py-4 gap-[40px] items-center">
-          <Link to="/">
-            <FontAwesomeIcon icon={faArrowLeftLong} className="mb-0 text-[30px]" />
+          <Link to="/Property">
+            <FontAwesomeIcon icon={faArrowLeftLong} className="mt-[50px] text-[black] text-[20px]" />
           </Link>
-          <h4 className="text-[32px] font-medium">{product.name ?? 'No Label'}</h4>
+          <h4 className="text-[20px] text-[grey] font-bold mt-[50px] font-medium">{product.name ?? 'No Label'}</h4>
         </div>
-        <div className="flex gap-[30px] px-24 ">
+        <div className="flex gap-[30px] px-24">
           <div className="pt-10 pl-[100px]">
-            {/* <img src={product.imageUrl ?? (product.name ?? 'No Name')} alt={product.name ?? 'No Name'} className='block spect-[138/100] max-w-[400px] object-cover'/> */}
-            <img src={product.imageUrl ?? product.name ?? 'No Name'} alt={product.name ?? 'No Name'} className="rounded-lg shadow-lg block w-[350px] h-[400px] mr-[150px] object-cover" />
+            <img src={product.imageUrl ?? 'default-image.jpg'} alt={product.name ?? 'No Name'} className="rounded-lg shadow-lg block w-[350px] h-[400px] mr-[150px] object-cover" />
           </div>
-          <div className="flex flex-col gap-[20px] pt-10">
-            <span className="text-[30px] font-medium">{formatToIDRCurrency(product.price) ?? `Not For Sale`}</span>
-            {/* {product.stock > 0 ? (
-              product.stock <= 25 ? (
-                <span className="font-medium text-yellow-500">Available, almost out of stock</span>
-              ) : (
-                <span className="font-medium text-green-500">Available</span>
-              )
-            ) : (
-              <span className="font-medium text-red-500">Out of stock</span>
-            )} */}
+          <div className="flex flex-col gap-[20px] pt-13">
+            <h1 className="text-[27px]">{product.name}</h1>
+            <span className="text-[25px] font-medium">{formatToIDRCurrency(product.price) ?? `Not For Sale`}</span>
+
+            {/* Menampilkan Rating */}
+            <div className="flex items-center">
+              {renderStars(product.rating)} {/* Menampilkan bintang */}
+              <span className="ml-2 text-sm text-gray-600">({product.rating})</span> {/* Menampilkan nilai rating */}
+            </div>
 
             <span className="text-grey-800">{product.category ?? 'Uncategorized'}</span>
 
-            <span className="font-medium ">
+            <span className="font-medium">
               <b>Description</b>
             </span>
             <p className="max-w-[500px] text-justify">{product.description ?? 'No description.'}</p>

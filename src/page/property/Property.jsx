@@ -73,21 +73,23 @@ export default function Property() {
       </div>
 
       {/* Partners Section */}
-      <div className="our-partners-parent p-8">
-        <h2 className="text-center text-2xl font-semibold text-gray-800 mb-6">OUR PARTNERS</h2>
+      <div className=" absolute top-[650px] left-[calc(50%-670px)] w-[1340px] flex flex-col items-center gap-[30px]">
+        <h2 className="relative flex flex-col  items-center gap-[35px] font-optician-sans">OUR PARTNERS</h2>
         <div id="partnersCarousel" className="carousel slide relative">
           <div className="carousel-inner">
-            <div className="carousel-item active flex justify-center space-x-4">
-              <img className="partner-logo w-16" src="assets/patner_1.jpg" alt="Partner 1" />
-              <img className="partner-logo w-16" src="assets/LG.jpg" alt="Partner 2" />
-              <img className="partner-logo w-16" src="assets/xiaomi.jpg" alt="Partner 3" />
-              <img className="partner-logo w-16" src="assets/patner_4.jpg" alt="Partner 4" />
+            <div className="carousel-item active flex justify-center space-x-8">
+            <div className="flex justify-center">
+              <img className="partner-logo w-auto h-16 mr-20" src="assets/patner_1.jpg" alt="Partner 1" />
+              <img className="partner-logo w-auto h-16 mr-20" src="assets/LG.jpg" alt="Partner 2" />
+              <img className="partner-logo w-auto h-16 mr-20" src="assets/xiaomi.jpg" alt="Partner 3" />
+              <img className="partner-logo w-auto h-16 mr-20" src="assets/patner_4.jpg" alt="Partner 4" />
+              </div>
             </div>
             <div className="carousel-item flex justify-center space-x-4">
-              <img className="partner-logo w-16" src="assets/patner_2.jpg" alt="Partner 2" />
-              <img className="partner-logo w-16" src="assets/patner_3.jpg" alt="Partner 3" />
-              <img className="partner-logo w-16" src="assets/agungsaha.jpg" alt="Partner 4" />
-              <img className="partner-logo w-16" src="/assets/pakuwon.jpg" alt="Partner 5" />
+              <img className="partner-logo w-auto h-16 mr-20" src="assets/patner_2.jpg" alt="Partner 2" />
+              <img className="partner-logo w-auto h-16 mr-20" src="assets/patner_3.jpg" alt="Partner 3" />
+              <img className="partner-logo w-auto h-16 mr-20" src="assets/agungsaha.jpg" alt="Partner 4" />
+              <img className="partner-logo w-auto h-16 mr-20" src="/assets/pakuwon.jpg" alt="Partner 5" />
             </div>
           </div>
         </div>
