@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Navbar from '../../../components/Navbar/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeftLong, faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import Button from '../../../components/Button/Button';
-import formatToIDRCurrency from '../../../utils/formatToIDRCurrency';
-import getAllProducts from '../../../services/getAllProducts';
+import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
+import formatToIDRCurrency from "../../utils/formatToIDRCurrency";
+import getAllProducts from "../../services/getAllProducts";
 
 export default function ProductDetail() {
   const { slug } = useParams();
@@ -15,7 +13,7 @@ export default function ProductDetail() {
     const allProducts = getAllProducts();
     const product = allProducts.find((prod) => prod.slug === slug);
     setProduct(product);
-  }, []);
+  }, [slug]);
 
   if (!product) {
     return (
@@ -26,7 +24,6 @@ export default function ProductDetail() {
   }
   return (
     <>
-      <Navbar></Navbar>
       <div className="pb-10 pt-10">
         <div className="flex px-24 py-4 gap-[40px] items-center">
           <Link to="/">
