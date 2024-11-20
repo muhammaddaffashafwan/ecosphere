@@ -3,7 +3,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  min-height: 600vh; 
+  min-height: 650vh; 
 	background-color: #fff;
 }
 
@@ -63,14 +63,14 @@
   max-width: 1156px;
   font-size: 23px;
   margin-top: 550px;
-  left: 183px;
+  left: 113px;
 }
 
 /* 2. Benefit */
 .benefits-title {
 	position: absolute;
-	top: 780px;
-	left: 525px;
+	top: 750px;
+	left: 450px;
   text-align: center;
   font-size: 40px;
   font-family: "Optician Sans";
@@ -90,27 +90,27 @@
 }
 .card-bif-1 {
 	top: 926px;
-	left: 160px;
+	left: 90px;
 }
 .card-bif-2 {
 	top: 926px;
-	left: 361px;
+	left: 291px;
 }
 .card-bif-3 {
 	top: 926px;
-	left: 562px;
+	left: 492px;
 }
 .card-bif-4 {
 	top: 926px;
-	left: 763px;
+	left: 693px;
 }
 .card-bif-5 {
 	top: 926px;
-	left: 964px;
+	left: 894px;
 }
 .card-bif-6 {
 	top: 926px;
-	left: 1165px;
+	left: 1095px;
 }
 .card-bif-1-child {
 	width: 100%; 
@@ -221,6 +221,7 @@
 	width: 1082.5px;
 	text-align: center;
 	font-family: "Optician Sans";
+	line-height: 45px;
 }
 .component-1 {
 	position: absolute;
@@ -282,6 +283,7 @@
 	margin: 0;
 	font-size: inherit;
 	font-weight: 500;
+	margin-left: -30px;
 }
 .renew-how {
 	position: absolute;
@@ -357,7 +359,7 @@
 	width: 1300px;
 	height: 350px;
 	align-items: center;
-	left: 155px;
+	left: 100px;
 	top: 1850px;
 }
 
