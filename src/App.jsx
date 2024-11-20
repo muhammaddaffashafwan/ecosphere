@@ -27,7 +27,7 @@ function App() {
 function AppContent() {
   const location = useLocation();
 
-  const showFooter = location.pathname.toLowerCase() !== '/login' && location.pathname.toLowerCase() !== '/signup';
+  const showFooter = location.pathname.toLowerCase() !== '/login' && location.pathname.toLowerCase() !== '/signup' && location.pathname.toLowerCase() !== '/forgotpassword';
 
   return (
     <>

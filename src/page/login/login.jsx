@@ -18,7 +18,7 @@ export function Login() {
                             <label htmlFor="password">Password</label>
                             <input type="password" id="password" placeholder="Enter Your Password" />
                         </div>
-                        <a href="/Forgotpw" className={styles['forgot-password']}>Forgot Password?</a>
+                        <a href="/forgotpassword" className={styles['forgot-password']}>Forgot Password?</a>
                         <button type="submit" className={styles['login-button-main']}>LOGIN</button>
                     </form>
                     <div className={styles['signup']}>
