@@ -86,7 +86,7 @@ export default function Property() {
           <RadioButton options={radioButtonOpts.current} defaultValue={'all'} />
         </div>
       </div>
-      <section className="container px-24 py-4">
+      <section className="mb-[125px] container px-24 py-4">
         <main className="grid grid-cols-4 gap-4">
           <CardList products={products} />
         </main>
