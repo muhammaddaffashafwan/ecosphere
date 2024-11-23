@@ -8,7 +8,7 @@ export function Article2() {
 
       <div>
         <div className="trending-news">Trending News</div>
-        <img className="image-icon" alt="" src="/images/article2 1.jpg" />
+        <img className="image-icon" alt="" src="/images/article2NO.jpg" />
 
         <a
           className="how-technology-is"
