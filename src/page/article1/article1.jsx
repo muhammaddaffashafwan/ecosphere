@@ -1,4 +1,6 @@
+import React from "react";
 import "./article1.css";
+import ExpandableText from "../../components/ExpandableText";
 
 export function Article1() {
 	return (
@@ -80,11 +82,12 @@ export function Article1() {
 							Eco House: Environmentally Friendly and Cost-Effective Home
 						</a>
 					</div>
-					<div className="have-you-ever">
-						Have you ever heard of sustainable development? Sustainable development starts from strategies to practices
-						to meet daily needs without sacrificing or damaging nature. Of course, to achieve sustainability goals and
-						implement them, [...]
-					</div>
+					<ExpandableText
+					text="Have you ever heard of sustainability or sustainable development? Sustainability development starts from strategy to practice to meet daily needs without sacrificing or destroying nature. Of course, to achieve sustainability goals and implement them, consistency is 
+					needed, one of which is a daily lifestyle that is in line with sustainable
+					 concepts such as an eco house."
+					 maxLength={150}
+					 />
 				</div>
 
 				<img className="article-inner" alt="" src="/images/imgarticle5.jpg" id="frameImage1" />
@@ -112,11 +115,14 @@ export function Article1() {
 							Eco Green House Energy-Saving and Cost-Saving Housing Concept
 						</a>
 					</div>
-					<div className="have-you-ever">
-						Currently, our society is very selective in choosing a residence to live in, In addition to the location and
-						building specifications, now people are also starting to be sensitive when choosing the concept and design
-						of the housing offered, [...]
-					</div>
+					
+					<ExpandableText
+					text="Currently, our society is very selective in choosing housing to live in. 
+					Apart from the location and specifications of the building, now people are also starting to be sensitive when choosing the concept and design of the housing offered, a beautiful and green residence will be a determining factor for consumers in making their choice. Therefore, the availability of environmentally friendly houses 
+					is something that must be taken into consideration by developers."
+					maxLength={150}/>
+					
+					
 				</div>
 				<img className="frame-icon" alt="" src="/images/imgarticle6.jpg" id="frameImage2" />
 
@@ -147,10 +153,11 @@ export function Article1() {
 							What is Eco House Design? Here&apos;s the Definition and Benefits!
 						</a>
 					</div>
-					<div className="have-you-ever">
-						Unlike housing trends that focus solely on aesthetics, eco-house or environmentally friendly home designs
-						offer alternative housing that is not only unique but also sustainable. [...]
-					</div>
+					
+					<ExpandableText
+					text="Unlike housing trends that focus solely on aesthetics, eco-house or environmentally friendly home designs offer alternative housing that is not only unique but also sustainable. This concept is still rarely applied in Indonesia due to the lack of public knowledge about its benefits and technology. In general, people build houses based on personal preferences without considering the environmental impacts that may arise, such as the use of environmentally unfriendly materials or excessive energy consumption. Eco houses are here as a solution
+					 to minimize the negative impact of housing on the environment through various innovations and sustainable approaches."
+					 maxLength={150}/>
 				</div>
 			</section>
 
@@ -181,11 +188,13 @@ export function Article1() {
 					</div>
 				</div>
 				<div className="our-age-is">
-					Our age is unfortunately marked by worrying climate change. The ever-increasing level of pollution requires
-					commitment from everyone to remedy the environmental damage caused in the last century. Eco-greenhouses
-					represent a step forward in a virtuous and environmentally friendly direction. Artigianfer has always chosen
-					the path of sustainability and has invested many resources in the development of greenhouses that take
-					advantage of renewable energy, patenting some innovative and sustainable greenhouse models. [...]
+				<ExpandableText
+				text="Our age is unfortunately marked by worrying climate change. The ever-increasing level of pollution requires commitment from everyone to remedy the environmental damage caused in the last century.
+
+					  Eco-greenhouses represent a step forward in a virtuous and environmentally friendly direction. Artigianfer has always chosen the path of sustainability and has invested many resources in the development of greenhouses that take advantage of renewable energy, patenting some innovative and sustainable greenhouse models.
+
+					  In this article we will understand what features a greenhouse must have to be considered truly environmentally friendly, how to make it and what are the most sustainable solutions of Artigianfer." maxLength={400 }
+					  />
 				</div>
 			</div>
 			<div className="body1" id="bodyContainer1">
@@ -213,12 +222,17 @@ export function Article1() {
 					</div>
 				</div>
 				<div className="our-age-is">
-					Entering the era of the industrial revolution 4.0, Smart Farming is one of the solutions to increase
-					agricultural efficiency and productivity in various countries including Indonesia. One of the applications of
-					smart farming is Smart Green House which is a hydroponic planting method. Technically Smart Green House is
-					controlled automatically to control humidity, temperature, nutrients and weather. With Smart Green House
-					agricultural productivity increases, income is also raised. Smart Green House is a tool to help farmers obtain
-					better quality and quantity of agricultural products compared to conventional methods. [...]
+					<ExpandableText
+					text="Entering the era of the industrial revolution 4.0, Smart Farming is one of the solutions to increase agricultural efficiency and productivity in various countries including Indonesia.
+						One of the applications of smart farming is Smart Green House which is a
+						hydroponic planting method. Technically Smart Green House is controlled automatically
+						to control humidity, temperature, nutrients and weather. With Smart Green House
+						agricultural productivity increases, income is also raised.
+						Smart Green House is a tool to help farmers obtain
+						better quality and quantity of agricultural products compared to conventional methods.
+						The government is trying to encourage farmers to transform by starting
+						to develop advanced agriculture called Smart Greenhouse." maxLength={400}
+					/>
 				</div>
 			</div>
 			<img className="img-icon1" alt="" src="/images/imgarticle8.jpg" id="imgImage1" />
@@ -250,14 +264,11 @@ export function Article1() {
 					</div>
 				</div>
 				<div className="healthy-living-can-container">
-					<span>
-						Healthy living can certainly make the body feel better, the same as the house where we live. Saving energy
-						is the goal, the better our home, the better the daily life we dream of. Saving electricity is also one of
-						the goals, right? But now all that has changed, making the concept of saving energy alone is not enough. But
-						it needs a renewable and continuous concept, one of which is Eco-Green Living. What is meant by energy
-						conservation? Conservation means using energy when needed so as not to waste energy. If we use less energy,
-						it will help us save money and make our planet more environmentally friendly. [...]
-					</span>
+					<ExpandableText
+					text="Healthy living can certainly make the body feel better, the same as the house where we live. Saving energy is the goal, the better our home, the better the daily life we ​​dream of.
+					Saving electricity is also one of the goals, right? But now all that has changed, making the concept of saving energy alone is not enough. But it needs a
+					 renewable and continuous concept, one of which is Eco-Green Living." maxLength={200}
+					/>
 				</div>
 			</div>
 

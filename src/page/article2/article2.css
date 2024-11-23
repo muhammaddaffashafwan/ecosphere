@@ -454,9 +454,10 @@
     display: -webkit-inline-box;
     overflow: hidden;
     text-overflow: ellipsis;
-  
     -webkit-box-orient: vertical;
     width: 281px;
+    text-decoration: none;
+    color: #000;
   }
   .spacexs-starship-spacecraft {
     position: absolute;

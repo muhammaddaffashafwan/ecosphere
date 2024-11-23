@@ -229,9 +229,11 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
-                    10 ways to make your home more sustainable
-                  </div>
+                  <a className="long-march-9"
+                  href="https://www.fmb.org.uk/resource/10-ways-to-make-your-home-more-sustainable.html">
+                  10 ways to make your home more sustainable
+                  </a>
+                  
                   <div className="spacexs-starship-spacecraft">
                     Making our homes more sustainable is an increasing concern
                     for many of us, not only to do our bit for the environment..
@@ -255,10 +257,9 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
-                    Eco House: Environmentally Friendly House, Here are the
-                    Terms and Benefits
-                  </div>
+                  <a className="long-march-9" href="https://nimbus9.tech/blog/eco-house/#1_Material"> Eco House: Environmentally Friendly House, Here are the
+                  Terms and Benefits</a>
+                
                   <div className="spacexs-starship-spacecraft">
                     Eco House is a housing design that prioritizes environmental
                     aspects. Not only is the aesthetic aspect important
@@ -282,10 +283,12 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
-                    Cornerstone Pieces: Building a Sustainable Home around
-                    Quality Furniture
-                  </div>
+                <a className="long-march-9"
+                  href="https://www.lunchboxarchitect.com/blog/cornerstone-pieces-building-a-sustainable-home-around-quality-furniture/">
+                        Cornerstone Pieces: Building a Sustainable Home around
+                        Quality Furniture
+                  </a>
+            
                   <div className="spacexs-starship-spacecraft-container">
                     <span>
                       Investing in solid, well-crafted furniture shouldnt be
@@ -315,9 +318,8 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
-                    Sustainable Home Design: Building a Greener Future
-                  </div>
+                  <a className="long-march-9" href="https://www.lunchboxarchitect.com/blog/sustainable-home-design-building-a-greener-future/">Sustainable Home Design: Building a Greener Future</a>
+      
                   <div className="spacexs-starship-spacecraft">
                     Ever thought about how your home could be greener and more
                     sustainable? As environmental concerns grow
@@ -339,9 +341,10 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
-                    Waste Recycling and Efforts to Overcome Waste Accumulation
-                  </div>
+                  <a className="long-march-9" href="https://waste4change.com/blog/daur-ulang-sampah/"
+                  > Waste Recycling and Efforts to Overcome Waste Accumulation
+                  </a>
+            
                   <div className="spacexs-starship-spacecraft">
                     The aim of recycling waste is to overcome the accumulation
                     of various types of waste which has become a common
@@ -371,10 +374,9 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
-                    5 Environmentally Friendly Home Features That Boost Property
-                    Value
-                  </div>
+                  <a className="long-march-9" href="https://www.homesteadfunding.com/blogs/environmentally-friendly-home-features-that-boost-property-value"> 5 Environmentally Friendly Home Features That Boost Property
+                  Value</a>
+            
                   <div className="spacexs-starship-spacecraft">
                     Sustainability and green building are no longer just passing
                     trends. Just this year, 19% of homebuyers from the National
@@ -399,9 +401,9 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
-                    Understanding carbon offsetting and your footprint
-                  </div>
+                  <a className="long-march-9" href="https://www.wwf.org.uk/myfootprint/challenges/understanding-carbon-offsetting-and-your-footprint">
+                  Understanding carbon offsetting and your footprint</a>
+                  
                   <div className="spacexs-starship-spacecraft">
                     Youve probably heard of offsetting emissions as a way of
                     reducing your carbon footprint. Unfortunately, there has
@@ -424,10 +426,9 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
-                    Sustainable Interior Design: Eco-Friendly Materials and
-                    Practices
-                  </div>
+                    <a className="long-march-9" href="https://oraanj-interiors.co.uk/our-blogs/sustainable-interior-design-eco-friendly-materials-and-practices/">Sustainable Interior Design: Eco-Friendly Materials and
+                    Practices</a>
+                  
                   <div className="spacexs-starship-spacecraft">
                     In todays world, where environmental consciousness is more
                     crucial than ever, sustainable interior design in London
@@ -458,9 +459,11 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
+                 
+                    <a className="long-march-9" href="https://www.iotforall.com/5-ways-to-reduce-your-energy-bill-using-smart-iot-devices">
                     5 Ways to Reduce Your Energy Bill Using Smart IoT Devices
-                  </div>
+                    </a>
+
                   <div className="spacexs-starship-spacecraft">
                     Rising energy consumption and skyrocketing bills can put a
                     financial strain on your pocket, making it challenging
@@ -485,10 +488,12 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
+                  
+                    <a className="long-march-9" href="https://www.abc.net.au/news/2019-04-12/indoor-plants-that-improve-air-quality-in-your-home-or-office/10987838">
+                    
                     Indoor plants that will purify the air in your home or
-                    office
-                  </div>
+                    office</a>
+                  
                   <div className="spacexs-starship-spacecraft">
                     When researching the potential of life — or at least a space
                     station — on Mars, NASA looked seriously at the possibility
@@ -514,9 +519,10 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
+                    <a className="long-march-9"  href="https://www.jdpipes.co.uk/knowledge/rainwater-harvesting/what-is-rainwater-harvesting-and-why-important.html">
                     What is rainwater harvesting and why is it important?
-                  </div>
+                    </a>
+                 
                   <div className="spacexs-starship-spacecraft">
                     Rainwater harvesting involves collecting and storing
                     rainwater during heavy periods of rainfall in tanks or
@@ -542,9 +548,11 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
+                    <a className="long-march-9  " href="https://superbee.me/how-to-be-a-zero-waste-kitchen/">
+                    
                     How to Be a Zero Waste Kitchen
-                  </div>
+                    </a>
+                  
                   <div className="spacexs-starship-spacecraft-container">
                     <p className="wondering-how-to-be-a-zero-was">
                       <span>
@@ -584,10 +592,12 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
+                  
+                    <a className="long-march-9" href="https://thegreenfortune.com/the-latest-innovations-in-energy-efficient-window-technology/">
+                    
                     What Are the Latest Innovations in Energy-Efficient Window
-                    Technology?
-                  </div>
+                    </a>
+                  
                   <div className="spacexs-starship-spacecraft-container">
                     <span>
                       With high energy costs and increased environmental
@@ -626,9 +636,10 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
+                  
+                    <a className="long-march-9" href="https://www.liveroof.com/why-do-a-green-roof/">
                     Why do a Green Roof? The Surprising Benefits of Green Roofs
-                  </div>
+                    </a>
                   <div className="spacexs-starship-spacecraft">
                     17 years ago, LiveRoof, LLC. (liveroof.com) developed the
                     LiveRoof® Hybrid Green Roof System: the only green roof
@@ -654,9 +665,12 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
+                
+                    <a className=" long-march-9" href="https://elat.com/blog/solar-101-a-beginners-guide-to-understanding-solar-panels/">
+                
                     Solar 101: a beginners guide to understanding solar panels
-                  </div>
+                    </a>
+                  
                   <div className="spacexs-starship-spacecraft">
                     Solar panels have become a prominent and environmentally
                     friendly source of energy, harnessing the power of the sun
@@ -680,10 +694,12 @@ export function Article2() {
               </div>
               <div className="desc-arc">
                 <div className="title-and-descriptions">
-                  <div className="long-march-9">
+                  
+                    <a className="long-march-9" href="https://www.greenamerica.org/green-living/cfls-vs-leds-better-bulbs#:~:text=LEDs%20are%20your%20best%20bet,mercury%2C%20and%20protecting%20the%20planet.">
+                  
                     CFL vs. LED Lights: Which is the Energy Efficient Light
-                    Bulb?
-                  </div>
+                    Bulb?   </a>
+                  
                   <div className="spacexs-starship-spacecraft">
                     Your home is a place of warmth and comfort, and your
                     lighting has a lot to do with that. Green America recommends
