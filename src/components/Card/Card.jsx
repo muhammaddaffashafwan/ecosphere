@@ -16,13 +16,12 @@ export default function Card({ product }) {
           <span className="block font-medium text-[12px] text-[#3C4563]">{product.category ?? 'Uncatagorized'}</span>
           <span className="block font-medium text-[16px] text-[#000000]">{formatToIDRCurrency(product.price) ?? 'Not for sale'}</span>
           <div>
-          <Button
-            type="button"
-            className="inline-flex items-center justify-center text-[14px] pt-2 pb-2 pl-10 pr-10 bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:text-[#739646] hover:bg-[#ffffff] hover:border-[#5f7f33] active:bg-[#ffffff] hover:ring-[#739646] hover:ring-2 active:ring-2 active:border-[#5f7f33] rounded-[40px] transition-all"
-          >
-            <span className="text-center">More information</span>
-          </Button>
-
+            <Button
+              type="button"
+              className="inline-flex items-center justify-center text-[14px] pt-2 pb-2 pl-10 pr-10 bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:text-[#739646] hover:bg-[#ffffff] hover:border-[#5f7f33] active:bg-[#ffffff] hover:ring-[#739646] hover:ring-2 active:ring-2 active:border-[#5f7f33] rounded-[40px] transition-all"
+            >
+              <span className="text-center">More information</span>
+            </Button>
           </div>
         </div>
       </div>

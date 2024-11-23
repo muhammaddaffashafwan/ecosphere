@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
-import formatToIDRCurrency from "../../utils/formatToIDRCurrency";
-import getAllProducts from "../../services/getAllProducts";
+import formatToIDRCurrency from '../../utils/formatToIDRCurrency';
+import getAllProducts from '../../services/getAllProducts';
 
 export default function ProductDetail() {
   const { slug } = useParams();
@@ -23,10 +23,14 @@ export default function ProductDetail() {
     return (
       <div className="stars flex">
         {Array.from({ length: fullStars }).map((_, index) => (
-          <span key={index} className="text-yellow-500">★</span> // Bintang penuh
+          <span key={index} className="text-yellow-500">
+            ★
+          </span> // Bintang penuh
         ))}
         {Array.from({ length: emptyStars }).map((_, index) => (
-          <span key={index} className="text-gray-300">★</span> // Bintang kosong
+          <span key={index} className="text-gray-300">
+            ★
+          </span> // Bintang kosong
         ))}
       </div>
     );
@@ -47,7 +51,7 @@ export default function ProductDetail() {
           <Link to="/Property">
             <FontAwesomeIcon icon={faArrowLeftLong} className="mt-[50px] text-[black] text-[20px]" />
           </Link>
-          <h4 className="text-[20px] text-[grey] font-bold mt-[50px] font-medium">{product.name ?? 'No Label'}</h4>
+          <h1 className="text-[15px] text-[grey] font-bold mt-[50px] font-medium">{product.name ?? 'No Label'}</h1>
         </div>
         <div className="flex gap-[30px] px-24">
           <div className="pt-10 pl-[100px]">
