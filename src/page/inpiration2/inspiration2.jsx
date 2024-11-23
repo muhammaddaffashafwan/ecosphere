@@ -142,7 +142,7 @@ export function Inspiration2() {
         </div>
         <div className='property-section'>
           <h2 className='property-title'>Do you want to see the property?</h2>
-          <a href='property.html' className='cta-button'>
+          <a href='/Property' className='cta-button'>
             Click Here!
           </a>
         </div>
