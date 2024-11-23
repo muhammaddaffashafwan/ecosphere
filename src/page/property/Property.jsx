@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useTransition } from 'react';
 import getAllProducts from '../../services/getAllProducts';
 import CardList from '../../components/CardList/CardList';
 import RadioButton from '../../components/RadioButton/RadioButton';
@@ -15,13 +15,18 @@ export default function Property() {
   ]);
 
   const originalProducts = useRef([]);
+  const [isPending, startTransition] = useTransition();
+	const [selectedCategory, setSelectedCategory] = useState("all");
 
   useEffect(() => {
-    function fetchAllProducts() {
-      const allProducts = getAllProducts();
-      originalProducts.current = allProducts.length > 0 ? allProducts : [];
-      setProducts(originalProducts.current);
-    }
+		function fetchAllProducts() {
+			let allProducts = getAllProducts();
+			allProducts = allProducts.length > 0 ? allProducts : [];
+			// simpan data produk yg belum difilter
+			originalProducts.current = allProducts;
+			// simpan data produk yg telah difilter
+			setProducts(allProducts);
+		}
 
     function fetchCategories() {
       const allCategories = getAllProductCategories();
@@ -32,6 +37,21 @@ export default function Property() {
     fetchCategories();
     fetchAllProducts();
   }, []);
+
+  useEffect(() => {
+		startTransition(() => {
+			const filtered = originalProducts.current.filter((product) => {
+				const matchedCategory = selectedCategory === "all" || product.categorySlug === selectedCategory;
+				return matchedCategory;
+			});
+
+			setProducts(filtered);
+		});
+	}, [selectedCategory]);
+
+	const handleCategoryChange = (category) => {
+		setSelectedCategory(category);
+	};
 
   return (
     <div className="bg-white min-h-screen text-black">
@@ -103,10 +123,10 @@ export default function Property() {
 
       <div className="px-24 pt-[900px] pb-[4px] gap-4 mt-4 flex-wrap">
         <h1 className="text-center text-[30px] font-bold">PROPERTY RECOMMENDATION</h1>
-        <p className="mt-4 mb-4 text-center">We're all about smart innovation for a greener life</p>
+        <p className="mt-4 mb-4 text-center">We&apos;re all about smart innovation for a greener life</p>
         <h3 className="font-medium text-black">Filter</h3>
         <div className="flex gap-2 flex-wrap">
-          <RadioButton options={radioButtonOpts.current} defaultValue={'all'} />
+        <RadioButton options={radioButtonOpts.current} defaultValue={"all"} onChange={handleCategoryChange} />
         </div>
       </div>
       <section className="mb-[125px] container px-24 py-4">
