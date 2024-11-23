@@ -25,7 +25,7 @@ export default function getAllProducts() {
       imageUrl: '/assets/img/2home.jpg',
       description: `The Lavia Living Type 5 in Citra Garden City, Jakarta, is a modern residence designed for comfort and functionality. With a land area of 60 m² and a building area of 95 m², it features four bedrooms and three bathrooms, making it ideal for families. The stylish interior, crafted from high-quality materials, creates a warm atmosphere.
                     Citra Garden City is known for its aesthetic appeal and extensive amenities, including green spaces and convenient access to shopping and transport. The residence is equipped with an advanced security system, ensuring the safety of its occupants. Overall, Lavia Living Type 5 is an excellent choice for quality housing in Jakarta.`,
-      rating: 3.0,
+      rating: 4.0,
     },
     {
       id: 'ECO-HS-003',
@@ -51,8 +51,8 @@ export default function getAllProducts() {
       imageUrl: '/assets/img/4home.jpg',
       description: `The Quantis Signature Type 178 in BSD City is a modern residence tailored for families. With a built-up area of 178 m², it features three bedrooms and two bathrooms, ensuring spacious and comfortable living. The sophisticated interior and high-quality materials create a warm atmosphere.
                     Located in the rapidly developing BSD City, the home offers easy access to shopping, schools, and recreational facilities. Its attractive, secure environment, supported by a robust security system, makes Quantis Signature Type 178 an excellent choice for those seeking a premium residence in a vibrant urban setting.`,
-     rating: 3.0,
-                  },
+      rating: 5.0,
+    },
 
     {
       id: 'EC0-MT-005',
@@ -76,7 +76,7 @@ export default function getAllProducts() {
       stock: 0,
       imageUrl: '/assets/img/image 52.png',
       description: `Eiken (Oak) - Tongue and Groove is the optimal choice for those seeking natural beauty and exceptional durability in their building projects. This oak offers an elegant aesthetic with a tongue and groove system that ensures easy and sturdy installation, and it is sourced from a sustainably managed source. By selecting Eiken (Oak), you are supporting environmentally friendly practices that help preserve forests and reduce carbon footprints. Additionally, oak is renowned for its high resistance to wear and tear, making it an optimal choice for long-lasting flooring and wall panels. Make Eiken (Oak) - Tongue and Groove part of your green solution for your home or project, and enjoy the long-term benefits of this high-quality material.`,
-      rating: 3.0,
+      rating: 4.0,
     },
     {
       id: 'ECO-MT-007',
@@ -88,7 +88,7 @@ export default function getAllProducts() {
       stock: 0,
       imageUrl: '/assets/img/image 58.png',
       description: `Basalt rock is the optimal choice for your construction projects that require exceptional strength and durability. Formed from natural volcanic processes, this rock has a dense and hard structure, making it highly resistant to pressure and erosion. Additionally, basalt rock is an eco-friendly material, derived from an abundant and renewable natural resource. By choosing basalt rock, you are not only getting a durable and strong material, but also contributing to the preservation of the environment. Make basalt rock a part of your construction solution for optimal and sustainable results.`,
-      rating: 3.0,
+      rating: 5.0,
     },
     {
       id: 'ECO-MT-008',
@@ -112,7 +112,7 @@ export default function getAllProducts() {
       stock: 0,
       imageUrl: '/assets/img/prop_1.jpg',
       description: `SunPower Maxeon solar panels offer the highest energy efficiency of up to 22.8%, producing more energy and reducing your carbon footprint. Designed for durability in extreme weather conditions, the panels are backed by up to a 40-year warranty. Its advanced technology reduces corrosion and damage, making it a safe and environmentally friendly long-term investment. With SunPower Maxeon, you can significantly reduce your electricity costs and contribute to a greener environment.`,
-      rating: 3.0,
+      rating: 5.0,
     },
     {
       id: 'ECO-TC-010',
@@ -126,7 +126,7 @@ export default function getAllProducts() {
       description: `Light large rooms like the living room with the Enrave Large Ceiling Lamp. It emits a soft light toward the ceiling and a strong light downward, filling the room with soothing warm to cool tones. With a modern and sleek design, this lamp is not only aesthetically pleasing, but also energy efficient. Using energy-efficient LED technology, it reduces power consumption and carbon footprint, making it a sustainable and environmentally friendly choice with a lifespan of up to 10 years. 
                     Key features include smart control via the Hue app or voice commands with Alexa and Google Assistant, and customizable light with over 50,000 shades of warm to cool white. Choose the Enrave Large Ceiling Lamp for a smart, efficient and eco-friendly lighting solution.`,
       rating: 3.0,
-      },
+    },
     {
       id: 'ECO-TC-011',
       slug: 'eco-technology-011',
@@ -138,7 +138,7 @@ export default function getAllProducts() {
       imageUrl: '/assets/img/prop_3.jpg',
       description: `Enjoy an extraordinary shower experience with the Nebia by Moen Smart Shower. Using advanced atomization technology, this shower breaks the water into tiny droplets, 
                     giving you the sensation of more water while using up to 45% less water than traditional showers. Its modern and elegant design not only enhances the aesthetics of your bathroom, but is also environmentally friendly, reducing water and energy consumption. With smart control via an app and compatibility with Alexa and Google Assistant, Nebia by Moen offers convenience and efficiency in one package. Choose Nebia by Moen for a luxurious, energy-efficient and sustainable bathroom solution.`,
-      rating: 3.0,
+      rating: 4.0,
     },
     {
       id: 'ECO-TC-012',
