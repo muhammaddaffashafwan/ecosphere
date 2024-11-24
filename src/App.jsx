@@ -7,7 +7,7 @@ import { Inspiration } from './page/inspiration/inspiration';
 import { Inspiration2 } from './page/inpiration2/inspiration2';
 import { Article2 } from './page/article2/article2';
 import { Article1 } from './page/article1/article1';
-import Property from './page/property/Property';
+import Property from "./page/property/Property";
 import ProductDetail from './page/ProductDetail/ProductDetail';
 import { Forum1 } from './page/forum1/forum1';
 import { Forum2 } from './page/forum2/forum2';

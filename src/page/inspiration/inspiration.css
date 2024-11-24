@@ -458,7 +458,11 @@
   border: 2px solid #739646;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: "Poppins", sans-serif;
-  display: inline-block; 
+  display: inline-block;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  -moz-transition: background-color 0.3s ease, color 0.3s ease;
+  -ms-transition: background-color 0.3s ease, color 0.3s ease;
+  -o-transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cta-button2:hover {

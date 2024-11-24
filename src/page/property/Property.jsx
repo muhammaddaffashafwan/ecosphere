@@ -1,57 +1,75 @@
-import { useState, useEffect, useRef, useTransition } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import getAllProducts from '../../services/getAllProducts';
 import CardList from '../../components/CardList/CardList';
 import RadioButton from '../../components/RadioButton/RadioButton';
 import getAllProductCategories from '../../services/getAllProductCategories';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
+// import { useInitializeCarousel } from "../../components/Carousel/propertyCarousel";
 
 export default function Property() {
+  
+  // useInitializeCarousel();
+  useEffect(() => {
+  $('#partnersCarousel').carousel({
+    interval: 3000, // Carousel interval in milliseconds
+    ride: 'carousel', // Automatically start cycling
+  });
+}, []);
+
   const [products, setProducts] = useState([]);
+  const [setIsLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
   const radioButtonOpts = useRef([
     {
       label: 'All',
       value: 'all',
     },
   ]);
-
   const originalProducts = useRef([]);
-  const [isPending, startTransition] = useTransition();
-	const [selectedCategory, setSelectedCategory] = useState("all");
 
   useEffect(() => {
-		function fetchAllProducts() {
-			let allProducts = getAllProducts();
-			allProducts = allProducts.length > 0 ? allProducts : [];
-			// simpan data produk yg belum difilter
-			originalProducts.current = allProducts;
-			// simpan data produk yg telah difilter
-			setProducts(allProducts);
-		}
+    // Fetch Products and Categories
+    async function fetchData() {
+      try {
+        const allProducts = await getAllProducts();
+        console.log('Fetched Products:', allProducts);
+        originalProducts.current = allProducts.length > 0 ? allProducts : [];
+        setProducts(allProducts);
 
-    function fetchCategories() {
-      const allCategories = getAllProductCategories();
-      const newCategories = allCategories.map((cat) => ({ label: cat.name, value: cat.slug })).filter((newCat) => !radioButtonOpts.current.some((existingCat) => existingCat.value === newCat.value));
-      radioButtonOpts.current = [...radioButtonOpts.current, ...newCategories];
+        const allCategories = await getAllProductCategories();
+        console.log('Fetched Categories:', allCategories);
+        const newCategories = allCategories.map((cat) => ({
+          label: cat.name,
+          value: cat.slug
+        })).filter((newCat) => !radioButtonOpts.current.some((existingCat) => existingCat.value === newCat.value));
+
+        radioButtonOpts.current = [...radioButtonOpts.current, ...newCategories];
+      } catch (error) {
+        console.error("Error fetching data", error);
+        setProducts([]); // Fallback to empty list if there's an error
+      } finally {
+        setIsLoading(false);
+      }
     }
 
-    fetchCategories();
-    fetchAllProducts();
-  }, []);
+    fetchData();
+  }, [setIsLoading]);
+
+
 
   useEffect(() => {
-		startTransition(() => {
-			const filtered = originalProducts.current.filter((product) => {
-				const matchedCategory = selectedCategory === "all" || product.categorySlug === selectedCategory;
-				return matchedCategory;
-			});
+    // Filter products based on selected category
+    const filtered = originalProducts.current.filter((product) => {
+      return selectedCategory === "all" || product.categorySlug === selectedCategory;
+    });
+    setProducts(filtered);
+  }, [selectedCategory]);
 
-			setProducts(filtered);
-		});
-	}, [selectedCategory]);
-
-	const handleCategoryChange = (category) => {
-		setSelectedCategory(category);
-	};
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
 
   return (
     <div className="bg-white min-h-screen text-black">
@@ -111,11 +129,13 @@ export default function Property() {
                 <img className="partner-logo w-auto h-16 " src="assets/patner_3.jpg" alt="Partner 3" />
               </div>
             </div>
-            <div className="carousel-item flex justify-center gap-[15px] space-x-4">
-              <img className="partner-logo w-auto h-16 " src="assets/.jpg" alt="Partner 2" />
-              <img className="partner-logo w-auto h-16 " src="assets/.jpg" alt="Partner 3" />
+            <div className="carousel-item active flex justify-center space-x-8">
+              <div className="flex justify-center gap-[15px]">
+              <img className="partner-logo w-auto h-16 " src="assets/ciputra.jpg" alt="Partner 2" />
+              <img className="partner-logo w-auto h-16 " src="assets/99co.jpg" alt="Partner 3" />
               <img className="partner-logo w-auto h-16 " src="assets/agungsaha.jpg" alt="Partner 4" />
               <img className="partner-logo w-auto h-16 " src="/assets/pakuwon.jpg" alt="Partner 5" />
+              </div>
             </div>
           </div>
         </div>
