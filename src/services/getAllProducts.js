@@ -8,7 +8,7 @@ export default function getAllProducts() {
       categorySlug: 'house',
       price: 950_571_000,
       stock: 100,
-      imageUrl: 'assets/img/1home.jpg',
+      imageUrl: '/assets/img/1home.jpg',
       description: `JKT Living Star is a contemporary apartment complex situated in the heart of Jakarta, providing convenient access to urban conveniences. The aesthetic appeal and functional design of the complex include a variety of unit types, well-suited for families and young professionals.
                         Each unit is furnished with high-quality items and features large windows that allow for the entry of natural light. Residents have access to a swimming pool, a gym, and green spaces, conducive to relaxation. The complex is situated in a location that is convenient for shopping, dining, and public transportation,
                         making it an ideal choice for individuals who desire a vibrant urban lifestyle. Additionally, the complex provides 24-hour security and attentive service, which contribute to a comfortable and secure living experience.`,
