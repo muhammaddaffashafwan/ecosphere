@@ -13,7 +13,7 @@ const ForumPost = ({ post }) => {
   };
 
   return (
-    <div className="flex flex-col bg-white p-5 rounded-lg shadow-md mb-5">
+    <div className="flex flex-col bg-softCream p-5 rounded-lg border-1 border-black shadow-md mb-5 ">
       <a href={post.link} className="text-decoration-none text-inherit">
         <div className="text-2xl font-bold mb-4 text-black">{post.title}</div>
         <div className="flex items-center mb-2">
@@ -23,7 +23,7 @@ const ForumPost = ({ post }) => {
             <span className="text-xs text-gray-500">{post.date}</span>
           </div>
         </div>
-        <div className="bg-green-100 p-4 rounded-lg border border-green-600 mb-4">
+        <div className="bg-softCream p-4 rounded-lg  mb-4">
           <p className="text-lg">{post.content}</p>
           <p className="text-sm text-gray-500">{post.tags}</p>
         </div>

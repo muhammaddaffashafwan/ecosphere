@@ -125,12 +125,12 @@ export function Forum1() {
           </button>
           <h2 className="text-2xl font-bold mb-4">Questions for You</h2>
           {questions.map((question) => (
-            <div key={question.id} className="bg-white p-4 rounded-lg mb-4">
+            <div key={question.id} className="bg-softCream p-4 rounded-lg mb-4">
               <h3 className="text-xl font-bold mb-2">{question.title}</h3>
               <p className="text-gray-600 mb-2">
                 {question.answers} Answers | Last answer {question.lastAnswer}
               </p>
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+              <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 Answer
               </button>
             </div>

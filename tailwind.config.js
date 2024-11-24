@@ -5,7 +5,11 @@ export default {
     './public/index.html',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        softCream: '#F7FFEC',
+      },
+    },
   },
   plugins: [],
 };
