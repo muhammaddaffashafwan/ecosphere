@@ -12,7 +12,8 @@ export default function Card({ product }) {
       <div className="flex flex-col max-w-[370px] flex-wrap p-[16px] bg-[#ffffff] rounded-[40px]">
         <img src={product.imageUrl ?? ''} alt={product.name ?? 'No name'} className="block max-h-[300px] mb-4 object-cover" />
         <div className="flex flex-col gap-2">
-          <h4 className="font-medium text-[16px] text-[#000000]">{product.name ?? 'No Name'}</h4>
+          <span className="font-medium text-[16px] text-[#000000] text-left"
+          style={{ textDecoration: 'none !important' }}>{product.name ?? 'No Name'}</span>
           <span className="block font-medium text-[12px] text-[#3C4563]">{product.category ?? 'Uncatagorized'}</span>
           <span className="block font-medium text-[16px] text-[#000000]">{formatToIDRCurrency(product.price) ?? 'Not for sale'}</span>
           <div>
