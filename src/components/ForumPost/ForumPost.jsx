@@ -24,6 +24,9 @@ const ForumPost = ({ post }) => {
           </div>
         </div>
         <div className="bg-softCream p-4 rounded-lg  mb-4">
+        {post.showImage && post.imageUrl && (
+            <img className="w-full h-auto" alt="Image Post" src={post.imageUrl} />
+          )}
           <p className="text-lg">{post.content}</p>
           <p className="text-sm text-gray-500">{post.tags}</p>
         </div>
