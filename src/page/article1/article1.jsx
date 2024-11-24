@@ -48,9 +48,11 @@ export function Article1() {
 </div>
 
 				<div className="news" id="news-img">
-					<div className="image-content">
-						<img src="/images/News.jpg" alt="Eco Green House Image" className="img-article3" />
-					</div>
+				<div className="image-content">
+  				<a href="https://mortgagemaster.co.id/blog/apa-itu-rumah-eco-green-simak-penjelasan-lengkapnya-ini-190" target="_blank" rel="noopener noreferrer">
+    			<img src="/images/News.jpg" alt="Eco Green House Image" className="img-article3" />
+  				</a>
+				</div>
 				</div>
 
 				<img className="article-item" alt="" src="/images/imgarticle4.jpg" id="img-article4" />

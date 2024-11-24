@@ -862,3 +862,8 @@
     background-color: #fff;
     color: #6ea54e;
   }
+
+  a {
+    color: #000;
+    /* text-decoration: underline; */
+}

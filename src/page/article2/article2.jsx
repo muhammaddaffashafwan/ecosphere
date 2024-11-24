@@ -61,17 +61,18 @@ export function Article2() {
         <div className="main-list-article-parent">
           <div className="eco-essentials1">Eco Essentials</div>
           <div className="main-list-article">
-            <div className="card-bif-a">
-              <img
-                className="image-icon1"
-                alt=""
-                src="/images/articledaffa1.png"
-              />
+          <div className="card-bif-a">
+          <a href="https://greenbuildingcanada.ca/bamboo-vs-wood-furniture/#:~:text=Bamboo%20may%20be%20the%20way,comes%20down%20to%20personal%20preference." target="_blank" rel="noopener noreferrer">
+      <img className="image-icon1"
+      alt="Bamboo vs Wood Furniture"
+      src="/images/articledaffa1.png"
+    />
+  <div className="overlay">
+    <div className="text-article">CLICK ME</div>
+  </div>
+    </a>
+</div>
 
-              <div className="overlay">
-                <div className="text-article">CLICK ME</div>
-              </div>
-            </div>
             <div className="research-institute-wins">
               Bamboo vs. Wood Furniture — <br />
               Which is Better for the <br />
@@ -83,25 +84,33 @@ export function Article2() {
               <img className="image-icon2" alt="" src="/images/miniart1.jpg" />
 
               <div className="scientists-identify-molten">
+                <a href="https://focus.flokk.com/how-to-choose-environmentally-friendly-furniture" target="_blank" rel="noopener noreferrer" className="text-black no-underline">
                 How to choose environmentally friendly furniture
+                </a>
               </div>
             </div>
             <div className="scientists-identify-molten-lay-parent">
               <div className="scientists-identify-molten">
+                <a href="https://www.marthastewart.com/best-plastic-free-kitchen-items-7484568" target="_blank" rel="noopener noreferrer" className="text-black no-underline">
                 13 Plastic-Free Essentials for a More Eco-Friendly Kitchen
+                </a>
               </div>
               <img className="image-icon2" alt="" src="/images/miniart2.jpg" />
             </div>
             <div className="scientists-identify-molten-lay-group">
               <div className="scientists-identify-molten">
+                <a href="https://www.cemexventures.com/sustainable-building-materials/" target="_blank" rel="noopener noreferrer" className="text-black no-underline">
                 Top 10 Sustainable Building Materials For Eco-Friendly
                 Construction
+                </a>
               </div>
               <img className="image-icon2" alt="" src="/images/miniart3.jpg" />
             </div>
             <div className="scientists-identify-molten-lay-container">
               <div className="scientists-identify-molten">
+                <a href="https://www.wired.com/story/eco-friendly-natural-cleaning-products/" target="_blank" rel="noopener noreferrer" className="text-black no-underline">
                 The Best Eco-Friendly Cleaning Products for Your Home
+                </a>
               </div>
               <img className="image-icon2" alt="" src="/images/miniart4.jpg" />
             </div>
@@ -111,6 +120,7 @@ export function Article2() {
           <div className="eco-essentials1">Green Living</div>
           <div className="main-list-article">
             <div className="card-bif-b">
+              <a href="https://greenargen.com/blogs/sustainable-living/zero-waste-living-small-changes-big-impact#:~:text=Going%20zero%20waste%20isn't,one%20step%20at%20a%20time." target="_blank" rel="noopener noreferrer">
               <img
                 className="image-icon1"
                 alt=""
@@ -119,6 +129,7 @@ export function Article2() {
               <div className="overlay">
                 <div className="text-article">CLICK ME</div>
               </div>
+              </a>
             </div>
 
             <div className="research-institute-wins">
@@ -129,26 +140,33 @@ export function Article2() {
           <div className="list-article">
             <div className="group-div">
               <img className="image-icon2" alt="" src="/images/miniart5.jpg" />
-
               <div className="scientists-identify-molten">
+                <a href="https://news.climate.columbia.edu/2018/12/27/35-ways-reduce-carbon-footprint/" target="_blank" rel="noopener noreferrer" className="text-black no-underline">
                 The 35 Easiest Ways to Reduce Your Carbon Footprint
+                </a>
               </div>
             </div>
             <div className="scientists-identify-molten-lay-parent">
               <div className="scientists-identify-molten">
+                <a href="https://www.globe.com.ph/go/shopping-lifestyle/article/sustainable-fashion-101-how-to-build-eco-friendly-wardrobe#gref" target="_blank" rel="noopener noreferrer" className="text-black no-underline">
                 Sustainable Fashion 101: How to Build an Eco-Friendly Wardrobe
+                </a>
               </div>
               <img className="image-icon2" alt="" src="/images/miniart6.jpg" />
             </div>
             <div className="scientists-identify-molten-lay-group">
               <div className="scientists-identify-molten">
+                <a href="https://www.nationalgeographic.com/lifestyle/article/how-to-compost-at-home" target="_blank" rel="noopener noreferrer" className="text-black no-underline">
                 How to compost at home—a guide for beginners
+                </a>
               </div>
               <img className="image-icon2" alt="" src="/images/miniart7.jpg" />
             </div>
             <div className="scientists-identify-molten-lay-container">
               <div className="scientists-identify-molten">
+                <a href="https://blueandgreentomorrow.com/sustainability/guide-sustainable-living-for-beginners/" target="_blank" rel="noopener noreferrer" className="text-black no-underline">
                 The Ultimate Guide to Sustainable Living for Beginners
+                </a>
               </div>
               <img className="image-icon2" alt="" src="/images/miniart8.jpg" />
             </div>
@@ -164,6 +182,7 @@ export function Article2() {
           <div className="eco-essentials1">Eco Tech</div>
           <div className="main-list-article">
             <div className="card-bif-c">
+              <a href="https://readwrite.com/how-are-smart-thermostats-making-homes-greener/" target="_blank" rel="noopener noreferrer">
               <img
                 className="image-icon1"
                 alt=""
@@ -172,6 +191,7 @@ export function Article2() {
               <div className="overlay">
                 <div className="text-article">CLICK ME</div>
               </div>
+              </a>
             </div>
             <div className="research-institute-wins">
               How Are Smart Thermostats <br />
@@ -184,24 +204,32 @@ export function Article2() {
               <img className="image-icon2" alt="" src="/images/miniart9.jpg" />
 
               <div className="scientists-identify-molten">
+                <a href="https://cyberelectrical.com.au/blog/the-10-best-energy-efficient-home-appliances/" target="_blank" rel="noopener noreferrer" className="text-black no-underline">
                 The 10 Best Energy-Efficient Home Appliances
+                </a>
               </div>
             </div>
             <div className="scientists-identify-molten-lay-parent">
               <div className="scientists-identify-molten">
+                <a href="https://gloriousdko.com/smart-faucets-the-future-of-your-water-conservation/" target="_blank" rel="noopener noreferrer" className="text-black no-underline">
                 Smart Faucets: The Future of Your Water Conservation
+                </a>
               </div>
               <img className="image-icon2" alt="" src="/images/miniart10.jpg" />
             </div>
             <div className="scientists-identify-molten-lay-group">
               <div className="scientists-identify-molten">
+                <a href="https://arka360.com/ros/solar-energy-design-material-innovations/" target="_blank" rel="noopener noreferrer" className="text-black no-underline">
                 Innovations in Solar Panel Design and Materials
+                </a>
               </div>
               <img className="image-icon2" alt="" src="/images/miniart11.jpg" />
             </div>
             <div className="scientists-identify-molten-lay-container">
               <div className="scientists-identify-molten">
+                <a href="https://www.newelectronics.co.uk/content/features/5-ways-smart-home-devices-can-help-save-energy/" target="_blank" rel="noopener noreferrer" className="text-black no-underline">
                 5 ways smart home devices can help save energy
+                </a>
               </div>
               <img className="image-icon2" alt="" src="/images/miniart12.jpg" />
             </div>
