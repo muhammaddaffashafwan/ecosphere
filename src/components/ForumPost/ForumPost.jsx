@@ -13,34 +13,47 @@ const ForumPost = ({ post }) => {
   };
 
   return (
-    <div className="flex flex-col bg-softCream p-5 rounded-lg border-1 border-black shadow-md mb-5 ">
+    <div className="flex flex-col bg-softCream p-5 rounded-lg border border-black shadow-md mb-5">
       <a href={post.link} className="text-decoration-none text-inherit">
-        <div className="text-2xl font-bold mb-4 text-black">{post.title}</div>
+        
         <div className="flex items-center mb-2">
-          <img className="w-10 h-10 rounded-full mr-2" alt="User  Avatar" src={post.userAvatar} />
+          <img
+            className="w-10 h-10 rounded-full mr-2"
+            alt="User Avatar"
+            src={post.userAvatar}
+          />
           <div className="flex flex-col">
             <span className="font-bold">{post.userName}</span>
             <span className="text-xs text-gray-500">{post.date}</span>
           </div>
         </div>
-        <div className="bg-softCream p-4 rounded-lg  mb-4">
-        {post.showImage && post.imageUrl && (
-            <img className="w-full h-auto" alt="Image Post" src={post.imageUrl} />
+        
+        <div className="bg-softCream p-4 rounded-lg mb-4">
+          <div className="text-2xl font-bold mb-4 text-black">{post.title}</div>
+          {post.showImage && post.imageUrl && (
+            <img className="w-full h-auto mb-[20px]" alt="Post Image" src={post.imageUrl} />
           )}
           <p className="text-lg">{post.content}</p>
           <p className="text-sm text-gray-500">{post.tags}</p>
         </div>
-      </ a>
+      </a>
       <div className="flex justify-between items-center mt-4">
         <div className="flex items-center">
-          <button className="flex items-center bg-transparent border-none cursor-pointer" onClick={handleLike}>
-            <i className={`bi ${isLiked ? 'bi-heart-fill text-red-500' : 'bi-heart'}`}></i>
+          <button
+            type="button"
+            className="flex items-center bg-transparent border-none cursor-pointer"
+            onClick={handleLike}
+          >
+            <i
+              className={`bi ${isLiked ? 'bi-heart-fill text-red-500' : 'bi-heart'}`}
+            ></i>
             <span className="ml-2">{likeCount}</span>
           </button>
-          <button className="flex items-center bg-transparent border-none cursor-pointer ml-4" onClick={() => {
-            console.log("Opening modal"); // Log untuk debugging
-            setIsModalOpen(true);
-          }}>
+          <button
+            type="button"
+            className="flex items-center bg-transparent border-none cursor-pointer ml-4"
+            onClick={() => setIsModalOpen(true)}
+          >
             <i className="bi bi-chat-text"></i>
             <span className="ml-2">{post.comments.length}</span>
           </button>
@@ -54,7 +67,6 @@ const ForumPost = ({ post }) => {
 // Menambahkan validasi prop
 ForumPost.propTypes = {
   post: PropTypes.shape({
-    likes: PropTypes.number.isRequired,
     link: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     userAvatar: PropTypes.string.isRequired,
@@ -62,7 +74,15 @@ ForumPost.propTypes = {
     date: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
     tags: PropTypes.string.isRequired,
-    comments: PropTypes.arrayOf(PropTypes.object).isRequired,
+    likes: PropTypes.number,
+    comments: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number,
+        content: PropTypes.string,
+      })
+    ).isRequired,
+    showImage: PropTypes.bool,
+    imageUrl: PropTypes.string,
   }).isRequired,
 };
 

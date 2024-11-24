@@ -1,99 +1,13 @@
 import { useState } from 'react';
-import ForumPost from "../../components/ForumPost/ForumPost";
+import { posts, questions as initialQuestions } from "../../components/ForumPost/DataPost";
 import "./forum1.css";
 
 export function Forum1() {
-  // State untuk menyimpan daftar postingan
-  const [posts] = useState([
-    {
-      link: '#',
-      userAvatar: 'images/forum1/profile1.png',
-      userName: 'Ester Howard',
-      date: 'Aug 24, 2024 | 09.15 pm',
-      title: 'Looking for Simple Tips to Start My Eco-Friendly Journey!',
-      content: "Hi everyone! 👋 I'm new to the eco-friendly lifestyle and looking to start with small, impactful changes at home. I've done a bit of research, but there's so much information out there that it's overwhelming! What are some simple tips or habits that helped you get started on your journey? Appreciate any advice!",
-      tags: '#EcoFriendlyLiving #GreenHome #TipsForBeginners',
-      likes: 24,
-      comments: 4
-
-    },
-    {
-      link: 'forum2.html',
-      userAvatar: 'images/forum1/muhammad sumbul.png',
-      userName: 'Muhammad Sumbul',
-      date: 'Aug 04, 2024 | 07.15 pm',
-      imageUrl:'images/forum1/forum1.png',
-      title: 'Starting My Eco-Home Journey: What’s the First Step?',
-      content: "Hello, Ecosphere community! 🌿 I've recently become passionate about making my home more eco-friendly, but I’m overwhelmed by all the advice out there. Some people say to start with energy-efficient appliances, others suggest focusing on water conservation, and then there’s also waste reduction. Given so many areas to improve, where would you recommend beginning? I’m on a budget, so I’m looking...",
-      tags: '#EcoFriendlyHome #SustainabilityTips #BudgetLiving',
-      likes: 12,
-      comments: 0,
-      showImage: true,
-    },
-
-    {
-      link: 'forum2.html',
-      userAvatar: 'images/forum1/javaaryani.png',
-      userName: 'Java Aryani',
-      date: 'Jul 21, 2024 | 11.25 am',
-      imageUrl:'images/forum1/forum2.png',
-      title: 'Sustainable Home Renovation: How Do You Integrate Eco-Friendly Materials?',
-      content: "Hello, fellow eco-enthusiasts! 🏡 I'm in the middle of planning a home renovation, and as someone who values sustainability, I want to make sure I incorporate eco-friendly materials into the process. I’ve already heard about using recycled materials and energy-efficient windows, but I’m wondering if there are other options I should be considering. For those who have renovated their homes with sustainability...",
-      tags: '#EcoFriendlyHome #SustainabilityTips #BudgetLiving',
-      likes: 15,
-      comments: 2,
-      showImage: true,
-    },
-
-    {
-      link: 'forum2.html',
-      userAvatar: 'images/forum1/ah tong.png',
-      userName: 'Ah Tong',
-      date: 'Jun 9, 2024 | 10.15 am',
-      title: 'How Do You Manage Your Energy Use at Home?',
-      content: "Hello, fellow eco-enthusiasts! 🏡 I’m in the middle of planning a home renovation, and as someone who values sustainability, I want to make sure I incorporate eco-friendly materials into the process. I’ve already heard about using recycled materials and energy-efficient windows, but I’m wondering if there are other options I should be considering. For those who have renovated their homes with sustainability...",
-      tags: '#EcoFriendlyHome #SustainabilityTips #BudgetLiving',
-      likes: 15,
-      comments: 2
-    },
-
-    {
-      link: 'forum2.html',
-      userAvatar: 'images/forum1/patricia.png',
-      userName: 'Patricia Kendrick',
-      date: 'May 25, 2024 | 12.45 pm',
-      imageUrl:'images/forum1/forum3.png',
-      title: 'Building a Sustainable Wardrobe: Tips for Eco-Friendly Fashion',
-      content: "Hi, everyone! 🌍 I’ve been making a conscious effort to reduce my environmental footprint in various areas of my life, and fashion is one of the most challenging. I’ve realized that fast fashion contributes significantly to waste and pollution, so I’m looking to build a more sustainable wardrobe. However, I’m overwhelmed by all the options available and unsure where to start. I’ve already begun by swapping out synthetic fabrics for natural materials like cotton and linen, but...",
-      tags: '#EcoFriendlyHome #SustainabilityTips #BudgetLiving',
-      likes: 15,
-      comments: 2,
-      showImage: true,
-    },
-
-
-    // Tambahkan lebih banyak postingan sesuai kebutuhan
-  ]);
-
-  const [questions, setQuestions] = useState([
-    {
-      id: 1,
-      title: 'What eco-friendly DIY projects have you tried recently?',
-      answers: 14,
-      lastAnswer: '1h',
-    },
-    {
-      id: 2,
-      title: 'What inspires you to make eco-friendly choices in your home?',
-      answers: 26,
-      lastAnswer: '1h',
-    },
-  ]);
-
+  const [questions, setQuestions] = useState(initialQuestions);
   const [newQuestion, setNewQuestion] = useState('');
 
   const handleNewQuestionChange = (e) => {
-    setNewQuestion(e. target.value);
+    setNewQuestion(e.target.value);
   };
 
   const addQuestion = () => {
@@ -120,14 +34,18 @@ export function Forum1() {
             ))}
           </div>
         </div>
-        <div className="w-1/3 ml-5"><input
+        <div className="w-1/3 ml-5">
+          <input
             type="text"
             value={newQuestion}
             onChange={handleNewQuestionChange}
             placeholder="Ask a new question..."
             className="border p-2 rounded w-full mt-4"
           />
-          <button onClick={addQuestion} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4">
+          <button
+            onClick={addQuestion}
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4"
+          >
             Add Question
           </button>
           <h2 className="text-2xl font-bold mb-4">Questions for You</h2>
@@ -142,7 +60,6 @@ export function Forum1() {
               </button>
             </div>
           ))}
-          
         </div>
       </main>
     </div>
