@@ -17,6 +17,7 @@
             background-color: #f5f5f5;
             background: url("/images/daun.jpg");
             background-size: cover;
+            padding-inline: 2rem;
         }
 
 
@@ -119,3 +120,77 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+/* Responsif */
+@media (min-width:425px) {
+.body-signup {
+    padding-inline: 4rem;
+    padding-bottom: 3rem;
+}
+}
+
+@media (min-width:768px) {
+.body-signup {
+    padding-inline: 4rem;
+}
+}
+
+@media (max-width: 900px) {
+.container-signup {
+    flex-direction: column; /* Tumpuk vertikal */
+    margin-inline: 5rem;
+}
+
+.image-section-signup {
+    flex-basis: 100%; /* Lebar penuh */
+    min-height: 100px; /* Tinggi minimum untuk menjaga gambar terlihat */
+}
+
+.login-section-3 {
+    flex-basis: 100%; /* Lebar penuh */
+    padding: 30px 20px;
+}
+
+.login-section-3 h2 {
+    font-size: 24px; /* Ukuran font lebih kecil untuk layar kecil */
+}
+
+.form-group-1 label {
+    font-size: 13px; /* Ukuran label lebih kecil */
+}
+
+.login-button-main-up {
+      font-size: 14px; /* Ukuran tombol lebih kecil */
+}
+
+.signup {
+    font-size: 11px; /* Ukuran teks signup lebih kecil */
+ }
+}
+
+@media (max-width: 300px) {
+.container-signup {
+    margin-inline: 5rem;
+}
+
+.login-section-3 {
+    padding: 10px; /* Padding lebih kecil */
+}
+
+.login-section-3 h2 {
+    font-size: 20px;
+}
+
+.form-group-1 input {
+    padding: 5px;
+}
+
+.login-button-main-up {
+    font-size: 14px;
+    padding: 5px;
+}
+
+.signup {
+    font-size: 10px;
+ }
+}

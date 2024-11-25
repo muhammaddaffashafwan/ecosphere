@@ -1,129 +1,205 @@
 /* Reset dasar */
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  } */
-  
-  /* Latar belakang halaman */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Latar belakang halaman */
 .body-login {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f5f5f5;
-    background: url("../images/daun.jpg");
-    background-size: cover;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  background: url("../images/daun.jpg");
+  background-size: cover;
+  padding-inline: 2rem;
+}
+
+/* Spasi untuk mengimbangi header tetap */
+.content-spacing {
+  height: 80px; 
+}
+
+/* Kontainer utama */
+.container-login {
+  display: flex;
+  flex-wrap: wrap; /* Untuk responsif */
+  border-radius: 15px;
+  background-color: #e2efdb;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow-x: hidden;
+  max-width: 900px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+/* Bagian gambar */
+.image-section {
+  flex: 1;
+  background: url("../images/wave home.png");
+  background-size: cover;
+  background-position: center; /* Diubah untuk lebih fleksibel */
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-basis: 50%;
+  min-height: 300px;
+}
+
+.image-section img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Bagian formulir login */
+.login-section {
+  flex: 1;
+  padding: 50px 80px;
+  background-color: #e2efdb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 50%;
+}
+
+.login-section h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  font-size: 13px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #666;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 7px !important; 
+  margin-top: 5px; 
+  border-radius: 35px !important;
+  border: 1px solid #ccc;
+}
+
+
+.forgot-password {
+  font-size: 12px;
+  color: #091dff;
+  text-align: right;
+  text-decoration: none;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.login-button-main {
+  width: 100%;
+  padding: 7px;
+  margin-top: 5px;
+  background-color: #6d9b5d;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+.signup {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+.signup a {
+  color: #091dff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Responsif */
+@media (min-width:425px) {
+  .body-login {
+    padding-inline: 4rem;
+    padding-bottom: 3rem;
   }
-  
-  
-  /* Spasi untuk mengimbangi header tetap */
-  .content-spacing {
-    height: 80px; 
+}
+
+@media (min-width:768px) {
+  .body-login {
+    padding-inline: 4rem;
   }
-  
-  /* Kontainer utama */
+}
+
+@media (max-width: 900px) {
   .container-login {
-    display: flex;
-    border-radius: 15px;
-    background-color: #e2efdb;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    overflow-x: hidden;
-    max-width: 900px;
-    margin-top: 40px;
-    width: 100%;
+    flex-direction: column; /* Tumpuk vertikal */
+    margin-inline: 5rem;
   }
-  
-  /* Bagian gambar */
+
   .image-section {
-    flex: 1;
-    background: url("../images/wave\ home.png");
-    background-size: cover;
-    background-position: right;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-basis: 50%;
+    flex-basis: 100%; /* Lebar penuh */
+    min-height: 100px; /* Tinggi minimum untuk menjaga gambar terlihat */
   }
-  
-  .image-section img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  /* Bagian formulir login */
+
   .login-section {
-    flex: 1;
-    padding: 50px 80px;
-    background-color: #e2efdb;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-basis: 50%;
+    flex-basis: 100%; /* Lebar penuh */
+    padding: 30px 20px;
   }
-  
+
   .login-section h2 {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 24px; /* Ukuran font lebih kecil untuk layar kecil */
   }
-  
-  .form-group {
-    margin-bottom: 15px;
-    font-size: 13px;
-  }
-  
+
   .form-group label {
-    font-size: 14px;
-    color: #666;
+    font-size: 13px; /* Ukuran label lebih kecil */
   }
-  
-  .form-group input {
-    width: 100%;
-    padding: 7px;
-    margin-top: 5px;
-    border-radius: 35px;
-    border: 1px solid #ccc;
-  }
-  
-  .forgot-password {
-    font-size: 12px;
-    color: #091dff;
-    text-align: right;
-    text-decoration: none;
-    margin-bottom: 20px;
-    display: block;
-  }
-  
+
   .login-button-main {
-    width: 100%;
-    padding: 7px;
-    margin-top: 5px;
-    background-color: #6d9b5d;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 35px;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
+    font-size: 14px; /* Ukuran tombol lebih kecil */
   }
-  
+
   .signup {
-    font-size: 12px;
-    text-align: center;
-    margin-top: 20px;
-    color: #333;
+    font-size: 11px; /* Ukuran teks signup lebih kecil */
   }
-  
-  .signup a {
-    color: #091dff;
-    text-decoration: none;
-    font-weight: bold;
+}
+
+@media (max-width: 300px) {
+  .container-login {
+    margin-inline: 5rem;
   }
-  
+
+  .login-section {
+    padding: 10px; /* Padding lebih kecil */
+  }
+
+  .login-section h2 {
+    font-size: 20px;
+  }
+
+  .form-group input {
+    padding: 5px;
+  }
+
+  .login-button-main {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .signup {
+    font-size: 10px;
+  }
+}
