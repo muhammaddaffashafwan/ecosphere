@@ -46,7 +46,7 @@ function AppContent() {
         <Route path="/products/:slug" element={<ProductDetail />} />
         <Route path="property" element={<Property />} />
         <Route path="forum1" element={<Forum1 />} />
-        <Route path="forum2" element={<Forum2 />} />
+        <Route path="forum2/:postId" element={<Forum2 />} />
         <Route path="profile" element={<Profile />} />
         <Route path="forgotpassword" element={<ForgotPassword />} />
         <Route path="signup" element={<Signup />} />
