@@ -114,8 +114,16 @@ export function Article2() {
               </div>
               <img className="image-icon2" alt="" src="/images/miniart4.jpg" />
             </div>
+            
+          </div>
+          
+        <div className="line-parent">
+            <div className="line13"></div>
+            <div className="line14"></div>
+            <div className="line15"></div>
           </div>
         </div>
+
         <div className="main-list-article-group">
           <div className="eco-essentials1">Green Living</div>
           <div className="main-list-article">
@@ -201,7 +209,7 @@ export function Article2() {
 
           <div className="list-article">
             <div className="group-div">
-              <img className="image-icon2" alt="" src="/images/miniart9.jpg" />
+              <img className="image-icon2" alt="" src="/images/ecotechmini1.jpg" />
 
               <div className="scientists-identify-molten">
                 <a href="https://cyberelectrical.com.au/blog/the-10-best-energy-efficient-home-appliances/" target="_blank" rel="noopener noreferrer" className="text-black no-underline">
@@ -215,7 +223,7 @@ export function Article2() {
                 Smart Faucets: The Future of Your Water Conservation
                 </a>
               </div>
-              <img className="image-icon2" alt="" src="/images/miniart10.jpg" />
+              <img className="image-icon2" alt="" src="/images/ecotechmini2.jpg" />
             </div>
             <div className="scientists-identify-molten-lay-group">
               <div className="scientists-identify-molten">
@@ -223,7 +231,7 @@ export function Article2() {
                 Innovations in Solar Panel Design and Materials
                 </a>
               </div>
-              <img className="image-icon2" alt="" src="/images/miniart11.jpg" />
+              <img className="image-icon2" alt="" src="/images/ecotechmini3.jpg" />
             </div>
             <div className="scientists-identify-molten-lay-container">
               <div className="scientists-identify-molten">
@@ -231,7 +239,7 @@ export function Article2() {
                 5 ways smart home devices can help save energy
                 </a>
               </div>
-              <img className="image-icon2" alt="" src="/images/miniart12.jpg" />
+              <img className="image-icon2" alt="" src="/images/ecotechmini4.jpg" />
             </div>
           </div>
 
