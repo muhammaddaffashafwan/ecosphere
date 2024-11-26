@@ -53,7 +53,7 @@ export function Article2() {
             sustainability and innovation in the construction industry.
           </span>
 
-          <a href="#" className="cta-buttonn">
+          <a href="https://www.planradar.com/au/technology-revolutionizing-homebuilding-iot-ai/#:~:text-article=Advanced%20data%20analytics%20and%20machine,suited%20to%20future%20generations'%20needs." className="cta-buttonn">
             More Information
           </a>
         </div>

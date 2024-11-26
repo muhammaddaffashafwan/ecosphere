@@ -11,7 +11,7 @@ export function Article1() {
 			<div className="explore">
 				Explore our in-depth articles and unlock the secrets to creating a future-friendly home. Start reading now and transform your living space into a greener sanctuary!
 			</div>
-			<a href="#" className="cta-button">More Information</a>
+			<a href="#news-img" className="cta-button">More Information</a>
 			<img className="img-article1" alt="" src="/images/imgarticle1.jpg" />
 			<img className="img-article2" alt="" src="/images/imgarticle2.jpg" />
 			</div>

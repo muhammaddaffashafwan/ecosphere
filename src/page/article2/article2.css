@@ -250,7 +250,7 @@
   }
   .trending-news {
     position: absolute;
-    top: 257px;
+    top: 120px;
     left: 120px;
     font-size: 40px;
     letter-spacing: -0.02em;
@@ -258,17 +258,18 @@
   }
   .image-icon {
     position: absolute;
-    top: 326px;
+    top: 190px;
     left: 120px;
     border-radius: 24px;
     width: 588px;
     height: 635px;
     overflow: hidden;
+    -o-object-fit: cover;
     object-fit: cover;
   }
   .how-technology-is {
     position: absolute;
-    top: 326px;
+    top: 185px;
     left: 732px;
     font-size: 40px;
     letter-spacing: -0.02em;
@@ -277,6 +278,7 @@
     display: inline-block;
     width: 588px;
     text-decoration: none;
+    text-align: initial;
   }
   .echnology-is-changing {
     position: absolute;
@@ -306,7 +308,7 @@
   }
   .echnology-is-changing-industri-parent {
     position: absolute;
-    top: 462px;
+    top: 330px;
     left: 735px;
     width: 280px;
     height: 110px;
@@ -319,7 +321,7 @@
   }
   .in-the-last-container {
     position: absolute;
-    top: 615px;
+    top: 483px;
     left: 735px;
     font-size: 16px;
     line-height: 140%;
@@ -335,7 +337,7 @@
   }
   .recent-trends-show-container {
     position: absolute;
-    top: 500px;
+    top: 370px;
     left: 1039px;
     font-size: 16px;
     line-height: 140%;
