@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ForumPost from "../../components/ForumPost/ForumPost";
 import { DataPost } from "../../components/ForumPost/DataPost";
+import "../global.css";
 
 const Profile = () => {
   // Memfilter data untuk hanya menampilkan postingan Muhammad Sumbul
@@ -58,7 +59,7 @@ const Profile = () => {
             src={profileImage} alt="User Avatar"
           />
           <div className="ml-4 text-white">
-            <h1 className="text-2xl font-bold font-opticians">Muhammad Sumbul</h1>
+            <h1 className="font text-2xl font-bold font-opticians">Muhammad Sumbul</h1>
             <p className="text-sm text-black">@sumbul</p>
           </div>
         </div>
@@ -135,7 +136,7 @@ const Profile = () => {
 
       {/* User Posts Section */}
       <div className="mt-32 p-5">
-        <h2 className="text-xl font-bold mb-4">Muhammad Sumbul's Posts</h2>
+        <h2 className="font text-xl font-bold mb-4 xz">Muhammad Sumbul's Posts</h2>
         {userPosts.length > 0 ? (
           userPosts.map((post) => <ForumPost key={post.id} post={post} />)
         ) : (

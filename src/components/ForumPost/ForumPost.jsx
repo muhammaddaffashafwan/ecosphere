@@ -44,7 +44,7 @@ const ForumPost = ({ post, currentUserId }) => {
       </div>
 
       {/* Post Title with Link to Forum2 */}
-      <Link to={`/forum2/${post.id}`} className="text-2xl font-bold mb-4 text-black mt-[15px]">
+      <Link to={`/forum2/${post.id}`} className="font text-2xl font-bold mb-4 text-black mt-[15px]">
         {post.title}
       </Link>
 

@@ -74,7 +74,7 @@ export function Forum2() {
           </div>
         </div>
 
-        <h1 className='text-3xl font-bold mb-4'>{post.title}</h1>
+        <h1 className='font text-3xl font-bold mb-4'>{post.title}</h1>
 
         {post.imageUrl && (
           <img src={post.imageUrl} alt={post.title} className='w-full h-auto mb-6 rounded-lg' />

@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 @font-face {
-  font-family: 'opticians';
-  src: url('components/font/Optician-Sans.otf') format('otf'),
-       url('components/font/Optician-Sans.ttf') format('ttf');
+  font-family: 'Optician';
+  src: url('/src/assets/fonts/OpticianSans.ttf') format('truetype'); /* Sesuaikan path */
   font-weight: normal;
   font-style: normal;
 }

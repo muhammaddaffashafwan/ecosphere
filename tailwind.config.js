@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        optician: ['Optician', 'sans-serif'], // Nama font custom
+      },
       colors: {
         softCream: '#F7FFEC',
       },

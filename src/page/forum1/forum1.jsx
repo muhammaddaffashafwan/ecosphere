@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { DataPost } from "../../components/ForumPost/DataPost";
 import ForumPost from "../../components/ForumPost/ForumPost";
+import "../global.css";
 
 export function Forum1() {
   // State for the list of questions
@@ -91,7 +92,7 @@ export function Forum1() {
       <main className="flex-grow p-5 flex">
         {/* Left Content */}
         <div className="flex-1">
-          <h1 className="text-2xl font-bold mb-5 mt-[100px]">SHARING & DISCUSSIONS</h1>
+          <h1 className="font text-5xl font-bold mb-5 mt-[100px]">SHARING & DISCUSSIONS</h1>
           <div className="flex flex-col">
             {DataPost.map((post) => (
               <ForumPost key={post.id} post={post} />
@@ -121,7 +122,7 @@ export function Forum1() {
 
           {/* Questions Section */}
           <div className="bg-softCream p-3 rounded-lg">
-          <h2 className="text-xl font-bold mb-4">QUESTION FOR YOU</h2>
+          <h2 className="font text-xl font-bold mb-4">QUESTION FOR YOU</h2>
           {questions.map((question) => (
             <div
               key={question.id}
