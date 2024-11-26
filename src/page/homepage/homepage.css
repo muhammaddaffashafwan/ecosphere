@@ -1,8 +1,8 @@
-body {
+/* body {
   margin: 0;
   padding: 0;
   background-color: #ffffff;
-}
+} */
 
 .vector-icon {
   position: absolute;
@@ -44,7 +44,7 @@ body {
   width: 100%;
   position: relative;
   background-color: #fff;
-  height: 3100px;
+  height: 2900px;
   overflow: hidden;
   text-align: left;
   font-size: 16px;
@@ -62,72 +62,13 @@ body {
   background-color: #f5f5f5;
   overflow-x: hidden;
 }
-/* Navbar */
-/* .header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffffff;
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-  position: fixed; 
-  top: 0;
-  z-index: 1000;
-  padding-inline: 90px;
-  box-sizing: border-box; 
-  padding-bottom: 5px;
-} */
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #7fbf7f;
-}
-
-.nav {
-  display: flex;
-  align-items: center; /* Membuat elemen di dalamnya rata secara vertikal */
-  gap: 70px; /* Mengatur jarak antar item di navbar */
-  font-size: 15px;
-  font-family: Poppins;
-  padding-top: 10px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #5c7838;
-  transition: font-weight 0.3s ease, color 0.3s ease;
-}
-
-.nav a:hover {
-  font-weight: bold;
-  color: #5c7838;
-}
-
-.nav .login-button {
-  padding: 7px 20px;
-  background-color: #739646;
-  color: #fff;
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 15px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 20px; /* Memberikan jarak dari menu */
-}
 
 /* 1 */
 
 .home-page-item {
   position: absolute;
   top: 217px;
-  left: 960px;
+  left: 60%;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
   border-radius: 50px;
@@ -139,7 +80,7 @@ body {
 }
 .home-page-icon {
   position: absolute;
-  left: 925px;
+  left: 60%;
   height: 1000px;
   object-fit: cover;
   border-radius: 15px;
@@ -148,7 +89,7 @@ body {
   position: absolute;
   top: 330px;
   left: 100px;
-  font-size: 64px;
+  font-size: 60px;
   letter-spacing: -0.02em;
   font-family: "Optician Sans";
   display: inline-block;
@@ -160,7 +101,7 @@ body {
   position: absolute;
   top: 490px;
   left: 100px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   text-align: justify;
   display: flex;
@@ -170,7 +111,7 @@ body {
 .hover-more-s {
   overflow: hidden;
   position: relative;
-  top: 760px;
+  top: 740px;
   left: 100px;
 }
 .cta-buttons {
@@ -192,47 +133,20 @@ body {
   color: #6ea54e;
 }
 
-/* .contact-now {
-    flex: 1;
-    border-radius: 32px;
-    background-color: #739646;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 16px;
-  }
-  .contact-now-wrapper {
-    position: absolute;
-    top: 798px;
-    left: calc(50% - 606px);
-    width: 300px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    padding: 10px;
-    box-sizing: border-box;
-    cursor: pointer;
-    color: #fff;
-  } */
-
 /* 2 */
 .about-us {
   position: absolute;
-  top: 1282px;
+  top: 1230px;
   left: 770px;
-  font-size: 64px;
+  font-size: 60px;
   letter-spacing: -0.02em;
   font-family: "Optician Sans";
 }
 .detail-about-us {
   position: absolute;
-  top: 1375px;
+  top: 1350px;
   left: 770px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   text-align: justify;
   display: inline-block;
@@ -241,7 +155,7 @@ body {
 }
 .frame-type-1 {
   position: absolute;
-  top: 1281px;
+  top: 1100px;
   left: 105px;
   border-radius: 8px;
   width: 280px;
@@ -254,7 +168,7 @@ body {
 }
 .frame-type-2 {
   position: absolute;
-  top: 1282px;
+  top: 1100px;
   left: 420px;
   border-radius: 8px;
   width: 282px;
@@ -267,7 +181,7 @@ body {
 }
 .frame-type-3 {
   position: absolute;
-  top: 1560px;
+  top: 1395px;
   left: 105px;
   border-radius: 8px;
   width: 282px;
@@ -280,7 +194,7 @@ body {
 }
 .frame-type-4 {
   position: absolute;
-  top: 1629px;
+  top: 1465px;
   left: 420px;
   border-radius: 8px;
   width: 279px;
@@ -291,21 +205,21 @@ body {
   object-fit: cover;
 }
 .click-me {
-    overflow: hidden;
-    position: absolute;
-    top: 2830px;
-    left: 729px;
+  overflow: hidden;
+  position: absolute;
+  top: 2830px;
+  left: 729px;
 }
 
 /* 3 */
 .section-3 {
   position: absolute;
-  top: 2465px;
+  top: 2300px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 1200px;
   height: 716px;
-  color: #1b1c57;
+  color: #000000;
 }
 .title {
   position: absolute;
@@ -358,7 +272,6 @@ body {
   text-align: center;
 }
 
-
 .left-side {
   position: absolute;
   top: 196px;
@@ -387,8 +300,8 @@ body {
 }
 
 .article-link {
-    color: #000;
-    text-decoration: none;
+  color: #000;
+  text-decoration: none;
 }
 .article-title {
   align-self: stretch;
@@ -408,6 +321,11 @@ body {
   font-size: 14px;
   color: #888b97;
 }
+
+.article-time p {
+  margin-bottom: 0;
+}
+
 .article-b {
   position: absolute;
   top: 188px;
@@ -469,13 +387,13 @@ body {
 .click-me {
   overflow: hidden;
   position: absolute;
-  top: 2830px;
-  left: 726px;
+  top: 2670px;
+  left: 700px;
 }
 .cta-button-2 {
   background-color: #739646;
   color: #fff;
-  padding: 12px 24px;
+  padding: 5px 2px;
   border-radius: 50px;
   margin-left: 37px;
   text-decoration: none;

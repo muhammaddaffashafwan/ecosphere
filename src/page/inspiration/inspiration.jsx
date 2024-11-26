@@ -279,26 +279,26 @@ export function Inspiration() {
       <div className='diy-content'>
         <div className='diy-vid'>
           <a href='https://youtu.be/kwajGch9cKA?si=gY1VakIGPPfGOGOU' className='youtube-icon-1'>
-            <img src='/images/diy1.png'/>
+            <img src='/images/diy1.png' />
           </a>
           <h3>Making Household Compost</h3>
         </div>
         <div className='diy-vid'>
           <a href='https://youtu.be/3uzXeCnzf0c?si=URrd1x0xZekSxx0T' className='youtube-icon-1'>
-            <img src='/images/diy2.png'/>
+            <img src='/images/diy2.png' />
           </a>
           <h3>DIY Simple Water Filter</h3>
         </div>
         <div className='diy-vid'>
           <a href='https://youtu.be/_Q_FMv77fdM?si=k2-r5MEj_fHCqfxj' className='youtube-icon-1'>
-            <img src='/images/diy3.png'/>
+            <img src='/images/diy3.png' />
           </a>
           <h3>Mini Vertical Garden</h3>
         </div>
       </div>
       <section className='hover-more-1'>
         <a href='/Inspiration2' className='cta-button2'>
-          see more
+          See More
         </a>
       </section>
     </div>
