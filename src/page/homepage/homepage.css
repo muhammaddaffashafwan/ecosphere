@@ -290,6 +290,12 @@ body {
   position: absolute;
   object-fit: cover;
 }
+.click-me {
+    overflow: hidden;
+    position: absolute;
+    top: 2830px;
+    left: 729px;
+}
 
 /* 3 */
 .section-3 {
@@ -379,11 +385,18 @@ body {
   justify-content: flex-start;
   gap: 16px;
 }
+
+.article-link {
+    color: #000;
+    text-decoration: none;
+}
 .article-title {
   align-self: stretch;
   position: relative;
   line-height: 140%;
   font-weight: 500;
+  text-decoration: none;
+  color: #000;
 }
 .article-time {
   align-self: stretch;
@@ -457,7 +470,7 @@ body {
   overflow: hidden;
   position: absolute;
   top: 2830px;
-  left: 800px;
+  left: 726px;
 }
 .cta-button-2 {
   background-color: #739646;

@@ -68,13 +68,17 @@ export function Homepage() {
 
           <div className="left-side">
             <div className="article-a">
-              <img src="/images/homearticle1.jpg" />
-              <div className="article-content">
-                <div className="article-title">
-                  <div className="article-title">
-                    Beginners Guide to Installing Solar Panels at Home
-                  </div>
-                </div>
+            <a href="https://powerstarelectricals.co.uk/blogs/beginners-guide-to-installing-solar-panels-at-home" className="article-link">
+            <img src="/images/homearticle1.jpg" alt="Solar Panels Guide" />
+            </a>
+           <div className="article-content">
+           <div className="article-title">
+          <a href="https://powerstarelectricals.co.uk/blogs/beginners-guide-to-installing-solar-panels-at-home" className="article-link">
+            Beginners Guide to Installing Solar Panels at Home
+          </a>
+          </div>
+
+
                 <div className="article-time">
                   <img src="/images/clock.png" />
                   <p>powerstarelectricals | Oct 24, 2024</p>
@@ -83,13 +87,16 @@ export function Homepage() {
             </div>
 
             <div className="article-b">
+              <a href="https://silvotherapy.co.uk/articles/biophilic-design#:~:text=Biophilic%20design%20doesn't%20just,for%20a%20healthier%20breathing%20environment." className="article-link">
               <img src="/images/homearticle2.jpg" />
-
+              </a>
               <div className="article-content">
                 <div className="article-title">
                   <div className="article-title">
+                    <a href="https://silvotherapy.co.uk/articles/biophilic-design#:~:text=Biophilic%20design%20doesn't%20just,for%20a%20healthier%20breathing%20environment." className="article-link">
                     The Magic of Biophilic Design: Bringing Nature Indoors for a
                     Healthier Living Space
+                    </a>
                   </div>
                 </div>
                 <div className="article-time">
@@ -100,12 +107,16 @@ export function Homepage() {
             </div>
 
             <div className="article-c">
+              <a href="https://www.forbes.com/sites/afdhelaziz/2022/05/31/how-greywater-systems-can-help-you-save-money-and-water-an-interview-with-leigh-jerrard-of-greywater-corps/" className="article-link">
               <img src="/images/homearticle3.jpg" />
+              </a>
               <div className="article-content">
                 <div className="article-title">
                   <div className="article-title">
+                    <a href="https://www.forbes.com/sites/afdhelaziz/2022/05/31/how-greywater-systems-can-help-you-save-money-and-water-an-interview-with-leigh-jerrard-of-greywater-corps/" className="article-link">
                     How Greywater Systems Can Help You Save Money And Water: An
                     Interview With Leigh Jerrard Of Greywater Corps
+                    </a>
                   </div>
                 </div>
                 <div className="article-time">
@@ -117,10 +128,13 @@ export function Homepage() {
           </div>
 
           <div className="right-side">
+            <a href="https://www.ecoluxlifestyle.co/5-inexpensive-ideas-to-make-your-home-more-eco-friendly/" className="article-link">
             <img src="/images/foto9.jpg" />
+            </a>
 
             <div className="article-4">
               <div className="article-4-content">
+                <a href="https://www.ecoluxlifestyle.co/5-inexpensive-ideas-to-make-your-home-more-eco-friendly/" className="article-link">
                 <b>5 Inexpensive Ideas To Make Your Home More Eco-Friendly</b>
                 <div className="article-4-desc">
                   Many assume that being more environmentally conscious means
@@ -132,6 +146,7 @@ export function Homepage() {
                   into a sustainable and environmentally responsible living
                   space.
                 </div>
+                 </a>
               </div>
               <div className="article-time">
                 <img src="/images/clock.png" />
@@ -142,7 +157,7 @@ export function Homepage() {
         </div>
 
         <section className="click-me">
-          <a href="#" className="cta-button-2">
+          <a href="https://www.ecoluxlifestyle.co/5-inexpensive-ideas-to-make-your-home-more-eco-friendly/" className="cta-button-2">
             CLICK ME
           </a>
         </section>
