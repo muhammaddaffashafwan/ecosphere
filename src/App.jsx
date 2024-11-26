@@ -11,7 +11,7 @@ import Property from "./page/property/Property";
 import ProductDetail from './page/ProductDetail/ProductDetail';
 import { Forum1 } from './page/forum1/forum1';
 import { Forum2 } from './page/forum2/forum2';
-import { Profile } from './page/profile/profile';
+import Profile from "./page/profile/profile";
 import { ForgotPassword } from './page/forgotPassword/forgotpassword';
 import { Signup } from './page/signup/signup';
 import ForumPost from './components/ForumPost/ForumPost';
@@ -52,6 +52,7 @@ function AppContent() {
         <Route path="signup" element={<Signup />} />
         <Route path="forumpost" element={<ForumPost />} />
         <Route path="modal" element={<Modal />} />
+        <Route path="profile" element={<Profile />} />
       </Routes>
 
       {/* Footer hanya ditampilkan jika bukan halaman login */}
