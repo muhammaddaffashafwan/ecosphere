@@ -66,7 +66,7 @@ const Profile = () => {
         {/* Edit Profile Button */}
         <button
           onClick={handleEditClick}
-          className="absolute top-[410px] right-[55px] px-[40px] py-2 rounded-full shadow-md bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:border-[#5f7f33] active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all"
+          className="absolute top-[410px] right-[55px] px-[40px] py-2 rounded-full shadow-md bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all"
         >
           Edit Profile
         </button>
@@ -123,7 +123,7 @@ const Profile = () => {
                 <button
                   type="button"
                   onClick={handleSaveProfile}
-                  className="px-4 py-2 bg-[#739646] text-white rounded-full hover:bg-[#6d9b5d]"
+                  className="px-4 py-2 rounded-full bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all"
                 >
                   Save
                 </button>

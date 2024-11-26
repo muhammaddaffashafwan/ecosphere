@@ -12,7 +12,7 @@ export default function Property() {
   // useInitializeCarousel();
   useEffect(() => {
   $('#partnersCarousel').carousel({
-    interval: 3000, // Carousel interval in milliseconds
+    interval: 1000, // Carousel interval in milliseconds
     ride: 'carousel', // Automatically start cycling
   });
 }, []);
