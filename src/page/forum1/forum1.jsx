@@ -92,7 +92,7 @@ export function Forum1() {
       <main className="flex-grow p-5 flex">
         {/* Left Content */}
         <div className="flex-1">
-          <h1 className="font text-5xl font-bold mb-5 mt-[100px]">SHARING & DISCUSSIONS</h1>
+          <h1 className="text-left font text-5xl font-bold mb-5 mt-[100px]">SHARING & DISCUSSIONS</h1>
           <div className="flex flex-col">
             {DataPost.map((post) => (
               <ForumPost key={post.id} post={post} />
@@ -101,7 +101,7 @@ export function Forum1() {
         </div>
 
         {/* Right Content */}
-        <div className="w-1/3 ml-5 pt-[180px]">
+        <div className="w-1/3 ml-5 pt-[195px]">
           {/* Input Section */}
           <div
             className="flex items-center bg-softCream p-3 rounded-lg mb-5 cursor-pointer border border-black shadow-md"

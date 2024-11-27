@@ -149,8 +149,8 @@ export default function Property() {
   <p className="mt-2 md:mt-4 mb-2 md:mb-4 text-center text-sm md:text-base">
     We&apos;re all about smart innovation for a greener life
   </p>
-  <h3 className="lg:ml-[80px] px-4 md:px-16 lg:px-24 font-medium text-black">Filter</h3>
-  <div className="lg:ml-[80px] px-4 md:px-16 lg:px-24 flex gap-2 flex-wrap">
+  <h3 className="lg:ml-[100px] px-4 md:px-16 lg:px-24 font-medium text-black">Filter</h3>
+  <div className="lg:ml-[100px] px-4 md:px-16 lg:px-24 flex gap-2 flex-wrap">
     <RadioButton options={radioButtonOpts.current} defaultValue={"all"} onChange={handleCategoryChange} />
   </div>
 </div>
