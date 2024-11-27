@@ -1,14 +1,17 @@
 import express from "express";
-import { getUsers } from "../controllers/Users.js";
+import { getUsers, authSignup, authLogin } from "../controllers/Users.js";
+import { authMiddleware } from "../middleware/authMiddleware.js";
 
-console.log("getUsers imported successfully:", getUsers);
 const router = express.Router();
 
 // tes web uda jalan
-router.get('/', (req, res) => {
-  res.json({status: "success"});
+router.get("/", (req, res) => {
+	res.json({ status: "success" });
 });
 
-router.get('/users', getUsers);
+router.post("/signup", authSignup);
+router.post("/login", authLogin);
+
+router.get("/users", authMiddleware, getUsers);
 
 export default router;
