@@ -3,8 +3,6 @@ import "./inspiration.css";
 export function Inspiration() {
   return (
     <div className='body-inspiration1'>
-      <img className='vector-icon' alt='' src='/images/vector.png' />
-
       <div className='inspiration-guide-panduan-inner'></div>
 
       <div className='eco-house-guide-cover'>
@@ -13,88 +11,97 @@ export function Inspiration() {
       </div>
 
       <div className='eco-frame'>
-        <div className='eco-inner-frame'></div>
-      </div>
-      <div className='eco-desc'>
         An environmentally friendly house (eco house) is a house designed to minimize environmental
         impact, reduce the use of natural resources and carbon emissions. By utilizing sustainable
         technology and materials, this house creates a healthy living space and maximizes energy and
         water efficiency.
       </div>
 
-      <div className='benefits-title'>BENEFITS IF YOU APPLY IT</div>
-      <div className='card-bif-1'>
-        <img className='card-bif-1-child' alt='' src='/images/cardbif1.png' />
-        <div className='card-bif-1-item'>
-          <div className='overlay'>
-            <div className='text-bif'>
-              ENERGY
-              <br />
-              AND
-              <br />
-              COST SAVING
+      {/* <div className='eco-desc'>
+        An environmentally friendly house (eco house) is a house designed to minimize environmental
+        impact, reduce the use of natural resources and carbon emissions. By utilizing sustainable
+        technology and materials, this house creates a healthy living space and maximizes energy and
+        water efficiency.
+      </div> */}
+
+      <div className='benefits-wrapper'>
+        <div className='benefits-title'>BENEFITS IF YOU APPLY IT</div>
+
+        <div className='card-wrapper'>
+          <div className='card-bif-1'>
+            <img className='card-bif-1-child' alt='' src='/images/cardbif1.png' />
+            <div className='card-bif-1-item'>
+              <div className='overlay'>
+                <div className='text-bif'>
+                  ENERGY
+                  <br />
+                  AND
+                  <br />
+                  COST SAVING
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className='card-bif-2'>
-        <img className='card-bif-1-child' alt='' src='/images/cardbif2.png' />
-        <div className='card-bif-1-item'>
-          <div className='overlay'>
-            <div className='text-bif'>
-              OCCUPANT
-              <br />
-              HELP
+          <div className='card-bif-2'>
+            <img className='card-bif-1-child' alt='' src='/images/cardbif2.png' />
+            <div className='card-bif-1-item'>
+              <div className='overlay'>
+                <div className='text-bif'>
+                  OCCUPANT
+                  <br />
+                  HELP
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className='card-bif-3'>
-        <img className='card-bif-1-child' alt='' src='/images/cardbif3.png' />
-        <div className='card-bif-1-item'>
-          <div className='overlay'>
-            <div className='text-bif'>MINIMAL ENVIRONTMENTAL IMPACT</div>
-          </div>
-        </div>
-      </div>
-
-      <div className='card-bif-4'>
-        <img className='card-bif-1-child' alt='' src='/images/cardbif4.png' />
-        <div className='card-bif-1-item'>
-          <div className='overlay'>
-            <div className='text-bif'>
-              HIGHER
-              <br />
-              PROPERTY
-              <br />
-              VALUES
+          <div className='card-bif-3'>
+            <img className='card-bif-1-child' alt='' src='/images/cardbif3.png' />
+            <div className='card-bif-1-item'>
+              <div className='overlay'>
+                <div className='text-bif'>MINIMAL ENVIRONMENTAL IMPACT</div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className='card-bif-5'>
-        <img className='card-bif-1-child' alt='' src='/images/cardbif5.png' />
-        <div className='card-bif-1-item'>
-          <div className='overlay'>
-            <div className='text-bif'>
-              SUPPORT LOCAL
-              <br />
-              COMMUNITIES
-              <br />
-              AND ECONOMIES
+          <div className='card-bif-4'>
+            <img className='card-bif-1-child' alt='' src='/images/cardbif4.png' />
+            <div className='card-bif-1-item'>
+              <div className='overlay'>
+                <div className='text-bif'>
+                  HIGHER
+                  <br />
+                  PROPERTY
+                  <br />
+                  VALUES
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className='card-bif-6'>
-        <img className='card-bif-1-child' alt='' src='/images/cardbif6.png' />
-        <div className='card-bif-1-item'>
-          <div className='overlay'>
-            <div className='text-bif'>SUSTAINABLE MATERIALS</div>
+          <div className='card-bif-5'>
+            <img className='card-bif-1-child' alt='' src='/images/cardbif5.png' />
+            <div className='card-bif-1-item'>
+              <div className='overlay'>
+                <div className='text-bif'>
+                  SUPPORT LOCAL
+                  <br />
+                  COMMUNITIES
+                  <br />
+                  AND ECONOMIES
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className='card-bif-6'>
+            <img className='card-bif-1-child' alt='' src='/images/cardbif6.png' />
+            <div className='card-bif-1-item'>
+              <div className='overlay'>
+                <div className='text-bif'>SUSTAINABLE MATERIALS</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
