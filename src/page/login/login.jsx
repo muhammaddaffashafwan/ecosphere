@@ -12,7 +12,7 @@ export function Login() {
                     <form>
                         <div className={styles['form-group']}>
                             <label htmlFor="username">Username</label>
-                            <input type="text" id="username" placeholder="Enter Your Email" />
+                            <input type="text" id="username" placeholder="Enter Your Username" />
                         </div>
                         <div className={styles['form-group']}>
                             <label htmlFor="password">Password</label>

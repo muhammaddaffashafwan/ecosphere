@@ -15,9 +15,13 @@ export function Signup () {
       <div className="login-section-3">
         <h2>SIGN UP</h2>
         <form>
+        <div className="form-group-1">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Enter Your Email" />
+          </div>
           <div className="form-group-1">
             <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Enter Your Email" />
+            <input type="text" id="username" placeholder="Enter Your Username" />
           </div>
           <div className="form-group-1">
             <label for="password">Password</label>
