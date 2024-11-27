@@ -144,19 +144,22 @@ export default function Property() {
         </div>
       </div>
 
-      <div className="px-24 pt-[900px] pb-[4px] gap-4 mt-4 flex-wrap">
-        <h1 className="text-center text-[30px] font-bold">PROPERTY RECOMMENDATION</h1>
-        <p className="mt-4 mb-4 text-center">We&apos;re all about smart innovation for a greener life</p>
-        <h3 className="font-medium text-black">Filter</h3>
-        <div className="flex gap-2 flex-wrap">
-        <RadioButton options={radioButtonOpts.current} defaultValue={"all"} onChange={handleCategoryChange} />
-        </div>
-      </div>
-      <section className="mb-[125px] container px-24 py-4">
-        <main className="grid grid-cols-4 gap-4">
-          <CardList products={products} />
-        </main>
-      </section>
+      <div className="px-4 md:px-16 lg:px-24 pt-[900px] pb-[4px] gap-4 mt-4 flex-wrap">
+  <h1 className="text-center text-[24px] md:text-[30px] font-bold">PROPERTY RECOMMENDATION</h1>
+  <p className="mt-2 md:mt-4 mb-2 md:mb-4 text-center text-sm md:text-base">
+    We&apos;re all about smart innovation for a greener life
+  </p>
+  <h3 className="lg:ml-[80px] px-4 md:px-16 lg:px-24 font-medium text-black">Filter</h3>
+  <div className="lg:ml-[80px] px-4 md:px-16 lg:px-24 flex gap-2 flex-wrap">
+    <RadioButton options={radioButtonOpts.current} defaultValue={"all"} onChange={handleCategoryChange} />
+  </div>
+</div>
+<section className="mb-[125px] container px-4 md:px-16 lg:px-24 py-4">
+  <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <CardList products={products} />
+  </main>
+</section>
+
     </div>
   );
 }
