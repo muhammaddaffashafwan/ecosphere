@@ -5,6 +5,9 @@ import "./navbar.css";
 export function Navbar() {
   // State untuk mengontrol dropdown menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  // State untuk mengecek apakah user sudah login
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   // Fungsi untuk toggle menu dropdown
   const toggleMenu = () => {
@@ -30,12 +33,24 @@ export function Navbar() {
               <Link to="/article1" className="text-lg text-gray-700 hover:text-[#5c7838]">
                 ARTICLE
               </Link>
-              <Link to="/forum1" className="text-lg text-gray-700 hover:text-[#5c7838]">
-                FORUM
-              </Link>
-              <Link to="/login" className="px-4 py-2 bg-[#5c7838] text-white rounded-full">
-                LOG IN
-              </Link>
+
+              {/* Conditional rendering for 'Forum' and 'Login/Profile' */}
+              {isLoggedIn ? (
+                <Link to="/forum1" className="text-lg text-gray-700 hover:text-[#5c7838]">
+                  FORUM
+                </Link>
+              ) : null}
+
+              {/* Profile or Login button */}
+              {isLoggedIn ? (
+                <Link to="/profile" className="px-4 py-2  text-white rounded-full">
+                  <img src="/images/profil.jpg" alt="" />
+                </Link>
+              ) : (
+                <Link to="/login" className="px-4 py-2 bg-[#5c7838] text-white rounded-full">
+                  LOG IN
+                </Link>
+              )}
             </div>
 
             {/* Mobile Menu */}
@@ -68,20 +83,35 @@ export function Navbar() {
                   >
                     ARTICLE
                   </Link>
-                  <Link
-                    to="/forum1"
-                    className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    FORUM
-                  </Link>
-                  <Link
-                    to="/login"
-                    className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    LOG IN
-                  </Link>
+
+                  {/* Conditional rendering for 'Forum' and 'Login/Profile' */}
+                  {isLoggedIn ? (
+                    <Link
+                      to="/forum1"
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      FORUM
+                    </Link>
+                  ) : null}
+
+                  {isLoggedIn ? (
+                    <Link
+                      to="/profile"
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      PROFILE
+                    </Link>
+                  ) : (
+                    <Link
+                      to="/login"
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      LOG IN
+                    </Link>
+                  )}
                 </div>
               )}
             </div>
