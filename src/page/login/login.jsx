@@ -23,7 +23,7 @@ export function Login() {
 			.then((response) => {
 				localStorage.setItem("token", response.data.token);
 
-				window.location.href = "/homepage";
+				window.location.href = "/";
 			})
 			.catch((error) => {
 				alert(error.response.data.error);
