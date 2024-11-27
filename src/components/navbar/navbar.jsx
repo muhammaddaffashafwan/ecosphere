@@ -1,17 +1,31 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { DataPost } from "../ForumPost/DataPost";
 import "./navbar.css";
 
 export function Navbar() {
-  // State untuk mengontrol dropdown menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
-  // State untuk mengecek apakah user sudah login
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
-  // Fungsi untuk toggle menu dropdown
+  // Misalkan id pengguna yang login adalah 1
+  const loggedInUserId = 2;
+  const loggedInUser = DataPost.find((user) => user.id === loggedInUserId);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setIsDropdownOpen(false);
+    navigate("/");
   };
 
   return (
@@ -34,18 +48,43 @@ export function Navbar() {
                 ARTICLE
               </Link>
 
-              {/* Conditional rendering for 'Forum' and 'Login/Profile' */}
-              {isLoggedIn ? (
+              {isLoggedIn && (
                 <Link to="/forum1" className="text-lg text-gray-700 hover:text-[#5c7838]">
                   FORUM
                 </Link>
-              ) : null}
+              )}
 
-              {/* Profile or Login button */}
               {isLoggedIn ? (
-                <Link to="/profile" className="px-4 py-2  text-white rounded-full">
-                  <img src="/images/profil.jpg" alt="" />
-                </Link>
+                <div className="relative">
+                  <button
+                    onClick={toggleDropdown}
+                    className="flex items-center focus:outline-none"
+                  >
+                    <img
+                      src={loggedInUser?.userAvatar || "/images/default-profile.png"}
+                      alt="Profile"
+                      className="w-10 h-10 rounded-full"
+                    />
+                  </button>
+                  {isDropdownOpen && (
+                    <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg w-48">
+                      <Link
+                        to="/profile"
+                        className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                        onClick={() => setIsDropdownOpen(false)}
+                      >
+                        PROFILE
+                      </Link>
+                      <Link
+                        to="/"
+                        className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                        onClick={handleLogout}
+                      >
+                        LOG OUT
+                      </Link>
+                    </div>
+                  )}
+                </div>
               ) : (
                 <Link to="/login" className="px-4 py-2 bg-[#5c7838] text-white rounded-full">
                   LOG IN
@@ -59,13 +98,12 @@ export function Navbar() {
                 MORE
               </button>
 
-              {/* Dropdown Menu */}
               {isMenuOpen && (
                 <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg w-48">
                   <Link
                     to="/inspiration"
                     className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
-                    onClick={() => setIsMenuOpen(false)} // Menutup menu setelah link diklik
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     INSPIRATION
                   </Link>
@@ -84,8 +122,7 @@ export function Navbar() {
                     ARTICLE
                   </Link>
 
-                  {/* Conditional rendering for 'Forum' and 'Login/Profile' */}
-                  {isLoggedIn ? (
+                  {isLoggedIn && (
                     <Link
                       to="/forum1"
                       className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
@@ -93,16 +130,25 @@ export function Navbar() {
                     >
                       FORUM
                     </Link>
-                  ) : null}
+                  )}
 
                   {isLoggedIn ? (
-                    <Link
-                      to="/profile"
-                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      PROFILE
-                    </Link>
+                    <>
+                      <Link
+                        to="/profile"
+                        className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        PROFILE
+                      </Link>
+                      <Link
+                        to="/"
+                        className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                        onClick={handleLogout}
+                      >
+                        LOG OUT
+                      </Link>
+                    </>
                   ) : (
                     <Link
                       to="/login"
