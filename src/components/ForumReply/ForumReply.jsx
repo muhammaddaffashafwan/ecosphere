@@ -24,8 +24,8 @@ function ForumReply({ comments, setComments }) {
               ...comment.replies,
               {
                 id: Date.now(), // ID unik untuk balasan baru
-                userName: "Current User", // Nama pengguna saat ini
-                avatar: "path/to/your/avatar.png", // Avatar untuk balasan
+                userName: "Muhammad Sumbul", // Nama pengguna saat ini
+                avatar: "/images/forum1/muhammad sumbul.png", // Avatar untuk balasan
                 comment: replyText,
                 date: "Just now", // Waktu balasan
               },
@@ -109,7 +109,7 @@ function ForumReply({ comments, setComments }) {
                 <div key={reply.id} className='border-t pt-2 flex items-start'>
                   <img
                     className='w-8 h-8 rounded-full mr-3'
-                    src={reply.avatar} // Avatar balasan
+                    src={reply.avatar || "/images/forum1/muhammad sumbul.png"} // Avatar balasan
                     alt={reply.userName}
                   />
                   <div>
