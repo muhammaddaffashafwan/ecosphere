@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { DataPost } from "../ForumPost/DataPost";
 import "./navbar.css";
@@ -6,11 +6,18 @@ import "./navbar.css";
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Misalkan id pengguna yang login adalah 1
   const loggedInUserId = 2;
   const loggedInUser = DataPost.find((user) => user.id === loggedInUserId);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsLoggedIn(!!token); // Set login berdasarkan token
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -20,136 +27,140 @@ export function Navbar() {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const navigate = useNavigate();
-
   const handleLogout = () => {
+    localStorage.removeItem("token");
     setIsLoggedIn(false);
     setIsDropdownOpen(false);
     navigate("/");
   };
 
   return (
-    <>
-      <header className="header">
-        <div className="logo">
-          <Link to="/"> <img src="/images/logo.jpg" alt="Logo" className="w-60" /> </Link>
-        </div>
-        <nav className="nav">
-          <div className="container mx-auto flex justify-between items-center px-6 py-4">
-            {/* Desktop Menu */}
-            <div className="hidden md:flex gap-[70px] items-center justify-center">
-              <Link to="/inspiration" className="text-lg text-gray-700 hover:text-[#5c7838]">
-                INSPIRATION
-              </Link>
-              <Link to="/property" className="text-lg text-gray-700 hover:text-[#5c7838]">
-                PROPERTY
-              </Link>
-              <Link to="/article1" className="text-lg text-gray-700 hover:text-[#5c7838]">
-                ARTICLE
-              </Link>
+    <header className="header">
+      <div className="logo">
+        <Link to="/">
+          <img src="/images/logo.jpg" alt="Logo" className="w-60" />
+        </Link>
+      </div>
+      <nav className="nav">
+        <div className="container mx-auto flex justify-between items-center px-6 py-4">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex gap-[70px] items-center justify-center">
+            <Link to="/inspiration" className="text-lg text-gray-700 hover:text-[#5c7838]">
+              INSPIRATION
+            </Link>
+            <Link to="/property" className="text-lg text-gray-700 hover:text-[#5c7838]">
+              PROPERTY
+            </Link>
+            <Link to="/article1" className="text-lg text-gray-700 hover:text-[#5c7838]">
+              ARTICLE
+            </Link>
 
-              {isLoggedIn && (
-                <Link to="/forum1" className="text-lg text-gray-700 hover:text-[#5c7838]">
-                  FORUM
-                </Link>
-              )}
+            {isLoggedIn && (
+              <Link to="/forum1" className="text-lg text-gray-700 hover:text-[#5c7838]">
+                FORUM
+              </Link>
+            )}
 
-              {isLoggedIn ? (
-                <div className="relative">
-                  <button
-                    onClick={toggleDropdown}
-                    className="flex items-center focus:outline-none"
-                  >
-                    <img
-                      src={loggedInUser?.userAvatar || "/images/default-profile.png"}
-                      alt="Profile"
-                      className="w-10 h-10 rounded-full"
-                    />
-                  </button>
-                  {isDropdownOpen && (
-                    <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg w-48">
-                      <Link
-                        to="/profile"
-                        className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
-                        onClick={() => setIsDropdownOpen(false)}
-                      >
-                        PROFILE
-                      </Link>
-                      <Link
-                        to="/"
-                        className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
-                        onClick={handleLogout}
-                      >
-                        LOG OUT
-                      </Link>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <Link to="/login" className="px-4 py-2 bg-[#5c7838] text-white rounded-full">
+            {isLoggedIn ? (
+              <div className="relative">
+                <button
+                  onClick={toggleDropdown}
+                  className="flex items-center focus:outline-none"
+                >
+                  <img
+                    src={loggedInUser?.userAvatar || "/images/default-profile.png"}
+                    alt="Profile"
+                    className="w-10 h-10 rounded-full"
+                  />
+                </button>
+                {isDropdownOpen && (
+                  <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg w-48">
+                    <Link
+                      to="/profile"
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      PROFILE
+                    </Link>
+                    <button
+                      onClick={handleLogout}
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2] w-full text-left"
+                    >
+                      LOG OUT
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <>
+                <Link to="/login" className="mr-[-60px] px-4 py-2 bg-[#5c7838] text-white rounded-full">
                   LOG IN
                 </Link>
-              )}
-            </div>
+                <Link to="/signup" className="px-4 py-2 bg-[#c9dbb2] text-gray-700 rounded-full">
+                  SIGN UP
+                </Link>
+              </>
+            )}
+          </div>
 
-            {/* Mobile Menu */}
-            <div className="md:hidden">
-              <button onClick={toggleMenu} className="text-[#5c7838]">
-                MORE
-              </button>
+          {/* Mobile Menu */}
+          <div className="md:hidden">
+            <button onClick={toggleMenu} className="text-[#5c7838]">
+              MORE
+            </button>
 
-              {isMenuOpen && (
-                <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg w-48">
+            {isMenuOpen && (
+              <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg w-48">
+                <Link
+                  to="/inspiration"
+                  className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  INSPIRATION
+                </Link>
+                <Link
+                  to="/property"
+                  className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  PROPERTY
+                </Link>
+                <Link
+                  to="/article1"
+                  className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  ARTICLE
+                </Link>
+
+                {isLoggedIn && (
                   <Link
-                    to="/inspiration"
+                    to="/forum1"
                     className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    INSPIRATION
+                    FORUM
                   </Link>
-                  <Link
-                    to="/property"
-                    className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    PROPERTY
-                  </Link>
-                  <Link
-                    to="/article1"
-                    className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    ARTICLE
-                  </Link>
+                )}
 
-                  {isLoggedIn && (
+                {isLoggedIn ? (
+                  <>
                     <Link
-                      to="/forum1"
+                      to="/profile"
                       className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      FORUM
+                      PROFILE
                     </Link>
-                  )}
-
-                  {isLoggedIn ? (
-                    <>
-                      <Link
-                        to="/profile"
-                        className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        PROFILE
-                      </Link>
-                      <Link
-                        to="/"
-                        className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
-                        onClick={handleLogout}
-                      >
-                        LOG OUT
-                      </Link>
-                    </>
-                  ) : (
+                    <button
+                      onClick={handleLogout}
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2] w-full text-left"
+                    >
+                      LOG OUT
+                    </button>
+                  </>
+                ) : (
+                  <>
                     <Link
                       to="/login"
                       className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
@@ -157,13 +168,20 @@ export function Navbar() {
                     >
                       LOG IN
                     </Link>
-                  )}
-                </div>
-              )}
-            </div>
+                    <Link
+                      to="/signup"
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      SIGN UP
+                    </Link>
+                  </>
+                )}
+              </div>
+            )}
           </div>
-        </nav>
-      </header>
-    </>
+        </div>
+      </nav>
+    </header>
   );
 }
