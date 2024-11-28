@@ -1,4 +1,5 @@
 import "./signup.css";
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 export function Signup() {
@@ -16,13 +17,33 @@ export function Signup() {
 		});
 	};
 
-	// useEffect(() => {
-	// 	if (password !== confirmPassword) {
-	// 		console.log("Passwords do not match!");
-	// 	} else {
-	// 		console.log("Passwords match!");
-	// 	}
-	// }, [password, confirmPassword]);
+	const handleSubmit = (e) => {
+		e.preventDefault();
+
+		if (signupData.password !== signupData.confirmPassword) {
+			alert("Passwords do not match!");
+			return;
+		}
+
+		axios
+			.post("http://localhost:5000/signup", signupData)
+			.then((response) => {
+				localStorage.setItem("token", response.data.token);
+        
+				window.location.href = "/login";
+			})
+			.catch((error) => {
+				alert(error.response?.data?.error || "An error occurred");
+			});
+	};
+
+	useEffect(() => {
+		if (signupData.password !== signupData.confirmPassword) {
+			console.log("Passwords do not match!");
+		} else {
+			console.log("Passwords match!");
+		}
+	}, [signupData.password, signupData.confirmPassword]);
 
 	return (
 		<>
@@ -34,10 +55,10 @@ export function Signup() {
 
 					<div className="login-section-3">
 						<h2>SIGN UP</h2>
-						<form>
+						<form onSubmit={handleSubmit}>
 							<div className="form-group-1">
 								<label htmlFor="email">Email</label>
-								<input onChange={handleChange} type="text" id="email" placeholder="Enter Your Email" />
+								<input onChange={handleChange} type="email" id="email" placeholder="Enter Your Email" />
 							</div>
 							<div className="form-group-1">
 								<label htmlFor="username">Username</label>
@@ -45,11 +66,11 @@ export function Signup() {
 							</div>
 							<div className="form-group-1">
 								<label htmlFor="password">Password</label>
-								<input onChange={handleChange} type="text" id="password" placeholder="Enter Your Password" />
+								<input onChange={handleChange} type="password" id="password" placeholder="Enter Your Password" />
 							</div>
 							<div className="form-group-1">
-								<label htmlFor="password">Confirm Password</label>
-								<input onChange={handleChange} type="text" id="confirm-password" placeholder="Confirm Your Password" />
+								<label htmlFor="confirmPassword">Confirm Password</label>
+								<input onChange={handleChange} type="password" id="confirmPassword" placeholder="Confirm Your Password" />
 							</div>
 							<button type="submit" className="login-button-main-up">
 								SIGN UP

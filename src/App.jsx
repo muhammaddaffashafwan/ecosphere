@@ -37,7 +37,7 @@ function AppContent() {
       <Navbar />
 
       <Routes>
-        <Route path="/homepage" element={<Homepage />} />
+        <Route path="/" element={<Homepage />} />
         <Route path="login" element={<Login />} />
         <Route path="inspiration" element={<Inspiration />} />
         <Route path="inspiration2" element={<Inspiration2 />} />
