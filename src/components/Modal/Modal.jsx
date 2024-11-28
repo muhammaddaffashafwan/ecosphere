@@ -19,7 +19,7 @@ const Modal = ({ onClose }) => {
             src='/images/forum1/muhammad sumbul.png'
             alt='User Avatar'
           />
-          <span className='font-semibold text-lg'>User Name</span>
+          <span className='font-semibold text-lg'>Muhammad Sumbul</span>
         </div>
 
         {/* Comment Section */}
