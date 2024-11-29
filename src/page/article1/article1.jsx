@@ -14,7 +14,7 @@ export function Article1() {
 			<a href="#news-img" className="cta-button">More Information</a>
 			<img className="img-article1" alt="" src="/images/imgarticle1.jpg" />
 			<img className="img-article2" alt="" src="/images/imgarticle2.jpg" />
-			</div>
+			</div> 
 			</section>
 
 			<section>
@@ -113,6 +113,7 @@ export function Article1() {
 			maxLength={150}/>
 			</div>
 			</section>
+			
 			<div className="more-articles">More Articles</div>
 			<img className="img-icon" alt="" src="/images/imgarticle7.jpg" id="imgImage" />
 			<div className="body" id="bodyContainer">

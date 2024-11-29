@@ -69,7 +69,100 @@
   object-fit: cover;
 }
 
-/* All category */
+@media (max-width: 1200px) {
+  .in-depth-article {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: 0em;
+  line-height: 60px;
+  word-spacing: normal;
+  text-align: left;
+}
+  .explore {
+    width: 100%;
+    font-size: 22px;
+  }
+  .txt {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    width: 80%;
+    font-size: 50px;
+    gap: 30px;
+  }
+  .img-article1 {
+    position: absolute;
+    top: 10px;
+    left: 600px;
+    width: 160px;
+    height: 400px;
+  }
+  .img-article2 {
+    position: absolute;
+    top: 70px;
+    left: 400px;
+    width: 160px;
+    height: 400px;
+  }
+}
+
+/* Responsif untuk layar mobile */
+@media (max-width: 768px) {
+  .in-depth-article {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: 0em;
+  line-height: 25px;
+  word-spacing: normal;
+  text-align: left;
+  text-wrap: wrap;
+  display: inline;
+  font-size: 35px;;
+}
+  .explore {
+    width: 100%;
+    font-size: 10px;
+    text-wrap: wrap;
+     display: block;
+     flex-wrap: nowrap;
+  }
+  .txt {
+    position: relative;
+    top: 100px;
+    left: 10px;
+    width: 100%;
+    font-size: 36px;
+    line-height: normal;
+    gap: 10px;
+    text-wrap: wrap;
+    
+  }
+  .img-article1 {
+    position: absolute;
+    top: 10px;
+    left: 350px;
+    width: 100px;
+    height: 200px;
+  }
+  .img-article2 {
+    position: absolute;
+    top: 70px;
+    left: 250px;
+    width: 100px;
+    height: 200px;
+  }
+  .cta-button{
+    width: 40%;
+    height: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    display: inline-block;
+  }
+}
+
+/* All categories */
 .article-item {
   position: absolute;
   top: 970px;
@@ -81,6 +174,7 @@
   object-fit: cover;
   cursor: pointer;
 }
+
 .article-categories-parent {
   position: absolute;
   top: 100px;
@@ -91,40 +185,33 @@
   font-size: 16px;
   color: #000;
 }
-.article-Allcategories {
+
+.article-Allcategories, .article-EcoEssentials, .article-GreenLiving, .article-EcoTech {
   position: absolute;
   top: 0px;
-  left: 0px;
   width: 400px;
   height: 24px;
 }
+
 .article-EcoEssentials {
-  position: absolute;
-  top: 0px;
   left: 380px;
-  width: 400px;
-  height: 24px;
 }
+
 .article-GreenLiving {
-  position: absolute;
-  top: 0px;
   left: 757px;
-  width: 400px;
-  height: 24px;
 }
+
 .article-EcoTech {
-  position: absolute;
-  top: 0px;
   left: 1116px;
-  width: 400px;
-  height: 24px;
 }
+
 .eco-tech1 {
   position: absolute;
   top: 800px;
   left: 250px;
   text-transform: uppercase;
 }
+
 .news {
   position: absolute;
   top: 1000px;
@@ -138,7 +225,6 @@
   justify-content: flex-end;
   padding: 30px;
   box-sizing: border-box;
-  /* background-image: url('./asset/imgarticle3.jpg'); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -147,11 +233,13 @@
   color: #fff;
   font-family: 'Optician Sans';
 }
+
 .img-article3 {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
+
 .calendar {
   display: flex;
   flex-direction: row;
@@ -159,6 +247,7 @@
   justify-content: flex-start;
   gap: 15px;
 }
+
 .icons-calendar {
   width: 20px;
   position: relative;
@@ -166,10 +255,12 @@
   overflow: hidden;
   flex-shrink: 0;
 }
-.advices {
+
+.advices, .category, .danastra {
   position: relative;
   line-height: 18px;
 }
+
 .category {
   display: none;
   flex-direction: row;
@@ -179,11 +270,12 @@
   font-size: 12px;
   font-family: Lato;
 }
+
 .danastra {
-  position: relative;
-  line-height: 140%;
   font-size: 12px;
+  line-height: 140%;
 }
+
 .bullets {
   width: 420px;
   display: flex;
@@ -192,6 +284,7 @@
   justify-content: flex-start;
   gap: 30px;
 }
+
 .eco-house-environmentally {
   text-align: left;
   align-self: stretch;
@@ -203,24 +296,34 @@
   text-decoration: none;
   line-height: 25px;
 }
-.headline {
+
+.headline, .have-you-ever {
   align-self: stretch;
+  position: relative;
+}
+
+.headline {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 5px;
 }
+
 .have-you-ever {
-  align-self: stretch;
-  position: relative;
   font-size: 14px;
   line-height: 140%;
   color: #333;
   text-align: justify;
 }
-.text {
+
+.text, .text1, .text2 {
   position: absolute;
+  cursor: pointer;
+  color: #656565;
+}
+
+.text {
   top: 982px;
   left: 936px;
   width: 382px;
@@ -229,9 +332,8 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 10px;
-  cursor: pointer;
-  color: #656565;
 }
+
 .article-inner {
   position: absolute;
   top: 1235px;
@@ -243,8 +345,8 @@
   object-fit: cover;
   cursor: pointer;
 }
+
 .text1 {
-  position: absolute;
   top: 1240px;
   left: 938px;
   width: 379px;
@@ -256,6 +358,7 @@
   cursor: pointer;
   color: #656565;
 }
+
 .frame-icon {
   position: absolute;
   top: 1481px;
@@ -267,8 +370,8 @@
   object-fit: cover;
   cursor: pointer;
 }
+
 .text2 {
-  position: absolute;
   top: 1490px;
   left: 936px;
   width: 381px;
@@ -280,6 +383,222 @@
   cursor: pointer;
   color: #656565;
 }
+
+/* Responsif untuk layar lebih kecil (tablet dan mobile) */
+@media (max-width: 1200px) {
+  .article-item {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 180px;
+  }
+  .article-categories-parent {
+    left: 0;
+    width: 100%;
+    font-size: 14px;
+  }
+  .article-Allcategories, .article-EcoEssentials, .article-GreenLiving, .article-EcoTech {
+    left: 0;
+    width: 33.3%;
+  }
+  .eco-tech1 {
+    left: 20px;
+    font-size: 20px;
+  }
+  .news {
+    top: 950px;
+    left: 20px;
+    width: 20%;
+    height: auto;
+    padding: 15px;
+    font-size: 20px;
+  }
+  .img-article3 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+  .calendar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .text, .text1, .text2 {
+    width: 100%;
+    left: 10px;
+  }
+
+  .article-inner {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 180px;
+  }
+
+  .frame-icon {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Responsif untuk layar mobile */
+@media (max-width: 768px) {
+  .article-item {
+    width: 80px;
+    height: 80px;
+    left: 240px;
+    display : block;
+    top : 865px;
+  }
+  .article-inner {
+width: 80px;
+    height: 80px;
+    left: 240px;
+    display : block;
+    top : 944px;
+  }
+
+  .frame-icon {
+    width: 80px;
+    height: 80px;
+    left: 240px;
+    display : block;
+    top : 1024px;
+  }
+
+  .article-categories-parent {
+    font-size: 12px;
+  }
+
+  .article-Allcategories, .article-EcoEssentials, .article-EcoTech, .article-GreenLiving {  
+    width: 100%;
+    top : -80px
+  }
+.article-Allcategories{
+  left : 10px;
+}
+.article-EcoEssentials{
+left: 140px
+}
+
+.article-EcoTech{
+left : 270px;
+}
+  
+.article-GreenLiving{
+    left: 390px;
+  }
+.eco-tech1 {
+    font-size: 10px;
+  }
+
+  .news {
+    top: 850px;
+    left: 10px;
+    width: calc(100% - 20px);
+    font-size: 18px;
+  }
+
+  .img-article3 {
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+}
+
+  .text, .text1, .text2 {
+    width: 1%;
+    position: relative; /* Pastikan bukan absolute jika ingin padding bekerja */
+    left: 285px;
+    padding-top: 20px; /* Tambahkan padding */
+    display: block;
+    top : 834px;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 8px;
+    text-wrap: nowrap;
+    line-height: 0;;
+  }
+.text{
+  top: 840px;
+  line-height: 0;
+}
+
+  .eco-house-environmentally {
+  text-align: left;
+  align-self: stretch;
+  position: relative;
+  font-size: 10px;
+  letter-spacing: -0.02em;
+  font-family: 'Optician Sans';
+  color: #333;
+  text-decoration: none;
+  line-height: 14px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-grow: 1; /* Mengisi ruang kosong */
+  min-height: 100%; /* Memastikan elemen mengisi tinggi container */
+  padding: 10px; /* Tambahkan jarak dalam */
+  margin: auto; /* Sejajarkan di tengah */
+  }
+
+.calendar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.icons-calendar {
+  width: 10px;
+  position: relative;
+  height: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  top: 10px;
+}
+
+.advices, .category, .danastra {
+  position: relative;
+  line-height: 10px;
+}
+
+.category {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  font-size: 10px;
+  font-family: Lato;
+}
+
+.danastra {
+  font-size: 8px;
+  line-height: 140%;
+  left:-13px;
+  top: 11px;
+}
+
+.bullets {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+  
+}
+.text {
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+}
+
 
 /* More Article */
 .more-articles {
