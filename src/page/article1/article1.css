@@ -123,8 +123,8 @@
     width: 100%;
     font-size: 10px;
     text-wrap: wrap;
-     display: block;
-     flex-wrap: nowrap;
+    display: block;
+    flex-wrap: wrap;
   }
   .txt {
     position: relative;
@@ -159,6 +159,7 @@
     text-align: center;
     text-overflow: ellipsis;
     display: inline-block;
+    left: 50px;
   }
 }
 
@@ -450,14 +451,14 @@
     height: 80px;
     left: 240px;
     display : block;
-    top : 865px;
+    top : 545px;
   }
   .article-inner {
 width: 80px;
     height: 80px;
     left: 240px;
     display : block;
-    top : 944px;
+    top : 623px;
   }
 
   .frame-icon {
@@ -465,7 +466,7 @@ width: 80px;
     height: 80px;
     left: 240px;
     display : block;
-    top : 1024px;
+    top : 702px;
   }
 
   .article-categories-parent {
@@ -474,17 +475,17 @@ width: 80px;
 
   .article-Allcategories, .article-EcoEssentials, .article-EcoTech, .article-GreenLiving {  
     width: 100%;
-    top : -80px
+    top : -400px
   }
 .article-Allcategories{
   left : 10px;
 }
 .article-EcoEssentials{
-left: 140px
+left: 142px
 }
 
 .article-EcoTech{
-left : 270px;
+left : 280px;
 }
   
 .article-GreenLiving{
@@ -495,7 +496,7 @@ left : 270px;
   }
 
   .news {
-    top: 850px;
+    top: 530px;
     left: 10px;
     width: calc(100% - 20px);
     font-size: 18px;
@@ -505,6 +506,7 @@ left : 270px;
   width: 40%;
   height: auto;
   object-fit: cover;
+  
 }
 
   .text, .text1, .text2 {
@@ -513,7 +515,7 @@ left : 270px;
     left: 285px;
     padding-top: 20px; /* Tambahkan padding */
     display: block;
-    top : 834px;
+    top : 348px;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
@@ -522,9 +524,10 @@ left : 270px;
     line-height: 0;;
   }
 .text{
-  top: 840px;
+  top: 360px;
   line-height: 0;
 }
+
 
   .eco-house-environmentally {
   text-align: left;
@@ -602,7 +605,7 @@ left : 270px;
 
 /* More Article */
 .more-articles {
-  position: absolute;
+  position: relative;
   top: 2000px;
   left: 120px;
   font-size: 64px;
@@ -927,4 +930,281 @@ left : 270px;
 a.eco-tech1 {
   color: #000;
   text-decoration: none;
+}
+
+/* Aturan default tetap sama */
+
+/* Media Queries tablet */
+@media (max-width: 1200px) { 
+  .more-articles,
+  .img-icon,
+  .body,
+  .headline4,
+  .headline3,
+  .body1,
+  .img-icon1,
+  .img-icon2 {
+    position: static; /* Membuat elemen mengikuti alur dokumen */
+    margin-top: 10px; /* Sentris untuk elemen */
+    width: 90%; /* Sesuaikan lebar */
+    max-width: 600px; /* Batasi lebar maksimum */
+    margin-left: 30px;
+  }
+
+  .more-articles {
+    margin-top: 400px;
+    margin-left: 30px;
+    text-wrap: nowrap;
+    font-size: 40px;
+  }
+
+  .headline4,
+  .headline3,
+  .bullets3,
+  .our-age-is {
+    font-size: 14px; /* Sesuaikan ukuran font */
+    left: 10px;
+  }
+.title1 {
+  font-size: 20px;
+  left: -170px;
+  text-align: center;
+  margin-top: -15px;
+  color:#000;
+}
+
+.title2 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 250px;
+  margin-left : -45px;
+  text-decoration: none;
+  color:#000;
+  right: 15px;
+}
+
+.img-icon1{
+  margin-top:-330px;
+}
+
+.img-icon2{
+  margin-top: 350px;
+}
+
+
+  .body,
+  .body1,
+  .body2 {
+    font-size: 20px; /* Skala ukuran font */
+    line-height: 1.4; /* Atur jarak antar baris */
+  }
+
+  .img-icon,
+  .img-icon1,
+  .img-icon2 {
+    width: 80%; /* Gambar penuh */
+    height: auto; /* Menyesuaikan tinggi */
+   margin-left: 60px;
+  }
+
+  .hover-more {
+    width: auto;
+    height: auto;
+    padding: 10px 15px; /* Lebih kecil untuk perangkat kecil */
+  }
+
+
+  .calendar {
+    margin-left: 50px;
+    margin-top : -20px;
+    
+  }
+
+  .our-age-is1 {
+  align-self: stretch;
+  position: relative;
+  font-size: 12px;
+  line-height: 140%;
+  font-family: Poppins;
+  padding-left: 0px;
+  margin-bottom: 30px;
+  }
+
+  .our-age-is2 {
+    align-self: stretch;
+  position: relative;
+  font-size: 12px;
+  line-height: 140%;
+  font-family: Poppins;
+  padding-left: 0px;
+  margin-top: 30px;
+  }
+
+  .healthy-living-can-container {
+  align-self: stretch;
+  position: relative;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: justify;
+  display: inline-block;
+  height: 172px;
+  flex-shrink: 0;
+  font-family: Poppins;
+  }
+
+  .title3 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .headline4,
+  .headline3,
+  .our-age-is {
+    font-size: 12px; /* Font lebih kecil untuk layar lebih sempit */
+    margin-left: 50px;
+  }
+
+  .body,
+  .body1,
+  .body2 {
+    font-size: 20px; /* Font lebih kecil */
+  }
+
+  .brandicofacebook-parent {
+    flex-direction: column; /* Tumpukan ikon media sosial */
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .more-articles,
+  .img-icon,
+  .body,
+  .headline4,
+  .headline3,
+  .body1,
+  .img-icon1,
+  .img-icon2 {
+    position: static; /* Membuat elemen mengikuti alur dokumen */
+    margin-top: 10px; /* Sentris untuk elemen */
+    width: 90%; /* Sesuaikan lebar */
+    max-width: 600px; /* Batasi lebar maksimum */
+    margin-left: 30px;
+  }
+
+  .more-articles {
+    margin-top: 400px;
+    margin-left: 30px;
+    text-wrap: nowrap;
+    font-size: 40px;
+  }
+
+  .headline4,
+  .headline3,
+  .bullets3,
+  .our-age-is {
+    font-size: 14px; /* Sesuaikan ukuran font */
+    left: 10px;
+  }
+.title1 {
+  font-size: 20px;
+  left: -170px;
+  text-align: center;
+  margin-top: -15px;
+  color:#000;
+}
+
+.title2 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 250px;
+  margin-left : -45px;
+  text-decoration: none;
+  color:#000;
+  right: 15px;
+}
+
+.img-icon1{
+  margin-top:-330px;
+}
+
+.img-icon2{
+  margin-top: 350px;
+}
+
+
+  .body,
+  .body1,
+  .body2 {
+    font-size: 20px; /* Skala ukuran font */
+    line-height: 1.4; /* Atur jarak antar baris */
+  }
+
+  .img-icon,
+  .img-icon1,
+  .img-icon2 {
+    width: 80%; /* Gambar penuh */
+    height: auto; /* Menyesuaikan tinggi */
+   margin-left: 60px;
+  }
+
+  .hover-more {
+    width: auto;
+    height: auto;
+    padding: 10px 15px; /* Lebih kecil untuk perangkat kecil */
+  }
+
+
+  .calendar {
+    margin-left: 50px;
+    margin-top : -20px;
+    
+  }
+
+  .our-age-is1 {
+  align-self: stretch;
+  position: relative;
+  font-size: 12px;
+  line-height: 140%;
+  font-family: Poppins;
+  padding-left: 0px;
+  margin-bottom: 30px;
+  }
+
+  .our-age-is2 {
+    align-self: stretch;
+  position: relative;
+  font-size: 12px;
+  line-height: 140%;
+  font-family: Poppins;
+  padding-left: 0px;
+  margin-top: 30px;
+  }
+
+  .healthy-living-can-container {
+  align-self: stretch;
+  position: relative;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: justify;
+  display: inline-block;
+  height: 172px;
+  flex-shrink: 0;
+  font-family: Poppins;
+  }
+
+  .title3 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 15px;
+  }
 }

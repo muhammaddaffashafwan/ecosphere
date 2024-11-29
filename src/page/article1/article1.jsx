@@ -132,7 +132,7 @@ export function Article1() {
 			</div>
 			</div>
 			</div>
-			<div className="our-age-is">
+			<div className="our-age-is1">
 			<ExpandableText
 			text="Our age is unfortunately marked by worrying climate change. The ever-increasing level of pollution requires commitment from everyone to remedy the environmental damage caused in the last century.
 			Eco-greenhouses represent a step forward in a virtuous and environmentally friendly direction. Artigianfer has always chosen the path of sustainability and has invested many resources in the development of greenhouses that take advantage of renewable energy, patenting some innovative and sustainable greenhouse models.
@@ -142,7 +142,7 @@ export function Article1() {
 			<div className="body1" id="bodyContainer1">
 			<div className="headline3">
 			<div className="headline6">
-			<a className="title1" href="https://upland.psp.pertanian.go.id/public/artikel/1672411257/sistem-smart-green-house-sebagai-pendongkrak-produktivitas-tanaman" target="_blank">
+			<a className="title2" href="https://upland.psp.pertanian.go.id/public/artikel/1672411257/sistem-smart-green-house-sebagai-pendongkrak-produktivitas-tanaman" target="_blank">
 				“Smart Green House” System as a Plant Productivity Booster</a>
 			</div>
 			<div className="bullets3">
@@ -156,7 +156,7 @@ export function Article1() {
 			</div>
 			</div>
 			</div>
-			<div className="our-age-is">
+			<div className="our-age-is2">
 			<ExpandableText
 			text="Entering the era of the industrial revolution 4.0, Smart Farming is one of the solutions to increase agricultural efficiency and productivity in various countries including Indonesia.
 			One of the applications of smart farming is Smart Green House which is a
@@ -174,7 +174,7 @@ export function Article1() {
 			<div className="body2" id="bodyContainer2">
 			<div className="headline3">
 			<div className="headline6">
-			<a className="title1" href="https://myeco.id/hemat-energi-eco-green-living-konsep-tepat-membuat-rumah-modern/" target="_blank">
+			<a className="title3" href="https://myeco.id/hemat-energi-eco-green-living-konsep-tepat-membuat-rumah-modern/" target="_blank">
 				Save Energy! Eco-Green Living The Right Concept to Make a Modern Home</a>
 			</div>
 			<div className="bullets3">
