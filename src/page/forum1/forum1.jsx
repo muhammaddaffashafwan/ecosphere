@@ -154,12 +154,9 @@ export function Forum1() {
                 key={question.id}
                 className='bg-softCream p-4 rounded-lg mb-4 border border-black shadow-md'
               >
-                <h3 className='text-lg font-semibold text-gray-900 mb-2'>{question.title}</h3>
-                <p className='text-sm text-gray-600 mb-3'>
-                  {question.answers} Answers | Last answer {question.lastAnswer}
-                </p>
+                <h3 className='text-lg font-semibold text-gray-900 mb-[15px]'>{question.title}</h3>
                 <button
-                  className='bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all rounded-full px-6 py-2 text-[15px]'
+                  className='bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all rounded-full px-[17px] py-[7px] text-[15px]'
                   onClick={() => handleAnswerClick(question)}
                 >
                   ANSWER

@@ -1,6 +1,6 @@
 import "./signup.css";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Signup() {
   const [signupData, setSignupData] = useState({
@@ -8,19 +8,35 @@ export function Signup() {
     email: "",
     username: "",
     password: "",
-    confirmPassword: "",
   });
 
   const handleChange = (e) => {
-    setSignupData({
-      ...signupData,
-      [e.target.id]: e.target.value,
-    });
+    const { id, value } = e.target;
+
+    // Untuk mencegah spasi di input username
+    if (id === "username") {
+      setSignupData({
+        ...signupData,
+        [id]: value.replace(/\s/g, ""), // Hapus semua spasi
+      });
+    } else {
+      setSignupData({
+        ...signupData,
+        [id]: value,
+      });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Validasi field kosong
+    if (!signupData.name || !signupData.email || !signupData.username || !signupData.password || !signupData.confirmPassword) {
+      alert("Please fill all the fields!");
+      return;
+    }
+
+    // Cek password cocok
     if (signupData.password !== signupData.confirmPassword) {
       alert("Passwords do not match!");
       return;
@@ -29,20 +45,17 @@ export function Signup() {
     console.log("Signup Data:", signupData); // Debugging data
 
     axios
-      .post("http://localhost:5000/signup", {
-        name: signupData.name,
-        email: signupData.email,
-        username: signupData.username,
-        password: signupData.password,
-      })
-      .then((response) => {
-        localStorage.setItem("token", response.data.token);
-        window.location.href = "/login";
-      })
-      .catch((error) => {
-        console.log("Error:", error.response?.data); // Debugging respons
-        alert(error.response?.data?.error || "An error occurred");
-      });
+  .post("http://localhost:5000/signup", signupData)
+  .then((response) => {
+    localStorage.setItem("token", response.data.token);
+    // Redirect to login page after successful signup
+    window.location.href = "/login";
+  })
+  .catch((error) => {
+    // Display error message if signup fails
+    alert(error.response?.data?.error || "Signup failed, please try again");
+  });
+
   };
 
   useEffect(() => {
@@ -57,7 +70,7 @@ export function Signup() {
     <div className="body-signup">
       <div className="content-spacing"></div>
       <div className="container-signup">
-        <div className="image-section-signup"> </div>
+        <div className="image-section-signup"></div>
         <div className="login-section-3">
           <h2>SIGN UP</h2>
           <form onSubmit={handleSubmit}>
@@ -70,18 +83,22 @@ export function Signup() {
                   type="text"
                   id="name"
                   placeholder="Enter Your Name"
+                  value={signupData.name}
                 />
               </div>
               <div className="form-group-inline">
                 <label htmlFor="username">Username</label>
-                <input
-                  onChange={handleChange}
-                  type="text"
-                  id="username"
-                  placeholder="Enter Your Username"
-                />
+                  <input
+                    onChange={handleChange}
+                    type="text"
+                    id="username"
+                    placeholder="Enter Your Username"
+                    value={signupData.username}
+                  />
               </div>
             </div>
+
+            {/* Email, Password, and Confirm Password Fields */}
             <div className="form-group-1">
               <label htmlFor="email">Email</label>
               <input
@@ -89,8 +106,10 @@ export function Signup() {
                 type="email"
                 id="email"
                 placeholder="Enter Your Email"
+                value={signupData.email}
               />
             </div>
+
             <div className="form-group-1">
               <label htmlFor="password">Password</label>
               <input
@@ -98,8 +117,10 @@ export function Signup() {
                 type="password"
                 id="password"
                 placeholder="Enter Your Password"
+                value={signupData.password}
               />
             </div>
+
             <div className="form-group-1">
               <label htmlFor="confirmPassword">Confirm Password</label>
               <input
@@ -109,6 +130,7 @@ export function Signup() {
                 placeholder="Confirm Your Password"
               />
             </div>
+
             <button type="submit" className="login-button-main-up">
               SIGN UP
             </button>

@@ -1,209 +1,209 @@
 /* Reset dasar */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Latar belakang halaman */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Latar belakang halaman */
+.body-signup {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  background: url("/images/daun.jpg");
+  background-size: cover;
+  padding-inline: 2rem;
+}
+
+/* Spasi untuk mengimbangi header tetap */
+.content-spacing {
+  height: 80px;
+}
+
+/* Kontainer utama */
+.container-signup {
+  display: flex;
+  background-color: #e2efdb;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-width: 1000px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+/* Bagian gambar */
+.image-section-signup {
+  flex: 1;
+  background: url("/images/wave home.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-basis: 50%;
+}
+
+/* Bagian formulir login */
+.login-section-3 {
+  flex: 1;
+  padding: 40px 80px;
+  background-color: #e2efdb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 50%;
+}
+
+.login-section-3 h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Grup form dengan dua kolom */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.form-group-inline {
+  flex: 1 1 calc(50% - 10px);
+}
+
+.form-group-inline label,
+.form-group-1 label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group-inline input,
+.form-group-1 input {
+  width: 100%;
+  padding: 7px !important; 
+  margin-bottom: 10px; 
+  border-radius: 35px !important;
+  border: 1px solid #ccc;
+  font-size: 13px;
+}
+
+
+/* Tombol utama */
+.login-button-main-up {
+  width: 100%;
+  padding: 7px;
+  margin-top: 15px;
+  background-color: #6d9b5d;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.login-button-main-up:hover {
+  background-color: #5a824b;
+}
+
+/* Teks signup */
+.signup {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+.signup a {
+  color: #091dff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Responsif */
+@media (min-width: 425px) {
   .body-signup {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f5f5f5;
-    background: url("/images/daun.jpg");
-    background-size: cover;
-    padding-inline: 2rem;
-  }
-  
-  /* Spasi untuk mengimbangi header tetap */
-  .content-spacing {
-    height: 80px;
-  }
-  
-  /* Kontainer utama */
-  .container-signup {
-    display: flex;
-    background-color: #e2efdb;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    max-width: 1000px;
-    margin-top: 40px;
-    width: 100%;
-  }
-  
-  /* Bagian gambar */
-  .image-section-signup {
-    flex: 1;
-    background: url("/images/wave home.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-basis: 50%;
-  }
-  
-  /* Bagian formulir login */
-  .login-section-3 {
-    flex: 1;
-    padding: 40px 80px;
-    background-color: #e2efdb;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-basis: 50%;
-  }
-  
-  .login-section-3 h2 {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  /* Grup form dengan dua kolom */
-  .form-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: space-between;
-  }
-  
-  .form-group-inline {
-    flex: 1 1 calc(50% - 10px);
-  }
-  
-  .form-group-inline label,
-  .form-group-1 label {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 5px;
-    display: block;
-  }
-  
-  .form-group-inline input,
-  .form-group-1 input {
-    width: 100%;
-    padding: 7px !important; 
-    margin-bottom: 10px; 
-    border-radius: 35px !important;
-    border: 1px solid #ccc;
-    font-size: 13px;
-  }
-  
-  /* Tombol utama */
-  .login-button-main-up {
-    width: 100%;
-    padding: 7px;
-    margin-top: 15px;
-    background-color: #6d9b5d;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 35px;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
-    transition: background-color 0.3s;
-  }
-  
-  .login-button-main-up:hover {
-    background-color: #5a824b;
-  }
-  
-  /* Teks signup */
-  .signup {
-    font-size: 12px;
-    text-align: center;
-    margin-top: 20px;
-    color: #333;
-  }
-  
-  .signup a {
-    color: #091dff;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  /* Responsif */
-  @media (min-width: 425px) {
-    .body-signup {
       padding-inline: 4rem;
       padding-bottom: 3rem;
-    }
   }
-  
-  @media (min-width: 768px) {
-    .body-signup {
+}
+
+@media (min-width: 768px) {
+  .body-signup {
       padding-inline: 4rem;
-    }
   }
-  
-  @media (max-width: 900px) {
-    .container-signup {
+}
+
+@media (max-width: 900px) {
+  .container-signup {
       flex-direction: column; /* Tumpuk vertikal */
       margin-inline: 5rem;
-    }
-  
-    .image-section-signup {
+  }
+
+  .image-section-signup {
       flex-basis: 100%; /* Lebar penuh */
       min-height: 100px; /* Tinggi minimum untuk menjaga gambar terlihat */
-    }
-  
-    .login-section-3 {
+  }
+
+  .login-section-3 {
       flex-basis: 100%; /* Lebar penuh */
       padding: 30px 20px;
-    }
-  
-    .login-section-3 h2 {
-      font-size: 24px; /* Ukuran font lebih kecil untuk layar kecil */
-    }
-  
-    .form-group-inline label {
-      font-size: 13px; /* Ukuran label lebih kecil */
-    }
-  
-    .login-button-main {
-      font-size: 14px; /* Ukuran tombol lebih kecil */
-    }
-  
-    .signup {
-      font-size: 11px; /* Ukuran teks signup lebih kecil */
-    }
   }
-  
-  @media (max-width: 300px) {
-    .container-signup {
+
+  .login-section-3 h2 {
+      font-size: 24px; /* Ukuran font lebih kecil untuk layar kecil */
+  }
+
+  .form-group-inline label {
+      font-size: 13px; /* Ukuran label lebih kecil */
+  }
+
+  .login-button-main {
+      font-size: 14px; /* Ukuran tombol lebih kecil */
+  }
+
+  .signup {
+      font-size: 11px; /* Ukuran teks signup lebih kecil */
+  }
+}
+
+@media (max-width: 300px) {
+  .container-signup {
       margin-inline: 5rem;
-    }
-  
-    .login-section-3 {
+  }
+
+  .login-section-3 {
       padding: 10px; /* Padding lebih kecil */
-    }
-  
-    .login-section-3 h2 {
+  }
+
+  .login-section-3 h2 {
       font-size: 20px;
-    }
-  
-    .form-group-inline input,
-    .form-group-1 input {
+  }
+
+  .form-group-inline input,
+  .form-group-1 input {
       padding: 5px;
-    }
-  
-    .login-button-main {
+  }
+
+  .login-button-main {
       font-size: 14px;
       padding: 5px;
-    }
-  
-    .signup {
-      font-size: 10px;
-    }
   }
-  
+
+  .signup {
+      font-size: 10px;
+  }
+}

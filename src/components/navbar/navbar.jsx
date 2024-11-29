@@ -77,17 +77,18 @@ export function Navbar() {
                   <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg w-48">
                     <Link
                       to="/profile"
-                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2] rounded-tl-lg rounded-tr-lg"
                       onClick={() => setIsDropdownOpen(false)}
                     >
                       PROFILE
                     </Link>
-                    <button
+                    <Link
+                    to="/"
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2] rounded-bl-lg rounded-br-lg"
                       onClick={handleLogout}
-                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2] w-full text-left"
                     >
                       LOG OUT
-                    </button>
+                    </Link>
                   </div>
                 )}
               </div>
@@ -113,7 +114,7 @@ export function Navbar() {
               <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg w-48">
                 <Link
                   to="/inspiration"
-                  className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                  className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2] rounded-tl-lg rounded-tr-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   INSPIRATION
@@ -145,20 +146,22 @@ export function Navbar() {
 
                 {isLoggedIn ? (
                   <>
-                    <Link
-                      to="/profile"
-                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      PROFILE
-                    </Link>
-                    <button
-                      onClick={handleLogout}
-                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2] w-full text-left"
-                    >
-                      LOG OUT
-                    </button>
-                  </>
+                  <Link
+                    to="/profile"
+                    className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    PROFILE
+                  </Link>
+                  <Link
+                  to="/"
+                    className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2] rounded-bl-lg rounded-br-lg"
+                    onClick={handleLogout}
+                  >
+                    LOG OUT
+                  </Link>
+                </>
+                
                 ) : (
                   <>
                     <Link
