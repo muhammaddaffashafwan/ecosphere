@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export function Signup() {
   const [signupData, setSignupData] = useState({
+    name: "",
     email: "",
     username: "",
     password: "",
@@ -29,6 +30,7 @@ export function Signup() {
 
     axios
       .post("http://localhost:5000/signup", {
+        name: signupData.name,
         email: signupData.email,
         username: signupData.username,
         password: signupData.password,
@@ -59,6 +61,27 @@ export function Signup() {
         <div className="login-section-3">
           <h2>SIGN UP</h2>
           <form onSubmit={handleSubmit}>
+            {/* Name and Username in One Row */}
+            <div className="form-row">
+              <div className="form-group-inline">
+                <label htmlFor="name">Name</label>
+                <input
+                  onChange={handleChange}
+                  type="text"
+                  id="name"
+                  placeholder="Enter Your Name"
+                />
+              </div>
+              <div className="form-group-inline">
+                <label htmlFor="username">Username</label>
+                <input
+                  onChange={handleChange}
+                  type="text"
+                  id="username"
+                  placeholder="Enter Your Username"
+                />
+              </div>
+            </div>
             <div className="form-group-1">
               <label htmlFor="email">Email</label>
               <input
@@ -66,15 +89,6 @@ export function Signup() {
                 type="email"
                 id="email"
                 placeholder="Enter Your Email"
-              />
-            </div>
-            <div className="form-group-1">
-              <label htmlFor="username">Username</label>
-              <input
-                onChange={handleChange}
-                type="text"
-                id="username"
-                placeholder="Enter Your Username"
               />
             </div>
             <div className="form-group-1">

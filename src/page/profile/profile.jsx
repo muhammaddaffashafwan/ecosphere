@@ -10,10 +10,10 @@ const Profile = () => {
   // State untuk modal edit profil
   const [isEditOpen, setIsEditOpen] = useState(false);
 
-  // State untuk foto profil
-  const [profileImage, setProfileImage] = useState(
-    "https://via.placeholder.com/150"
-  );
+  // State untuk data profil
+  const [profileImage, setProfileImage] = useState("https://via.placeholder.com/150");
+  const [name, setName] = useState("Muhammad Sumbul");
+  const [username, setUsername] = useState("@sumbul");
 
   // State untuk file gambar baru
   const [newProfileImage, setNewProfileImage] = useState(null);
@@ -59,8 +59,8 @@ const Profile = () => {
             src={profileImage} alt="User Avatar"
           />
           <div className="ml-4 text-white">
-            <h1 className="font text-2xl font-bold font-opticians">Muhammad Sumbul</h1>
-            <p className="text-sm text-black">@sumbul</p>
+            <h1 className="font text-2xl font-bold font-opticians">{name}</h1>
+            <p className="text-sm text-black">{username}</p>
           </div>
         </div>
 
@@ -86,17 +86,21 @@ const Profile = () => {
                   type="text"
                   className="w-full border border-gray-300 rounded-lg p-2"
                   placeholder="Enter your name"
-                  defaultValue="Muhammad Sumbul"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
 
-              {/* Edit Bio */}
+              {/* Edit Username */}
               <div className="mb-4">
-                <label className="block text-sm font-medium mb-2">Bio</label>
-                <textarea
+                <label className="block text-sm font-medium mb-2">Username</label>
+                <input
+                  type="text"
                   className="w-full border border-gray-300 rounded-lg p-2"
-                  placeholder="Enter your bio"
-                ></textarea>
+                  placeholder="Enter your username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
               </div>
 
               {/* Change Profile Picture */}

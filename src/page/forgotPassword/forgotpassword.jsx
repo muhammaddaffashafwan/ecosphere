@@ -12,17 +12,18 @@ export function ForgotPassword() {
             </h2>
             <form>
                 <p>
-                    Enter your email address or username which is connected to your
-                    account for receive an email from us
+                Enter your new password and repeat it to reset your account password.
                 </p>
                 <div className="form-group">
+                <label htmlFor="new-password">New Password</label>
                     <input
                         type="password"
-                        id="new-password"
+                        id="newPassword"
                         placeholder="Enter Your New Password"
                     />
                 </div>
                 <div className="form-group">
+                <label htmlFor="repeat-newPassword">Repeat New Password</label>
                     <input
                         type="password"
                         id="repeat-password"
