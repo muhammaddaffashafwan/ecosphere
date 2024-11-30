@@ -1,873 +1,869 @@
 /* body {
     min-height: 500px;
   } */
-  
-  .yellow-and-green-modern-logo {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 284px;
-    height: 67px;
-    object-fit: cover;
-    cursor: pointer;
-  }
-  .label {
-    position: relative;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-  .buttoncontent {
-    height: 24px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .buttoncontent-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .button {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    box-shadow: 0px -1px 0.5px rgba(14, 14, 44, 0.4) inset;
-    border-radius: 50px;
-    background-color: #fff;
-    width: 127px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 24px;
-    box-sizing: border-box;
-  }
-  .button1 {
-    position: absolute;
-    top: 0px;
-    left: 208px;
-    box-shadow: 0px -1px 0.5px rgba(14, 14, 44, 0.4) inset;
-    border-radius: 50px;
-    background-color: #fff;
-    width: 127px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 24px;
-    box-sizing: border-box;
-  }
-  .button2 {
-    position: absolute;
-    top: 0px;
-    left: 396px;
-    border-radius: 50px;
-    background-color: #fff;
-    width: 113px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 24px;
-    box-sizing: border-box;
-    font-size: 16px;
-  }
-  .buttonprimary {
-    position: absolute;
-    top: 0px;
-    left: 567px;
-    border-radius: 50px;
-    background-color: #739646;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 24px;
-    text-align: left;
-    font-size: 16px;
-    color: #fff;
-  }
-  .button-parent {
-    position: absolute;
-    top: 9.5px;
-    left: 547px;
-    width: 681px;
-    height: 48px;
-  }
-  .yellow-and-green-modern-logo-parent {
-    position: absolute;
-    top: 22px;
-    left: 105px;
-    width: 1228px;
-    height: 67px;
-  }
-  .navbar {
-    position: absolute;
-    top: 0px;
-    left: calc(50% - 720px);
-    width: 1440px;
-    height: 111px;
-    text-align: center;
-    font-size: 14px;
-    color: #5c7838;
-  }
-  .yellow-and-green-modern-logo1 {
-    width: 168px;
-    position: relative;
-    height: 32px;
-    object-fit: cover;
-  }
-  .we-provide-information {
-    position: absolute;
-    width: 100%;
-    top: 0%;
-    left: 0%;
-    line-height: 140%;
-    display: inline-block;
-    opacity: 0.75;
-  }
-  .brandicofacebook-icon {
-    width: 32px;
-    position: relative;
-    height: 32px;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-  .brandicofacebook-parent {
-    position: absolute;
-    height: 25%;
-    width: 45%;
-    top: 75%;
-    right: 55%;
-    bottom: 0%;
-    left: 0%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 24px;
-  }
-  .bio {
-    width: 320px;
-    position: relative;
-    height: 128px;
-  }
-  .yellow-and-green-modern-logo-group {
-    width: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 20px;
-  }
-  .property1 {
-    width: 94px;
-    position: relative;
-    font-size: 16px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    display: inline-block;
-    color: #414958;
-  }
-  .discover {
-    align-self: stretch;
-    position: relative;
-    font-weight: 500;
-  }
-  .property {
-    width: 176px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 20px;
-  }
-  .article1 {
-    align-self: stretch;
-    position: relative;
-    font-size: 16px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #414958;
-  }
-  .eco-tech {
-    align-self: stretch;
-    position: relative;
-    text-transform: capitalize;
-    font-family: Lexend;
-  }
-  .article {
-    width: 212px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 19px;
-  }
-  .contact {
-    width: 265px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 20px;
-  }
-  .property-parent {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 30px;
-  }
-  .frame-wrapper {
-    width: 713px;
-    position: relative;
-    height: 168px;
-    text-align: left;
-    font-size: 14px;
-  }
-  .frame-parent {
-    position: absolute;
-    top: 4499px;
-    left: 120px;
-    width: 1209px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    text-align: justify;
-    font-size: 11px;
-    color: #8694b4;
-  }
-  .trending-news {
-    position: absolute;
-    top: 120px;
-    left: 120px;
-    font-size: 40px;
-    letter-spacing: -0.02em;
-    font-family: "Optician Sans";
-  }
-  .image-icon {
-    position: absolute;
-    top: 190px;
-    left: 120px;
-    border-radius: 24px;
-    width: 588px;
-    height: 635px;
-    overflow: hidden;
-    -o-object-fit: cover;
-    object-fit: cover;
-  }
-  .how-technology-is {
-    position: absolute;
-    top: 185px;
-    left: 732px;
-    font-size: 40px;
-    letter-spacing: -0.02em;
-    font-family: "Optician Sans";
-    color: inherit;
-    display: inline-block;
-    width: 588px;
-    text-decoration: none;
-    text-align: initial;
-  }
-  .echnology-is-changing {
-    position: absolute;
-    top: 40px;
-    left: 82.75px;
-    line-height: 140%;
-    font-weight: 500;
-    display: inline-block;
-    width: 197.2px;
-    font-family: poppins;
-  }
-  .t {
-    position: absolute;
-    top: 45px;
-    left: 0px;
-    font-size: 135px;
-    line-height: 140%;
-    font-weight: 500;
-    color: #000;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 75px;
-    height: 98px;
-    font-family: poppins;
-  }
-  .echnology-is-changing-industri-parent {
-    position: absolute;
-    top: 330px;
-    left: 735px;
-    width: 280px;
-    height: 110px;
-    text-align: justify;
-    font-size: 16px;
-    color: #3d3d3d;
-  }
-  .in-the-last {
-    font-weight: 500;
-  }
-  .in-the-last-container {
-    position: absolute;
-    top: 483px;
-    left: 735px;
-    font-size: 16px;
-    line-height: 140%;
-    color: #3d3d3d;
-    gap: 2rem;
-    text-align: justify;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    width: 280px;
-    height: 287px;
-    font-family: poppins;
-  }
-  .recent-trends-show-container {
-    position: absolute;
-    top: 370px;
-    left: 1039px;
-    font-size: 16px;
-    line-height: 140%;
-    color: #3d3d3d;
-    text-align: justify;
-    display: inline-block;
-    width: 281px;
-    font-family: poppins;
-  }
-  
-  .planradar {
-    position: relative;
-    line-height: 140%;
-  }
-  .category-and-est-read-time {
-    /* position: absolute; */
-    top: 899px;
-    left: 732px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-    font-size: 11px;
-    color: rgba(0, 0, 0, 0.72);
-  }
-  .latest-news-around {
-    position: absolute;
-    top: 1980px;
-    left: 120px;
-    font-size: 40px;
-    letter-spacing: -0.02em;
-    font-family: Optician Sans;
-    display: inline-block;
-    width: 585px;
-    padding-top: 50px;
-    line-height: 40px;
-  }
-  .image-child {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-radius: 24px;
-    width: 282px;
-    height: 282px;
-    object-fit: cover;
-  }
-  
-  .image-1,
-  .image-2,
-  .image-3,
-  .image-4,
-  .image-5,
-  .image-6,
-  .image-7,
-  .image-8,
-  .image-9,
-  .image-10,
-  .image-11,
-  .image-12,
-  .image-13,
-  .image-14,
-  .image-15,
-  .image-16 {
-    width: 282px;
-    position: relative;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
-    height: 282px;
-    border-radius: 24px;
-    overflow: hidden;
-  }
-  
-  .image-1 .overlay,
-  .image-2 .overlay,
-  .image-3 .overlay,
-  .image-4 .overlay,
-  .image-5 .overlay,
-  .image-6 .overlay,
-  .image-7 .overlay,
-  .image-8 .overlay,
-  .image-9 .overlay,
-  .image-10 .overlay,
-  .image-11 .overlay,
-  .image-12 .overlay,
-  .image-13 .overlay,
-  .image-14 .overlay,
-  .image-15 .overlay,
-  .image-16 .overlay {
-    opacity: 0;
-  }
-  
-  .image-1 .overlay:hover,
-  .image-2 .overlay:hover,
-  .image-3 .overlay:hover,
-  .image-4 .overlay:hover,
-  .image-5 .overlay:hover,
-  .image-6 .overlay:hover,
-  .image-7 .overlay:hover,
-  .image-8 .overlay:hover,
-  .image-9 .overlay:hover,
-  .image-10 .overlay:hover,
-  .image-11 .overlay:hover,
-  .image-12 .overlay:hover,
-  .image-13 .overlay:hover,
-  .image-14 .overlay:hover,
-  .image-15 .overlay:hover,
-  .image-16 .overlay:hover {
-    opacity: 1;
-  }
-  
-  .long-march-9 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    letter-spacing: -0.02em;
-    display: -webkit-inline-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    width: 281px;
-    text-decoration: none;
-    color: #000;
-  }
-  .spacexs-starship-spacecraft {
-    position: absolute;
-    top: 65px;
-    left: 0px;
-    font-size: 14px;
-    line-height: 140%;
-    font-family: Poppins;
-    color: #3d3d3d;
-    text-align: justify;
-    display: -webkit-inline-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  
-    -webkit-box-orient: vertical;
-    width: 283px;
-  }
-  .title-and-descriptions {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 281px;
-    height: 75px;
-  }
-  
 
-  
-  .space-and-universe {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    line-height: 140%;
-  }
-  .line1 {
-    position: absolute;
-    top: 1.5px;
-    left: 120px;
-    border-right: 1px solid rgba(0, 0, 0, 0.72);
-    box-sizing: border-box;
-    width: 1px;
-    height: 13px;
-  }
-  .mins-read {
-    position: absolute;
-    top: 0px;
-    left: 140px;
-    line-height: 140%;
-  }
-  .category-and-est-read-time1 {
-    position: absolute;
-    top: 150px;
-    left: 0px;
-    width: 250px;
-    height: 16px;
-    font-size: 11px;
-    color: rgba(0, 0, 0, 0.72);
-    font-family: Poppins;
-  }
-  .desc-arc {
-    align-self: stretch;
-    position: relative;
-    height: 158px;
-  }
-  .image-parent {
-    position: absolute;
-    top: calc(50% - 225.5px);
-    left: calc(50% - 141px);
-    width: 282px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 11px;
-  }
-  .more-article {
-    width: 282px;
-    position: relative;
-    height: 451px;
-  }
-  .iconbydesign {
-    color: inherit;
-  }
-  .spacexs-starship-spacecraft-container {
-    position: absolute;
-    top: 65px;
-    left: 0px;
-    font-size: 14px;
-    line-height: 140%;
-    color: #3d3d3d;
-    text-align: justify;
-    display: -webkit-inline-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  
-    -webkit-box-orient: vertical;
-    width: 283px;
-    font-family: Poppins;
-  }
-  .frame-div {
-    position: absolute;
-    top: calc(50% - 225.5px);
-    left: calc(50% - 141px);
-    width: 282px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 11px;
-    cursor: pointer;
-  }
-  .color-icon {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-radius: 24px;
-    width: 282px;
-    height: 282px;
-    object-fit: cover;
-    mix-blend-mode: color;
-  }
-  .space-and-universe4 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    line-height: 140%;
-    color: inherit;
-    text-decoration: none;
-  }
-  .more-article4 {
-    width: 282px;
-    position: relative;
-    background-color: #fff;
-    height: 451px;
-  }
-  .wondering-how-to-be-a-zero-was {
-    margin: 0;
-  }
-  .zero-waste-kitchen {
-    text-decoration: underline;
-  }
-  .more-article-parent {
-    position: absolute;
-    top: 2129px;
-    left: calc(50% - 650px);
-    width: 1300px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-content: center;
-    padding: 24px 0px;
-    box-sizing: border-box;
-    gap: 24px;
-    font-family: "Optician Sans";
-  }
-  .hover-more {
-    position: absolute;
-    top: 878px;
-    left: 1044px;
-    border-radius: 50px;
-    background-color: #739646;
-    border: 2px solid rgba(255, 255, 255, 0.25);
-    box-sizing: border-box;
-    width: 276px;
-    height: 36px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 24px;
-    font-size: 14px;
-    color: #fbfbfb;
-  }
-  
-  .research-institute-wins {
-    position: absolute;
-    top: 84.58%;
-    left: 0%;
-    letter-spacing: -0.02em;
-    display: -webkit-inline-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-family: "Optician Sans";
-    -webkit-box-orient: vertical;
-    width: 384px;
-  }
-  .main-list-article {
-    position: absolute;
-    top: 41px;
-    left: 0px;
-    width: 384px;
-    height: 467px;
-    font-family: "Optician Sans";
-  }
-  
-  .card-bif-a {
-    position: absolute;
-    border-radius: 24px;
-    overflow: hidden;
-    width: 384px;
-    height: 384px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.549);
-  }
-  
-  .card-bif-b {
-    position: absolute;
-    border-radius: 24px;
-    overflow: hidden;
-    width: 384px;
-    height: 384px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.549);
-  }
-  
-  .card-bif-c {
-    position: absolute;
-    border-radius: 24px;
-    overflow: hidden;
-    width: 384px;
-    height: 384px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.549);
-  }
-  
-  .image-icon1 {
-    object-fit: cover;
-  }
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 24px;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    font-family: "Optician Sans";
-  }
-  .card-bif-a:hover .overlay,
-  .card-bif-b:hover .overlay,
-  .card-bif-c:hover .overlay {
-    opacity: 1;
-  }
-  .text-article {
-    color: white;
-    font-size: 18px;
-    text-align: center;
-  }
-  
-  .scientists-identify-molten {
-    position: absolute;
-    width: 68.75%;
-    top: 4.21%;
-    left: 31.25%;
-    line-height: 140%;
-    font-weight: 500;
-    display: -webkit-inline-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    z-index: 10;
-    -webkit-box-orient: vertical;
-    
-  }
-  .group-div {
-    position: absolute;
-    height: 19.51%;
-    width: 100%;
-    top: 0%;
-    right: 0%;
-    bottom: 80.49%;
-    left: 0%;
-  }
-  .scientists-identify-molten-lay-parent {
-    position: absolute;
-    height: 19.51%;
-    width: 100%;
-    top: 26.83%;
-    right: 0%;
-    bottom: 53.66%;
-    left: 0%;
-  }
-  .scientists-identify-molten-lay-group {
-    position: absolute;
-    height: 19.51%;
-    width: 100%;
-    top: 53.66%;
-    right: 0%;
-    bottom: 26.83%;
-    left: 0%;
-  }
-  .scientists-identify-molten-lay-container {
-    position: absolute;
-    height: 19.51%;
-    width: 100%;
-    top: 80.49%;
-    right: 0%;
-    bottom: 0%;
-    left: 0%;
-  }
-  .list-article {
-    position: absolute;
-    top: 526px;
-    left: 0px;
-    width: 384px;
-    height: 287px;
-    text-align: justify;
-    font-size: 16px;
-  }
-  .eco-essentials1 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    font-size: 14px;
-    line-height: 140%;
-    text-align: center;
-    font-family: poppins;
-  }
-  .line13 {
-    position: absolute;
-    top: -0.5px;
-    left: -0.5px;
-    border-top: 1px solid #dde1e6;
-    box-sizing: border-box;
-    width: 385px;
-    height: 1px;
-  }
-  .line14 {
-    position: absolute;
-    top: 76.02px;
-    left: -0.5px;
-    border-top: 1px solid #dde1e6;
-    box-sizing: border-box;
-    width: 385px;
-    height: 1px;
-  }
-  .line15 {
-    position: absolute;
-    top: 152.55px;
-    left: -0.5px;
-    border-top: 1px solid #dde1e6;
-    box-sizing: border-box;
-    width: 385px;
-    height: 1px;
-  }
-  .line-parent {
-    position: absolute;
-    top: 597.47px;
-    left: 0px;
-    width: 384px;
-    height: 153px;
-  }
-  .main-list-article-parent {
-    position: absolute;
-    top: 1000px;
-    left: 120px;
-    width: 384px;
-    height: 817px;
-  }
-  .main-list-article-group {
-    position: absolute;
-    top: 1000px;
-    left: 528px;
-    width: 384px;
-    height: 817px;
-  }
-  .main-list-article-container {
-    position: absolute;
-    top: 1000px;
-    left: 936px;
-    width: 384px;
-    height: 817px;
-  }
-  .articles-2 {
-    width: 100%;
-    position: relative;
-    background-color: #fff;
-    height: 4200px;
-    text-align: left;
-    font-size: 24px;
-    color: #000;
-    font-family: Poppins;
-  }
-  
-  .cta-buttonn {
-    background-color: #739646;
-    color: #fff;
-    padding: 7px 60px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 18px;
-    border: 2px solid #739646;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-family: "Poppins", sans-serif;
-    display: inline-block;
-    margin-top: 18px;
-  }
-  
-  .cta-buttonn:hover {
-    background-color: #fff;
-    color: #6ea54e;
-  }
-
-  a {
-    color: #000;
-    /* text-decoration: underline; */
-    pointer-events: auto; /* Pastikan properti ini aktif */
+.yellow-and-green-modern-logo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 284px;
+  height: 67px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.label {
+  position: relative;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.buttoncontent {
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.buttoncontent-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.button {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  box-shadow: 0px -1px 0.5px rgba(14, 14, 44, 0.4) inset;
+  border-radius: 50px;
+  background-color: #fff;
+  width: 127px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  box-sizing: border-box;
+}
+.button1 {
+  position: absolute;
+  top: 0px;
+  left: 208px;
+  box-shadow: 0px -1px 0.5px rgba(14, 14, 44, 0.4) inset;
+  border-radius: 50px;
+  background-color: #fff;
+  width: 127px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  box-sizing: border-box;
+}
+.button2 {
+  position: absolute;
+  top: 0px;
+  left: 396px;
+  border-radius: 50px;
+  background-color: #fff;
+  width: 113px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.buttonprimary {
+  position: absolute;
+  top: 0px;
+  left: 567px;
+  border-radius: 50px;
+  background-color: #739646;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  text-align: left;
+  font-size: 16px;
+  color: #fff;
+}
+.button-parent {
+  position: absolute;
+  top: 9.5px;
+  left: 547px;
+  width: 681px;
+  height: 48px;
+}
+.yellow-and-green-modern-logo-parent {
+  position: absolute;
+  top: 22px;
+  left: 105px;
+  width: 1228px;
+  height: 67px;
+}
+.navbar {
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 720px);
+  width: 1440px;
+  height: 111px;
+  text-align: center;
+  font-size: 14px;
+  color: #5c7838;
+}
+.yellow-and-green-modern-logo1 {
+  width: 168px;
+  position: relative;
+  height: 32px;
+  object-fit: cover;
+}
+.we-provide-information {
+  position: absolute;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  line-height: 140%;
+  display: inline-block;
+  opacity: 0.75;
+}
+.brandicofacebook-icon {
+  width: 32px;
+  position: relative;
+  height: 32px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.brandicofacebook-parent {
+  position: absolute;
+  height: 25%;
+  width: 45%;
+  top: 75%;
+  right: 55%;
+  bottom: 0%;
+  left: 0%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.bio {
+  width: 320px;
+  position: relative;
+  height: 128px;
+}
+.yellow-and-green-modern-logo-group {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.property1 {
+  width: 94px;
+  position: relative;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-block;
+  color: #414958;
+}
+.discover {
+  align-self: stretch;
+  position: relative;
+  font-weight: 500;
+}
+.property {
+  width: 176px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.article1 {
+  align-self: stretch;
+  position: relative;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #414958;
+}
+.eco-tech {
+  align-self: stretch;
+  position: relative;
+  text-transform: capitalize;
+  font-family: Lexend;
+}
+.article {
+  width: 212px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 19px;
+}
+.contact {
+  width: 265px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.property-parent {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+}
+.frame-wrapper {
+  width: 713px;
+  position: relative;
+  height: 168px;
+  text-align: left;
+  font-size: 14px;
+}
+.frame-parent {
+  position: absolute;
+  top: 4499px;
+  left: 120px;
+  width: 1209px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: justify;
+  font-size: 11px;
+  color: #8694b4;
+}
+.trending-news {
+  position: absolute;
+  top: 120px;
+  left: 120px;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  font-family: "Optician Sans";
+}
+.image-icon {
+  position: absolute;
+  top: 190px;
+  left: 120px;
+  border-radius: 24px;
+  width: 588px;
+  height: 635px;
+  overflow: hidden;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.how-technology-is {
+  position: absolute;
+  top: 185px;
+  left: 732px;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  font-family: "Optician Sans";
+  color: inherit;
+  display: inline-block;
+  width: 588px;
+  text-decoration: none;
+  text-align: initial;
+}
+.echnology-is-changing {
+  position: absolute;
+  top: 40px;
+  left: 82.75px;
+  line-height: 140%;
+  font-weight: 500;
+  display: inline-block;
+  width: 197.2px;
+  font-family: poppins;
+}
+.t {
+  position: absolute;
+  top: 45px;
+  left: 0px;
+  font-size: 135px;
+  line-height: 140%;
+  font-weight: 500;
+  color: #000;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 98px;
+  font-family: poppins;
+}
+.echnology-is-changing-industri-parent {
+  position: absolute;
+  top: 330px;
+  left: 735px;
+  width: 280px;
+  height: 110px;
+  text-align: justify;
+  font-size: 16px;
+  color: #3d3d3d;
+}
+.in-the-last {
+  font-weight: 500;
+}
+.in-the-last-container {
+  position: absolute;
+  top: 483px;
+  left: 735px;
+  font-size: 16px;
+  line-height: 140%;
+  color: #3d3d3d;
+  gap: 2rem;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 280px;
+  height: 287px;
+  font-family: poppins;
+}
+.recent-trends-show-container {
+  position: absolute;
+  top: 370px;
+  left: 1039px;
+  font-size: 16px;
+  line-height: 140%;
+  color: #3d3d3d;
+  text-align: justify;
+  display: inline-block;
+  width: 281px;
+  font-family: poppins;
 }
 
+.planradar {
+  position: relative;
+  line-height: 140%;
+}
+.category-and-est-read-time {
+  /* position: absolute; */
+  top: 899px;
+  left: 732px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.72);
+}
+.latest-news-around {
+  position: absolute;
+  top: 1980px;
+  left: 100px;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  font-family: Optician Sans;
+  display: inline-block;
+  width: 585px;
+  padding-top: 50px;
+  line-height: 40px;
+}
+.image-child {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 24px;
+  width: 282px;
+  height: 282px;
+  object-fit: cover;
+}
+
+.image-1,
+.image-2,
+.image-3,
+.image-4,
+.image-5,
+.image-6,
+.image-7,
+.image-8,
+.image-9,
+.image-10,
+.image-11,
+.image-12,
+.image-13,
+.image-14,
+.image-15,
+.image-16 {
+  width: 282px;
+  position: relative;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  height: 282px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.image-1 .overlay,
+.image-2 .overlay,
+.image-3 .overlay,
+.image-4 .overlay,
+.image-5 .overlay,
+.image-6 .overlay,
+.image-7 .overlay,
+.image-8 .overlay,
+.image-9 .overlay,
+.image-10 .overlay,
+.image-11 .overlay,
+.image-12 .overlay,
+.image-13 .overlay,
+.image-14 .overlay,
+.image-15 .overlay,
+.image-16 .overlay {
+  opacity: 0;
+}
+
+.image-1 .overlay:hover,
+.image-2 .overlay:hover,
+.image-3 .overlay:hover,
+.image-4 .overlay:hover,
+.image-5 .overlay:hover,
+.image-6 .overlay:hover,
+.image-7 .overlay:hover,
+.image-8 .overlay:hover,
+.image-9 .overlay:hover,
+.image-10 .overlay:hover,
+.image-11 .overlay:hover,
+.image-12 .overlay:hover,
+.image-13 .overlay:hover,
+.image-14 .overlay:hover,
+.image-15 .overlay:hover,
+.image-16 .overlay:hover {
+  opacity: 1;
+}
+
+.long-march-9 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  letter-spacing: -0.02em;
+  display: -webkit-inline-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  width: 281px;
+  text-decoration: none;
+  color: #000;
+}
+.spacexs-starship-spacecraft {
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  font-size: 14px;
+  line-height: 140%;
+  font-family: Poppins;
+  color: #3d3d3d;
+  text-align: justify;
+  display: -webkit-inline-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  -webkit-box-orient: vertical;
+  width: 283px;
+}
+.title-and-descriptions {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 281px;
+  height: 75px;
+}
+
+.space-and-universe {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  line-height: 140%;
+}
+.line1 {
+  position: absolute;
+  top: 1.5px;
+  left: 120px;
+  border-right: 1px solid rgba(0, 0, 0, 0.72);
+  box-sizing: border-box;
+  width: 1px;
+  height: 13px;
+}
+.mins-read {
+  position: absolute;
+  top: 0px;
+  left: 140px;
+  line-height: 140%;
+}
+.category-and-est-read-time1 {
+  position: absolute;
+  top: 170px;
+  left: 0px;
+  width: 250px;
+  height: 16px;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.72);
+  font-family: Poppins;
+}
+.desc-arc {
+  align-self: stretch;
+  position: relative;
+  height: 158px;
+}
+.image-parent {
+  position: absolute;
+  top: calc(50% - 225.5px);
+  left: calc(50% - 141px);
+  width: 282px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 11px;
+}
+.more-article {
+  width: 282px;
+  position: relative;
+  height: 480px;
+}
+.iconbydesign {
+  color: inherit;
+}
+.spacexs-starship-spacecraft-container {
+  position: absolute;
+  top: 65px;
+  left: 0px;
+  font-size: 14px;
+  line-height: 140%;
+  color: #3d3d3d;
+  text-align: justify;
+  display: -webkit-inline-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  -webkit-box-orient: vertical;
+  width: 283px;
+  font-family: Poppins;
+}
+.frame-div {
+  position: absolute;
+  top: calc(50% - 225.5px);
+  left: calc(50% - 141px);
+  width: 282px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 11px;
+  cursor: pointer;
+}
+.color-icon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 24px;
+  width: 282px;
+  height: 282px;
+  object-fit: cover;
+  mix-blend-mode: color;
+}
+.space-and-universe4 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  line-height: 140%;
+  color: inherit;
+  text-decoration: none;
+}
+.more-article4 {
+  width: 282px;
+  position: relative;
+  background-color: #fff;
+  height: 451px;
+}
+.wondering-how-to-be-a-zero-was {
+  margin: 0;
+}
+.zero-waste-kitchen {
+  text-decoration: underline;
+}
+.more-article-parent {
+  position: absolute;
+  top: 2129px;
+  left: calc(50% - 650px);
+  width: 1300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 24px 0px;
+  box-sizing: border-box;
+  gap: 24px;
+  font-family: "Optician Sans";
+}
+.hover-more {
+  position: absolute;
+  top: 878px;
+  left: 1044px;
+  border-radius: 50px;
+  background-color: #739646;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-sizing: border-box;
+  width: 276px;
+  height: 36px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 24px;
+  font-size: 14px;
+  color: #fbfbfb;
+}
+
+.research-institute-wins {
+  position: absolute;
+  top: 84.58%;
+  left: 0%;
+  letter-spacing: -0.02em;
+  display: -webkit-inline-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Optician Sans";
+  -webkit-box-orient: vertical;
+  width: 384px;
+}
+.main-list-article {
+  position: absolute;
+  top: 41px;
+  left: 0px;
+  width: 384px;
+  height: 467px;
+  font-family: "Optician Sans";
+}
+
+.card-bif-a {
+  position: absolute;
+  border-radius: 24px;
+  overflow: hidden;
+  width: 384px;
+  height: 384px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.549);
+}
+
+.card-bif-b {
+  position: absolute;
+  border-radius: 24px;
+  overflow: hidden;
+  width: 384px;
+  height: 384px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.549);
+}
+
+.card-bif-c {
+  position: absolute;
+  border-radius: 24px;
+  overflow: hidden;
+  width: 384px;
+  height: 384px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.549);
+}
+
+.image-icon1 {
+  object-fit: cover;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: "Optician Sans";
+}
+.card-bif-a:hover .overlay,
+.card-bif-b:hover .overlay,
+.card-bif-c:hover .overlay {
+  opacity: 1;
+}
+.text-article {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+
+.scientists-identify-molten {
+  position: absolute;
+  width: 68.75%;
+  top: 4.21%;
+  left: 31.25%;
+  line-height: 140%;
+  font-weight: 500;
+  display: -webkit-inline-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 10;
+  -webkit-box-orient: vertical;
+}
+.group-div {
+  position: absolute;
+  height: 19.51%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 80.49%;
+  left: 0%;
+}
+.scientists-identify-molten-lay-parent {
+  position: absolute;
+  height: 19.51%;
+  width: 100%;
+  top: 26.83%;
+  right: 0%;
+  bottom: 53.66%;
+  left: 0%;
+}
+.scientists-identify-molten-lay-group {
+  position: absolute;
+  height: 19.51%;
+  width: 100%;
+  top: 53.66%;
+  right: 0%;
+  bottom: 26.83%;
+  left: 0%;
+}
+.scientists-identify-molten-lay-container {
+  position: absolute;
+  height: 19.51%;
+  width: 100%;
+  top: 80.49%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+}
+.list-article {
+  position: absolute;
+  top: 526px;
+  left: 0px;
+  width: 384px;
+  height: 287px;
+  text-align: justify;
+  font-size: 16px;
+}
+.eco-essentials1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: center;
+  font-family: poppins;
+}
+.line13 {
+  position: absolute;
+  top: -0.5px;
+  left: -0.5px;
+  border-top: 1px solid #dde1e6;
+  box-sizing: border-box;
+  width: 385px;
+  height: 1px;
+}
+.line14 {
+  position: absolute;
+  top: 76.02px;
+  left: -0.5px;
+  border-top: 1px solid #dde1e6;
+  box-sizing: border-box;
+  width: 385px;
+  height: 1px;
+}
+.line15 {
+  position: absolute;
+  top: 152.55px;
+  left: -0.5px;
+  border-top: 1px solid #dde1e6;
+  box-sizing: border-box;
+  width: 385px;
+  height: 1px;
+}
+.line-parent {
+  position: absolute;
+  top: 597.47px;
+  left: 0px;
+  width: 384px;
+  height: 153px;
+}
+.main-list-article-parent {
+  position: absolute;
+  top: 1000px;
+  left: 120px;
+  width: 384px;
+  height: 817px;
+}
+.main-list-article-group {
+  position: absolute;
+  top: 1000px;
+  left: 528px;
+  width: 384px;
+  height: 817px;
+}
+.main-list-article-container {
+  position: absolute;
+  top: 1000px;
+  left: 936px;
+  width: 384px;
+  height: 817px;
+}
+.articles-2 {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  height: 4200px;
+  text-align: left;
+  font-size: 24px;
+  color: #000;
+  font-family: Poppins;
+}
+
+.cta-buttonn {
+  background-color: #739646;
+  color: #fff;
+  padding: 7px 60px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 18px;
+  border: 2px solid #739646;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  display: inline-block;
+  margin-top: 18px;
+}
+
+.cta-buttonn:hover {
+  background-color: #fff;
+  color: #6ea54e;
+}
+
+a {
+  color: #000;
+  /* text-decoration: underline; */
+  pointer-events: auto; /* Pastikan properti ini aktif */
+}
