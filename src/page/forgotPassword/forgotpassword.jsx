@@ -6,7 +6,8 @@ export function ForgotPassword() {
   // State for form data and error handling
   const [formData, setFormData] = useState({
     email: "",
-    password: "",
+    newPassword: "",
+    repeatPassword: "",
   });
 
   const [error, setError] = useState(null);
@@ -24,9 +25,15 @@ export function ForgotPassword() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Password strength validation (example: minimum 6 characters)
-    if (formData.password.length < 6) {
+    // Password strength validation
+    if (formData.newPassword.length < 6) {
       setError("Password must be at least 6 characters long.");
+      return;
+    }
+
+    // Password match validation
+    if (formData.newPassword !== formData.repeatPassword) {
+      setError("Passwords do not match.");
       return;
     }
 
@@ -36,30 +43,33 @@ export function ForgotPassword() {
     axios
       .post("http://localhost:5000/forgot-password", {
         email: formData.email,
-        Password: formData.password,
+        password: formData.newPassword, // Menggunakan key yang sesuai untuk backend
       })
-      .then((response) => {
-        // Handle successful password reset
+      .then(() => {
         alert("Password has been reset successfully!");
-        // Redirect to login or homepage if needed
+        // Redirect to login page after successful reset
         window.location.href = "/login";
       })
       .catch((error) => {
-        // Handle error (e.g., invalid email, server issues)
-        setError(error.response?.data?.error || "Failed to reset password.");
+        // Display error message if reset fails
+        alert(
+          error.response?.data?.error ||
+            "Failed to reset password. Please try again."
+        );
       })
       .finally(() => {
-        setLoading(false); // End loading state after request is complete
+        setLoading(false); // End loading state
       });
   };
-// Basic validation to ensure passwords match
-    useEffect(() => {
-        if (formData.newPassword !== formData.repeatPassword) {
-          console.log("Passwords do not match!");
-        } else {
-          console.log("Passwords match!");
-        }
-      }, [formData.newPassword, formData.repeatPassword]);
+
+  // Basic validation to ensure passwords match
+  useEffect(() => {
+    if (formData.newPassword !== formData.repeatPassword) {
+      console.log("Passwords do not match!");
+    } else {
+      console.log("Passwords match!");
+    }
+  }, [formData.newPassword, formData.repeatPassword]);
 
   return (
     <div className="body-forgotpw">
@@ -71,11 +81,8 @@ export function ForgotPassword() {
             FORGOT <br /> PASSWORD?
           </h2>
           <form onSubmit={handleSubmit}>
-            <p>
-              Enter your email and new password to reset your account password.
-            </p>
+            <p>Enter your email and new password to reset your account password.</p>
             {error && <p className="error-message">{error}</p>} {/* Error message */}
-            
             <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
@@ -87,7 +94,6 @@ export function ForgotPassword() {
                 required
               />
             </div>
-            
             <div className="form-group">
               <label htmlFor="newPassword">New Password</label>
               <input
@@ -99,7 +105,6 @@ export function ForgotPassword() {
                 required
               />
             </div>
-            
             <div className="form-group">
               <label htmlFor="repeatPassword">Repeat New Password</label>
               <input
@@ -111,7 +116,6 @@ export function ForgotPassword() {
                 required
               />
             </div>
-            
             <button type="submit" className="login-button-main" disabled={loading}>
               {loading ? "Resetting..." : "SUBMIT"}
             </button>
