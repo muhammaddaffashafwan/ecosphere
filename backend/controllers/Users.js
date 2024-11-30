@@ -38,8 +38,6 @@ export const resetPassword = async (req, res) => {
   }
 };
 
-
-
 // Konfigurasi penyimpanan file menggunakan multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -50,7 +48,18 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage });
+// Filter untuk validasi tipe file
+const upload = multer({
+  storage,
+  fileFilter: (req, file, cb) => {
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+    if (allowedTypes.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error('Invalid file type. Only JPG, PNG, and GIF are allowed.'), false);
+    }
+  },
+});
 
 // **GET Users**
 export const getUsers = async (req, res) => {
@@ -152,7 +161,7 @@ export const updateProfileImage = async (req, res) => {
   // Memastikan file diupload
   upload.single('profile_image')(req, res, async (err) => {
     if (err) {
-      return res.status(400).json({ error: "Error uploading file" });
+      return res.status(400).json({ error: err.message }); // Error handling jika file tidak valid
     }
 
     try {
@@ -190,10 +199,10 @@ export const deleteProfileImage = async (req, res) => {
       return res.status(404).json({ error: "Profile image not found" });
     }
 
-		const __filename = fileURLToPath(import.meta.url);
+    const __filename = fileURLToPath(import.meta.url);
     const __dirname = dirname(__filename);
+    const imagePath = path.join(__dirname, '..', user.profile_image); // Pastikan path benar
 
-    const imagePath = path.join(__dirname, user.profile_image);
     fs.unlink(imagePath, async (err) => {
       if (err) {
         return res.status(500).json({ error: "Error deleting profile image from server" });

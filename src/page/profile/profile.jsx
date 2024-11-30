@@ -1,71 +1,157 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import ForumPost from "../../components/ForumPost/ForumPost";
-import { DataPost } from "../../components/ForumPost/DataPost";
 import "../global.css";
 
 const Profile = () => {
-  // Memfilter data untuk hanya menampilkan postingan Muhammad Sumbul
-  const userPosts = DataPost.filter((post) => post.userName === "Muhammad Sumbul");
-
-  // State untuk modal edit profil
   const [isEditOpen, setIsEditOpen] = useState(false);
-
-  // State untuk data profil
   const [profileImage, setProfileImage] = useState("https://via.placeholder.com/150");
-  const [name, setName] = useState("Muhammad Sumbul");
-  const [username, setUsername] = useState("@sumbul");
-
-  // State untuk file gambar baru
+  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [newProfileImage, setNewProfileImage] = useState(null);
+  const [userPosts, setUserPosts] = useState([]);
+  const [loading, setLoading] = useState(false); // Loading state to handle async operations
 
+  // Open edit profile modal
   const handleEditClick = () => {
     setIsEditOpen(true);
   };
 
+  // Close modal and reset image state
   const handleCloseModal = () => {
     setIsEditOpen(false);
-    setNewProfileImage(null); // Reset gambar sementara
+    setNewProfileImage(null);
   };
 
-  const handleSaveProfile = () => {
-    if (newProfileImage) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setProfileImage(reader.result); // Menyimpan gambar yang telah dipilih
-      };
-      reader.readAsDataURL(newProfileImage); // Membaca gambar sebagai URL
-    }
-    handleCloseModal();
-  };
-
+  // Handle profile image file change
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setNewProfileImage(file); // Simpan file gambar
+      setNewProfileImage(file);
     }
   };
+
+  // Save profile changes
+  const handleSaveProfile = async () => {
+    setLoading(true); // Start loading
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("username", username);
+
+    if (newProfileImage) {
+      formData.append("profile_image", newProfileImage);
+    }
+
+    try {
+      const token = localStorage.getItem("token");
+      const response = await axios.put(
+        "http://localhost:5000/profile-image",
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      // Update state after successful save
+      setProfileImage(response.data.profile_image || profileImage);
+      setName(name);
+      setUsername(username);
+      handleCloseModal();
+    } catch (error) {
+      console.error("Error updating profile", error);
+      alert("Error updating profile, please try again!");
+    } finally {
+      setLoading(false); // End loading
+    }
+  };
+
+  // Delete profile image
+  const handleDeleteProfileImage = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      await axios.delete("http://localhost:5000/profile-image", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setProfileImage("https://via.placeholder.com/150");
+    } catch (error) {
+      console.error("Error deleting profile image", error);
+      alert("Error deleting profile image, please try again!");
+    }
+  };
+
+  // Fetch user profile data on load
+  useEffect(() => {
+    const fetchUserData = async () => {
+      setLoading(true);
+      try {
+        const token = localStorage.getItem("token");
+        const response = await axios.get("http://localhost:5000/users", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        setName(response.data.name);
+        setUsername(response.data.username);
+        setProfileImage(response.data.profile_image || "https://via.placeholder.com/150");
+      } catch (error) {
+        console.error("Error fetching user data", error);
+        alert("Error fetching user data, please try again!");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
+  // Fetch user posts on load
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get("http://localhost:5000/users/posts", {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        setUserPosts(response.data.posts);
+      } catch (error) {
+        console.error("Error fetching posts", error);
+        alert("Error fetching posts, please try again!");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Header Section */}
       <div className="relative flex-shrink-0">
-        {/* Background Image */}
-  <div className="h-[400px] relative">
-    <img 
-      src="/images/bg_sampul.jpg" 
-      alt="Background" 
-      className="w-full h-full object-cover" 
-    />
-  </div>
+        <div className="h-[400px] relative">
+          <img
+            src="/images/bg_sampul.jpg"
+            alt="Background"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
         {/* Profile Avatar and Details */}
         <div className="absolute top-[355px] left-[55px] flex items-center">
           <img
             className="w-24 h-24 rounded-full border-4 border-[#404d3c]"
-            src={profileImage} alt="User Avatar"
+            src={profileImage}
+            alt="User Avatar"
           />
           <div className="ml-4 text-white">
-            <h1 className="font text-2xl font-bold font-opticians">{name}</h1>
+            <h1 className="font text-2xl font-bold">{name}</h1>
             <p className="text-sm text-black">{username}</p>
           </div>
         </div>
@@ -136,7 +222,7 @@ const Profile = () => {
                   onClick={handleSaveProfile}
                   className="px-4 py-2 rounded-full bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all"
                 >
-                  Save
+                  Save Changes
                 </button>
               </div>
             </form>
@@ -144,14 +230,20 @@ const Profile = () => {
         </div>
       )}
 
-      {/* User Posts Section */}
-      <div className="mt-32 p-5">
-        <h2 className="font text-xl font-bold mb-4 xz">Muhammad Sumbul's Posts</h2>
-        {userPosts.length > 0 ? (
-          userPosts.map((post) => <ForumPost key={post.id} post={post} />)
-        ) : (
-          <p className="text-lg text-gray-500">No posts available for Muhammad Sumbul.</p>
-        )}
+      {/* User's Forum Posts */}
+      <div className="my-10 mx-4">
+        <h2 className="text-2xl font-bold">My Forum Posts</h2>
+        <div className="mt-4">
+          {loading ? (
+            <p>Loading...</p>
+          ) : userPosts.length > 0 ? (
+            userPosts.map((post, index) => (
+              <ForumPost key={index} post={post} />
+            ))
+          ) : (
+            <p>No posts available</p>
+          )}
+        </div>
       </div>
     </div>
   );

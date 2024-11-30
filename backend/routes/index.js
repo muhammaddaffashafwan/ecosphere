@@ -32,10 +32,10 @@ router.post("/login", authLogin);
 router.get("/users", authMiddleware, getUsers);
 
 // Rute untuk mengupdate gambar profil (memerlukan otentikasi)
-router.put("/users/profile-image", authMiddleware, upload.single('profile_image'), updateProfileImage);
+router.put("/profile-image", authMiddleware, upload.single('profile_image'), updateProfileImage);
 
 // Rute untuk menghapus gambar profil (memerlukan otentikasi)
-router.delete("/users/profile-image", authMiddleware, deleteProfileImage);
+router.delete("/profile-image", authMiddleware, deleteProfileImage);
 
 // Rute untuk reset password (tanpa otentikasi, hanya memerlukan email)
 router.post("/forgot-password", resetPassword); // Add the route to handle password reset
