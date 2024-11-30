@@ -50,12 +50,18 @@ const Profile = () => {
       {/* Header Section */}
       <div className="relative flex-shrink-0">
         {/* Background Image */}
-        <div className="h-[400px] bg-gradient-to-t from-[#6d9b5d] to-white"></div>
+  <div className="h-[400px] relative">
+    <img 
+      src="/images/bg_sampul.jpg" 
+      alt="Background" 
+      className="w-full h-full object-cover" 
+    />
+  </div>
 
         {/* Profile Avatar and Details */}
         <div className="absolute top-[355px] left-[55px] flex items-center">
           <img
-            className="w-24 h-24 rounded-full border-4 border-[#6d9b5d]"
+            className="w-24 h-24 rounded-full border-4 border-[#404d3c]"
             src={profileImage} alt="User Avatar"
           />
           <div className="ml-4 text-white">
