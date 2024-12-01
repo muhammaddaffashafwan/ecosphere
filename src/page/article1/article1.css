@@ -117,14 +117,32 @@
   text-align: left;
   text-wrap: wrap;
   display: inline;
-  font-size: 35px;;
+  font-size: 30px;
+  margin-right: 150px;
+  margin-left: 20px;;
 }
   .explore {
     width: 100%;
-    font-size: 10px;
+    font-size: 11px;
     text-wrap: wrap;
-    display: block;
-    flex-wrap: wrap;
+    display: inline-block;
+    padding-bottom: 2rem;
+    padding-right: 170px;
+    align-self: stretch;
+    text-align: left;
+    z-index: 10;
+    white-space: wrap;
+    padding-left: 20px;
+    top: 10px;
+  }
+   .cta-button{
+    width: 66%;
+    height: 40px;
+    margin-left: 20px;
+    font-size: small;
+    font-display: center;
+    margin-top: 10px;
+    z-index: 10;
   }
   .txt {
     position: relative;
@@ -139,28 +157,19 @@
   }
   .img-article1 {
     position: absolute;
-    top: 10px;
-    left: 350px;
-    width: 100px;
-    height: 200px;
+    top: 5px;
+    left: 400px;
+    width: 70px;
+    height: 150px;
   }
   .img-article2 {
     position: absolute;
-    top: 70px;
-    left: 250px;
-    width: 100px;
-    height: 200px;
+    top: 30px;
+    left: 325px;
+    width: 70px;
+    height: 150px;
   }
-  .cta-button{
-    width: 40%;
-    height: 40px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-align: center;
-    text-overflow: ellipsis;
-    display: inline-block;
-    left: 50px;
-  }
+ 
 }
 
 /* All categories */
@@ -515,7 +524,7 @@ left : 280px;
     left: 285px;
     padding-top: 20px; /* Tambahkan padding */
     display: block;
-    top : 348px;
+    top : 308px;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
@@ -524,7 +533,7 @@ left : 280px;
     line-height: 0;;
   }
 .text{
-  top: 360px;
+  top: 300px;
   line-height: 0;
 }
 
@@ -595,10 +604,6 @@ left : 280px;
   gap: 30px;
   
 }
-.text {
-  flex-wrap: nowrap;
-  justify-content: space-around;
-}
 
 }
 
@@ -628,7 +633,7 @@ left : 280px;
 .eco-greenhouses {
   margin: 0;
 }
-.title {
+.title1 {
   align-self: stretch;
   position: relative;
   letter-spacing: -0.02em;
@@ -659,7 +664,7 @@ left : 280px;
   justify-content: flex-start;
   gap: 10px;
 }
-.our-age-is {
+.our-age-is1 {
   align-self: stretch;
   position: relative;
   font-size: 14px;
@@ -667,6 +672,15 @@ left : 280px;
   font-family: Poppins;
   text-align: justify;
  
+}
+
+.our-age-is2 {
+  align-self: stretch;
+  position: relative;
+  font-size: 14px;
+  line-height: 140%;
+  font-family: Poppins;
+  text-align: justify;
 }
 .body {
   position: absolute;
@@ -692,6 +706,31 @@ left : 280px;
   text-align: left;
   line-height: 35px;
 }
+
+.title2 {
+  width: 574px;
+  position: relative;
+  letter-spacing: -0.02em;
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+  text-align: left;
+  line-height: 35px;
+}
+
+.title3 {
+  width: 574px;
+  position: relative;
+  letter-spacing: -0.02em;
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+  text-align: left;
+  line-height: 35px;
+  text-decoration: none;
+  color:#000;
+}
+
 .headline6 {
   display: flex;
   flex-direction: column;
@@ -744,6 +783,8 @@ left : 280px;
   height: 172px;
   flex-shrink: 0;
   font-family: Poppins;
+  text-decoration: none;
+  color:#000;
 }
 .body2 {
   position: absolute;
@@ -880,14 +921,7 @@ left : 280px;
   height: 48px;
   flex-shrink: 0;
 }
-.title3 {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 15px;
-}
+
 .bullets6 {
   align-self: stretch;
   display: flex;
@@ -932,7 +966,6 @@ a.eco-tech1 {
   text-decoration: none;
 }
 
-/* Aturan default tetap sama */
 
 /* Media Queries tablet */
 @media (max-width: 1200px) { 
@@ -1070,19 +1103,12 @@ a.eco-tech1 {
     margin-left: 50px;
   }
 
-  .body,
-  .body1,
-  .body2 {
-    font-size: 20px; /* Font lebih kecil */
-  }
 
   .brandicofacebook-parent {
     flex-direction: column; /* Tumpukan ikon media sosial */
     gap: 10px;
   }
-}
 
-@media (max-width: 480px) {
   .more-articles,
   .img-icon,
   .body,
@@ -1112,32 +1138,38 @@ a.eco-tech1 {
     font-size: 14px; /* Sesuaikan ukuran font */
     left: 10px;
   }
+
 .title1 {
   font-size: 20px;
-  left: -170px;
-  text-align: center;
+  left: -120px;
+  align-items: center;
   margin-top: -15px;
   color:#000;
+  line-height: 20px; 
 }
 
 .title2 {
   font-size: 20px;
-  text-align: center;
-  margin-top: 250px;
-  margin-left : -45px;
+  margin-top: -5px;
+  margin-left : -2px;
   text-decoration: none;
   color:#000;
-  right: 15px;
+  padding-right: 153px;
+  line-height: 20px;
+  text-align: center;
 }
 
-.img-icon1{
-  margin-top:-330px;
-}
-
-.img-icon2{
-  margin-top: 350px;
-}
-
+.title3 {
+  font-size: 20px ;
+  margin-left: -700px;
+  gap: 15px;
+  margin-top: -770px;
+  text-decoration: none;
+  color:#000;
+  text-align: center;
+  line-height: 20px;
+  padding-right: 200px;
+  }
 
   .body,
   .body1,
@@ -1150,9 +1182,19 @@ a.eco-tech1 {
   .img-icon1,
   .img-icon2 {
     width: 80%; /* Gambar penuh */
-    height: auto; /* Menyesuaikan tinggi */
-   margin-left: 60px;
+    height: 10; /* Menyesuaikan tinggi */
+  margin-left: 60px;
+   margin-bottom: 0;
+   padding-bottom: 0;
   }
+
+  .img-icon1{
+  margin-top: -25px;
+}
+
+.img-icon2{
+  margin-top: -25px;
+}
 
   .hover-more {
     width: auto;
@@ -1162,7 +1204,7 @@ a.eco-tech1 {
 
 
   .calendar {
-    margin-left: 50px;
+    margin-left: 75px;
     margin-top : -20px;
     
   }
@@ -1174,37 +1216,36 @@ a.eco-tech1 {
   line-height: 140%;
   font-family: Poppins;
   padding-left: 0px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   }
 
   .our-age-is2 {
-    align-self: stretch;
+  align-self: stretch;
   position: relative;
   font-size: 12px;
   line-height: 140%;
   font-family: Poppins;
   padding-left: 0px;
-  margin-top: 30px;
+  margin-bottom: 50px;
   }
 
   .healthy-living-can-container {
   align-self: stretch;
   position: relative;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 140%;
   text-align: justify;
-  display: inline-block;
-  height: 172px;
+  display: inline-block;/* Sesuaikan tinggi */
   flex-shrink: 0;
   font-family: Poppins;
-  }
+  padding-right: 800px;
+  margin-left: -700px;
+  z-index: 1; /* Sesuaikan layer */
+  margin-bottom: 100px;
+  padding-top: 0;
+}
 
-  .title3 {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 15px;
-  }
+
+  
+  
 }

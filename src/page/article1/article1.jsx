@@ -139,6 +139,7 @@ export function Article1() {
 			In this article we will understand what features a greenhouse must have to be considered truly environmentally friendly, how to make it and what are the most sustainable solutions of Artigianfer." maxLength={400 }/>
 			</div>
 			</div>
+			<img className="img-icon1" alt="" src="/images/imgarticle8.jpg" id="imgImage1" />
 			<div className="body1" id="bodyContainer1">
 			<div className="headline3">
 			<div className="headline6">
@@ -169,11 +170,12 @@ export function Article1() {
 			to develop advanced agriculture called Smart Greenhouse." maxLength={400}/>
 			</div>
 			</div>
-			<img className="img-icon1" alt="" src="/images/imgarticle8.jpg" id="imgImage1" />
+			
 			<img className="img-icon2" alt="" src="/images/imgarticle9.jpg" id="imgImage2" />
 			<div className="body2" id="bodyContainer2">
 			<div className="headline3">
 			<div className="headline6">
+			
 			<a className="title3" href="https://myeco.id/hemat-energi-eco-green-living-konsep-tepat-membuat-rumah-modern/" target="_blank">
 				Save Energy! Eco-Green Living The Right Concept to Make a Modern Home</a>
 			</div>
