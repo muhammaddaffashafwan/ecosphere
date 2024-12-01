@@ -411,3 +411,76 @@ body {
   background-color: #fff;
   color: #6ea54e;
 }
+
+@media (max-width:426px) {
+  .home-page-title {
+    font-size: 20px;
+    left: 25px;
+    top: 80px;
+  }
+  .home-page-item {
+    width: 250px;
+    height: 220px;
+    left: 4rem;
+    
+  }
+  .at-ecosmophere {
+    font-size: 13px;
+    left: 25px;
+    width: 380px;
+  }
+  .home-page-icon {
+    width: 250px;
+    height: 400px;
+    left: 6rem;
+    padding-top: 100px;
+    bottom: 2420px;
+  }
+  .cta-buttons {
+    padding: 3px 60px;
+  }
+  .color-blur-icon {
+    left: 25px;
+    top: -100px;
+  }
+  
+  .hover-more-s {
+    left: 25px;
+    top: 650px;
+  }
+  .image-about-us {
+    width: 100px;
+  }
+  .frame-type-1 {
+    width: 150px;
+    height: 200px;
+    left: 25px;
+    top: 865px;
+  }
+  .frame-type-2 {
+    left: 190px;
+    width: 150px;
+    top: 865px;
+  }
+  .frame-type-3 {
+    left: 25px;
+    width: 150px;
+    top: 1015px;
+  }
+  .frame-type-4 {
+    left: 190px;
+    width: 150px;
+    top: 1050px;
+  }
+  .about-us {
+    left: 25px;
+    font-size: 30px;
+    top: 1250px;
+  }
+  .detail-about-us {
+    left: 25px;
+    font-size: 13px;
+    width: 380px;
+    top: 1310px;
+  }
+}

@@ -7,9 +7,10 @@ export function Homepage() {
         <img className='vector-icon' alt='' src='/images/footerHP.png' />
 
         <img className='color-blur-icon' alt='' src='/images/Color BlurHP.png' />
-
+        <div className="">
         <div className='home-page-item'></div>
         <img className='home-page-icon' alt='' src='/images/homepage-plant.png' />
+        </div>
         <div className='home-page-title'>Smart Living, Greener Future</div>
         <div className='at-ecosmophere'>
           "At Ecosmophere, we empower you with the knowledge to create an eco-friendly home. Explore
@@ -17,11 +18,11 @@ export function Homepage() {
           footprint while enhancing your living space. Start your journey toward greener living
           today."
         </div>
-        <section className='hover-more-s'>
+        <div className='hover-more-s'>
           <a href='#about-us' className='cta-buttons'>
             Get To Know Us
           </a>
-        </section>
+        </div>
         <img className='vector-icon2' alt='' src='/images/VectorgreenHP.png' />
 
         <div id='about-us' className='about-us'>
@@ -34,21 +35,21 @@ export function Homepage() {
           inspire a community of environmentally conscious individuals who strive to make a positive
           impact on the world, starting from their homes.
         </div>
-        <div className='frame-type-1'>
-          <img className='about-us-1' alt='' src='/images/aboutus1.jpg ' />
-        </div>
-        <div className='frame-type-2'>
-          <img className='about-us-2' alt='' src='/images/aboutus2.jpg' />
-        </div>
-        <div className='frame-type-3'>
-          <img className='about-us-3' alt='' src='/images/aboutus3.jpg' />
-        </div>
-        <div className='frame-type-4'>
-          <img className='about-us-4' alt='' src='/images/aboutus4.jpg' />
-        </div>
-
-        <img className='vector-icon3' alt='' src='/images/VectorgreenHP.png' />
-
+        
+          <div className='frame-type-1'>
+            <img className='about-us-1' alt='' src='/images/aboutus1.jpg ' />
+          </div>
+          <div className='frame-type-2'>
+            <img className='about-us-2' alt='' src='/images/aboutus2.jpg' />
+          </div>
+          <div className='frame-type-3'>
+            <img className='about-us-3' alt='' src='/images/aboutus3.jpg' />
+          </div>
+          <div className='frame-type-4'>
+            <img className='about-us-4' alt='' src='/images/aboutus4.jpg' />
+          </div>
+          <img className='vector-icon3' alt='' src='/images/VectorgreenHP.png' />
+        
         <div className='section-3'>
           <div className='title'>
             <div className='title-1'>
