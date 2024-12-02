@@ -25,7 +25,7 @@ export function Homepage() {
         </div>
         <img className='vector-icon2' alt='' src='/images/VectorgreenHP.png' />
 
-        <div id='about-us' className='about-us'>
+        <div  className='about-us'>
           ABOUT US
         </div>
         <div className='detail-about-us'>
@@ -36,7 +36,7 @@ export function Homepage() {
           impact on the world, starting from their homes.
         </div>
         
-          <div className='frame-type-1'>
+          <div id="about-us" className='frame-type-1'>
             <img className='about-us-1' alt='' src='/images/aboutus1.jpg ' />
           </div>
           <div className='frame-type-2'>
@@ -55,7 +55,7 @@ export function Homepage() {
             <div className='title-1'>
               <div className='title-up'>
                 <div className='title-up-caption'>Find knowledge that matters</div>
-                <div className='title-acc'></div>
+                
               </div>
               <div className='title-down'>Explore articles to elevate your eco-journey!</div>
             </div>
@@ -80,7 +80,7 @@ export function Homepage() {
                 </div>
 
                 <div className='article-time'>
-                  <img src='/images/clock.png' />
+                  <img className="clock" src='/images/clock.png' />
                   <p>powerstarelectricals | Oct 24, 2024</p>
                 </div>
               </div>
@@ -106,7 +106,7 @@ export function Homepage() {
                   </div>
                 </div>
                 <div className='article-time'>
-                  <img src='/images/clock.png' />
+                  <img className="clock-1" src='/images/clock.png' />
                   <p>silvotherapy | Jan 31, 2024</p>
                 </div>
               </div>
@@ -132,7 +132,7 @@ export function Homepage() {
                   </div>
                 </div>
                 <div className='article-time'>
-                  <img src='/images/clock.png' />
+                  <img className="clock-2" src='/images/clock.png' />
                   <p>forbes | May 31, 2022</p>
                 </div>
               </div>
@@ -153,7 +153,7 @@ export function Homepage() {
                   href='https://www.ecoluxlifestyle.co/5-inexpensive-ideas-to-make-your-home-more-eco-friendly/'
                   className='article-link'
                 >
-                  <b>5 Inexpensive Ideas To Make Your Home More Eco-Friendly</b>
+                  <b className="eco-friendly">5 Inexpensive Ideas To Make Your Home More Eco-Friendly</b>
                   <div className='article-4-desc'>
                     Many assume that being more environmentally conscious means their living
                     expenses will increase. However, you do not have to break the bank to make your
@@ -164,8 +164,8 @@ export function Homepage() {
                   </div>
                 </a>
               </div>
-              <div className='article-time'>
-                <img src='/images/clock.png' />
+              <div className='article-time-1'>
+                <img className="clock-3" src='/images/clock.png' />
                 <p>ecoluxlifestyle | Nov 19, 2023</p>
               </div>
             </div>

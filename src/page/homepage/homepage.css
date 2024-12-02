@@ -393,7 +393,7 @@ body {
 .cta-button-2 {
   background-color: #739646;
   color: #fff;
-  padding: 5px 2px;
+  padding: 5px ;
   border-radius: 50px;
   margin-left: 37px;
   text-decoration: none;
@@ -414,7 +414,7 @@ body {
 
 @media (max-width:426px) {
   .home-page-title {
-    font-size: 20px;
+    font-size: 30px;
     left: 25px;
     top: 80px;
   }
@@ -425,7 +425,7 @@ body {
     
   }
   .at-ecosmophere {
-    font-size: 13px;
+    font-size: 14px;
     left: 25px;
     width: 380px;
   }
@@ -474,13 +474,87 @@ body {
   }
   .about-us {
     left: 25px;
-    font-size: 30px;
+    font-size: 25px;
     top: 1250px;
   }
   .detail-about-us {
     left: 25px;
     font-size: 13px;
     width: 380px;
-    top: 1310px;
+    top: 1305px;
+  }
+  .title-up-caption {
+    font-size: 20px;
+    top: -310px;
+    padding-left: 65px;
+  }
+  .title-down {
+    font-size: 23px;
+    top: -260px;
+    padding-left: 10px;
+  }
+  .article-a {
+    top: -373px;
+    left: 410px;
+    font-size: 12PX;
+  }
+  .article-time {
+    font-size: 10px;
+  }
+  .clock,
+  .clock-1,
+  .clock-2
+  {
+    width: 17px;
+  }
+  .article-b {
+    top: -260px;
+    left: 410px;
+    font-size: 12PX;
+  }
+  .article-c {
+    top: -150px;
+    left: 410px;
+    font-size: 12PX;
+  }
+  .right-side {
+    left: 413px;
+    width: 380px;
+    top: 210px;
+  }
+  .article-time-1 {
+    font-size: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  .eco-friendly {
+    font-size: 13px;
+    width: 200px;
+  }
+  .article-4-desc {
+    font-size: 10px;
+    width: 390px;
+  }
+  .article-4 {
+    top: 230px;
+  }
+  .clock-3 {
+    width: 17px;
+    height: 20px;
+  }
+  .click-me {
+    left: -10px;
+    top: 2550px;
+  }
+  .cta-button-2 {
+    padding: 3px;
+    width: 380px;
+  }
+} 
+
+@media (max-width:768px) {
+  .home-page-title {
+    font-size: 30px;
+    left: 60px;
   }
 }
