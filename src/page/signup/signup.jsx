@@ -47,7 +47,8 @@ export function Signup() {
     axios
   .post("http://localhost:5000/signup", signupData)
   .then((response) => {
-    localStorage.setItem("token", response.data.token);
+    alert("Signup successful! Please log in.");
+    // localStorage.setItem("token", response.data.token);
     // Redirect to login page after successful signup
     window.location.href = "/login";
   })
