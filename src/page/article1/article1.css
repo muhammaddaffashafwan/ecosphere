@@ -336,62 +336,101 @@
   color: #656565;
 }
 
-/* Responsif untuk layar tablet */
-@media (min-width: 768px) {
-  .article-item, .article-inner, .frame-icon {
-    width: 85px;
-    height: 85px;
-    left: 34vw;
-    display: block;
-  }
-  .article-categories-parent {
-    left: 0;
-    width: 100%;
-    font-size: 14px;
-  }
-  .article-Allcategories, .article-EcoEssentials, .article-GreenLiving, .article-EcoTech {
-    left: 0;
-    width: 33.3%;
-  }
-  .eco-tech1 {
-    left: 20px;
-    font-size: 20px;
-  }
+@media (max-width: 768px) {
   .news {
-    top: 950px;
-    left: 20px;
-    width: 20%;
-    height: auto;
-    padding: 15px;
-    font-size: 20px;
-  }
-  .img-article3 {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-  .calendar {
-    flex-direction: column;
-    gap: 10px;
+    top: 35vw;
+    width: 45%;;
+    left: 3vw;
   }
 
-  .text, .text1, .text2 {
-    width: 100%;
-    left: 10px;
+  .article-Allcategories, .article-EcoEssentials, .article-GreenLiving,.article-EcoTech{
+    top :-52vw;
+    z-index: 1;
+    font-size: -1vw;
+  }
+
+  .article-Allcategories{
+    left: -9vw;
+  }
+
+  .article-EcoEssentials{
+    left: 17vw;
+  }
+
+  .article-GreenLiving{
+    left : 43vw;
+  }
+
+  .article-EcoTech{
+    left: 66vw;
+  }
+
+  .article-inner, .article-item, .frame-icon {
+    left : 44vw;
+    width: 17%;
+    height: 17vw;
+  }
+
+  .article-item {
+    top : 73vw;
   }
 
   .article-inner {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 180px;
-    height: 180px;
+    top : 90vw;
   }
 
   .frame-icon {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 180px;
-    height: 180px;
+    top: 107vw;
+  }
+  .eco-house-environmentally {
+    font-size: 2vw;
+    line-height: 2vw;
+    left: 0vw;;
+  }
+
+  .text {
+    left : 61vw;
+    padding-right: 15vw;
+    font-size: 1vw;
+    line-height:-2vw;
+    top: 72vw;
+  }
+
+  .text1 {
+    left : 61vw;
+    padding-right: 15vw;
+    font-size: 1vw;
+    top: 89vw
+  }
+
+  .text2{
+    left : 61vw;
+    padding-right: 15vw;
+    font-size : 1vw;
+    top: 107vw;
+  }
+.calendar{
+  padding-left:10vw;
+  gap:2vw;
+}
+  .icon-calendar {
+    width: -9vw;
+    height: -9vw;
+    left : 7vw;
+  }
+
+  .danastra{
+    font-size: -30vw;
+    text-wrap: nowrap;
+    left:-2vw;
+  }
+
+  .bullets{
+    margin-left: -10vw;
+  }
+
+  .headline{
+    padding-bottom: 0vw;
   }
 }
 
@@ -756,156 +795,79 @@ a.eco-tech1 {
 
 
 @media (max-width: 768px) {
-  .headline4,
-  .headline3,
-  .our-age-is {
-    font-size: 12px; /* Font lebih kecil untuk layar lebih sempit */
-    margin-left: 50px;
+  .more-articles{
+    top: 108vw;
+    font-size: 30px;
+    left: 7vw;
+  }
+  
+  .icon-more{
+  top: 103vw;
+  left: 87vw;
+  position: relative;
+  width: 3vw;
+  height: 3vw;
   }
 
-
-  .brandicofacebook-parent {
-    flex-direction: column; /* Tumpukan ikon media sosial */
-    gap: 10px;
-  }
-
-  .more-articles,
-  .img-icon,
-  .body,
-  .headline4,
-  .headline3,
-  .body1,
-  .img-icon1,
-  .img-icon2 {
-    position: static; /* Membuat elemen mengikuti alur dokumen */
-    margin-top: 10px; /* Sentris untuk elemen */
-    width: 90%; /* Sesuaikan lebar */
-    max-width: 600px; /* Batasi lebar maksimum */
-    margin-left: 30px;
-  }
-
-  .more-articles {
-    margin-top: 400px;
-    margin-left: 30px;
-    text-wrap: nowrap;
-    font-size: 40px;
-  }
-
-  .headline4,
-  .headline3,
-  .bullets3,
-  .our-age-is {
-    font-size: 14px; /* Sesuaikan ukuran font */
-    left: 10px;
-  }
-
-.title1 {
-  font-size: 20px;
-  left: -120px;
-  align-items: center;
-  margin-top: -15px;
-  color:#000;
-  line-height: 20px; 
-}
-
-.title2 {
-  font-size: 20px;
-  margin-top: -5px;
-  margin-left : -2px;
-  text-decoration: none;
-  color:#000;
-  padding-right: 153px;
-  line-height: 20px;
-  text-align: center;
-}
-
-.title3 {
-  font-size: 20px ;
-  margin-left: -700px;
-  gap: 15px;
-  margin-top: -770px;
-  text-decoration: none;
-  color:#000;
-  text-align: center;
-  line-height: 20px;
-  padding-right: 200px;
-  }
-
-  .body,
-  .body1,
-  .body2 {
-    font-size: 20px; /* Skala ukuran font */
-    line-height: 1.4; /* Atur jarak antar baris */
-  }
-
-  .img-icon,
-  .img-icon1,
-  .img-icon2 {
-    width: 80%; /* Gambar penuh */
-    height: 10; /* Menyesuaikan tinggi */
-  margin-left: 60px;
-   margin-bottom: 0;
-   padding-bottom: 0;
-  }
-
-  .img-icon1{
-  margin-top: -25px;
-}
-
-.img-icon2{
-  margin-top: -25px;
-}
-
-  .hover-more {
-    width: auto;
-    height: auto;
-    padding: 10px 15px; /* Lebih kecil untuk perangkat kecil */
-  }
-
-
-  .calendar {
-    margin-left: 75px;
-    margin-top : -20px;
+  .img-icon, .img-icon1, .img-icon2{
+    width: 50vw;
+    height: 30vw;
     
   }
 
-  .our-age-is1 {
-  align-self: stretch;
-  position: relative;
-  font-size: 12px;
-  line-height: 140%;
-  font-family: Poppins;
-  padding-left: 0px;
-  margin-bottom: 50px;
+  .img-icon{
+    top:156vw;
+    align-items: center;
+    margin-left : 10vw;
   }
 
-  .our-age-is2 {
-  align-self: stretch;
-  position: relative;
-  font-size: 12px;
-  line-height: 140%;
-  font-family: Poppins;
-  padding-left: 0px;
-  margin-bottom: 50px;
+  .img-icon1{
+    top: 226vw;
+    align-items: center;
+    left: 26vw;
   }
 
-  .healthy-living-can-container {
-  align-self: stretch;
-  position: relative;
-  font-size: 12px;
-  line-height: 140%;
-  text-align: justify;
-  display: inline-block;/* Sesuaikan tinggi */
-  flex-shrink: 0;
-  font-family: Poppins;
-  padding-right: 800px;
-  margin-left: -700px;
-  z-index: 1; /* Sesuaikan layer */
-  margin-bottom: 100px;
-  padding-top: 0;
-}
+  .img-icon2{
+    top: 299vw;
+    left: 26vw;
+  }
+
+  .title1, .title2, .title3{
+    font-size: 25px;
+    text-align: center;
+    line-height: 3vw;;
+  }
+
+  .title1{
+    left:-82vw;
+    top: -93vw;
+  }
+
+  .our-age-is1{
+    left: -83vw;
+    top: -104vw;
+  }
+
+  .title2{
+    top: -81vw;
+    left:-2vw;
+  }
+
+  .our-age-is2{
+    top: -89vw;
+    left: -2vw;
+  }
+
+  .title3{
+    top: -67vw;
+    left: -82vw;
+  }
+
+  .healthy-living-can-container{
+    top:-83vw;
+    left: -82vw;
+  }
 
 
-  
-  
+
 }
