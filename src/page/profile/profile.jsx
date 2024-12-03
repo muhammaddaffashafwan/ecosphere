@@ -12,6 +12,15 @@ const Profile = () => {
   const [userPosts, setUserPosts] = useState([]);
   const [loading, setLoading] = useState(false); // Loading state to handle async operations
 
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
+
+    console.log("user:", user);
+    console.log("token:", token);
+  }, []);
+
   // Open edit profile modal
   const handleEditClick = () => {
     setIsEditOpen(true);
@@ -151,6 +160,7 @@ const Profile = () => {
 
     fetchPosts();
   }, []);
+
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">

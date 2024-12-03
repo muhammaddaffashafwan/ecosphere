@@ -1,162 +1,140 @@
-import { useState } from "react";
-import { DataPost } from "../../components/ForumPost/DataPost";
+import { useState, useEffect } from "react";
 import ForumPost from "../../components/ForumPost/ForumPost";
 import "../global.css";
 
 export function Forum1() {
-  // State for the list of questions
   const [questions, setQuestions] = useState([
     {
       id: 1,
       title: "What eco-friendly DIY projects have you tried recently?",
-      answers: 14,
-      lastAnswer: "1h ago",
-      image: null,
     },
     {
       id: 2,
       title: "What inspires you to make eco-friendly choices in your home?",
-      answers: 26,
-      lastAnswer: "1h ago",
-      image: null,
     },
     {
-      id: 2,
+      id: 3,
       title: "What is the most impactful change you've made at home to support sustainability?",
-      answers: 31,
-      lastAnswer: "3h ago",
-      image: null,
     },
     {
-      id: 2,
+      id: 4,
       title: "Which smart tech solutions have helped make your home greener?",
-      answers: 19,
-      lastAnswer: "5h ago",
-      image: null,
     },
   ]);
-
-  // State for overlay
   const [overlayVisible, setOverlayVisible] = useState(false);
-  const [overlayMode, setOverlayMode] = useState("add"); // 'add' or 'answer'
-  const [selectedQuestion, setSelectedQuestion] = useState(null); // Question for the overlay
-  const [inputTitle, setInputTitle] = useState(""); // For adding question title
-  const [bodyContent, setBodyContent] = useState(""); // User's input for details
-  const [newImage, setNewImage] = useState(null); // State for uploaded image
+  const [overlayMode, setOverlayMode] = useState("add");
+  const [selectedQuestion, setSelectedQuestion] = useState(null);
+  const [inputTitle, setInputTitle] = useState("");
+  const [bodyContent, setBodyContent] = useState("");
+  const [newImage, setNewImage] = useState(null);
 
-  // Handle "What's Your Question?" click
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
+
+    console.log("user:", user);
+    console.log("token:", token);
+  }, []);
+
   const handleQuestionClick = () => {
     setOverlayMode("add");
     setSelectedQuestion(null);
     setInputTitle("");
     setBodyContent("");
-    setNewImage(null); // Reset image state
+    setNewImage(null);
     setOverlayVisible(true);
   };
 
-  // Handle "ANSWER" button click
   const handleAnswerClick = (question) => {
     setOverlayMode("answer");
     setSelectedQuestion(question);
     setBodyContent("");
-    setNewImage(null); // Reset image state
+    setNewImage(null);
     setOverlayVisible(true);
   };
 
-  // Handle overlay submit
-  const handleOverlaySubmit = () => {
-    if (overlayMode === "add") {
-      // Add a new question
-      if (inputTitle.trim() && bodyContent.trim()) {
+  const handleOverlaySubmit = async () => {
+    const formData = new FormData();
+    formData.append("caption", bodyContent); // Backend expects 'caption'
+    if (inputTitle && overlayMode === "add") {
+      formData.append("title", inputTitle); // Add the title only when creating a new question
+    }
+    if (newImage) {
+      formData.append("image_url", newImage); // Attach image
+    }
+
+    try {
+      if (overlayMode === "add") {
+        // Add new question
         setQuestions([
           ...questions,
-          {
-            id: questions.length + 1,
-            title: inputTitle,
-            answers: 0,
-            lastAnswer: "Just now",
-            image: newImage, // Add image if uploaded
-          },
+          { id: questions.length + 1, title: inputTitle, caption: bodyContent }, // Add the new question
         ]);
-      }
-    } else if (overlayMode === "answer") {
-      // Simulate adding an answer (increment answers count)
-      if (bodyContent.trim()) {
-        setQuestions(
-          questions.map((q) =>
+      } else if (overlayMode === "answer" && selectedQuestion) {
+        // Add new answer to a selected question
+        setQuestions((prevQuestions) =>
+          prevQuestions.map((q) =>
             q.id === selectedQuestion.id
-              ? {
-                  ...q,
-                  answers: q.answers + 1,
-                  lastAnswer: "Just now",
-                  image: newImage, // Add image if uploaded
-                }
+              ? { ...q, replies: (q.replies || 0) + 1, lastAnswer: "Just now" }
               : q
           )
         );
       }
+      setOverlayVisible(false);
+    } catch (error) {
+      console.error("Error submitting data:", error);
     }
-    setOverlayVisible(false);
   };
 
-  // Handle file input change
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setNewImage(reader.result); // Save image as a base64 string
-      };
-      reader.readAsDataURL(file); // Read the file as base64 string
-    }
+    setNewImage(file);
   };
 
   return (
-    <div className='min-h-screen flex flex-col'>
-      <main className='flex-grow p-5 flex'>
-        {/* Left Content */}
-        <div className='flex-1'>
-          <h1 className='text-left font text-5xl font-bold mb-5 mt-[100px]'>
+    <div className="min-h-screen flex flex-col">
+      <main className="flex-grow p-5 flex">
+        <div className="flex-1">
+          <h1 className="text-left font text-5xl font-bold mb-5 mt-[100px]">
             SHARING & DISCUSSIONS
           </h1>
-          <div className='flex flex-col'>
-            {DataPost.map((post) => (
+          <div className="flex flex-col">
+            {questions.map((post) => (
               <ForumPost key={post.id} post={post} />
             ))}
           </div>
         </div>
 
-        {/* Right Content */}
-        <div className='w-1/3 ml-5 pt-[195px]'>
-          {/* Input Section */}
+        <div className="w-1/3 ml-5 pt-[195px]">
           <div
-            className='flex items-center bg-softCream p-3 rounded-lg mb-5 cursor-pointer border border-black shadow-md'
+            className="flex items-center bg-softCream p-3 rounded-lg mb-5 cursor-pointer border border-black shadow-md"
             onClick={handleQuestionClick}
           >
             <img
-              src='/images/forum1/muhammad sumbul.png'
-              alt='User Avatar'
-              className='w-10 h-10 rounded-full mr-3'
+              src="/images/forum1/muhammad sumbul.png"
+              alt="User Avatar"
+              className="w-10 h-10 rounded-full mr-3"
             />
             <input
-              type='text'
+              type="text"
               placeholder="What's Your Question?"
-              className='bg-lightGreen rounded-lg p-2 w-full text-gray-700 focus:outline-none cursor-pointer'
+              className="bg-lightGreen rounded-lg p-2 w-full text-gray-700 focus:outline-none cursor-pointer"
               readOnly
             />
           </div>
 
-          {/* Questions Section */}
-          <div className='bg-softCream p-3 rounded-lg'>
-            <h2 className='font text-xl font-bold mb-4'>QUESTION FOR YOU</h2>
+          <div className="bg-softCream p-3 rounded-lg">
+            <h2 className="font text-xl font-bold mb-4">QUESTION FOR YOU</h2> {/* Static section title */}
             {questions.map((question) => (
               <div
                 key={question.id}
-                className='bg-softCream p-4 rounded-lg mb-4 border border-black shadow-md'
+                className="bg-softCream p-4 rounded-lg mb-4 border border-black shadow-md"
               >
-                <h3 className='text-lg font-semibold text-gray-900 mb-[15px]'>{question.title}</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-[15px]">
+                  {question.title} {/* Dynamic question title */}
+                </h3>
                 <button
-                  className='bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all rounded-full px-[17px] py-[7px] text-[15px]'
+                  className="bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all rounded-full px-[17px] py-[7px] text-[15px]"
                   onClick={() => handleAnswerClick(question)}
                 >
                   ANSWER
@@ -167,24 +145,23 @@ export function Forum1() {
         </div>
       </main>
 
-      {/* Overlay */}
       {overlayVisible && (
-        <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
-          <div className='bg-white p-6 rounded-lg shadow-lg w-[600px] max-h-[550px] mt-[60px] overflow-y-auto'>
-            <h2 className='text-xl font-bold mb-4'>
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-[600px] max-h-[550px] mt-[60px] overflow-y-auto">
+            <h2 className="text-xl font-bold mb-4">
               {overlayMode === "add" ? "Ask a New Question" : `${selectedQuestion.title}`}
             </h2>
             {overlayMode === "add" && (
               <input
-                type='text'
-                placeholder='Enter the title here...'
-                className='w-full p-3 border border-gray-300 rounded-lg mb-4'
+                type="text"
+                placeholder="Enter the title here..."
+                className="w-full p-3 border border-gray-300 rounded-lg mb-4"
                 value={inputTitle}
                 onChange={(e) => setInputTitle(e.target.value)}
               />
             )}
             <textarea
-              className='w-full p-3 border border-gray-300 rounded-lg mb-4'
+              className="w-full p-3 border border-gray-300 rounded-lg mb-4"
               placeholder={
                 overlayMode === "add"
                   ? "Write your question details here..."
@@ -194,31 +171,34 @@ export function Forum1() {
               onChange={(e) => setBodyContent(e.target.value)}
             ></textarea>
 
-            {/* Image Upload */}
-            <div className='mb-4'>
-              <label className='block text-sm font-medium mb-2'>Upload Image</label>
+            <div className="mb-4">
+              <label className="block text-sm font-medium mb-2">Upload Image</label>
               <input
-                type='file'
-                accept='image/*'
+                type="file"
+                accept="image/*"
                 onChange={handleFileChange}
-                className='w-full border border-gray-300 rounded-lg p-2'
+                className="w-full border border-gray-300 rounded-lg p-2"
               />
               {newImage && (
-                <div className='mt-2'>
-                  <img src={newImage} alt='Uploaded Preview' className='max-w-[200px] rounded-lg' />
+                <div className="mt-2">
+                  <img
+                    src={URL.createObjectURL(newImage)}
+                    alt="Uploaded Preview"
+                    className="max-w-[200px] rounded-lg"
+                  />
                 </div>
               )}
             </div>
 
-            <div className='flex justify-end'>
+            <div className="flex justify-end">
               <button
-                className='bg-gray-200 px-4 py-2 rounded-full mr-2'
+                className="bg-gray-200 px-4 py-2 rounded-full mr-2"
                 onClick={() => setOverlayVisible(false)}
               >
                 Cancel
               </button>
               <button
-                className='bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all px-4 py-2 rounded-full'
+                className="bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all px-4 py-2 rounded-full"
                 onClick={handleOverlaySubmit}
               >
                 Submit

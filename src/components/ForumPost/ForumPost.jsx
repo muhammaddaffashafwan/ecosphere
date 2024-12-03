@@ -1,36 +1,149 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom'; // Added useNavigate for redirect after update/delete
 import Modal from "../Modal/Modal";
 
-const ForumPost = ({ post, currentUserId }) => {
-  const [likeCount, setLikeCount] = useState(post.likes || 0);
+const ForumPost = ({ currentUserId }) => {
+  const { id } = useParams(); // Extracting the id from the URL parameter
+  const [post, setPost] = useState(null);
+  const [likeCount, setLikeCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMoreOptionsOpen, setIsMoreOptionsOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate(); // Added navigate for redirect
+
+  const token = localStorage.getItem('authToken'); // Assuming token is stored in localStorage
+
+  useEffect(() => {
+    console.log('Post ID:', id); // Debug log to check the id value
+
+    if (!id) {
+      setError("Post ID is missing or invalid.");
+      setLoading(false);
+      return;
+    }
+
+    setLoading(true);
+    fetch(`http://localhost:5000/get-forum/${id}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`, // Include token in the request header
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (!data) {
+          throw new Error("Post not found.");
+        }
+        setPost(data);
+        setLikeCount(data.likes || 0);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(`Failed to fetch post data: ${error.message}`);
+        setLoading(false);
+      });
+  }, [id, token]); // Added token as dependency
+
+  useEffect(() => {
+    if (post && currentUserId) {
+      fetch(`http://localhost:5000/like-forum/${id}/${currentUserId}`, {
+        headers: {
+          'Authorization': `Bearer ${token}`, // Include token in the request header
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setIsLiked(data.isLiked);
+          setLikeCount(data.likeCount);
+        })
+        .catch((error) => console.error("Error fetching like data:", error));
+    }
+  }, [post, currentUserId, id, token]);
 
   const handleLike = () => {
-    setIsLiked(!isLiked);
-    setLikeCount(isLiked ? likeCount - 1 : likeCount + 1);
+    const action = isLiked ? 'unlike' : 'like';
+    fetch(`http://localhost:5000/like-forum/${id}/${currentUserId}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`, // Include token in the request header
+      },
+      body: JSON.stringify({ action }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setIsLiked(data.isLiked);
+        setLikeCount(data.likeCount);
+      })
+      .catch((error) => console.error("Error updating like:", error));
   };
 
   const handleDelete = () => {
-    // Handle deletion logic here
-    console.log('Post deleted');
-    setIsMoreOptionsOpen(false); // Close the more options menu
+    fetch(`http://localhost:5000/delete-forum/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${token}`, // Include token in the request header
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log('Post deleted');
+          navigate('/forum'); // Redirect to forum page after deletion
+        } else {
+          console.error('Failed to delete post');
+        }
+      })
+      .catch((error) => console.error("Error deleting post:", error));
+    setIsMoreOptionsOpen(false);
   };
 
   const handleUpdate = () => {
-    // Handle update logic here
-    console.log('Post updated');
-    setIsMoreOptionsOpen(false); // Close the more options menu
+    fetch(`http://localhost:5000/update-forum/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${token}`, // Include token in the request header
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log('Post updated');
+          navigate(`/forum2/${id}`); // Redirect to the post detail page after update
+        } else {
+          console.error('Failed to update post');
+        }
+      })
+      .catch((error) => console.error("Error updating post:", error));
+    setIsMoreOptionsOpen(false);
   };
 
-  const isUserPost = post.userId === currentUserId; // Check if the post belongs to the current user
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  if (!post) {
+    return <div>Post not found</div>;
+  }
+
+  const isUserPost = post.userId === currentUserId;
 
   return (
     <div className="flex flex-col bg-softCream p-5 rounded-lg border border-black shadow-md mb-5">
-      {/* User avatar and details */}
       <div className="flex items-center mb-2">
         <img
           className="w-10 h-10 rounded-full mr-2"
@@ -42,13 +155,9 @@ const ForumPost = ({ post, currentUserId }) => {
           <span className="text-xs text-gray-500">{post.date}</span>
         </div>
       </div>
-
-      {/* Post Title with Link to Forum2 */}
       <Link to={`/forum2/${post.id}`} className="font text-2xl font-bold mb-4 text-black mt-[15px]">
         {post.title}
       </Link>
-
-      {/* Post Content */}
       <div className="bg-softCream rounded-lg">
         {post.showImage && post.imageUrl && (
           <img className="w-full h-auto mb-[20px]" alt="Post Image" src={post.imageUrl} />
@@ -56,8 +165,6 @@ const ForumPost = ({ post, currentUserId }) => {
         <p className="text-lg">{post.content}</p>
         <p className="text-sm text-gray-500">{post.tags}</p>
       </div>
-
-      {/* Like and Message Buttons */}
       <div className="flex justify-between items-center mt-4">
         <div className="flex items-center gap-[30px]">
           <button
@@ -76,68 +183,44 @@ const ForumPost = ({ post, currentUserId }) => {
             onClick={() => setIsModalOpen(true)}
           >
             <i className="bi bi-chat-text text-2xl"></i>
-            <span className="ml-2">{post.comments.length}</span>
+            <span className="ml-2">{(post.comments || []).length}</span>
           </button>
         </div>
-
-        {/* More Options (Only visible for the post owner) */}
         {isUserPost && (
-  <div className="relative">
-    <button
-      className="flex items-center justify-center text-2xl"
-      onClick={() => setIsMoreOptionsOpen(!isMoreOptionsOpen)}
-    >
-      <i className="bi bi-three-dots"></i>
-    </button>
-    {isMoreOptionsOpen && (
-      <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg w-40 border-2 border-[#739646]">
-        <button
-          className="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 rounded-lg"
-          onClick={handleUpdate}
-        >
-          Update
-        </button>
-        <div className="border-t border-[#739646]"></div> {/* Divider line */}
-        <button
-          className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 rounded-lg"
-          onClick={handleDelete}
-        >
-          Delete
-        </button>
+          <div className="relative">
+            <button
+              className="flex items-center justify-center text-2xl"
+              onClick={() => setIsMoreOptionsOpen(!isMoreOptionsOpen)}
+            >
+              <i className="bi bi-three-dots"></i>
+            </button>
+            {isMoreOptionsOpen && (
+              <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg w-40 border-2 border-[#739646]">
+                <button
+                  className="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 rounded-lg"
+                  onClick={handleUpdate}
+                >
+                  Update
+                </button>
+                <div className="border-t border-[#739646]"></div>
+                <button
+                  className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 rounded-lg"
+                  onClick={handleDelete}
+                >
+                  Delete
+                </button>
+              </div>
+            )}
+          </div>
+        )}
       </div>
-    )}
-  </div>
-)}
-
-      </div>
-
-      {/* Modal for comments */}
       {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
     </div>
   );
 };
 
 ForumPost.propTypes = {
-  post: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    userAvatar: PropTypes.string.isRequired,
-    userName: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-    tags: PropTypes.string.isRequired,
-    likes: PropTypes.number,
-    comments: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number,
-        content: PropTypes.string,
-      })
-    ).isRequired,
-    showImage: PropTypes.bool,
-    imageUrl: PropTypes.string,
-    userId: PropTypes.string.isRequired, // Added userId to identify the post owner
-  }).isRequired,
-  currentUserId: PropTypes.string.isRequired, // Added currentUserId as a prop
+  currentUserId: PropTypes.string, // Optional prop
 };
 
 export default ForumPost;

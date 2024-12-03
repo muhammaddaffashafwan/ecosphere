@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 
 function ForumReply({ comments, setComments }) {
   const [replyingToCommentId, setReplyingToCommentId] = useState(null); // ID komentar yang sedang dibalas

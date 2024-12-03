@@ -64,11 +64,19 @@ const upload = multer({
 // **GET Users**
 export const getUsers = async (req, res) => {
   try {
-    const users = await Users.findAll();
-    return res.json(users);
+    // Fetch all users, you can add specific attributes or filtering if needed
+    const users = await Users.findAll({
+      attributes: ['id', 'name', 'username', 'email', 'profile_image', 'createdAt', 'updatedAt'], // Specify the fields you want to return
+    });
+
+    if (!users || users.length === 0) {
+      return res.status(404).json({ message: "No users found" });
+    }
+
+    return res.status(200).json(users);
   } catch (error) {
-    console.log(error);
-    return res.status(500).json({ error: "An error occurred" });
+    console.error("Error fetching users:", error.message); // Log detailed error
+    return res.status(500).json({ error: "Failed to fetch users. Please try again later." });
   }
 };
 

@@ -16,6 +16,8 @@ import { ForgotPassword } from './page/forgotPassword/forgotpassword';
 import { Signup } from './page/signup/signup';
 import ForumPost from './components/ForumPost/ForumPost';
 import Modal from './components/Modal/Modal';
+import { useState } from 'react';
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
@@ -27,13 +29,21 @@ function App() {
 
 function AppContent() {
   const location = useLocation();
+  console.log('Current location:', location.pathname); // Log current route
 
-  console.log('Current location:', location.pathname); // Log rute saat ini
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to handle modal visibility
 
   const showFooter = location.pathname.toLowerCase() !== '/login' && location.pathname.toLowerCase() !== '/signup' && location.pathname.toLowerCase() !== '/forgotpassword';
 
+  // Function to handle closing of the modal
+  const handleModalClose = () => {
+    console.log('Modal closed');
+    setIsModalOpen(false);
+  };
+
   return (
     <>
+      <AuthProvider>
       <Navbar />
 
       <Routes>
@@ -50,13 +60,15 @@ function AppContent() {
         <Route path="profile" element={<Profile />} />
         <Route path="forgotpassword" element={<ForgotPassword />} />
         <Route path="signup" element={<Signup />} />
-        <Route path="forumpost" element={<ForumPost />} />
-        <Route path="modal" element={<Modal />} />
-        <Route path="profile" element={<Profile />} />
+        <Route path="forum1/:id" element={<ForumPost />} />
       </Routes>
 
-      {/* Footer hanya ditampilkan jika bukan halaman login */}
+      {/* Conditionally show Modal based on isModalOpen */}
+      {isModalOpen && <Modal onClose={handleModalClose} />}
+
+      {/* Footer only shown if not on login, signup, or forgotpassword page */}
       {showFooter && <Footer />}
+      </AuthProvider>
     </>
   );
 }
