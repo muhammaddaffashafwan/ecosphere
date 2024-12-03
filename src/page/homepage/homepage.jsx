@@ -67,7 +67,7 @@ export function Homepage() {
                 href='https://powerstarelectricals.co.uk/blogs/beginners-guide-to-installing-solar-panels-at-home'
                 className='article-link'
               >
-                <img src='/images/homearticle1.jpg' alt='Solar Panels Guide' />
+                <img className="img-1" src='/images/homearticle1.jpg' alt='Solar Panels Guide' />
               </a>
               <div className='article-content'>
                 <div className='article-title'>
@@ -91,7 +91,7 @@ export function Homepage() {
                 href="https://silvotherapy.co.uk/articles/biophilic-design#:~:text=Biophilic%20design%20doesn't%20just,for%20a%20healthier%20breathing%20environment."
                 className='article-link'
               >
-                <img src='/images/homearticle2.jpg' />
+                <img className="img-2" src='/images/homearticle2.jpg' />
               </a>
               <div className='article-content'>
                 <div className='article-title'>
@@ -117,7 +117,7 @@ export function Homepage() {
                 href='https://www.forbes.com/sites/afdhelaziz/2022/05/31/how-greywater-systems-can-help-you-save-money-and-water-an-interview-with-leigh-jerrard-of-greywater-corps/'
                 className='article-link'
               >
-                <img src='/images/homearticle3.jpg' />
+                <img className="img-3" src='/images/homearticle3.jpg' />
               </a>
               <div className='article-content'>
                 <div className='article-title'>

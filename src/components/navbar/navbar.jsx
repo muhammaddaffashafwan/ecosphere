@@ -44,7 +44,7 @@ export function Navbar() {
       <nav className="nav">
         <div className="container mx-auto flex justify-between items-center px-6 py-4">
           {/* Desktop Menu */}
-          <div className="hidden md:flex gap-[70px] items-center justify-center">
+          <div className="hidden lg:flex gap-[70px] items-center justify-center">
             <Link to="/inspiration" className="text-lg text-gray-700 hover:text-[#5c7838]">
               INSPIRATION
             </Link>
@@ -83,7 +83,7 @@ export function Navbar() {
                       PROFILE
                     </Link>
                     <Link
-                    to="/"
+                      to="/"
                       className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2] rounded-bl-lg rounded-br-lg"
                       onClick={handleLogout}
                     >
@@ -104,8 +104,8 @@ export function Navbar() {
             )}
           </div>
 
-          {/* Mobile Menu */}
-          <div className="md:hidden">
+          {/* Mobile and Tablet Menu */}
+          <div className="lg:hidden">
             <button onClick={toggleMenu} className="text-[#5c7838]">
               MORE
             </button>
@@ -146,22 +146,21 @@ export function Navbar() {
 
                 {isLoggedIn ? (
                   <>
-                  <Link
-                    to="/profile"
-                    className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    PROFILE
-                  </Link>
-                  <Link
-                  to="/"
-                    className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2] rounded-bl-lg rounded-br-lg"
-                    onClick={handleLogout}
-                  >
-                    LOG OUT
-                  </Link>
-                </>
-                
+                    <Link
+                      to="/profile"
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2]"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      PROFILE
+                    </Link>
+                    <Link
+                      to="/"
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#c9dbb2] rounded-bl-lg rounded-br-lg"
+                      onClick={handleLogout}
+                    >
+                      LOG OUT
+                    </Link>
+                  </>
                 ) : (
                   <>
                     <Link
