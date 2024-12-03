@@ -87,60 +87,6 @@
   color: #6ea54e;
 }
 
-@media (max-width: 768px) {
-  .in-depth-article {
-  font-size: 30px;
-  padding-right: 40vw;
-  margin-left: 6vw;
-  line-height: 4vw;
-}
-  .explore {
-    font-size: 11px;
-    padding-right: 25vw;
-    text-align: left;
-    margin-left: 6vw;
-    top: 10px;
-    font-size: 2vw;
-  }
-   .cta-button{
-    margin-left: 6vw;
-    margin-top: 5vw;
-  }
-  .txt {
-    position: relative;
-    top: 15vw;
-    left: 10px;
-    width: 100%;
-    gap: 10px;
-    
-  }
-  .img-article1 {
-    position: absolute;
-    top: -1vw;
-    left: 80vw;
-    width: 90px;
-    height: 190px;
-  }
-  .img-article2 {
-    position: absolute;
-    top: 30px;
-    left: 67vw;
-    width: 90px;
-    height: 190px;
-  }
- 
-}
-
-@media (max-width: 425px) {
-  .in-depth-article {
-  font-size: 20px;
-  padding-right: 35vw;
-  margin-left: 5vw;
-  line-height: 0vw;
-  z-index: 1;
-}
-}
-
 /* All categories */
 .article-item {
   position: absolute;
@@ -362,109 +308,7 @@
   color: #656565;
 }
 
-@media (max-width: 768px) {
-  .news {
-    top: 35vw;
-    width: 45%;;
-    left: 3vw;
-  }
 
-  .article-Allcategories, .article-EcoEssentials, .article-GreenLiving,.article-EcoTech{
-    top :-52vw;
-    z-index: 1;
-    font-size: -1vw;
-  }
-
-  .article-Allcategories{
-    left: -9vw;
-  }
-
-  .article-EcoEssentials{
-    left: 17vw;
-  }
-
-  .article-GreenLiving{
-    left : 43vw;
-  }
-
-  .article-EcoTech{
-    left: 66vw;
-  }
-
-  .article-inner, .article-item, .frame-icon {
-    left : 44vw;
-    width: 17%;
-    height: 17vw;
-  }
-
-  .article-item {
-    top : 73vw;
-  }
-
-  .article-inner {
-    top : 90vw;
-  }
-
-  .frame-icon {
-    top: 107vw;
-  }
-  .eco-house-environmentally {
-    font-size: 2vw;
-    line-height: 2vw;
-    left: 0vw;;
-  }
-
-  .text {
-    left : 61vw;
-    padding-right: 15vw;
-    font-size: 1vw;
-    line-height:-2vw;
-    top: 72vw;
-  }
-
-  .text1 {
-    left : 61vw;
-    padding-right: 15vw;
-    font-size: 1vw;
-    top: 89vw
-  }
-
-  .text2{
-    left : 61vw;
-    padding-right: 15vw;
-    font-size : 1vw;
-    top: 107vw;
-  }
-.calendar{
-  padding-left:9vw;
-  gap:2vw;
-}
-
-.calendar2{
-  margin-left:-2vw;
-  width: -1vw;
-  height: -1vw;
-}
-  .icons-calendar {
-    width: 1vw;
-    height: 1vw;
-    left : 1vw;
-  }
-
-  .danastra{
-    font-size: 1vw;
-    text-wrap: nowrap;
-    left:-1vw;
-  }
-
-  .bullets{
-    margin-left: -10vw;
-  }
-
-  .headline{
-    padding-bottom: 0vw;
-  }
-}
 
 
 /* More Article */
@@ -827,6 +671,152 @@ a.eco-tech1 {
 
 
 @media (max-width: 768px) {
+/* indepth */
+  .in-depth-article {
+  font-size: 30px;
+  padding-right: 40vw;
+  margin-left: 6vw;
+  line-height: 4vw;
+}
+  .explore {
+    font-size: 11px;
+    padding-right: 25vw;
+    text-align: left;
+    margin-left: 6vw;
+    top: 10px;
+    font-size: 2vw;
+  }
+   .cta-button{
+    margin-left: 6vw;
+    margin-top: 5vw;
+  }
+  .txt {
+    position: relative;
+    top: 15vw;
+    left: 10px;
+    width: 100%;
+    gap: 10px;
+    
+  }
+  .img-article1 {
+    position: absolute;
+    top: -1vw;
+    left: 80vw;
+    width: 90px;
+    height: 190px;
+  }
+  .img-article2 {
+    position: absolute;
+    top: 30px;
+    left: 67vw;
+    width: 90px;
+    height: 190px;
+  }
+ 
+  /* All category */
+  .news {
+    top: 35vw;
+    width: 45%;;
+    left: 3vw;
+  }
+
+  .article-Allcategories, .article-EcoEssentials, .article-GreenLiving,.article-EcoTech{
+    top :-52vw;
+    z-index: 1;
+    font-size: -1vw;
+  }
+
+  .article-Allcategories{
+    left: -9vw;
+  }
+
+  .article-EcoEssentials{
+    left: 17vw;
+  }
+
+  .article-GreenLiving{
+    left : 43vw;
+  }
+
+  .article-EcoTech{
+    left: 66vw;
+  }
+
+  .article-inner, .article-item, .frame-icon {
+    left : 44vw;
+    width: 17%;
+    height: 17vw;
+  }
+
+  .article-item {
+    top : 73vw;
+  }
+
+  .article-inner {
+    top : 90vw;
+  }
+
+  .frame-icon {
+    top: 107vw;
+  }
+  .eco-house-environmentally {
+    font-size: 2vw;
+    line-height: 2vw;
+    left: 0vw;;
+  }
+
+  .text {
+    left : 61vw;
+    padding-right: 15vw;
+    font-size: 1vw;
+    line-height:-2vw;
+    top: 72vw;
+  }
+
+  .text1 {
+    left : 61vw;
+    padding-right: 15vw;
+    font-size: 1vw;
+    top: 89vw
+  }
+
+  .text2{
+    left : 61vw;
+    padding-right: 15vw;
+    font-size : 1vw;
+    top: 107vw;
+  }
+.calendar{
+  padding-left:9vw;
+  gap:2vw;
+}
+
+.calendar2{
+  margin-left:-2vw;
+  width: -1vw;
+  height: -1vw;
+}
+  .icons-calendar {
+    width: 1vw;
+    height: 1vw;
+    left : 1vw;
+  }
+
+  .danastra{
+    font-size: 1vw;
+    text-wrap: nowrap;
+    left:-1vw;
+  }
+
+  .bullets{
+    margin-left: -10vw;
+  }
+
+  .headline{
+    padding-bottom: 0vw;
+  }
+
+/* more-article */
   .more-articles{
     top: 108vw;
     font-size: 30px;
@@ -932,6 +922,258 @@ a.eco-tech1 {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 426px) {
+  /* indepth */
+  .in-depth-article {
+    font-size: 25px;
+    padding-right: 35vw;
+    margin-left: 6vw;
+    z-index: 1;
+    top: 10vw;
+  }
+
+  .explore {
+    top: 12vw;
+    padding-right: 86vw;
+  }
+.cta-button{
+  width: 46%;
+  height: 7vw;
+  text-wrap: nowrap;
+  font-size: 3vw;
+  display: inline-block;
+  text-align: center;
+  padding: 4px 7px;
+  margin-top: 14vw;
+}
+
+.cta-button:hover {
+  background-color: #fff;
+  color: #6ea54e;
+}
+
+.img-article1, .img-article2{
+width: 14vw;
+  height: 31vw;
+}
+.img-article1 {
+  top: 10vw;
+}
+
+.img-article2 {
+  top: 15vw;
+  left: 65vw;
+}
+
+/* all-category */
+
+.news {
+    top: 15vw;
+    width: 48%;
+  }
+
+  .article-Allcategories, .article-EcoEssentials, .article-GreenLiving,.article-EcoTech{
+    top : -139vw;
+    z-index: 1;
+    font-size: 2vw;
+  }
+
+  .article-Allcategories{
+    left: -20vw;
+  }
+
+  .article-EcoEssentials{
+    left: 6vw;
+  }
+
+  .article-GreenLiving{
+    left : 33vw;
+  }
+
+  .article-EcoTech{
+    left: 57vw;
+  }
+
+  .article-inner, .article-item, .frame-icon {
+    left : 44vw;
+    width: 16%;
+    height: 16vw;
+  }
+
+  .article-item {
+    top : 82vw;
+  }
+
+  .article-inner {
+    top : 98vw;
+  }
+
+  .frame-icon {
+    top: 114vw;
+  }
+  .eco-house-environmentally {
+    font-size: 2vw;
+    line-height: 2vw;
+    left: 0vw;;
+  }
+
+  .text {
+    left : 61vw;
+    padding-right: 55vw;
+    font-size: 1vw;
+    line-height:-2vw;
+    
+    top: 80vw;
+  }
+
+  .text1 {
+    left : 61vw;
+    padding-right: 55vw;
+    font-size: 1vw;
+    top: 97vw
+  }
+
+  .text2{
+    left : 61vw;
+    padding-right: 55vw;
+    font-size : 1vw;
+    top: 113vw;
+  }
+.calendar{
+  padding-left:9vw;
+  gap:2vw;
+}
+
+.calendar2{
+  margin-left:-2vw;
+  width: -1vw;
+  height: -1vw;
+}
+  .icons-calendar {
+    width: 1vw;
+    height: 1vw;
+    left : 1vw;
+  }
+
+  .danastra{
+    font-size: 1vw;
+    text-wrap: nowrap;
+    left:-1vw;
+  }
+
+  .bullets{
+    margin-left: -10vw;
+  }
+
+  .headline{
+    padding-bottom: 0vw;
+  }
+
+  /* more-article */
+
+  .more-articles{
+    top: 100vw;
+    font-size: 25px;
+    margin-left: 3vw;
+  }
+
+  .icon-more{
+    top: 94vw;
+  }
+
+  .img-icon{
+    top:162vw;
+    align-items: center;
+    margin-left : -2vw;
+  }
+
+  .img-icon1{
+    top: 250vw;
+    align-items: center;
+    left: 27vw;
+  }
+
+  .img-icon2{
+    top: 338vw;
+    left: 27vw;
+  }
+
+  .title1, .title2, .title3{
+    font-size: 17px;
+    text-align: center;
+    line-height: 3vw;
+    right: 20vw;
+  }
+
+  .our-age-is1, .our-age-is2, .healthy-living-can-container{
+    font-size: 2vw;
+    padding-left: 25vw;
+    padding-right:30vw ;
+  }
+
+  .title1{
+    left:-187vw;
+    top: -312vw;
+  }
+
+  .our-age-is1{
+    left: -187vw;
+    top: -345vw;
+  }
+
+  .title2{
+    top: -330vw;
+    left: -18vw;
+    padding-left:-50vw;
+    padding-right: 50vw; ;
+  }
+
+  .our-age-is2{
+    top: -363vw;
+    left: -42vw;
+  }
+
+  .title3{
+    top: -348vw;
+    left: -160vw;
+    padding-left:-55vw;
+    padding-right: 55vw;
+  }
+
+  .healthy-living-can-container{
+    top:-375vw;
+    left: -187vw;
+  }
+
+.calendar-1{
+  top: 90vw;
+  left:-100vw; 
+}
+.danastra2{
+  top: -313vw;
+  left:-151vw; 
+}
+.icons-calendarA{
+  top: -313vw;
+  left:-153vw;
+}
+.danastra3 {
+  top: -331vw;
+  left:-8vw; 
+}
+.icons-calendarB{
+  top: -331vw;
+  left:-8vw; 
+}
+.danastra4{
+  top: -350vw;
+  left:-152vw;
+}
+
+.icons-calendarC{
+  top: -350vw;
+  left:-153vw;
+}
+ 
 
 }
