@@ -47,7 +47,7 @@ export function Article1() {
 			<img className="icons-calendar" alt="" src="/images/calendar.png" />
 			<div className="danastra">Jan 12, 2023</div>
 			</div>
-			<div className="calendar">
+			<div className="calendar2">
 			<img className="icons-calendar" alt="" src="/images/account.png" />
 			<div className="danastra">Danastra</div>
 			</div>
@@ -69,12 +69,12 @@ export function Article1() {
 			<img className="icons-calendar" alt="" src="/images/calendar.png" />
 			<div className="danastra">Mar 30, 2020</div>
 			</div>
-			<div className="category">
+			{/* <div className="category">
 			<img className="icons-calendar" alt="" src="Icons / tag.svg" />
 			<div className="advices">Advices</div>
-			</div>
-			<div className="calendar">
-			<img className="icons-calendar" alt="" src="/images/calendar.png" />
+			</div> */}
+			<div className="calendar2">
+			<img className="icons-calendar" alt="" src="/images/account.png" />
 			<div className="danastra">Haris Sukarnayudabrata</div>
 			</div>
 			</div>
@@ -95,11 +95,11 @@ export function Article1() {
 			<img className="icons-calendar" alt="" src="/images/calendar.png" />
 			<div className="danastra">May 29, 2024</div>
 			</div>
-			<div className="category">
+			{/* <div className="category">
 			<img className="icons-calendar" alt="" src="Icons / tag.svg" />
 			<div className="advices">Advices</div>
-			</div>
-			<div className="calendar">
+			</div> */}
+			<div className="calendar2">
 			<img className="icons-calendar" alt="" src="/images/account.png" />
 			<div className="danastra">Biru Cahya Imanda</div>
 			</div>
@@ -122,13 +122,13 @@ export function Article1() {
 			<a className="title1" href="https://artigianfer.com/en/news/greenhouses-how-to-reduce-pallution-and-waste/" target="_blank">Eco-greenhouses: <br />how to reduce environmental impact</a>
 			</div>
 			<div className="bullets3">
-			<div className="calendar">
-			<img className="icons-calendar" alt="" src="/images/calendar.png" />
-			<div className="danastra">Feb 24, 2022</div>
+			<div className="calendar-1">
+			<img className="icons-calendarA" alt="" src="/images/calendar.png" />
+			<div className="danastra2">Feb 24, 2022</div>
 			</div>
-			<div className="calendar">
-			<img className="icons-calendar" alt="" src="/images/account.png" />
-			<div className="danastra">Artigianfer</div>
+			<div className="calendar-2">
+			<img className="icons-calendarA" alt="" src="/images/account.png" />
+			<div className="danastra2">Artigianfer</div>
 			</div>
 			</div>
 			</div>
@@ -147,13 +147,13 @@ export function Article1() {
 				“Smart Green House” System as a Plant Productivity Booster</a>
 			</div>
 			<div className="bullets3">
-			<div className="calendar">
-			<img className="icons-calendar" alt="" src="/images/calendar.png" />
-			<div className="danastra">Dec 19, 2022</div>
+			<div className="calendar-1">
+			<img className="icons-calendarB" alt="" src="/images/calendar.png" />
+			<div className="danastra3">Dec 19, 2022</div>
 			</div>
-			<div className="calendar">
-			<img className="icons-calendar" alt="" src="/images/account.png" />
-			<div className="danastra">UPLAND Project</div>
+			<div className="calendar-2">
+			<img className="icons-calendarB" alt="" src="/images/account.png" />
+			<div className="danastra3">UPLAND Project</div>
 			</div>
 			</div>
 			</div>
@@ -180,13 +180,13 @@ export function Article1() {
 				Save Energy! Eco-Green Living The Right Concept to Make a Modern Home</a>
 			</div>
 			<div className="bullets3">
-			<div className="calendar">
-			<img className="icons-calendar" alt="" src="/images/calendar.png" />
-			<div className="danastra">Nov 2, 2023</div>
+			<div className="calendar-1">
+			<img className="icons-calendarC" alt="" src="/images/calendar.png" />
+			<div className="danastra4">Nov 2, 2023</div>
 			</div>
-			<div className="calendar">
-			<img className="icons-calendar" alt="" src="/images/account.png" />
-			<div className="danastra">myeco</div>
+			<div className="calendar-2">
+			<img className="icons-calendarC" alt="" src="/images/account.png" />
+			<div className="danastra4">myeco</div>
 			</div>
 			</div>
 			</div>

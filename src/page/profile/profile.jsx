@@ -44,6 +44,11 @@ const Profile = () => {
 
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        alert("No token found, please log in again.");
+        return;
+      }
+
       const response = await axios.put(
         "http://localhost:5000/profile-image",
         formData,
@@ -71,6 +76,11 @@ const Profile = () => {
   const handleDeleteProfileImage = async () => {
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        alert("No token found, please log in again.");
+        return;
+      }
+
       await axios.delete("http://localhost:5000/profile-image", {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -89,6 +99,11 @@ const Profile = () => {
       setLoading(true);
       try {
         const token = localStorage.getItem("token");
+        if (!token) {
+          alert("No token found, please log in again.");
+          return;
+        }
+
         const response = await axios.get("http://localhost:5000/users", {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -114,9 +129,15 @@ const Profile = () => {
     const fetchPosts = async () => {
       setLoading(true);
       try {
+        const token = localStorage.getItem("token");
+        if (!token) {
+          alert("No token found, please log in again.");
+          return;
+        }
+
         const response = await axios.get("http://localhost:5000/users/posts", {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${token}`,
           },
         });
         setUserPosts(response.data.posts);
@@ -241,7 +262,7 @@ const Profile = () => {
               <ForumPost key={index} post={post} />
             ))
           ) : (
-            <p>No posts available</p>
+            <p>No posts available.</p>
           )}
         </div>
       </div>

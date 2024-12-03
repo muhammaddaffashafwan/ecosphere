@@ -69,7 +69,24 @@
   object-fit: cover;
 }
 
-/* Responsif untuk layar mobile */
+.cta-button {
+  background-color: #739646;
+  color: #fff;
+  padding: 7px 100px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 18px;
+  border: 2px solid #739646;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  display: inline-block; /* Membuat tombol mengikuti text-align */
+}
+
+.cta-button:hover {
+  background-color: #fff;
+  color: #6ea54e;
+}
+
 @media (max-width: 768px) {
   .in-depth-article {
   font-size: 30px;
@@ -112,6 +129,16 @@
     height: 190px;
   }
  
+}
+
+@media (max-width: 425px) {
+  .in-depth-article {
+  font-size: 20px;
+  padding-right: 35vw;
+  margin-left: 5vw;
+  line-height: 0vw;
+  z-index: 1;
+}
 }
 
 /* All categories */
@@ -192,7 +219,7 @@
   object-fit: cover;
 }
 
-.calendar {
+.calendar, .calendar2, .calendar-1, .calendar-2 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -200,7 +227,7 @@
   gap: 15px;
 }
 
-.icons-calendar {
+.icons-calendar, .icons-calendarA, .icons-calendarB, .icons-calendarC {
   width: 20px;
   position: relative;
   height: 20px;
@@ -208,12 +235,14 @@
   flex-shrink: 0;
 }
 
-.advices, .category, .danastra {
+.danastra, .danastra2, .danastra3, .danastra4{
   position: relative;
   line-height: 18px;
+  font-size: 12px;
+  line-height: 140%;
 }
 
-.category {
+/* .category {
   display: none;
   flex-direction: row;
   align-items: center;
@@ -221,12 +250,8 @@
   gap: 15px;
   font-size: 12px;
   font-family: Lato;
-}
+} */
 
-.danastra {
-  font-size: 12px;
-  line-height: 140%;
-}
 
 .bullets {
   width: 420px;
@@ -285,6 +310,7 @@
   justify-content: flex-start;
   gap: 10px;
 }
+
 
 .article-inner {
   position: absolute;
@@ -410,19 +436,25 @@
     top: 107vw;
   }
 .calendar{
-  padding-left:10vw;
+  padding-left:9vw;
   gap:2vw;
 }
-  .icon-calendar {
-    width: -9vw;
-    height: -9vw;
-    left : 7vw;
+
+.calendar2{
+  margin-left:-2vw;
+  width: -1vw;
+  height: -1vw;
+}
+  .icons-calendar {
+    width: 1vw;
+    height: 1vw;
+    left : 1vw;
   }
 
   .danastra{
-    font-size: -30vw;
+    font-size: 1vw;
     text-wrap: nowrap;
-    left:-2vw;
+    left:-1vw;
   }
 
   .bullets{
@@ -845,7 +877,7 @@ a.eco-tech1 {
 
   .our-age-is1{
     left: -83vw;
-    top: -104vw;
+    top: -101vw;
   }
 
   .title2{
@@ -854,7 +886,7 @@ a.eco-tech1 {
   }
 
   .our-age-is2{
-    top: -89vw;
+    top: -86vw;
     left: -2vw;
   }
 
@@ -864,10 +896,42 @@ a.eco-tech1 {
   }
 
   .healthy-living-can-container{
-    top:-83vw;
+    top:-80vw;
     left: -82vw;
   }
 
+.calendar-1{
+  top: 90vw;
+  left:-100vw; 
+}
+.danastra2{
+  top: -94vw;
+  left:-63vw; 
+}
+.icons-calendarA{
+  top: -94vw;
+  left:-63vw;
+}
+.danastra3 {
+  top: -82vw;
+  left:16vw; 
+}
+.icons-calendarB{
+  top: -82vw;
+  left:16vw; 
+}
+.danastra4{
+  top: -68vw;
+  left:-60vw;
+}
 
+.icons-calendarC{
+  top: -68vw;
+  left:-60vw;
+}
+
+}
+
+@media (max-width: 768px) {
 
 }
