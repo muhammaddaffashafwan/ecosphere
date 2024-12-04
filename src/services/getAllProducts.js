@@ -3,7 +3,7 @@ export default function getAllProducts() {
     {
       id: 'ECO-HS-001',
       slug: 'eco-house-001',
-      name: 'International Eco-Apartment JKT Living Star',
+      name: 'Apartment JKT Living Star',
       category: 'House',
       categorySlug: 'house',
       price: 950_571_000,
@@ -17,7 +17,7 @@ export default function getAllProducts() {
     {
       id: 'EC0-HS-002',
       slug: 'eco-house-002',
-      name: 'Lavia Living Type 5 at Citra Garden City Jakarta',
+      name: 'Lavia Living, Jakarta',
       category: 'House',
       categorySlug: 'house',
       price: 2_186_313_300,
@@ -30,7 +30,7 @@ export default function getAllProducts() {
     {
       id: 'ECO-HS-003',
       slug: 'eco-house-003',
-      name: 'Avilla Nova Cluster at Samanea Hill',
+      name: 'Avilla Nova Cluster ',
       category: 'House',
       categorySlug: 'house',
       price: 1_017_111_000,
@@ -43,7 +43,7 @@ export default function getAllProducts() {
     {
       id: 'ECO-HS-004',
       slug: 'eco-house-004',
-      name: 'Quantis Signature Type 178 at BSD City',
+      name: 'Quantis Signature at BSD City',
       category: 'House',
       categorySlug: 'house',
       price: 8_150_659_350,
@@ -57,7 +57,7 @@ export default function getAllProducts() {
     {
       id: 'EC0-MT-005',
       slug: 'eco-material-005',
-      name: 'Bamboo Petung (Dendrocalamus asper)',
+      name: 'Bamboo Petung ',
       category: 'Material',
       categorySlug: 'material',
       price: 4_199_850,
@@ -69,7 +69,7 @@ export default function getAllProducts() {
     {
       id: 'ECO-MT-006',
       slug: 'eco-material-006',
-      name: 'Eiken (Oak) - Tongue and Groove',
+      name: 'Eiken (Oak) ',
       category: 'Material',
       categorySlug: 'material',
       price: 24_886_650,
@@ -81,7 +81,7 @@ export default function getAllProducts() {
     {
       id: 'ECO-MT-007',
       slug: 'eco-material-007',
-      name: 'Basaltic (Fine-Grained) Rock',
+      name: 'Basaltic Rock ',
       category: 'Material',
       categorySlug: 'material',
       price: 1_909_000,

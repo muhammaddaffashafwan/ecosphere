@@ -7,13 +7,14 @@ export default function Card({ product }) {
   return (
     <Link
       to={`/products/${product.slug}`}
-      className="flex flex-col max-w-[370px] flex-wrap p-[16px] bg-[#ffffff] hover:ring-opacity-40 active:ring-5 active:ring-[#739646] rounded-[20px] shadow-xl hover:shadow-xxl transition-shadow duration-200 ease-in-out"
+      className="flex flex-col max-w-[260px] flex-wrap p-[16px] bg-[#ffffff] hover:ring-opacity-40 active:ring-5 active:ring-[#739646] rounded-[20px] shadow-xl hover:shadow-xxl transition-shadow duration-200 ease-in-out"
     >
-      <div className=" flex-col max-w-[370px] flex-wrap p-[16px] bg-[#ffffff] rounded-[40px]">
+      <div className=" flex-col max-w-[250px] w-[230px]  flex-wrap p-[16px] bg-[#ffffff] rounded-[20px]">
         <img src={product.imageUrl ?? ''} alt={product.name ?? 'No name'} className="block max-h-[300px] mb-4 object-cover" />
         <div className="flex flex-col gap-2">
-          <div className="font-medium text-[16px] text-[#000000] text-left"
-          style={{ textDecoration: 'none !important' }}>{product.name ?? 'No Name'}</div>
+          <div className="font-medium text-[16px] text-[#000000] text-left" style={{ textDecoration: 'none !important' }}>
+            {product.name ?? 'No Name'}
+          </div>
           <div className="block font-medium text-[12px] text-[#3C4563]">{product.category ?? 'Uncatagorized'}</div>
           <div className="block font-medium text-[16px] text-[#000000]">{formatToIDRCurrency(product.price) ?? 'Not for sale'}</div>
           <div>
