@@ -1,146 +1,27 @@
-import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { Link, useParams, useNavigate } from 'react-router-dom'; // Added useNavigate for redirect after update/delete
+import { useState } from 'react';
+import { Link } from 'react-router-dom'; 
 import Modal from "../Modal/Modal";
 
-const ForumPost = ({ currentUserId }) => {
-  const { id } = useParams(); // Extracting the id from the URL parameter
-  const [post, setPost] = useState(null);
-  const [likeCount, setLikeCount] = useState(0);
-  const [isLiked, setIsLiked] = useState(false);
+const ForumPost = ({ data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMoreOptionsOpen, setIsMoreOptionsOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const navigate = useNavigate(); // Added navigate for redirect
+  const [isLiked, setisLiked] = useState(data.isLiked);
+  const [likeCount, setLikeCount] = useState(data.likeCount);
 
-  const token = localStorage.getItem('authToken'); // Assuming token is stored in localStorage
-
-  useEffect(() => {
-    console.log('Post ID:', id); // Debug log to check the id value
-
-    if (!id) {
-      setError("Post ID is missing or invalid.");
-      setLoading(false);
-      return;
-    }
-
-    setLoading(true);
-    fetch(`http://localhost:5000/get-forum/${id}`, {
-      headers: {
-        'Authorization': `Bearer ${token}`, // Include token in the request header
-      },
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        if (!data) {
-          throw new Error("Post not found.");
-        }
-        setPost(data);
-        setLikeCount(data.likes || 0);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(`Failed to fetch post data: ${error.message}`);
-        setLoading(false);
-      });
-  }, [id, token]); // Added token as dependency
-
-  useEffect(() => {
-    if (post && currentUserId) {
-      fetch(`http://localhost:5000/like-forum/${id}/${currentUserId}`, {
-        headers: {
-          'Authorization': `Bearer ${token}`, // Include token in the request header
-        },
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          return response.json();
-        })
-        .then((data) => {
-          setIsLiked(data.isLiked);
-          setLikeCount(data.likeCount);
-        })
-        .catch((error) => console.error("Error fetching like data:", error));
-    }
-  }, [post, currentUserId, id, token]);
+  const token = localStorage.getItem('token');
+  const currentUserId = localStorage.getItem('id');
 
   const handleLike = () => {
-    const action = isLiked ? 'unlike' : 'like';
-    fetch(`http://localhost:5000/like-forum/${id}/${currentUserId}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`, // Include token in the request header
-      },
-      body: JSON.stringify({ action }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setIsLiked(data.isLiked);
-        setLikeCount(data.likeCount);
-      })
-      .catch((error) => console.error("Error updating like:", error));
+
   };
 
   const handleDelete = () => {
-    fetch(`http://localhost:5000/delete-forum/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'Authorization': `Bearer ${token}`, // Include token in the request header
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          console.log('Post deleted');
-          navigate('/forum'); // Redirect to forum page after deletion
-        } else {
-          console.error('Failed to delete post');
-        }
-      })
-      .catch((error) => console.error("Error deleting post:", error));
-    setIsMoreOptionsOpen(false);
+
   };
 
   const handleUpdate = () => {
-    fetch(`http://localhost:5000/update-forum/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Authorization': `Bearer ${token}`, // Include token in the request header
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          console.log('Post updated');
-          navigate(`/forum2/${id}`); // Redirect to the post detail page after update
-        } else {
-          console.error('Failed to update post');
-        }
-      })
-      .catch((error) => console.error("Error updating post:", error));
-    setIsMoreOptionsOpen(false);
+
   };
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>{error}</div>;
-  }
-
-  if (!post) {
-    return <div>Post not found</div>;
-  }
-
-  const isUserPost = post.userId === currentUserId;
 
   return (
     <div className="flex flex-col bg-softCream p-5 rounded-lg border border-black shadow-md mb-5">
@@ -148,22 +29,22 @@ const ForumPost = ({ currentUserId }) => {
         <img
           className="w-10 h-10 rounded-full mr-2"
           alt="User Avatar"
-          src={post.userAvatar}
+          src={data.profileImage}
         />
         <div className="flex flex-col">
-          <span className="font-bold">{post.userName}</span>
-          <span className="text-xs text-gray-500">{post.date}</span>
+          <span className="font-bold">{data.user_id}</span>
+          <span className="text-xs text-gray-500">{data.createdAt}</span>
         </div>
       </div>
-      <Link to={`/forum2/${post.id}`} className="font text-2xl font-bold mb-4 text-black mt-[15px]">
-        {post.title}
+      <Link to={`/forum2/${data.id}`} className="font text-2xl font-bold mb-4 text-black mt-[15px]">
+        {data.title}
       </Link>
       <div className="bg-softCream rounded-lg">
-        {post.showImage && post.imageUrl && (
-          <img className="w-full h-auto mb-[20px]" alt="Post Image" src={post.imageUrl} />
+        {data.imageUrl && (
+          <img className="w-full h-auto mb-[20px]" alt="Post Image" src={data.imageUrl} />
         )}
-        <p className="text-lg">{post.content}</p>
-        <p className="text-sm text-gray-500">{post.tags}</p>
+        <p className="text-lg">{data.caption}</p>
+        <p className="text-sm text-gray-500">{data.hashtags}</p>
       </div>
       <div className="flex justify-between items-center mt-4">
         <div className="flex items-center gap-[30px]">
@@ -183,10 +64,10 @@ const ForumPost = ({ currentUserId }) => {
             onClick={() => setIsModalOpen(true)}
           >
             <i className="bi bi-chat-text text-2xl"></i>
-            <span className="ml-2">{(post.comments || []).length}</span>
+            <span className="ml-2">{(data.replies || []).length}</span>
           </button>
         </div>
-        {isUserPost && (
+        {currentUserId == data.user_id && (
           <div className="relative">
             <button
               className="flex items-center justify-center text-2xl"
@@ -219,8 +100,15 @@ const ForumPost = ({ currentUserId }) => {
   );
 };
 
-ForumPost.propTypes = {
-  currentUserId: PropTypes.string, // Optional prop
-};
+// ForumPost.propTypes = {
+//   currentUserId: PropTypes.string, // Optional prop
+// };
 
 export default ForumPost;
+
+// const ForumPost = ({data}) => {
+//   console.log(data.title);
+//   return <div>{data.caption}</div>;
+
+// }; 
+// export default ForumPost; 

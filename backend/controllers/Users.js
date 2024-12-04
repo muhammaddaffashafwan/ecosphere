@@ -157,6 +157,7 @@ export const authLogin = async (req, res) => {
       status: "success",
       message: "Login successful",
       token: `Bearer ${token}`,
+      id: user.id,
     });
   } catch (error) {
     console.log(error);

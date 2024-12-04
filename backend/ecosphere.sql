@@ -70,7 +70,8 @@ CREATE TABLE `forum` (
   `user_id` int(11) NOT NULL, -- Menyesuaikan nama kolom foreign key
   `title` varchar(255) NOT NULL,
   `caption` text NOT NULL,
-  `image_url` varchar(255) DEFAULT NULL, -- Menyimpan URL gambar
+  `image_url` varchar(255) DEFAULT NULL, 
+   `hashtags` text DEFAULT NULL,
   `createdAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),

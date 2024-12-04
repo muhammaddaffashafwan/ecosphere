@@ -73,16 +73,25 @@ export default function Property() {
   return (
     <div className="bg-white min-h-screen text-black">
       <div className="absolute top-[100px] left-[150px] w-[544.1px] h-[411.8px] text-left text-black font-[Optician Sans]">
-        <div className="discovery flex flex-col md:flex-row items-center">
-          <img className=" absolute ml-[725px] top-0 left-0 z-0" alt="Eco Discovery" src="assets/prop_illus.jpg" />
-          <div className="mt-[-20px] tracking-[-0.02em] pt-[30px] leading-[20px] text-black ">
-            <h1 className="font font-bold  text-[45px]">DISCOVER ECO-FRIENDLY HOMES AND PRODUCTS</h1>
-            <p className="mt-4 ">
-              We offer a comprehensive range of eco-friendly homes and goods, coupled with cutting-edge technology. Our product range includes solar panels, home energy management systems, and smart LED lights, all designed to create a
-              greener, more efficient home.
-            </p>
-          </div>
-        </div>
+      <div className="discovery flex flex-col md:flex-row items-center">
+  {/* Gambar */}
+  <img 
+    className="absolute top-0 left-0 z-0 w-[90%] max-w-[400px] md:w-[60%] md:max-w-none md:ml-[725px]" 
+    alt="Eco Discovery" 
+    src="assets/prop_illus.jpg" 
+  />
+  
+  {/* Konten */}
+  <div className="relative mt-[50px] md:mt-[-20px] px-4 md:px-0 tracking-[-0.02em] pt-[30px] leading-[1.5] text-black max-w-[90%] md:max-w-[50%]">
+    <h1 className="font font-bold text-[30px] md:text-[45px]">
+      DISCOVER ECO-FRIENDLY HOMES AND PRODUCTS
+    </h1>
+    <p className="mt-4 text-sm md:text-base">
+      We offer a comprehensive range of eco-friendly homes and goods, coupled with cutting-edge technology. Our product range includes solar panels, home energy management systems, and smart LED lights, all designed to create a greener, more efficient home.
+    </p>
+  </div>
+</div>
+
 
         <div className="numbers mt-12 flex flex-wrap justify-between text-center">
           {/* Property Return Rate */}
