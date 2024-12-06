@@ -60,6 +60,7 @@ router.post("/forgot-password", resetPassword);
 
 // Forum CRUD Routes
 
+
 // Create a new forum post (requires authentication)
 router.post("/create-forum", authMiddleware, createForum);
 

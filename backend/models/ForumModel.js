@@ -16,6 +16,13 @@ const Forum = db.define(
       },
       onDelete: "CASCADE", // Jika user dihapus, forum terkait juga akan dihapus
     },
+    uname: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      }
+    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -28,6 +35,13 @@ const Forum = db.define(
       allowNull: false,
       validate: {
         notEmpty: true, // Validasi agar caption tidak kosong
+      },
+    },
+    hashtags: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
       },
     },
     image_url: {
@@ -44,6 +58,16 @@ const Forum = db.define(
     tableName: "forum", // Nama tabel sesuai dengan yang diinginkan
   }
 );
+
+// Before Create Hook: Check if 'uname' exists in the 'users' table
+Forum.beforeCreate(async (forum, options) => {
+  const user = await db.models.users.findOne({
+    where: { username: forum.uname },
+  });
+  if (!user) {
+    throw new Error('Username does not exist');
+  }
+});
 
 // Like Model
 const Like = db.define(

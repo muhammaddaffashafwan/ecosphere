@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom"; // To get the id from the URL
 import ForumPost from "../../components/ForumPost/ForumPost";
 import "../global.css";
 
 export function Forum1() {
+  const { id } = useParams(); // Assuming id is passed as a URL parameter
   const [questions, setQuestions] = useState([
     {
       id: 1,
@@ -27,14 +29,16 @@ export function Forum1() {
   const [inputTitle, setInputTitle] = useState("");
   const [bodyContent, setBodyContent] = useState("");
   const [newImage, setNewImage] = useState(null);
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  const [loading, setLoading] = useState(false); // Add the loading state
+  const [post, setPost] = useState(null); // Store the fetched post data
+  const [error, setError] = useState(null); // Store the error if there's an issue with fetching data
 
   useEffect(() => {
     const user = localStorage.getItem("user");
-    const token = localStorage.getItem("token");
-
     console.log("user:", user);
     console.log("token:", token);
-  }, []);
+  }, [token]);
 
   const handleQuestionClick = () => {
     setOverlayMode("add");
@@ -91,6 +95,39 @@ export function Forum1() {
     setNewImage(file);
   };
 
+  // Correcting the fetch call to use token and id
+  useEffect(() => {
+    if (!token) {
+      console.error("Token is missing.");
+      return;
+    }
+
+    setLoading(true);
+    fetch(`http://localhost:5000/get-forum`, {
+      headers: {
+        Authorization: token, // Include token in the request header
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (!data) {
+          throw new Error("Post not found.");
+        }
+        setPost(data);
+        console.log("Forum Data:", data); // Log the forum data
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(`Failed to fetch post data: ${error.message}`);
+        setLoading(false);
+      });
+  }, [id, token]); // Now id is being passed from URL and token is managed properly
+
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow p-5 flex">
@@ -99,8 +136,8 @@ export function Forum1() {
             SHARING & DISCUSSIONS
           </h1>
           <div className="flex flex-col">
-            {questions.map((post) => (
-              <ForumPost key={post.id} post={post} />
+            {Array.isArray(post) && post.map((data, i) => (
+              <ForumPost key={i} data={data} />
             ))}
           </div>
         </div>
@@ -192,16 +229,16 @@ export function Forum1() {
 
             <div className="flex justify-end">
               <button
-                className="bg-gray-200 px-4 py-2 rounded-full mr-2"
+                className="bg-gray-200 px-4 py-2 rounded-lg mr-2"
                 onClick={() => setOverlayVisible(false)}
               >
                 Cancel
               </button>
               <button
-                className="bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all px-4 py-2 rounded-full"
+                className="bg-green-500 text-white px-4 py-2 rounded-lg"
                 onClick={handleOverlaySubmit}
               >
-                Submit
+                {overlayMode === "add" ? "Post Question" : "Post Answer"}
               </button>
             </div>
           </div>
@@ -210,5 +247,6 @@ export function Forum1() {
     </div>
   );
 }
+
 
 export default Forum1;

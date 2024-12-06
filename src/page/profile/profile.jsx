@@ -10,16 +10,72 @@ const Profile = () => {
   const [username, setUsername] = useState("");
   const [newProfileImage, setNewProfileImage] = useState(null);
   const [userPosts, setUserPosts] = useState([]);
-  const [loading, setLoading] = useState(false); // Loading state to handle async operations
+  const [loading, setLoading] = useState(false);
+  const [userId, setUserId] = useState(null); // Add state for the user ID
 
+  const token = localStorage.getItem("token");
+  if (!token) {
+    alert("No token found, please log in again.");
+    return;
+  }
 
+  // Fetch user profile data on load
   useEffect(() => {
-    const user = localStorage.getItem("user");
-    const token = localStorage.getItem("token");
+    const fetchUserProfile = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get('http://localhost:5000/users', {
+          headers: {
+            Authorization: token,
+          },
+        });
+        console.log('__User data__:', response);
 
-    console.log("user:", user);
-    console.log("token:", token);
-  }, []);
+        setName(response.data.name);
+        setUsername(response.data.username);
+        setProfileImage(response.data.profile_image || 'https://via.placeholder.com/150');
+        setUserId(response.data.id); // Store the user ID
+      } catch (error) {
+        console.log('__Error fetching user data__', error);
+        alert('Error fetching user data, please try again!');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUserProfile();
+  }, [token]); // added token as a dependency if it changes
+
+  // Fetch user posts on load
+  useEffect(() => {
+    const fetchUserPosts = async () => {
+      if (!userId) return; // Only fetch posts if the userId is available
+
+      setLoading(true);
+      try {
+        const response = await axios.get(`http://localhost:5000/get-forum/${userId}`, { // Use userId here
+          headers: {
+            Authorization: token,
+          },
+        });
+        console.log('__User posts__:', response);
+
+        // Ensure the response contains posts as an array
+        if (Array.isArray(response.data.replies)) {
+          setUserPosts(response.data.replies);
+        } else {
+          setUserPosts([]); // Default to empty array if no posts found
+        }
+      } catch (error) {
+        console.error('__Error fetching posts__', error);
+        alert('Error fetching posts, please try again!');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUserPosts();
+  }, [token, userId]); // Add userId as a dependency
 
   // Open edit profile modal
   const handleEditClick = () => {
@@ -42,7 +98,7 @@ const Profile = () => {
 
   // Save profile changes
   const handleSaveProfile = async () => {
-    setLoading(true); // Start loading
+    setLoading(true);
     const formData = new FormData();
     formData.append("name", name);
     formData.append("username", username);
@@ -52,22 +108,13 @@ const Profile = () => {
     }
 
     try {
-      const token = localStorage.getItem("token");
-      if (!token) {
-        alert("No token found, please log in again.");
-        return;
-      }
+      const response = await axios.put("http://localhost:5000/profile-image", formData, {
+        headers: {
+          Authorization: token,
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
-      const response = await axios.put(
-        "http://localhost:5000/profile-image",
-        formData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
       // Update state after successful save
       setProfileImage(response.data.profile_image || profileImage);
       setName(name);
@@ -84,103 +131,30 @@ const Profile = () => {
   // Delete profile image
   const handleDeleteProfileImage = async () => {
     try {
-      const token = localStorage.getItem("token");
-      if (!token) {
-        alert("No token found, please log in again.");
-        return;
-      }
-
       await axios.delete("http://localhost:5000/profile-image", {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: token,
         },
       });
+
       setProfileImage("https://via.placeholder.com/150");
     } catch (error) {
-      console.error("Error deleting profile image", error);
+      console.error("__Error deleting profile image__", error);
       alert("Error deleting profile image, please try again!");
     }
   };
-
-  // Fetch user profile data on load
-  useEffect(() => {
-    const fetchUserData = async () => {
-      setLoading(true);
-      try {
-        const token = localStorage.getItem("token");
-        if (!token) {
-          alert("No token found, please log in again.");
-          return;
-        }
-
-        const response = await axios.get("http://localhost:5000/users", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-
-        setName(response.data.name);
-        setUsername(response.data.username);
-        setProfileImage(response.data.profile_image || "https://via.placeholder.com/150");
-      } catch (error) {
-        console.error("Error fetching user data", error);
-        alert("Error fetching user data, please try again!");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchUserData();
-  }, []);
-
-  // Fetch user posts on load
-  useEffect(() => {
-    const fetchPosts = async () => {
-      setLoading(true);
-      try {
-        const token = localStorage.getItem("token");
-        if (!token) {
-          alert("No token found, please log in again.");
-          return;
-        }
-
-        const response = await axios.get("http://localhost:5000/users/posts", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setUserPosts(response.data.posts);
-      } catch (error) {
-        console.error("Error fetching posts", error);
-        alert("Error fetching posts, please try again!");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchPosts();
-  }, []);
-
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Header Section */}
       <div className="relative flex-shrink-0">
         <div className="h-[400px] relative">
-          <img
-            src="/images/bg_sampul.jpg"
-            alt="Background"
-            className="w-full h-full object-cover"
-          />
+          <img src="/images/bg_sampul.jpg" alt="Background" className="w-full h-full object-cover" />
         </div>
 
         {/* Profile Avatar and Details */}
         <div className="absolute top-[355px] left-[55px] flex items-center">
-          <img
-            className="w-24 h-24 rounded-full border-4 border-[#404d3c]"
-            src={profileImage}
-            alt="User Avatar"
-          />
+          <img className="w-24 h-24 rounded-full border-4 border-[#404d3c]" src={profileImage} alt="User Avatar" />
           <div className="ml-4 text-white">
             <h1 className="font text-2xl font-bold">{name}</h1>
             <p className="text-sm text-black">{username}</p>
@@ -228,9 +202,7 @@ const Profile = () => {
 
               {/* Change Profile Picture */}
               <div className="mb-4">
-                <label className="block text-sm font-medium mb-2">
-                  Change Profile Picture
-                </label>
+                <label className="block text-sm font-medium mb-2">Change Profile Picture</label>
                 <input
                   type="file"
                   accept="image/*"
@@ -241,11 +213,7 @@ const Profile = () => {
 
               {/* Modal Buttons */}
               <div className="flex justify-end">
-                <button
-                  type="button"
-                  onClick={handleCloseModal}
-                  className="px-4 py-2 bg-gray-200 rounded-full mr-2"
-                >
+                <button type="button" onClick={handleCloseModal} className="px-4 py-2 bg-gray-200 rounded-full mr-2">
                   Cancel
                 </button>
                 <button
@@ -263,18 +231,16 @@ const Profile = () => {
 
       {/* User's Forum Posts */}
       <div className="my-10 mx-4">
-        <h2 className="text-2xl font-bold">My Forum Posts</h2>
-        <div className="mt-4">
-          {loading ? (
-            <p>Loading...</p>
-          ) : userPosts.length > 0 ? (
-            userPosts.map((post, index) => (
-              <ForumPost key={index} post={post} />
-            ))
+        <h2 className="text-xl font-bold mb-4">Your Posts</h2>
+        {loading ? (
+          <p>Loading posts...</p>
+        ) : (
+          Array.isArray(userPosts) && userPosts.length > 0 ? (
+            userPosts.map((post) => <ForumPost key={post.id} post={post} />)
           ) : (
             <p>No posts available.</p>
-          )}
-        </div>
+          )
+        )}
       </div>
     </div>
   );

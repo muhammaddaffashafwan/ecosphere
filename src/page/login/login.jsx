@@ -25,8 +25,8 @@ export function Login() {
 			.post("http://localhost:5000/login", loginData)
 			.then((response) => {
 				localStorage.setItem("token", response.data.token);
-				localStorage.setItem("user", JSON.stringify(response.data.user));
-				// Redirect to home page after successful login
+				localStorage.setItem("id", JSON.stringify(response.data.id));
+
 				window.location.href = "/";
 			})
 			.catch((error) => {

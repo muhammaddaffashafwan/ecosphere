@@ -867,3 +867,99 @@ a {
   /* text-decoration: underline; */
   pointer-events: auto; /* Pastikan properti ini aktif */
 }
+
+@media screen and (max-width: 768px) {
+  .articles-2{
+    background-color: #cb7070;
+   top: 200px;
+  }
+  .trending-news {
+    font-size: 30px;
+    left: 50px;
+  }
+  .image-icon {
+    width: 670px;
+    height: 250px;
+    left: 50px;
+    top: 175px;
+  }
+  .how-technology-is {
+    font-size: 25px;
+    left: 53px;
+    width: 700px;
+    top: 440px;
+  }
+  .echnology-is-changing-industri-parent {
+   left: 40px;
+   top: 450px;
+   font-size: 12px;
+  }
+  .echnology-is-changing {
+    left: 70px;
+    width: 245px;
+  }
+  .t{
+    font-size: 85px;
+    top: 27px;
+  } 
+  .in-the-last-container {
+    left: 54px;
+    top: 560px;
+    width: 300px;
+  }
+  .in-the-last {
+    font-size: 12px;
+  }
+  .recent-trends-show-container {
+    left: 380px;
+    top: 485px;
+    width: 318px;
+  }
+  .cta-buttonn {
+    padding: 6px 75px;
+  }
+  .main-list-article-parent {
+    left: 53px;
+    top: 950px;
+  }
+  .image-icon1 {
+    width: 250px;
+    /* height:300px; */
+  }
+  .card-bif-a,
+  .card-bif-b,
+  .card-bif-c {
+    width: 250px;
+    height: 200px;
+  }
+  .research-institute-wins {
+    top: 210px;
+  }
+  .list-article {
+    top: 330px;
+    width: 355px;
+    font-size: 12px;
+  }
+  .scientists-identify-molten {
+    width: 185px;
+  }
+  .main-list-article-group {
+    left: 400px;
+    top: 950px;
+  }
+  .line-parent {
+    top:400px;
+  }
+  .line13,
+  .line14,
+  .line15 {
+    width: 300px;
+  }
+  .main-list-article-container {
+    left: 53px;
+    top: 1600px;
+  }
+  /* .more-article-parent {
+   padding-bottom: 5000px;
+  } */
+} 
