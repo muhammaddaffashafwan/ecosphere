@@ -871,6 +871,7 @@ a {
 @media screen and (max-width: 768px) {
   .articles-2{
     background-color: #cb7070;
+   top: 200px;
   }
   .trending-news {
     font-size: 30px;
@@ -919,6 +920,7 @@ a {
   }
   .main-list-article-parent {
     left: 53px;
+    top: 950px;
   }
   .image-icon1 {
     width: 250px;
@@ -931,17 +933,33 @@ a {
     height: 200px;
   }
   .research-institute-wins {
-    top: 150px;
+    top: 210px;
   }
   .list-article {
-    top: 268px;
+    top: 330px;
     width: 355px;
-    font-size: 13px;
+    font-size: 12px;
   }
   .scientists-identify-molten {
     width: 185px;
   }
   .main-list-article-group {
     left: 400px;
+    top: 950px;
   }
+  .line-parent {
+    top:400px;
+  }
+  .line13,
+  .line14,
+  .line15 {
+    width: 300px;
+  }
+  .main-list-article-container {
+    left: 53px;
+    top: 1600px;
+  }
+  /* .more-article-parent {
+   padding-bottom: 5000px;
+  } */
 } 
