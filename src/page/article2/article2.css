@@ -921,10 +921,27 @@ a {
     left: 53px;
   }
   .image-icon1 {
-    width: 120px;
+    width: 250px;
+    /* height:300px; */
   }
-  /* .card-bif-a {
-    width: 100px;
-    
-  } */
+  .card-bif-a,
+  .card-bif-b,
+  .card-bif-c {
+    width: 250px;
+    height: 200px;
+  }
+  .research-institute-wins {
+    top: 150px;
+  }
+  .list-article {
+    top: 268px;
+    width: 355px;
+    font-size: 13px;
+  }
+  .scientists-identify-molten {
+    width: 185px;
+  }
+  .main-list-article-group {
+    left: 400px;
+  }
 } 
