@@ -114,7 +114,7 @@ export function Inspiration() {
           <div className='recycled-wood'>RECYCLED WOOD</div>
         </div>
 
-        <div className='environment-categories'>
+        <div className='environment-categories0'>
           <img src='/images/envi2.png' />
           <div className='natural-insulation'>
             NATURAL
@@ -123,7 +123,7 @@ export function Inspiration() {
           </div>
         </div>
 
-        <div className='environment-categories'>
+        <div className='environment-categories1'>
           <img src='/images/envi3.png' />
           <div className='eco-friendly-paint'>
             ECO-FRIENDLY
@@ -132,12 +132,12 @@ export function Inspiration() {
           </div>
         </div>
 
-        <div className='environment-categories'>
+        <div className='environment-categories2'>
           <img src='/images/envi4.png' />
           <div className='clay-brick'>CLAY BRICK</div>
         </div>
 
-        <div className='environment-categories'>
+        <div className='environment-categories3'>
           <img src='/images/envi5.png' />
           <div className='energy-saving-glass'>
             ENERGY-SAVING
@@ -146,7 +146,7 @@ export function Inspiration() {
           </div>
         </div>
 
-        <div className='environment-categories'>
+        <div className='environment-categories4'>
           <img src='/images/envi6.png' />
           <div className='bamboo'>BAMBOO</div>
         </div>
@@ -158,14 +158,14 @@ export function Inspiration() {
 
       <div className='component-1'>
         <img src='/images/comp1.png' />
-        <div className='renew-title-wrapper'>
-          <div className='renew-title'>
+        <div className='renew-title-wrapper1'>
+          <div className='renew-title1'>
             solar <br />
             panels
           </div>
         </div>
-        <div className='comp-type'>
-          <div className='comp-type-container'>
+        <div className='comp-type1'>
+          <div className='comp-type-container1'>
             <b>Types:</b>
             <ol className='renew-list'>
               <li>Monocrystalline panels (high efficiency, durable)</li>
@@ -176,8 +176,8 @@ export function Inspiration() {
             </ol>
           </div>
         </div>
-        <div className='renew-how'>
-          <div className='renew-how-ben-container'>
+        <div className='renew-how1'>
+          <div className='renew-how-ben-container1'>
             <b>How It Works:</b>
             <span className='renew-how-ben-capture'>
               {" "}
@@ -186,8 +186,8 @@ export function Inspiration() {
             </span>
           </div>
         </div>
-        <div className='renew-ben'>
-          <div className='renew-how-ben-container'>
+        <div className='renew-ben1'>
+          <div className='renew-ben-container1'>
             <b>Benefits:</b>
             <span className='renew-how-ben-capture'>
               {" "}
@@ -200,15 +200,14 @@ export function Inspiration() {
 
       <div className='component-2'>
         <img src='/images/comp2.png' />
-
-        <div className='renew-title-wrapper'>
-          <div className='renew-title'>
+        <div className='renew-title-wrapper2'>
+          <div className='renew-title2'>
             Passive Solar Heating and <br />
             Cooling
           </div>
         </div>
-        <div className='comp-type'>
-          <div className='comp-type-container'>
+        <div className='comp-type2'>
+          <div className='comp-type-container2'>
             <b>Types:</b>
             <ol className='renew-list'>
               <li>
@@ -222,8 +221,8 @@ export function Inspiration() {
             </ol>
           </div>
         </div>
-        <div className='renew-how'>
-          <div className='renew-how-ben-container'>
+        <div className='renew-how2'>
+          <div className='renew-how-ben-container2'>
             <b>How It Works:</b>
             <span className='renew-how-ben-capture'>
               Utilizes house design and window orientation to maximize sunlight during winter and
@@ -231,8 +230,8 @@ export function Inspiration() {
             </span>
           </div>
         </div>
-        <div className='renew-ben'>
-          <div className='renew-how-ben-container'>
+        <div className='renew-ben2'>
+          <div className='renew-ben-container2'>
             <b>Benefits:</b>
             <span className='renew-how-ben-capture'>
               {" "}
@@ -245,14 +244,14 @@ export function Inspiration() {
 
       <div className='component-3'>
         <img src='/images/comp3.png' />
-        <div className='renew-title-wrapper'>
-          <div className='renew-title'>
+        <div className='renew-title-wrapper3'>
+          <div className='renew-title3'>
             Rainwater Harvesting <br />
             Systems
           </div>
         </div>
-        <div className='comp-type'>
-          <div className='comp-type-container'>
+        <div className='comp-type3'>
+          <div className='comp-type-container3'>
             <b>Types:</b>
             <ol className='renew-list'>
               <li>Roof Collection System: Channels rainwater from the roof into a storage tank</li>
@@ -260,8 +259,8 @@ export function Inspiration() {
             </ol>
           </div>
         </div>
-        <div className='renew-how'>
-          <div className='renew-how-ben-container'>
+        <div className='renew-how3'>
+          <div className='renew-how-ben-container3'>
             <b>How It Works:</b>
             <span className='renew-how-ben-capture'>
               {" "}
@@ -270,8 +269,8 @@ export function Inspiration() {
             </span>
           </div>
         </div>
-        <div className='renew-ben'>
-          <div className='renew-how-ben-container'>
+        <div className='renew-ben3'>
+          <div className='renew-ben-container3'>
             <b>Benefits:</b>
             <span className='renew-how-ben-capture'>
               {" "}
