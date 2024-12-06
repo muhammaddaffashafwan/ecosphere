@@ -9,6 +9,9 @@ export default {
       fontFamily: {
         optician: ['Optician', 'sans-serif'], // Nama font custom
       },
+      screens: {
+        'mobile': '425px', // Breakpoint khusus untuk layar 425px
+      },
       colors: {
         softCream: '#F7FFEC',
       },
