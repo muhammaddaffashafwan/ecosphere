@@ -7,7 +7,7 @@ export default function Card({ product }) {
   return (
     <Link
       to={`/products/${product.slug}`}
-      className="flex flex-col max-w-[220px] flex-wrap p-[12px] bg-[#ffffff] hover:ring-opacity-40 active:ring-5 active:ring-[#739646] rounded-[20px] shadow-xl hover:shadow-xxl transition-shadow duration-200 ease-in-out transform scale-90"
+      className="flex flex-col md:max-w-[520px] max-w-[220px] flex-wrap p-[12px] md:p-[25px] bg-[#ffffff] hover:ring-opacity-40 active:ring-5 active:ring-[#739646] rounded-[20px] shadow-xl hover:shadow-xxl transition-shadow duration-200 ease-in-out transform scale-90"
     >
       <div className="flex-col max-w-[210px] w-[200px] flex-wrap p-[12px] bg-[#ffffff] rounded-[20px]">
         <img src={product.imageUrl ?? ''} alt={product.name ?? 'No name'} className="block max-h-[250px] mb-4 object-cover" />
