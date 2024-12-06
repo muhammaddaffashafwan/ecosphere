@@ -9,12 +9,18 @@ export const authMiddleware = (req, res, next) => {
     return res.status(401).json({ error: "Unauthenticated, token missing" });
   }
 
+  // Pastikan JWT_SECRET ada di environment variable
+  const secret = process.env.JWT_SECRET;
+  if (!secret) {
+    return res.status(500).json({ error: "Server error: JWT_SECRET is missing" });
+  }
+
   try {
-    // Memverifikasi token dengan menggunakan JWT_SECRET yang ada di environment variable
-    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+    // Memverifikasi token dengan menggunakan JWT_SECRET
+    const decodedToken = jwt.verify(token, secret);
 
     // Pastikan id ada di dalam token, jika tidak ada maka kembalikan respons Unauthorized
-    if (!decodedToken.id) {
+    if (!decodedToken || !decodedToken.id) {
       return res.status(403).json({ error: "Unauthorized, invalid token" });
     }
 

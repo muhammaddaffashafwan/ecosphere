@@ -575,7 +575,7 @@ export function Article2() {
           <div className='more-article'>
             <div className='image-parent'>
               <div className='image-9'>
-                <img className='image-child' alt='' src='/images/9.png' />
+                <img classNa me='image-child' alt='' src='/images/9.png' />
 
                 <div className='overlay'>
                   <div className='text-article'>CLICK ME</div>

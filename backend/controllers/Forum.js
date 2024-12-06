@@ -2,16 +2,28 @@ import { Forum, Like, Reply } from "../models/ForumModel.js";
 
 // Create a new forum post
 export const createForum = async (req, res) => {
-  const { title, caption, image_url } = req.body;
+  const { title, caption, hashtags, image_url } = req.body;
   const user_id = req.user.id; // assuming the user is authenticated and user_id is in req.user
+  const uname = req.user.username; // Ensure this is how you're accessing the username
 
   try {
-    const forumPost = await Forum.create({ user_id, title, caption, image_url });
+    // Check if the user is authenticated and the uname exists
+    if (!uname) {
+      return res.status(400).json({ error: "Username is missing or not found in the session" });
+    }
+
+    // Create the forum post
+    const forumPost = await Forum.create({ user_id, uname, title, caption, hashtags, image_url });
+
+    // Respond with success message and created forum post
     res.status(201).json({ message: "Forum post created successfully", forumPost });
   } catch (error) {
+    // Handle errors (for example, validation or database errors)
+    console.error(error);
     res.status(500).json({ error: error.message });
   }
 };
+
 
 // Get all forum posts
 export const getForum = async (req, res) => {
@@ -68,7 +80,7 @@ export const getForumById = async (req, res) => {
 // Update an existing forum post
 export const updateForum = async (req, res) => {
   const { id } = req.params;
-  const { title, caption, image_url } = req.body;
+  const { title, caption, hashtags, image_url } = req.body;
   const user_id = req.user.id;
 
   try {
@@ -80,6 +92,7 @@ export const updateForum = async (req, res) => {
 
     forumPost.title = title || forumPost.title;
     forumPost.caption = caption || forumPost.caption;
+    forumPost.hashtags = hashtags || forumPost.hashtags;
     forumPost.image_url = image_url || forumPost.image_url;
 
     await forumPost.save();

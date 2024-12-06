@@ -11,9 +11,45 @@ const ForumPost = ({ data }) => {
   const token = localStorage.getItem('token');
   const currentUserId = localStorage.getItem('id');
 
-  const handleLike = () => {
+  const handleLike = async () => {
+    const token = localStorage.getItem('token');
+    console.log("Token:", token); // Check if the token is valid
 
+    const postId = data.id; // Get the current post ID
+  
+    // Check if the user is logged in
+    if (!token) {
+      alert("Please log in to like the post");
+      return;
+    }
+  
+    try {
+      // Send the like/unlike request to the server
+      const response = await fetch(`http://localhost:5000/like-forum/${postId}/like`, {
+        method: isLiked ? 'DELETE' : 'POST',  // Use DELETE to unlike, POST to like
+        headers: {
+          'Authorization': `Bearer ${token}`,  // Include the token for authentication
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(`Failed to update like status: ${error.message}`);
+      }
+      
+  
+      // Update the like status based on the server response
+      const result = await response.json();
+      
+      // Update the like count and isLiked state
+      setisLiked(result.isLiked);
+      setLikeCount(result.likeCount);
+    } catch (error) {
+      console.error("Error handling like:", error);
+    }
   };
+  
 
   const handleDelete = () => {
 
@@ -32,7 +68,7 @@ const ForumPost = ({ data }) => {
           src={data.profileImage}
         />
         <div className="flex flex-col">
-          <span className="font-bold">{data.user_id}</span>
+          <span className="font-bold">{data.uname}</span>
           <span className="text-xs text-gray-500">{data.createdAt}</span>
         </div>
       </div>
