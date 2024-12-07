@@ -184,6 +184,7 @@ footer a {
   footer {
     /* padding: 20px 10px; */
     flex-direction: row;
+    gap: 15px;
   }
 
   .footer-section {
@@ -192,7 +193,7 @@ footer a {
     justify-content: center; /* Menempatkan elemen di tengah secara vertikal */
     align-items: center; /* Menempatkan elemen di tengah secara horizontal */
     padding-right: 0;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     min-width: 100%; 
     width: 100%; /* Ubah dari 768px ke 100% agar fleksibel */
     text-align: center; 
@@ -200,7 +201,7 @@ footer a {
 }
 
   .footer-background {
-    top: 360px;
+    top: 430px;
     width: 700px; 
     left: -250px;
   }
