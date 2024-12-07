@@ -118,55 +118,125 @@ footer a {
 /* Responsive Styles */
 @media (max-width: 768px) {
   footer {
-    padding: 30px 20px;
-    flex-direction: column;
+    padding: 50px 20px;
+    flex-direction: row;
     align-items: center;
   }
 
   .footer-section {
+    display: flex;
+    flex-direction: column; /* Mengatur elemen dalam satu kolom */
+    justify-content: center; /* Menempatkan elemen di tengah secara vertikal */
+    align-items: center; /* Menempatkan elemen di tengah secara horizontal */
     padding-right: 0;
-    min-width: 100%; /* Allow sections to take full width */
-    text-align: center; /* Center text for smaller screens */
-  }
+    margin-bottom: 40px;
+    min-width: 100%; 
+    width: 100%; /* Ubah dari 768px ke 100% agar fleksibel */
+    text-align: center; 
+    box-sizing: border-box; /* Memastikan padding tidak memengaruhi lebar total */
+}
 
   .footer-background {
-    bottom: 50px; /* Adjust background position */
-    right: 0; /* Center background */
-    width: 100%; /* Full width on smaller screens */
+    top: 100px;
+    width: 700px; 
+    left: 75px;
   }
 
   .footer-section h4 {
     font-size: 18px; /* Slightly larger font for headings */
   }
 
+  .footer-section img {
+    width: 400px;
+    height: auto;
+  }
+
   .footer-section p {
     font-size: 12px; /* Adjust paragraph font size */
+    max-width: 500px;
+    text-align: center;
   }
 
   .social-icons {
-    margin-top: 15px;
+    margin-top: 10px;
   }
 
   .social-icons a {
     margin-right: 15px; /* Reduce spacing between icons */
     font-size: 18px; /* Slightly smaller icon font size */
   }
+
+  .footer-section-property,
+  .footer-section-article,
+  .footer-section-contact {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+    position: relative;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    display: inline-block;
+    color: #414958;
+  }
 }
 
 @media (max-width: 480px) {
   footer {
-    padding: 20px 10px;
+    /* padding: 20px 10px; */
+    flex-direction: row;
   }
 
+  .footer-section {
+    display: flex;
+    flex-direction: column; /* Mengatur elemen dalam satu kolom */
+    justify-content: center; /* Menempatkan elemen di tengah secara vertikal */
+    align-items: center; /* Menempatkan elemen di tengah secara horizontal */
+    padding-right: 0;
+    margin-bottom: 40px;
+    min-width: 100%; 
+    width: 100%; /* Ubah dari 768px ke 100% agar fleksibel */
+    text-align: center; 
+    box-sizing: border-box; /* Memastikan padding tidak memengaruhi lebar total */
+}
+
+  .footer-background {
+    top: 360px;
+    width: 700px; 
+    left: -250px;
+  }
+  
   .footer-section h4 {
     font-size: 16px; /* Adjust font size for very small screens */
+  }
+
+  .footer-section img {
+    width: 400px;
+    height: auto;
   }
 
   .footer-section p {
     font-size: 12px; /* Keep paragraph font size consistent */
   }
 
+  .social-icons {
+    margin-top: 10px;
+  }
+
   .social-icons a {
     font-size: 16px; /* Further reduce icon font size */
   }
+}
+
+.footer-section-property,
+.footer-section-article,
+.footer-section-contact {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 20px;
+  position: relative;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  display: inline-block;
+  color: #414958;
+  flex-direction: column;
 }
