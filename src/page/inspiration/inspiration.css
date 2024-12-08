@@ -537,10 +537,22 @@
   text-align: center;
   right: 50px;
   left: 9vw;
-  top: 160vw;
-  padding-bottom: 0vw;
-}
+  top: 156vw;
+  padding:0vw;
 
+}
+.environment-frame{
+  margin-top: 90vw;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding: 100px;
+  border-radius: 24px;
+  /* transform: translateY(750px); */
+  /* margin-left: 385px; */
+  white-space: nowrap;
+  cursor: grab;
+  width: 100vw;
+}
 .environment-categories ,
 .environment-categories0,
 .environment-categories1, 
@@ -551,8 +563,8 @@
   height: 155px;
   right: 30vw;
   left: -4vw;
-  top:-10vw;
-  z-index: 10;
+  top:1vw;
+  z-index: 1;
 }
 
 .renewable-title{
@@ -568,6 +580,10 @@
   height: 30vw;
   left: 28vw;
   top: 240vw;
+}
+
+.renew-title1{
+  top: 200vw;
 }
 
 .comp-type {
@@ -602,7 +618,7 @@ height: 30vw;
   width: 49vw;
 height: 30vw;
   left: 30vw;
-  top: 390vw;
+  top: 410vw;
 }
 
 .renew-title{
@@ -610,6 +626,7 @@ height: 30vw;
   padding-right: -10vw;
 white-space: nowrap;
 }
+
 
 .renew-how-ben-container{
   width: 100vw;
@@ -632,7 +649,7 @@ white-space: nowrap;
 .diy-title{
   font-size: 30px;
   text-align: center;
-  top: 450vw;
+  top: 480vw;
   z-index: 1;
 }
 .diy-content {
@@ -640,9 +657,9 @@ white-space: nowrap;
   }
 
 .diy-vid{
-  width: 10%;
+  width: 15%;
   left: -8vw;
-  top: 150vw;
+  top: 230vw;
 }
 
 .diy-vid h3{
@@ -653,20 +670,56 @@ white-space: nowrap;
 .renew-title-wrapper2,
 .renew-title-wrapper3
 {
-  left: -22vw;
+  left: -15vw;
+  top: 35vw;
 }
 .comp-type1,
 .comp-type2,
 .comp-type3,
- .renew-how1,
- .renew-how2,
- .renew-how3,
-  .renew-ben1,
-  .renew-ben2,
-  .renew-ben3{
- left: -20vw; 
+.renew-how1,
+.renew-how2,
+.renew-how3,
+.renew-ben1,
+.renew-ben2,
+.renew-ben3{
+ left: -15vw; 
 }
 
+.comp-type1{
+  top: 48vw;
+}
+
+.renew-how1{
+  top: 63vw;
+}
+
+.renew-ben1{
+  top: 72vw;
+}
+
+.comp-type2{
+  top: 50vw;
+}
+
+.renew-how2{
+  top: 65vw;
+}
+
+.renew-ben2{
+  top: 75vw;
+}
+
+.comp-type3{
+  top: 45vw;
+}
+
+.renew-how3{
+  top: 57vw;
+}
+
+.renew-ben3{
+  top: 66vw;
+}
 .cta-button2{
   width: 10%;
  padding: 5px 50x;
