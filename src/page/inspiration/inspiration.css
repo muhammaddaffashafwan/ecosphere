@@ -654,6 +654,7 @@ white-space: nowrap;
 }
 .diy-content {
     grid-template-columns: 1fr; /* 2 columns */
+    width: 768px;
   }
 
 .diy-vid{
@@ -720,14 +721,13 @@ white-space: nowrap;
 .renew-ben3{
   top: 66vw;
 }
-.cta-button2{
-  width: 10%;
+.hover-more-1 {
+  /* width: 10%; */
  padding: 5px 50x;
  text-wrap: nowrap;
- margin-left:-10vw;
- top: -20vw;
- z-index: 10;
-
+ /* margin-left:-10vw; */
+ /* top: -20vw; */
+ /* z-index: 10; */
 }
 .body-inspiration1{
   background-color: #455a2a;
