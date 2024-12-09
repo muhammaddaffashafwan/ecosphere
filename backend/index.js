@@ -5,8 +5,11 @@ import db from "./config/database.js";
 import Users from "./models/UserModel.js";
 import router from "./routes/index.js";
 import cors from "cors";
+import bodyParser from "body-parser";
 
 const app = express();
+
+app.use(bodyParser())
 
 app.use(
 	cors({

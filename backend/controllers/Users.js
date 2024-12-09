@@ -6,52 +6,59 @@ import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import { request } from "http";
+
+// Pastikan direktori upload ada
+// Mendapatkan path direktori saat ini (equivalent dari __dirname dalam ES Module)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Pastikan direktori upload ada
+const uploadDirectory = path.join(__dirname, '..', 'uploads', 'profiles');
+if (!fs.existsSync(uploadDirectory)) {
+  fs.mkdirSync(uploadDirectory, { recursive: true });
+}
 
 export const resetPassword = async (req, res) => {
-  const { email, password } = req.body; // Mengambil email, password, dan confirm password dari body request
+  const { email, password } = req.body;
 
   try {
-    // Basic validation to check if email, password, and confirmPassword are provided
-    if (!email || !password ) {
-      return res.status(400).json({ error: "Email, password, and confirm password are required." });
+    if (!email || !password) {
+      return res.status(400).json({ error: "Email and password are required." });
     }
 
-    // Cek apakah email yang dimasukkan ada dalam database
-    const user = await Users.findOne({ where: { email } });  // Ensure you're querying with the correct model and method
+    const user = await Users.findOne({ where: { email } });
     if (!user) {
-      return res.status(404).json({ error: "User not found with this email." });
+      return res.status(404).json({ error: "User not found." });
     }
 
-    // Hash password baru yang dimasukkan
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    // Update password pengguna dalam database
     user.password = hashedPassword;
     await user.save();
 
-    // Response sukses setelah password berhasil diubah
-    res.status(200).json({ message: "Password reset successful." });
+    return res.status(200).json({ message: "Password reset successful." });
   } catch (error) {
-    console.error("Error in password reset:", error.message); // Log the error message for debugging
-    res.status(500).json({ error: "Internal Server Error. Please try again later." });
+    console.error("Error in password reset:", error.message);
+    res.status(500).json({ error: "Internal server error." });
   }
 };
 
 // Konfigurasi penyimpanan file menggunakan multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads/profiles/'); // Direktori untuk menyimpan gambar
+    cb(null, uploadDirectory);
   },
   filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname)); // Nama file dengan timestamp
+    cb(null, Date.now() + path.extname(file.originalname));
   },
 });
 
-// Filter untuk validasi tipe file
 const upload = multer({
   storage,
   fileFilter: (req, file, cb) => {
+    console.log(req.files)
     const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
     if (allowedTypes.includes(file.mimetype)) {
       cb(null, true);
@@ -64,9 +71,8 @@ const upload = multer({
 // **GET Users**
 export const getUsers = async (req, res) => {
   try {
-    // Fetch all users, you can add specific attributes or filtering if needed
     const users = await Users.findAll({
-      attributes: ['id', 'name', 'username', 'email', 'profile_image', 'createdAt', 'updatedAt'], // Specify the fields you want to return
+      attributes: ['id', 'name', 'username', 'email', 'profile_image', 'createdAt', 'updatedAt'],
     });
 
     if (!users || users.length === 0) {
@@ -75,7 +81,7 @@ export const getUsers = async (req, res) => {
 
     return res.status(200).json(users);
   } catch (error) {
-    console.error("Error fetching users:", error.message); // Log detailed error
+    console.error("Error fetching users:", error.message);
     return res.status(500).json({ error: "Failed to fetch users. Please try again later." });
   }
 };
@@ -148,9 +154,9 @@ export const authLogin = async (req, res) => {
     }
 
     const token = jwt.sign(
-      { id: user.id, username: user.username }, // Payload
-      process.env.JWT_SECRET, // Secret key
-      { expiresIn: "24h" } // Token expiration time
+      { id: user.id, username: user.username },
+      process.env.JWT_SECRET,
+      { expiresIn: "24h" }
     );
 
     return res.status(200).json({
@@ -168,21 +174,24 @@ export const authLogin = async (req, res) => {
 
 // **Update Profile Image**
 export const updateProfileImage = async (req, res) => {
-  // Memastikan file diupload
-  upload.single('profile_image')(req, res, async (err) => {
-    if (err) {
-      return res.status(400).json({ error: err.message }); // Error handling jika file tidak valid
-    }
-
+    console.log("test",req.file)
+    console.log(req.files) 
+    // if (err) {
+    //   console.log('Upload Error:', err); // Log error upload
+    //   return res.status(400).json({ error: err.message });
+    // }
+    console.log('Uploaded file:', req.file); // Log file yang diupload
+    // Lanjutkan ke proses berikutnya...
     try {
       const userId = req.user.id; // Asumsikan userId tersedia dari JWT token
-      const imagePath = '/uploads/profiles/' + req.file.filename; // Path gambar
+      const imagePath = '/uploads/profiles/' + req.file.filename;
 
       const user = await Users.findOne({ where: { id: userId } });
       if (!user) {
         return res.status(404).json({ error: "User not found" });
       }
 
+      console.log("test2",user)
       await user.update({ profile_image: imagePath });
 
       return res.status(200).json({
@@ -196,37 +205,36 @@ export const updateProfileImage = async (req, res) => {
       console.log(error);
       return res.status(500).json({ error: "An error occurred while updating profile image" });
     }
-  });
-};
-
-// **Delete Profile Image**
-export const deleteProfileImage = async (req, res) => {
-  try {
-    const userId = req.user.id; // Asumsikan userId tersedia dari JWT token
-
-    const user = await Users.findOne({ where: { id: userId } });
-    if (!user || !user.profile_image) {
-      return res.status(404).json({ error: "Profile image not found" });
-    }
-
-    const __filename = fileURLToPath(import.meta.url);
-    const __dirname = dirname(__filename);
-    const imagePath = path.join(__dirname, '..', user.profile_image); // Pastikan path benar
-
-    fs.unlink(imagePath, async (err) => {
-      if (err) {
-        return res.status(500).json({ error: "Error deleting profile image from server" });
-      }
-
-      await user.update({ profile_image: null });
-
-      return res.status(200).json({
-        status: "success",
-        message: "Profile image deleted successfully",
-      });
-    });
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({ error: "An error occurred while deleting profile image" });
   }
-};
+
+// // **Delete Profile Image**
+// export const deleteProfileImage = async (req, res) => {
+//   try {
+//     const userId = req.user.id;
+
+//     const user = await Users.findOne({ where: { id: userId } });
+//     if (!user || !user.profile_image) {
+//       return res.status(404).json({ error: "Profile image not found" });
+//     }
+
+//     const __filename = fileURLToPath(import.meta.url);
+//     const __dirname = dirname(__filename);
+//     const imagePath = path.join(__dirname, '..', user.profile_image);
+
+//     fs.unlink(imagePath, async (err) => {
+//       if (err) {
+//         return res.status(500).json({ error: "Error deleting profile image from server" });
+//       }
+
+//       await user.update({ profile_image: null });
+
+//       return res.status(200).json({
+//         status: "success",
+//         message: "Profile image deleted successfully",
+//       });
+//     });
+//   } catch (error) {
+//     console.log(error);
+//     return res.status(500).json({ error: "An error occurred while deleting profile image" });
+//   }
+// };

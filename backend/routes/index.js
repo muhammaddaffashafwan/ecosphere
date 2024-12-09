@@ -4,7 +4,7 @@ import {
   authSignup, 
   authLogin, 
   updateProfileImage, 
-  deleteProfileImage, 
+  // deleteProfileImage, 
   resetPassword 
 } from "../controllers/Users.js";
 import { 
@@ -32,7 +32,7 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname)); // Nama file yang unik
   },
-});
+}); 
 const upload = multer({ storage }); // Inisialisasi multer dengan konfigurasi penyimpanan
 
 // Tes Web: Untuk memastikan server berjalan
@@ -53,7 +53,7 @@ router.get("/users", authMiddleware, getUsers);
 router.put("/profile-image", authMiddleware, upload.single('profile_image'), updateProfileImage);
 
 // Rute untuk menghapus gambar profil (memerlukan otentikasi)
-router.delete("/profile-image", authMiddleware, deleteProfileImage);
+// router.delete("/profile-image", authMiddleware, deleteProfileImage);
 
 // Rute untuk reset password (tanpa otentikasi, hanya memerlukan email)
 router.post("/forgot-password", resetPassword);

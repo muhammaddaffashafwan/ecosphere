@@ -39,9 +39,6 @@ const Users = db.define(
       type: DataTypes.STRING,
       allowNull: true, // Mengizinkan kolom ini null, karena user bisa tidak memiliki gambar
       defaultValue: null, // Menetapkan default null jika tidak ada gambar
-      validate: {
-        isUrl: true, // Validasi agar jika ada, formatnya harus URL yang valid
-      },
     },
   },
   {
