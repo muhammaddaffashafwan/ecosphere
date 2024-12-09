@@ -415,7 +415,7 @@ body {
 /* Responsive mode */
 @media screen and  (max-width:768px) {
   .home-page-title {
-    font-size: 33px;
+    font-size: 27px;
     left: 50px;
     top: 250px;
   }
@@ -477,14 +477,24 @@ body {
     top: 950px;
   }
   .title-up-caption {
-    font-size: 25px;
+    font-size: 35px;
     top: -400px;
-    padding-left: 65px;
+    padding-left: -10vw;
+    text-wrap: nowrap;
+    text-align: center;
+
+  }
+
+  .title-up{
+    left: 30px;
+    line-height: 2vw;
   }
   .title-down {
-    font-size: 30px;  
+    font-size: 35px;  
     top: -345px;
     padding-left: 10px;
+    line-height: 4vw;
+    text-align: center;
   }
   .article-a {
     top: 150px;
