@@ -35,61 +35,101 @@ export function Forum1() {
   const [error, setError] = useState(null); // Store the error if there's an issue with fetching data
 
   useEffect(() => {
-    const user = localStorage.getItem("user");
-    console.log("user:", user);
+    // const user = localStorage.getItem("user");
+    // console.log("user:", user);
+    
     console.log("token:", token);
   }, [token]);
 
-  const handleQuestionClick = () => {
-    setOverlayMode("add");
-    setSelectedQuestion(null);
-    setInputTitle("");
-    setBodyContent("");
-    setNewImage(null);
-    setOverlayVisible(true);
-  };
+  // const handleQuestionClick = () => {
+  //   setOverlayMode("add");
+  //   setSelectedQuestion(null);
+  //   setInputTitle("");
+  //   setBodyContent("");
+  //   setNewImage(null);
+  //   setOverlayVisible(true);
+  // };
 
-  const handleAnswerClick = (question) => {
-    setOverlayMode("answer");
-    setSelectedQuestion(question);
-    setBodyContent("");
-    setNewImage(null);
-    setOverlayVisible(true);
-  };
+  // const handleAnswerClick = (question) => {
+  //   setOverlayMode("answer");
+  //   setSelectedQuestion(question);
+  //   setBodyContent("");
+  //   setNewImage(null);
+  //   setOverlayVisible(true);
+  // };
 
-  const handleOverlaySubmit = async () => {
-    const formData = new FormData();
-    formData.append("caption", bodyContent); // Backend expects 'caption'
-    if (inputTitle && overlayMode === "add") {
-      formData.append("title", inputTitle); // Add the title only when creating a new question
-    }
-    if (newImage) {
-      formData.append("image_url", newImage); // Attach image
-    }
+  // const handleOverlaySubmit = async () => {
+  //   const formData = new FormData();
+  //   formData.append("caption", bodyContent); // Backend expects 'caption'
+  //   if (inputTitle && overlayMode === "add") {
+  //     formData.append("title", inputTitle); // Add the title only when creating a new question
+  //   }
+  //   if (newImage) {
+  //     formData.append("image_url", newImage); // Attach image
+  //   }
 
+  //   try {
+  //     if (overlayMode === "add") {
+  //       // Add new question
+  //       setQuestions([
+  //         ...questions,
+  //         { id: questions.length + 1, title: inputTitle, caption: bodyContent }, // Add the new question
+  //       ]);
+  //     } else if (overlayMode === "answer" && selectedQuestion) {
+  //       // Add new answer to a selected question
+  //       setQuestions((prevQuestions) =>
+  //         prevQuestions.map((q) =>
+  //           q.id === selectedQuestion.id
+  //             ? { ...q, replies: (q.replies || 0) + 1, lastAnswer: "Just now" }
+  //             : q
+  //         )
+  //       );
+  //     }
+  //     setOverlayVisible(false);
+  //   } catch (error) {
+  //     console.error("Error submitting data:", error);
+  //   }
+  // };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent the default form submission
+  
+    const formData = {
+      title: formTitle, // The title of the forum post
+      caption: formCaption, // The caption or content of the forum post
+      hashtags: formHashtags, // The hashtags related to the post
+      image_url: formImageUrl, // The image URL if the post includes an image
+    };
+  
     try {
-      if (overlayMode === "add") {
-        // Add new question
-        setQuestions([
-          ...questions,
-          { id: questions.length + 1, title: inputTitle, caption: bodyContent }, // Add the new question
-        ]);
-      } else if (overlayMode === "answer" && selectedQuestion) {
-        // Add new answer to a selected question
-        setQuestions((prevQuestions) =>
-          prevQuestions.map((q) =>
-            q.id === selectedQuestion.id
-              ? { ...q, replies: (q.replies || 0) + 1, lastAnswer: "Just now" }
-              : q
-          )
-        );
+      // Send a POST request to your backend API (adjust the URL as needed)
+      const response = await fetch('/api/forum', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${authToken}`, // Assuming you're using token-based authentication
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      // Parse the response
+      const data = await response.json();
+  
+      if (response.ok) {
+        // Handle the success case (e.g., show a success message)
+        alert('Forum post created successfully');
+        console.log(data.forumPost); // The created forum post object
+      } else {
+        // Handle error response
+        alert(`Error: ${data.error}`);
       }
-      setOverlayVisible(false);
     } catch (error) {
-      console.error("Error submitting data:", error);
+      // Handle network or other unexpected errors
+      console.error('Error creating forum post:', error);
+      alert('An error occurred while creating the post');
     }
   };
-
+  
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setNewImage(file);
@@ -145,7 +185,7 @@ export function Forum1() {
         <div className="w-1/3 ml-5 pt-[195px]">
           <div
             className="flex items-center bg-softCream p-3 rounded-lg mb-5 cursor-pointer border border-black shadow-md"
-            onClick={handleQuestionClick}
+            onClick={handleSubmit}
           >
             <img
               src="/images/forum1/muhammad sumbul.png"
@@ -172,7 +212,7 @@ export function Forum1() {
                 </h3>
                 <button
                   className="bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all rounded-full px-[17px] py-[7px] text-[15px]"
-                  onClick={() => handleAnswerClick(question)}
+                  onClick={() => handleSubmit(question)}
                 >
                   ANSWER
                 </button>
@@ -194,7 +234,7 @@ export function Forum1() {
                 placeholder="Enter the title here..."
                 className="w-full p-3 border border-gray-300 rounded-lg mb-4"
                 value={inputTitle}
-                onChange={(e) => setInputTitle(e.target.value)}
+                onChange={(e) => formTitle(e.target.value)}
               />
             )}
             <textarea
