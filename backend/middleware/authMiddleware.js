@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 
 export const authMiddleware = (req, res, next) => {
   // Mengambil token dari header Authorization
-  const token = req.headers.authorization?.split(" ")[1];
+  const token = req.header("authorization")?.split(" ")[1];
 
   // Jika token tidak ditemukan, kembalikan respons Unauthorized
   if (!token) {

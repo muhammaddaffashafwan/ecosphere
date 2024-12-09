@@ -4,6 +4,8 @@ import ForumPost from "../../components/ForumPost/ForumPost";
 import "../global.css";
 
 export function Forum1() {
+  const [post, setPost] = useState([]);
+  const [error, setError] = useState(null);
   const { id } = useParams(); // Assuming id is passed as a URL parameter
   const [questions, setQuestions] = useState([
     {
@@ -26,72 +28,70 @@ export function Forum1() {
   const [overlayVisible, setOverlayVisible] = useState(false);
   const [overlayMode, setOverlayMode] = useState("add");
   const [selectedQuestion, setSelectedQuestion] = useState(null);
-  const [inputTitle, setInputTitle] = useState("");
-  const [bodyContent, setBodyContent] = useState("");
-  const [newImage, setNewImage] = useState(null);
-  const [token, setToken] = useState(localStorage.getItem("token"));
+  const [formTitle, setFormTitle] = useState(""); // Add this state
+  const [formCaption, setFormCaption] = useState(""); // Add if not already defined
+  const [formHashtags, setFormHashtags] = useState(""); // Add for hashtags if needed
+  const [formImageUrl, setFormImageUrl] = useState(""); // Add for image URL if needed
   const [loading, setLoading] = useState(false); // Add the loading state
-  const [post, setPost] = useState(null); // Store the fetched post data
-  const [error, setError] = useState(null); // Store the error if there's an issue with fetching data
+  const token = localStorage.getItem("token");
+  console.log("token:", token);
 
-  useEffect(() => {
-    // const user = localStorage.getItem("user");
-    // console.log("user:", user);
-    
-    console.log("token:", token);
-  }, [token]);
+  const handleQuestionClick = () => {
+    setOverlayMode("add");
+    setSelectedQuestion(null);  // No question selected for new question
+    setFormTitle("");
+    setFormCaption("");
+    setFormHashtags("");
+    setFormImageUrl(null);
+    setOverlayVisible(true); // Show the overlay when button is clicked
+  };
 
-  // const handleQuestionClick = () => {
-  //   setOverlayMode("add");
-  //   setSelectedQuestion(null);
-  //   setInputTitle("");
-  //   setBodyContent("");
-  //   setNewImage(null);
-  //   setOverlayVisible(true);
-  // };
+  const handleAnswerClick = (question) => {
+    setOverlayMode("answer");
+    setSelectedQuestion(question); // Set selected question for answering
+    setFormCaption("");
+    setFormHashtags("");
+    setFormImageUrl("");
+    setOverlayVisible(true); // Show the overlay when answering a question
+  };
 
-  // const handleAnswerClick = (question) => {
-  //   setOverlayMode("answer");
-  //   setSelectedQuestion(question);
-  //   setBodyContent("");
-  //   setNewImage(null);
-  //   setOverlayVisible(true);
-  // };
+  const handleOverlaySubmit = async () => {
+    const formData = new FormData();
+    formData.append("caption", formCaption); // Backend expects 'caption'
+    if (formTitle && overlayMode === "add") {
+      formData.append("title", formTitle); // Add the title only when creating a new question
+    }
+    if (formHashtags) {
+      formData.append("hashtags", formHashtags); // Attach hashtags
+    }
+    if (formImageUrl) {
+      formData.append("image_url", formImageUrl); // Attach image
+    }
 
-  // const handleOverlaySubmit = async () => {
-  //   const formData = new FormData();
-  //   formData.append("caption", bodyContent); // Backend expects 'caption'
-  //   if (inputTitle && overlayMode === "add") {
-  //     formData.append("title", inputTitle); // Add the title only when creating a new question
-  //   }
-  //   if (newImage) {
-  //     formData.append("image_url", newImage); // Attach image
-  //   }
+    try {
+      if (overlayMode === "add") {
+        // Add new question
+        setQuestions([
+          ...questions,
+          { id: questions.length + 1, title: formTitle, caption: formCaption }, // Add the new question
+        ]);
+      } else if (overlayMode === "answer" && selectedQuestion) {
+        // Add new answer to a selected question
+        setQuestions((prevQuestions) =>
+          prevQuestions.map((q) =>
+            q.id === selectedQuestion.id
+              ? { ...q, replies: (q.replies || 0) + 1, lastAnswer: "Just now" }
+              : q
+          )
+        );
+      }
+      setOverlayVisible(false); // Hide overlay after submission
+    } catch (error) {
+      console.error("Error submitting data:", error);
+    }
+  };
 
-  //   try {
-  //     if (overlayMode === "add") {
-  //       // Add new question
-  //       setQuestions([
-  //         ...questions,
-  //         { id: questions.length + 1, title: inputTitle, caption: bodyContent }, // Add the new question
-  //       ]);
-  //     } else if (overlayMode === "answer" && selectedQuestion) {
-  //       // Add new answer to a selected question
-  //       setQuestions((prevQuestions) =>
-  //         prevQuestions.map((q) =>
-  //           q.id === selectedQuestion.id
-  //             ? { ...q, replies: (q.replies || 0) + 1, lastAnswer: "Just now" }
-  //             : q
-  //         )
-  //       );
-  //     }
-  //     setOverlayVisible(false);
-  //   } catch (error) {
-  //     console.error("Error submitting data:", error);
-  //   }
-  // };
-
-  const handleSubmit = async (e) => {
+  const handleAnswerSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission
   
     const formData = {
@@ -103,11 +103,11 @@ export function Forum1() {
   
     try {
       // Send a POST request to your backend API (adjust the URL as needed)
-      const response = await fetch('/api/forum', {
+      const response = await fetch('http://localhost:5000/create-forum', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${authToken}`, // Assuming you're using token-based authentication
+          Authorization: token, // Assuming you're using token-based authentication
         },
         body: JSON.stringify(formData),
       });
@@ -117,31 +117,30 @@ export function Forum1() {
   
       if (response.ok) {
         // Handle the success case (e.g., show a success message)
-        alert('Forum post created successfully');
+        alert("Forum post created successfully");
         console.log(data.forumPost); // The created forum post object
       } else {
         // Handle error response
-        alert(`Error: ${data.error}`);
+        alert(`error: ${data.error}`);
       }
     } catch (error) {
       // Handle network or other unexpected errors
-      console.error('Error creating forum post:', error);
-      alert('An error occurred while creating the post');
+      console.error("Error creating forum post:", error);
+      alert("An error occurred while creating the post");
     }
   };
-  
+
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    setNewImage(file);
+    setFormImageUrl(file);
   };
 
   // Correcting the fetch call to use token and id
   useEffect(() => {
     if (!token) {
-      console.error("Token is missing.");
-      return;
+      alert("You need to log in to access this feature.");
+      window.location.href = "/login"; // Redirect if not logged in
     }
-
     setLoading(true);
     fetch(`http://localhost:5000/get-forum`, {
       headers: {
@@ -166,7 +165,7 @@ export function Forum1() {
         setError(`Failed to fetch post data: ${error.message}`);
         setLoading(false);
       });
-  }, [id, token]); // Now id is being passed from URL and token is managed properly
+  }, [id, token]);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -185,7 +184,7 @@ export function Forum1() {
         <div className="w-1/3 ml-5 pt-[195px]">
           <div
             className="flex items-center bg-softCream p-3 rounded-lg mb-5 cursor-pointer border border-black shadow-md"
-            onClick={handleSubmit}
+            onClick={handleQuestionClick} // Trigger overlay for new question
           >
             <img
               src="/images/forum1/muhammad sumbul.png"
@@ -201,18 +200,18 @@ export function Forum1() {
           </div>
 
           <div className="bg-softCream p-3 rounded-lg">
-            <h2 className="font text-xl font-bold mb-4">QUESTION FOR YOU</h2> {/* Static section title */}
+            <h2 className="font text-xl font-bold mb-4">QUESTION FOR YOU</h2>
             {questions.map((question) => (
               <div
                 key={question.id}
                 className="bg-softCream p-4 rounded-lg mb-4 border border-black shadow-md"
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-[15px]">
-                  {question.title} {/* Dynamic question title */}
+                  {question.title}
                 </h3>
                 <button
                   className="bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all rounded-full px-[17px] py-[7px] text-[15px]"
-                  onClick={() => handleSubmit(question)}
+                  onClick={() => handleAnswerClick(question)} // Open overlay for answering
                 >
                   ANSWER
                 </button>
@@ -233,8 +232,8 @@ export function Forum1() {
                 type="text"
                 placeholder="Enter the title here..."
                 className="w-full p-3 border border-gray-300 rounded-lg mb-4"
-                value={inputTitle}
-                onChange={(e) => formTitle(e.target.value)}
+                value={formTitle}
+                onChange={(e) => setFormTitle(e.target.value)}
               />
             )}
             <textarea
@@ -244,8 +243,8 @@ export function Forum1() {
                   ? "Write your question details here..."
                   : "Write your answer here..."
               }
-              value={bodyContent}
-              onChange={(e) => setBodyContent(e.target.value)}
+              value={formCaption}
+              onChange={(e) => setFormCaption(e.target.value)}
             ></textarea>
 
             <div className="mb-4">
@@ -256,29 +255,31 @@ export function Forum1() {
                 onChange={handleFileChange}
                 className="w-full border border-gray-300 rounded-lg p-2"
               />
-              {newImage && (
-                <div className="mt-2">
-                  <img
-                    src={URL.createObjectURL(newImage)}
-                    alt="Uploaded Preview"
-                    className="max-w-[200px] rounded-lg"
-                  />
-                </div>
-              )}
             </div>
 
-            <div className="flex justify-end">
+            <div className="mb-4">
+              <label className="block text-sm font-medium mb-2">Hashtags</label>
+              <input
+                type="text"
+                placeholder="#green #sustainability"
+                className="w-full p-3 border border-gray-300 rounded-lg"
+                value={formHashtags}
+                onChange={(e) => setFormHashtags(e.target.value)}
+              />
+            </div>
+
+            <div className="flex justify-between">
               <button
-                className="bg-gray-200 px-4 py-2 rounded-lg mr-2"
-                onClick={() => setOverlayVisible(false)}
+                className="bg-gray-500 text-white rounded-full px-4 py-2"
+                onClick={() => setOverlayVisible(false)} // Close overlay without saving
               >
                 Cancel
               </button>
               <button
-                className="bg-green-500 text-white px-4 py-2 rounded-lg"
-                onClick={handleOverlaySubmit}
+                className="bg-[#739646] text-white rounded-full px-4 py-2"
+                onClick={handleAnswerSubmit} // Handle form submission
               >
-                {overlayMode === "add" ? "Post Question" : "Post Answer"}
+                Submit
               </button>
             </div>
           </div>
@@ -287,6 +288,3 @@ export function Forum1() {
     </div>
   );
 }
-
-
-export default Forum1;
