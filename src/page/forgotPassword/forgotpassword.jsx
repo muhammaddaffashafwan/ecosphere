@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import "./forgotpassword.css";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import './forgotpassword.css';
 
 export function ForgotPassword() {
   // State for form data and error handling
   const [formData, setFormData] = useState({
-    email: "",
-    newPassword: "",
-    repeatPassword: "",
+    email: '',
+    newPassword: '',
+    repeatPassword: '',
   });
 
   const [error, setError] = useState(null);
@@ -27,13 +27,13 @@ export function ForgotPassword() {
 
     // Password strength validation
     if (formData.newPassword.length < 6) {
-      setError("Password must be at least 6 characters long.");
+      setError('Password must be at least 6 characters long.');
       return;
     }
 
     // Password match validation
     if (formData.newPassword !== formData.repeatPassword) {
-      setError("Passwords do not match.");
+      setError('Passwords do not match.');
       return;
     }
 
@@ -41,21 +41,18 @@ export function ForgotPassword() {
 
     // Send reset request to the backend
     axios
-      .post("http://localhost:5000/forgot-password", {
+      .post('http://localhost:5000/forgot-password', {
         email: formData.email,
         password: formData.newPassword, // Menggunakan key yang sesuai untuk backend
       })
       .then(() => {
-        alert("Password has been reset successfully!");
+        alert('Password has been reset successfully!');
         // Redirect to login page after successful reset
-        window.location.href = "/login";
+        window.location.href = '/login';
       })
       .catch((error) => {
         // Display error message if reset fails
-        alert(
-          error.response?.data?.error ||
-            "Failed to reset password. Please try again."
-        );
+        alert(error.response?.data?.error || 'Failed to reset password. Please try again.');
       })
       .finally(() => {
         setLoading(false); // End loading state
@@ -65,9 +62,9 @@ export function ForgotPassword() {
   // Basic validation to ensure passwords match
   useEffect(() => {
     if (formData.newPassword !== formData.repeatPassword) {
-      console.log("Passwords do not match!");
+      console.log('Passwords do not match!');
     } else {
-      console.log("Passwords match!");
+      console.log('Passwords match!');
     }
   }, [formData.newPassword, formData.repeatPassword]);
 
@@ -81,43 +78,28 @@ export function ForgotPassword() {
             FORGOT <br /> PASSWORD?
           </h2>
           <form onSubmit={handleSubmit}>
-            <p>Enter your email and new password to reset your account password.</p>
+            <p className="text-forgot">Enter your email and new password to reset your account password.</p>
             {error && <p className="error-message">{error}</p>} {/* Error message */}
             <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                placeholder="Enter Your Email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
+              <label htmlFor="email">
+                <b>Email</b>
+              </label>
+              <input type="email" id="email" placeholder="Enter Your Email" value={formData.email} onChange={handleChange} required />
             </div>
             <div className="form-group">
-              <label htmlFor="newPassword">New Password</label>
-              <input
-                type="password"
-                id="newPassword"
-                placeholder="Enter Your New Password"
-                value={formData.newPassword}
-                onChange={handleChange}
-                required
-              />
+              <label htmlFor="newPassword">
+                <b>New Password</b>
+              </label>
+              <input type="password" id="newPassword" placeholder="Enter Your New Password" value={formData.newPassword} onChange={handleChange} required />
             </div>
             <div className="form-group">
-              <label htmlFor="repeatPassword">Repeat New Password</label>
-              <input
-                type="password"
-                id="repeatPassword"
-                placeholder="Repeat Your New Password"
-                value={formData.repeatPassword}
-                onChange={handleChange}
-                required
-              />
+              <label htmlFor="repeatPassword">
+                <b>Repeat New Password</b>
+              </label>
+              <input type="password" id="repeatPassword" placeholder="Repeat Your New Password" value={formData.repeatPassword} onChange={handleChange} required />
             </div>
             <button type="submit" className="login-button-main" disabled={loading}>
-              {loading ? "Resetting..." : "SUBMIT"}
+              {loading ? 'Resetting...' : 'SUBMIT'}
             </button>
           </form>
         </div>
