@@ -868,9 +868,8 @@ a {
   pointer-events: auto; /* Pastikan properti ini aktif */
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .articles-2{
-    background-color: #cb7070;
    top: 200px;
   }
   .trending-news {
@@ -959,7 +958,59 @@ a {
     left: 53px;
     top: 1600px;
   }
-  /* .more-article-parent {
-   padding-bottom: 5000px;
-  } */
+  .latest-news-around {
+    left: 55px;
+    top: 2300px;
+    font-size: 30px;
+  }
+  .more-article-parent {
+   top: 2400px;
+   left: -2px;
+  }
+  .more-article .image-child {
+    width: 230px;
+    height: 200px;
+  }
+  .image-1,
+  .image-2,
+  .image-3,
+  .image-4,
+  .image-5,
+  .image-6,
+  .image-7,
+  .image-8,
+  .image-9,
+  .image-10,
+  .image-11,
+  .image-12,
+  .image-13,
+  .image-14,
+  .image-15,
+  .image-16 {
+    width: 200px;
+    height: 200px;
+  }
+  .desc-arc .title-and-descriptions {
+    font-size: 14px;
+  }
+  .desc-arc a {
+    width: 200px;
+  }
+  .desc-arc .spacexs-starship-spacecraft {
+    width: 200px;
+    font-size: 12px;
+  }
+  .desc-arc .category-and-est-read-time1 {
+    top: 190px;
+  }
 } 
+
+/* @media screen and (max-width:426px) {
+  .articles-2 {
+    background-color: #ca1c1c;
+  }
+  .trending-news {
+    font-size: 30px;
+    left: 50px;
+  }
+} */

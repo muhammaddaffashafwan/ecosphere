@@ -8,34 +8,22 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    // Check if token and user info are in localStorage
+    // Ambil data dari localStorage
     const token = localStorage.getItem("token");
-    const user = localStorage.getItem("username");
-
-    console.log("Token:", token);
-    console.log("Username:", user);
-
-    if (token && user) {
-      try {
-        // Safely parse user data if it's a valid string
-        const parsedUser = user ? JSON.parse(user) : null;
-        if (parsedUser) {
-          setIsAuthenticated(true);
-          setUser(parsedUser); // Store parsed user info
-        } else {
-          setIsAuthenticated(false);
-          setUser(null);
-        }
-      } catch (error) {
-        console.error("Failed to parse user data:", error); // Handle JSON parse errors
-        setIsAuthenticated(false);
-        setUser(null);
-      }
+    const username = localStorage.getItem("username");
+  
+    console.log("Token from localStorage:", token); // Debugging untuk melihat token
+    console.log("Username from localStorage:", username); // Debugging untuk melihat username
+  
+    if (token && username) {
+      setIsAuthenticated(true);
+      setUser(username); // Gunakan username langsung, tidak perlu JSON.parse
     } else {
       setIsAuthenticated(false);
       setUser(null);
     }
-  }, []); // Run once when the component mounts
+  }, []);
+  
 
   const logout = () => {
     // Remove token and user data from localStorage

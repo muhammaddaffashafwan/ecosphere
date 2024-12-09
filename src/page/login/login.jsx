@@ -24,13 +24,22 @@ export function Login() {
 		axios
 			.post("http://localhost:5000/login", loginData)
 			.then((response) => {
-				localStorage.setItem("token", response.data.token);
-				localStorage.setItem("id", JSON.stringify(response.data.id));
-
-				window.location.href = "/";
+				console.log("Login response:", response.data); // Debugging untuk melihat respons server
+				
+				// Pastikan response.data memiliki token, id, dan username
+				if (response.data.token) {
+					localStorage.setItem("token", response.data.token); // Simpan token
+					localStorage.setItem("id", JSON.stringify(response.data.id)); // Simpan id (format JSON)
+					localStorage.setItem("username", response.data.username); // Simpan username
+					console.log("Data successfully stored in localStorage");
+					
+					// Redirect ke halaman utama
+					window.location.href = "/";
+				} else {
+					alert("Token is missing in the response"); // Pesan error jika token tidak ada
+				}
 			})
 			.catch((error) => {
-				// Display error message if login fails
 				alert(error.response?.data?.error || "Login failed, please try again");
 			});
 	};
