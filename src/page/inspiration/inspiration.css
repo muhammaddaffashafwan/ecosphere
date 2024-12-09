@@ -729,7 +729,99 @@ white-space: nowrap;
  z-index: 10;
 
 }
-.body-inspiration1{
+/* .body-inspiration1{
   background-color: #455a2a;
+} */
 }
+
+@media  (max-width: 426px){
+/* 1 */
+.eco-house-guide{
+  font-size: 40px;
+}
+
+.eco-frame{
+  font-size: small;
+}
+
+.benefits-title{
+  font-size: 25px;
+}
+
+.environmentally-title{
+  top: 3900vw;
+}
+
+.card-bif-4{
+  top: 270vw;
+  left: 12vw;
+}
+
+.card-bif-5{
+  top: 270vw;
+  left: 39vw;
+}
+
+.card-bif-6{
+  top: 270vw;
+  left: 66vw;
+}
+
+.card-bif-3{
+  left: 66vw;
+}
+
+.card-bif-2{
+  left: 39vw;
+}
+
+.card-bif-1{
+  left: 12vw;
+}
+
+
+
+.environment-categories ,
+.environment-categories0,
+.environment-categories1, 
+.environment-categories2, 
+.environment-categories3, 
+.environment-categories4 {
+  width: 22vw;
+  height: 155px;
+  right: 30vw;
+  left: -4vw;
+  top:110vw;
+  z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.diy-title{
+  top: 669vw;
+}
+
+
+.diy-vid{
+  top: 220vw;
+}
+.component-1{
+  top: 350vw;
+}
+.renewable-title{
+  top: 350vw;
+}
+
+
 }
