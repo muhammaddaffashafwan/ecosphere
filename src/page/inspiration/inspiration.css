@@ -734,7 +734,7 @@
 @media (max-width: 426px) {
   /* 1 */
   .body-inspiration1 {
-    min-height: 860vh;
+    min-height: 570vh;
   }
   .eco-house-guide {
     font-size: 40px;
@@ -821,19 +821,20 @@
   }
 
   .components-1 {
-    top: 520vw;
+    top: 580vw;
   }
+
 
   .components-2 {
     left: 30vw;
-    top: 645vw;
+    top: 700vw;
   }
 
   .components-3 {
     width: 49vw;
     height: 30vw;
     left: 30vw;
-    top: 780vw;
+    top: 830vw;
   }
 
   .renew-title-wrapper1 {
@@ -933,11 +934,11 @@
 
   .diy-title {
     font-size: 32px; /* Ukuran font lebih kecil lagi */
-    top: 890vw;
+    top: 950vw;
   }
   .diy-content {
     gap: 10px; /* Mengurangi jarak antar elemen */
-    top: 700vw;
+    top: 745vw;
   }
 
   .cta-button2 {
@@ -948,7 +949,7 @@
   .hover-more-1 {
     padding: 5px 50x;
     text-wrap: nowrap;
-    top: 1000vw;
+    top: 1050vw;
   }
   /* YouTube play icon */
   .youtube-icon-1:before {
