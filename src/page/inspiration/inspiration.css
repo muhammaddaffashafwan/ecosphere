@@ -1,141 +1,129 @@
 .body-inspiration1 {
   margin: 0;
-  padding-bottom: 190%;
+  padding: 0;
   display: flex;
   flex-direction: column;
   min-height: 650vh;
-  background-color: #fff;
 }
 
 .eco-house-guide-cover {
   position: relative;
   background-color: #000;
-  height: 583px;
+  height: 90vh; /* Tinggi penuh */
   width: 100%;
   overflow: hidden;
   text-align: center;
-  font-size: 64px;
   color: #fff;
-  top: 50px;
+  display: flex;
+  align-items: center; /* Vertikal tengah */
+  justify-content: center; /* Horizontal tengah */
+  z-index: 1; /* Pastikan ini berada di bawah */
 }
 
 .eco-house-guide-cover img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
+  height: 100%; /* Pastikan gambar memenuhi tinggi kontainer */
+  object-fit: cover; /* Isi penuh tanpa distorsi */
+  object-position: top; /* Posisi gambar fokus di bagian atas */
   display: block;
 }
 
 .eco-house-guide {
   position: absolute;
-  margin: auto;
-  text-align: center;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: "Optician Sans";
-  top: 270px;
+  z-index: 1; /* Pastikan teks di atas gambar */
+  font-family: "Optician Sans", sans-serif;
+  font-size: 5vw; /* Gunakan ukuran font responsif */
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
-
+/* 
 .eco-frame {
   margin: 2rem auto;
   width: 90%;
   max-width: 1200px;
-}
+} */
 
 .eco-frame {
-  position: absolute;
-  height: 171px;
-  width: 1200px;
-  box-shadow: 4px 4px 30px rgba(255, 255, 255, 0.5);
-  border-radius: 24px;
-  background-color: #455a2a;
+  position: absolute; /* Absolut relatif terhadap kontainer induk */
+  bottom: 0; /* Posisikan di bagian bawah halaman */
+  left: 50%; /* Pusatkan secara horizontal */
+  transform: translateX(-50%); /* Koreksi posisi agar tepat di tengah */
+  width: 90%; /* Lebar fleksibel */
+  max-width: 1200px; /* Batas lebar maksimum */
+  padding: 2rem; /* Spasi dalam */
+  background-color: #455a2a; /* Warna latar */
+  color: #fff; /* Warna teks */
+  border-radius: 24px; /* Sudut membulat */
   font-family: "Poppins", sans-serif;
-  color: #fff;
-  text-align: justify;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px; /* Menambahkan padding agar teks tidak terlalu menempel di tepi */
-  font-size: 20px;
-  max-width: 1156px;
-  width: 90%;
-  margin-top: 550px;
-  left: 113px;
-  box-sizing: border-box; /* Agar padding tidak mengubah ukuran total elemen */
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
+  z-index: 2; /* Pastikan di atas elemen lainnya */
 }
-
-
-  
-
 
 /* 2. Benefit */
+.benefits-wrapper {
+  margin: 2rem auto; /* Jarak atas dan bawah */
+  text-align: center; /* Teks rata tengah */
+  padding: 1rem; /* Padding internal */
+  max-width: 1200px; /* Batas lebar */
+}
+
+/* Judul */
 .benefits-title {
-  position: absolute;
-  top: 750px;
-  left: 450px;
-  text-align: center;
-  font-size: 40px;
-  font-family: "Optician Sans";
-  margin: 4rem auto 2rem;
+  font-size: 2.5rem; /* Ukuran judul besar */
+  font-family: "Optician Sans", sans-serif;
+  margin-bottom: 2rem; /* Jarak dengan konten bawah */
+  margin-top: 10rem;
+  display: flex; /* Menggunakan flexbox */
+  justify-content: center; /* Pusatkan teks horizontal */
+  align-items: center; /* Pusatkan teks vertikal */
+  height: 100px; /* Tinggi untuk memastikan teks di tengah */
 }
 
+/* Flexbox untuk kartu */
 .card-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 15px;
+  display: flex; /* Susun kartu secara horizontal */
+  justify-content: space-between; /* Sebarkan kartu di sepanjang baris */
+  gap: 20px; /* Jarak antar kartu */
+  flex-wrap: wrap; /* Bungkus kartu jika tidak muat */
+  justify-content: center; /* Pusatkan elemen */
 }
 
+/* Kartu */
 .card-bif-1,
 .card-bif-2,
 .card-bif-3,
 .card-bif-4,
 .card-bif-5,
 .card-bif-6 {
-  position: absolute;
-  width: 185px;
-  height: 346px;
-  border-radius: 24px;
-  overflow: hidden;
+  position: relative; /* Untuk overlay */
+  width: 150px; /* Lebar kartu lebih kecil */
+  height: 250px; /* Tinggi kartu lebih kecil */
+  border-radius: 12px; /* Sudut membulat */
+  overflow: hidden; /* Hilangkan bagian meluap */
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek hover */
 }
 
-.card-bif-1 {
-  top: 926px;
-  left: 110px;
+.card-bif-1:hover,
+.card-bif-2:hover,
+.card-bif-3:hover,
+.card-bif-4:hover,
+.card-bif-5:hover,
+.card-bif-6:hover {
+  transform: scale(1.05); /* Zoom-in saat hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.card-bif-2 {
-  top: 926px;
-  left: 310px;
-}
-
-.card-bif-3 {
-  top: 926px;
-  left: 510px;
-}
-
-.card-bif-4 {
-  top: 926px;
-  left: 710px;
-}
-
-.card-bif-5 {
-  top: 926px;
-  left: 910px;
-}
-
-.card-bif-6 {
-  top: 926px;
-  left: 1110px;
-}
-
+/* Gambar di dalam kartu */
 .card-bif-1-child {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100%; /* Lebar penuh */
+  height: 100%; /* Tinggi penuh */
+  object-fit: cover; /* Pastikan gambar tidak terdistorsi */
 }
 
+/* Overlay */
 .card-bif-1-item {
   position: absolute;
   top: 0;
@@ -145,18 +133,18 @@
 }
 
 .overlay {
+  position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 24px;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Latar belakang gelap */
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 12px;
   opacity: 0;
   transition: opacity 0.3s ease;
-  font-family: "Optician Sans";
 }
 
 .card-bif-1:hover .overlay,
@@ -165,43 +153,48 @@
 .card-bif-4:hover .overlay,
 .card-bif-5:hover .overlay,
 .card-bif-6:hover .overlay {
-  opacity: 1;
+  opacity: 1; /* Tampilkan overlay saat hover */
 }
 
+/* Teks di dalam overlay */
 .text-bif {
-  color: white;
-  font-size: 18px;
+  color: #fff;
+  font-size: 1rem;
+  font-family: "Optician Sans", sans-serif;
   text-align: center;
+  line-height: 1.5;
 }
 
 /* 3. Environment */
+/* Judul */
 .environmentally-title {
-  position: absolute;
-  top: 1400px;
-  left: 190px;
-  font-size: 40px;
-  font-family: "Optician Sans";
-  margin: 4rem auto 2rem;
+  position: relative;
+  font-size: 40px; /* Ukuran judul besar */
+  font-family: "Optician Sans", sans-serif;
+  text-align: center;
+  margin: 4rem auto 2rem; /* Jarak atas dan bawah */
+  padding: 50px;
 }
 
+/* Frame untuk elemen-elemen lingkungan */
 .environment-frame {
   display: flex;
   overflow-x: scroll;
   scroll-behavior: smooth;
-  padding: 100px;
+  padding: 30px;
   border-radius: 24px;
-  /* transform: translateY(750px); */
-  /* margin-left: 385px; */
-  white-space: nowrap;
+  white-space: nowrap; /* Menjaga elemen tetap sejajar horizontal */
   cursor: grab;
-  width: 100vw;
-  margin-top: 930px;
+  width: 100%; /* Pastikan lebar penuh */
+  margin-top: 10px; /* Menambahkan margin-top untuk memberi ruang dari judul */
 }
-.environment-categories, 
-.environment-categories0, 
-.environment-categories1, 
-.environment-categories2, 
-.environment-categories3, 
+
+/* Elemen kategori lingkungan */
+.environment-categories,
+.environment-categories0,
+.environment-categories1,
+.environment-categories2,
+.environment-categories3,
 .environment-categories4 {
   flex: 0 0 auto;
   width: 200px;
@@ -211,11 +204,15 @@
   position: relative;
   box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.549);
 }
+
+/* Gambar dalam kategori */
 .environment-categories img {
   width: 100%;
   border-radius: 24px;
   display: block;
 }
+
+/* Teks dalam kategori */
 .recycled-wood,
 .natural-insulation,
 .eco-friendly-paint,
@@ -232,25 +229,24 @@
   padding: 5px;
   box-sizing: border-box;
   width: 90%;
-  font-family: "Optician Sans";
+  font-family: "Optician Sans", sans-serif;
 }
-
 /* 4. renewable */
 .renewable-title {
   position: absolute;
-  top: 2100px;
+  /* top: 1900px; */
   left: 50%;
   transform: translateX(-50%);
   font-size: 40px;
   letter-spacing: -0.02em;
-  width: 1082.5px;
+  /* width: 1082.5px; */
   text-align: center;
   font-family: "Optician Sans";
   line-height: 45px;
 }
-.component-1 {
+.components-1 {
   position: absolute;
-  top: 2260px;
+  top: 2100px;
   left: 120px;
   width: 1200px;
   height: 368px;
@@ -258,22 +254,42 @@
   font-size: 16px;
   font-family: Poppins;
 }
-.component-1 img {
+.components-1 img {
   position: absolute;
   height: 100%;
   width: 49.05%;
   top: 0%;
-  right: 50.95%;
+  /* right: 50.95%; */
   bottom: 0%;
   left: 0%;
-  border-radius: 24px;
+  border-radius: 10px;
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
 }
-.renew-title-wrapper1,
-.renew-title-wrapper2,
+.renew-title-wrapper1 {
+  position: absolute;
+  height: 10.87%;
+  top: 0%;
+  bottom: 89.13%;
+  left: 50.78%;
+  font-size: 40px;
+  font-family: "Optician Sans";
+  line-height: 40px;
+}
+
+.renew-title-wrapper2 {
+  position: absolute;
+  height: 10.87%;
+  top: 0%;
+  bottom: 89.13%;
+  left: 50.78%;
+  font-size: 40px;
+  font-family: "Optician Sans";
+  line-height: 40px;
+}
+
 .renew-title-wrapper3 {
   position: absolute;
   height: 10.87%;
@@ -284,6 +300,7 @@
   font-family: "Optician Sans";
   line-height: 40px;
 }
+
 .renew-title1,
 .renew-title2,
 .renew-title3 {
@@ -359,9 +376,9 @@
   text-align: justify;
 }
 
-.component-2 {
+.components-2 {
   position: absolute;
-  top: 2700px;
+  top: 2600px;
   left: 120px;
   width: 1200px;
   height: 368px;
@@ -370,9 +387,9 @@
   font-family: Poppins;
 }
 
-.component-3 {
+.components-3 {
   position: absolute;
-  top: 3150px;
+  top: 3100px;
   left: 120px;
   width: 1200px;
   height: 368px;
@@ -381,31 +398,36 @@
   font-family: Poppins;
 }
 
-/* 5. DIY */
+/* DIY Title */
 .diy-title {
   position: absolute;
   text-align: center;
   font-size: 50px;
   font-family: "Optician Sans";
   margin: 4rem auto 2rem;
-  top: 3650px;
+  top: 3600px;
   left: 50%;
   transform: translateX(-50%);
+  width: 100%; /* Menyesuaikan lebar */
 }
 
+/* DIY Content (flex layout for videos) */
 .diy-content {
   position: absolute;
   display: flex;
   gap: 60px;
   padding: 10px;
-  width: 1300px;
+  width: 100%; /* Menggunakan lebar penuh untuk responsivitas */
+  max-width: 1300px; /* Maksimum lebar */
   height: 350px;
   align-items: center;
-  left: 100px;
-  top: 2000px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1950px;
+  justify-content: center;
 }
 
-
+/* Video container */
 .diy-vid {
   background-color: #fff;
   border-radius: 16px;
@@ -416,18 +438,23 @@
   transition: background-color 0.3s ease, color 0.3s ease;
   position: relative;
   top: 1850px;
+  width: 30%; /* Lebar kartu tetap proporsional */
 }
 
 .diy-vid:hover {
   background-color: #739646;
   color: #fff;
 }
+
+/* Gambar video */
 .diy-vid img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 16px 16px 0 0;
 }
+
+/* Teks judul video */
 .diy-vid h3 {
   font-size: 24px;
   margin: 10px 10px;
@@ -439,6 +466,7 @@
   text-align: center;
 }
 
+/* YouTube play icon */
 .youtube-icon-1:before {
   content: "▶";
   position: absolute;
@@ -464,12 +492,13 @@
   display: block;
 }
 
+/* Button for "See More" */
 .hover-more-1 {
   text-align: center;
   overflow: hidden;
   position: absolute;
   top: 4300px;
-  left: 700px;
+  left: 50%;
   transform: translateX(-50%);
 }
 
@@ -484,10 +513,6 @@
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: "Poppins", sans-serif;
   display: inline-block;
-  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
-  -moz-transition: background-color 0.3s ease, color 0.3s ease;
-  -ms-transition: background-color 0.3s ease, color 0.3s ease;
-  -o-transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cta-button2:hover {
@@ -495,333 +520,455 @@
   color: #6ea54e;
 }
 
-@media  (max-width: 768px){
-.eco-house-guide{
-  font-size: 40px;
-}
-
-.benefits-title{
-  font-size: 35px;
-  left: 24vw;
-}
-.card-bif-1, .card-bif-2, .card-bif-3, .card-bif-4, .card-bif-5, .card-bif-6{
-  width: 100px;
-  height: 190px;
-}
-
-.card-bif-1{
-  left: 6vw;
-}
-
-.card-bif-2{
-  left: 21vw;
-}
-
-.card-bif-3{
- left: 36vw;
-}
-
-.card-bif-4{
-  left: 51vw;
-}
-
-.card-bif-5{
-  left: 66vw;
-}
-
-.card-bif-6{
-  left: 81vw;
-}
-.environmentally-title{
-  font-size: 35px;
-  text-align: center;
-  right: 50px;
-  left: 9vw;
-  top: 156vw;
-  padding:0vw;
-
-}
-.environment-frame{
-  margin-top: 90vw;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  padding: 100px;
-  border-radius: 24px;
-  /* transform: translateY(750px); */
-  /* margin-left: 385px; */
-  white-space: nowrap;
-  cursor: grab;
-  width: 100vw;
-}
-.environment-categories ,
-.environment-categories0,
-.environment-categories1, 
-.environment-categories2, 
-.environment-categories3, 
-.environment-categories4 {
-  width: 22vw;
-  height: 155px;
-  right: 30vw;
-  left: -4vw;
-  top:1vw;
-  z-index: 1;
-}
-
-.renewable-title{
-  font-size: 33px;
-  text-align: center;
-  padding-right: 100px;
-  padding-left: 130px;
-  top: 220vw;
-}
-
-.component-1{
-  width: 100vw;
-  height: 30vw;
-  left: 28vw;
-  top: 240vw;
-}
-
-.renew-title1{
-  top: 200vw;
-}
-
-.comp-type {
-  left: -10vw;
-  text-align: center;
-  top: 35vw;
-}
-
-.renew-how{
-  left: -40vw;
-  text-align: center;
-  top: 50uvw;
-  padding-right: -500vw;
-}
-
-.renew-ben{
-  left: -40vw;
-  text-align: center;
-  top: 58vw;
-  padding-right: -500vw;
-}
-
-.component-2{
-  width: 49vw;
-height: 30vw;
-  left: 30vw;
-  top: 320vw;
-  
-}
-
-.component-3{
-  width: 49vw;
-height: 30vw;
-  left: 30vw;
-  top: 410vw;
-}
-
-.renew-title{
-  padding-top: 30vw;
-  padding-right: -10vw;
-white-space: nowrap;
-}
-
-
-.renew-how-ben-container{
-  width: 100vw;
-  height: 30vw;
-  left: 30vw;
-
-}
-
-.eco-frame{
-  width: 85%;
-  font-size: medium;
-  left: 7vw;
-}
-
-.renew-title-wrapper{
-  left: 10vw;
-}
-
-/* video-diy */
-.diy-title{
-  font-size: 30px;
-  text-align: center;
-  top: 480vw;
-  z-index: 1;
-}
-.diy-content {
-    grid-template-columns: 1fr; /* 2 columns */
-    width: 768px;
+@media (max-width: 768px) {
+  .eco-house-guide {
+    font-size: 50px;
   }
 
-.diy-vid{
-  width: 15%;
-  left: -8vw;
-  top: 230vw;
+  .eco-frame {
+    width: 95%; /* Lebar lebih besar pada layar kecil */
+    font-size: 1rem; /* Ukuran teks lebih kecil */
+    padding: 1.5rem;
+  }
+
+  .benefits-title {
+    font-size: 2rem;
+  }
+
+  .card-wrapper {
+    justify-content: space-around;
+  }
+
+  .card-bif-1,
+  .card-bif-2,
+  .card-bif-3,
+  .card-bif-4,
+  .card-bif-5,
+  .card-bif-6 {
+    width: 150px; /* Lebar kartu lebih kecil */
+    height: 230px; /* Tinggi kartu lebih kecil */
+  }
+
+  .text-bif {
+    font-size: 0.9rem; /* Ukuran teks lebih kecil */
+  }
+
+  .environmentally-title {
+    font-size: 2rem; /* Ukuran font lebih kecil untuk tablet */
+  }
+
+  .environment-frame {
+    padding: 10px; /* Kurangi padding */
+  }
+  .environment-categories,
+  .environment-categories0,
+  .environment-categories1,
+  .environment-categories2,
+  .environment-categories3,
+  .environment-categories4 {
+    width: 150px; /* Lebar kartu lebih kecil untuk tablet */
+  }
+
+  .renewable-title {
+    position: relative;
+    font-size: 30px;
+    font-family: "Optician Sans", sans-serif;
+    text-align: center;
+    margin: 4rem auto 2rem;
+    padding: 50px;
+  }
+
+  .components-1 {
+    width: 100vw;
+    height: 30vw;
+    left: 30vw;
+    top: 290vw;
+  }
+
+  .renew-title1 {
+    top: 200vw;
+  }
+
+  .comp-type {
+    left: -10vw;
+    text-align: center;
+    top: 35vw;
+  }
+
+  .renew-how {
+    left: -40vw;
+    text-align: center;
+    top: 50uvw;
+    padding-right: -500vw;
+  }
+
+  .renew-ben {
+    left: -40vw;
+    text-align: center;
+    top: 58vw;
+    padding-right: -500vw;
+  }
+
+  .components-2 {
+    width: 49vw;
+    height: 30vw;
+    left: 30vw;
+    top: 375vw;
+  }
+
+  .components-3 {
+    width: 49vw;
+    height: 30vw;
+    left: 30vw;
+    top: 470vw;
+  }
+
+  .renew-title {
+    padding-top: 30vw;
+    padding-right: -10vw;
+    white-space: nowrap;
+  }
+
+  .renew-how-ben-container {
+    width: 100vw;
+    height: 30vw;
+    left: 30vw;
+  }
+
+  /* .renew-title-wrapper {
+    left: 10vw;
+  } */
+
+  /* video-diy */
+  .diy-title {
+    font-size: 32px; /* Ukuran font lebih kecil lagi */
+    top: 550vw;
+  }
+  .diy-content {
+    gap: 10px; /* Mengurangi jarak antar elemen */
+    top: 330vw;
+  }
+
+  .diy-vid {
+    width: 100%; /* Lebar video mengisi layar */
+  }
+
+  .cta-button2 {
+    padding: 7px 60px;
+    font-size: 16px; /* Ukuran tombol lebih kecil */
+  }
+
+  .renew-title-wrapper1 {
+    left: -15vw;
+    top: 33vw;
+  }
+
+  .renew-title-wrapper2 {
+    left: -15vw;
+    top: 33vw;
+  }
+
+  .renew-title-wrapper3 {
+    left: -15vw;
+    top: 33vw;
+  }
+
+  .comp-type1,
+  .comp-type2,
+  .comp-type3,
+  .renew-how1,
+  .renew-how2,
+  .renew-how3,
+  .renew-ben1,
+  .renew-ben2,
+  .renew-ben3 {
+    left: -15vw;
+  }
+
+  .comp-type1 {
+    top: 40vw;
+  }
+
+  .renew-how1 {
+    top: 56vw;
+  }
+
+  .renew-ben1 {
+    top: 66vw;
+  }
+
+  .comp-type2 {
+    top: 45vw;
+  }
+
+  .renew-how2 {
+    top: 62vw;
+  }
+
+  .renew-ben2 {
+    top: 73vw;
+  }
+
+  .comp-type3 {
+    top: 45vw;
+  }
+
+  .renew-how3 {
+    top: 59vw;
+  }
+
+  .renew-ben3 {
+    top: 70vw;
+  }
+  .hover-more-1 {
+    padding: 5px 50x;
+    text-wrap: nowrap;
+    top: 640vw;
+  }
+
+  .body-inspiration1 {
+    min-height: 750vh;
+  }
 }
 
-.diy-vid h3{
-  font-size: small;
-}
+@media (max-width: 426px) {
+  /* 1 */
+  .body-inspiration1 {
+    min-height: 860vh;
+  }
+  .eco-house-guide {
+    font-size: 40px;
+  }
 
-.renew-title-wrapper1,
-.renew-title-wrapper2,
-.renew-title-wrapper3
-{
-  left: -15vw;
-  top: 35vw;
-}
-.comp-type1,
-.comp-type2,
-.comp-type3,
-.renew-how1,
-.renew-how2,
-.renew-how3,
-.renew-ben1,
-.renew-ben2,
-.renew-ben3{
- left: -15vw; 
-}
+  .eco-frame {
+    font-size: 0.5rem; /* Ukuran teks lebih kecil */
+    padding: 1.5rem;
+  }
 
-.comp-type1{
-  top: 48vw;
-}
+  .benefits-title {
+    font-size: 25px;
+  }
 
-.renew-how1{
-  top: 63vw;
-}
+  .environmentally-title {
+    font-size: 1.5rem; /* Ukuran font lebih kecil untuk ponsel */
+    margin-bottom: 10px;
+  }
 
-.renew-ben1{
-  top: 72vw;
-}
+  .environment-frame {
+    padding: 5px; /* Kurangi padding */
+  }
 
-.comp-type2{
-  top: 50vw;
-}
+  /* .card-bif-4 {
+    top: 270vw;
+    left: 12vw;
+  }
 
-.renew-how2{
-  top: 65vw;
-}
+  .card-bif-5 {
+    top: 270vw;
+    left: 39vw;
+  }
 
-.renew-ben2{
-  top: 75vw;
-}
+  .card-bif-6 {
+    top: 270vw;
+    left: 66vw;
+  }
 
-.comp-type3{
-  top: 45vw;
-}
+  .card-bif-3 {
+    left: 66vw;
+  }
 
-.renew-how3{
-  top: 57vw;
-}
+  .card-bif-2 {
+    left: 39vw;
+  }
 
-.renew-ben3{
-  top: 66vw;
-}
-.hover-more-1 {
-  /* width: 10%; */
- padding: 5px 50x;
- text-wrap: nowrap;
- /* margin-left:-10vw; */
- /* top: -20vw; */
- /* z-index: 10; */
-}
-/* .body-inspiration1{
-  background-color: #455a2a;
-} */
-}
+  .card-bif-1 {
+    left: 12vw;
+  } */
 
-@media  (max-width: 426px){
-/* 1 */
-.eco-house-guide{
-  font-size: 40px;
-}
+  .environment-categories,
+  .environment-categories0,
+  .environment-categories1,
+  .environment-categories2,
+  .environment-categories3,
+  .environment-categories4 {
+    width: 120px; /* Lebar kartu lebih kecil untuk ponsel */
+  }
 
-.eco-frame{
-  font-size: small;
-}
+  .diy-title {
+    top: 669vw;
+  }
 
-.benefits-title{
-  font-size: 25px;
-}
+  .diy-vid {
+    top: 220vw;
+  }
 
-.environmentally-title{
-  top: 3900vw;
-}
+  .diy-vid h3 {
+    font-size: 17px;
+    margin: 10px 10px;
+    font-family: "Optician Sans";
+    text-decoration: none;
+    padding: 0px;
+    font-weight: 300;
+    margin-top: 16px;
+    text-align: center;
+  }
 
-.card-bif-4{
-  top: 270vw;
-  left: 12vw;
-}
+  .renewable-title {
+    font-size: 22px;
+    width: 110%;
+    /* top: 2100px; */
+    line-height: 30px;
+  }
 
-.card-bif-5{
-  top: 270vw;
-  left: 39vw;
-}
+  .components-1 {
+    top: 520vw;
+  }
 
-.card-bif-6{
-  top: 270vw;
-  left: 66vw;
-}
+  .components-2 {
+    left: 30vw;
+    top: 645vw;
+  }
 
-.card-bif-3{
-  left: 66vw;
-}
+  .components-3 {
+    width: 49vw;
+    height: 30vw;
+    left: 30vw;
+    top: 780vw;
+  }
 
-.card-bif-2{
-  left: 39vw;
-}
+  .renew-title-wrapper1 {
+    left: -15vw;
+    top: 33vw;
+    font-size: 20px;
+  }
 
-.card-bif-1{
-  left: 12vw;
-}
+  .renew-title-wrapper2 {
+    left: -15vw;
+    top: 33vw;
+    font-size: 20px;
+  }
 
+  .renew-title-wrapper3 {
+    left: -15vw;
+    top: 33vw;
+    font-size: 20px;
+  }
 
+  .comp-type1 {
+    width: 80%;
+    margin-top: 10px;
+  }
+  .comp-type2 {
+    width: 160%;
+    margin-top: 0px;
+  }
 
-.environment-categories ,
-.environment-categories0,
-.environment-categories1, 
-.environment-categories2, 
-.environment-categories3, 
-.environment-categories4 {
-  width: 22vw;
-  height: 155px;
-  right: 30vw;
-  left: -4vw;
-  top:110vw;
-  z-index: 1;
-}
+  .comp-type3 {
+    width: 160%;
+    margin-top: 20px;
+  }
 
+  .comp-type-container1,
+  .comp-type-container2,
+  .comp-type-container3 {
+    width: 100%;
+    font-size: 14px;
+  }
 
+  .renew-how1 {
+    width: 80%;
+    margin-top: 85px;
+    text-align: justify;
+    font-size: 14px;
+  }
+  .renew-how2 {
+    width: 160%;
+    margin-top: 80px;
+    text-align: justify;
+    font-size: 14px;
+  }
+  .renew-how3 {
+    width: 160%;
+    margin-top: 80px;
+    text-align: justify;
+    font-size: 14px;
+  }
 
+  .renew-ben1 {
+    width: 80%;
+    margin-top: 130px;
+    text-align: justify;
+    font-size: 14px;
+  }
 
+  .renew-ben2 {
+    width: 160%;
+    margin-top: 120px;
+    text-align: justify;
+    font-size: 14px;
+  }
 
+  .renew-ben3 {
+    width: 160%;
+    margin-top: 120px;
+    text-align: justify;
+    font-size: 14px;
+  }
 
+  .renew-how-ben-container1,
+  .renew-how-ben-container2,
+  .renew-how-ben-container3,
+  .renew-ben-container1,
+  .renew-ben-container2,
+  .renew-ben-container3 {
+    width: 100%;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
 
+  .renew-list {
+    margin-left: 0;
+    font-size: 0.85rem;
+  }
 
+  .diy-title {
+    font-size: 32px; /* Ukuran font lebih kecil lagi */
+    top: 890vw;
+  }
+  .diy-content {
+    gap: 10px; /* Mengurangi jarak antar elemen */
+    top: 700vw;
+  }
 
+  .cta-button2 {
+    padding: 7px 60px;
+    font-size: 12px; /* Ukuran tombol lebih kecil */
+  }
 
+  .hover-more-1 {
+    padding: 5px 50x;
+    text-wrap: nowrap;
+    top: 1000vw;
+  }
+  /* YouTube play icon */
+  .youtube-icon-1:before {
+    content: "▶";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    color: #000000;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10%;
+    /* padding: 20px; */
+    /* padding-left: 40px; */
+    /* padding-right: 40px; */
+    z-index: 1;
+  }
 
-
-
-
-.diy-title{
-  top: 669vw;
-}
-
-
-.diy-vid{
-  top: 220vw;
-}
-.component-1{
-  top: 350vw;
-}
-.renewable-title{
-  top: 350vw;
-}
-
-
+  .youtube-icon-1:hover:before {
+    color: #ffffff;
+    background: #739646;
+  }
 }

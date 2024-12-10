@@ -156,13 +156,10 @@ export function Inspiration() {
         3 Renewable Energy Technologies for Environmentally Friendly Homes
       </div>
 
-      <div className='component-1'>
+      <div className='components-1'>
         <img src='/images/comp1.png' />
         <div className='renew-title-wrapper1'>
-          <div className='renew-title1'>
-            solar <br />
-            panels
-          </div>
+          <div className='renew-title1'>solar panels</div>
         </div>
         <div className='comp-type1'>
           <div className='comp-type-container1'>
@@ -198,13 +195,10 @@ export function Inspiration() {
         </div>
       </div>
 
-      <div className='component-2'>
+      <div className='components-2'>
         <img src='/images/comp2.png' />
         <div className='renew-title-wrapper2'>
-          <div className='renew-title2'>
-            Passive Solar Heating and <br />
-            Cooling
-          </div>
+          <div className='renew-title2'>Passive Solar Heating and Cooling</div>
         </div>
         <div className='comp-type2'>
           <div className='comp-type-container2'>
@@ -223,7 +217,7 @@ export function Inspiration() {
         </div>
         <div className='renew-how2'>
           <div className='renew-how-ben-container2'>
-            <b>How It Works:</b>
+            <b>How It Works: </b>
             <span className='renew-how-ben-capture'>
               Utilizes house design and window orientation to maximize sunlight during winter and
               minimize heat during summer. Heating or cooling occurs without additional energy.
@@ -242,7 +236,7 @@ export function Inspiration() {
         </div>
       </div>
 
-      <div className='component-3'>
+      <div className='components-3'>
         <img src='/images/comp3.png' />
         <div className='renew-title-wrapper3'>
           <div className='renew-title3'>
