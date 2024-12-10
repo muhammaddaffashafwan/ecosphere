@@ -346,7 +346,7 @@ export function Article2() {
               </div>
             </div>
           </div>
-          <div className='more-article'>
+          <div className='more-article1'>
             <div className='image-parent'>
               <div className='image-2'>
                 <img className='image-child' alt='' src='/images/2.png' />
@@ -377,7 +377,7 @@ export function Article2() {
               </div>
             </div>
           </div>
-          <div className='more-article'>
+          <div className='more-article2'>
             <div className='image-parent'>
               <div className='image-3'>
                 <img className='image-child' alt='' src='/images/3.png' />
@@ -412,7 +412,7 @@ export function Article2() {
               </div>
             </div>
           </div>
-          <div className='more-article'>
+          <div className='more-article3'>
             <div className='frame-div' id='frameContainer'>
               <div className='image-4'>
                 <img className='image-child' alt='' src='/images/4.png' />
@@ -477,7 +477,7 @@ export function Article2() {
               </div>
             </div>
           </div>
-          <div className='more-article'>
+          <div className='more-article5'>
             <div className='image-parent'>
               <div className='image-6'>
                 <img className='image-child' alt='' src='/images/6.png' />
@@ -508,7 +508,7 @@ export function Article2() {
               </div>
             </div>
           </div>
-          <div className='more-article'>
+          <div className='more-article6'>
             <div className='image-parent'>
               <div className='image-7'>
                 <img className='image-child' alt='' src='/images/7.png' />
@@ -536,7 +536,7 @@ export function Article2() {
               </div>
             </div>
           </div>
-          <div className='more-article'>
+          <div className='more-article7'>
             <div className='image-parent'>
               <div className='image-8'>
                 <img className='image-child' alt='' src='/images/8.png' />
@@ -572,7 +572,7 @@ export function Article2() {
               </div>
             </div>
           </div>
-          <div className='more-article'>
+          <div className='more-article8'>
             <div className='image-parent'>
               <div className='image-9'>
                 <img classNa me='image-child' alt='' src='/images/9.png' />
@@ -603,7 +603,7 @@ export function Article2() {
               </div>
             </div>
           </div>
-          <div className='more-article'>
+          <div className='more-article9'>
             <div className='image-parent'>
               <div className='image-10'>
                 <img className='image-child' alt='' src='/images/10.png' />
@@ -635,7 +635,7 @@ export function Article2() {
               </div>
             </div>
           </div>
-          <div className='more-article'>
+          <div className='more-article10'>
             <div className='image-parent'>
               <div className='image-11'>
                 <img className='image-child' alt='' src='/images/11.png' />
@@ -666,7 +666,7 @@ export function Article2() {
               </div>
             </div>
           </div>
-          <div className='more-article'>
+          <div className='more-article11'>
             <div className='image-parent'>
               <div className='image-12'>
                 <img className='image-child' alt='' src='/images/12.png' />
@@ -708,7 +708,7 @@ export function Article2() {
               </div>
             </div>
           </div>
-          <div className='more-article'>
+          <div className='more-article12'>
             <div className='image-parent'>
               <div className='image-13'>
                 <img className='image-child' alt='' src='/images/13.png' />
@@ -750,7 +750,7 @@ export function Article2() {
               </div>
             </div>
           </div>
-          <div className='more-article'>
+          <div className='more-article13'>
             <div className='image-parent'>
               <div className='image-14'>
                 <img className='image-child' alt='' src='/images/14.png' />
@@ -777,7 +777,7 @@ export function Article2() {
               </div>
             </div>
           </div>
-          <div className='more-article'>
+          <div className='more-article14'>
             <div className='image-parent'>
               <div className='image-15'>
                 <img className='image-child' alt='' src='/images/15.png' />
@@ -806,7 +806,7 @@ export function Article2() {
               </div>
             </div>
           </div>
-          <div className='more-article'>
+          <div className='more-article15'>
             <div className='image-parent'>
               <div className='image-16'>
                 <img className='image-child' alt='' src='/images/16.png' />
