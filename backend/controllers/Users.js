@@ -5,11 +5,8 @@ import multer from "multer";
 import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
-import { dirname } from "path";
-import { request } from "http";
 
-// Pastikan direktori upload ada
-// Mendapatkan path direktori saat ini (equivalent dari __dirname dalam ES Module)
+// Mendapatkan direktori saat ini
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -19,6 +16,29 @@ if (!fs.existsSync(uploadDirectory)) {
   fs.mkdirSync(uploadDirectory, { recursive: true });
 }
 
+// Konfigurasi penyimpanan file menggunakan multer
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, uploadDirectory);
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const upload = multer({
+  storage,
+  fileFilter: (req, file, cb) => {
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+    if (allowedTypes.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error('Invalid file type. Only JPG, PNG, and GIF are allowed.'));
+    }
+  },
+}).single('profile_image'); // pastikan 'profile_image' adalah key yang digunakan untuk upload file
+
+// **Reset Password**
 export const resetPassword = async (req, res) => {
   const { email, password } = req.body;
 
@@ -45,28 +65,38 @@ export const resetPassword = async (req, res) => {
   }
 };
 
-// Konfigurasi penyimpanan file menggunakan multer
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, uploadDirectory);
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname));
-  },
-});
-
-const upload = multer({
-  storage,
-  fileFilter: (req, file, cb) => {
-    console.log(req.files)
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
-    if (allowedTypes.includes(file.mimetype)) {
-      cb(null, true);
-    } else {
-      cb(new Error('Invalid file type. Only JPG, PNG, and GIF are allowed.'), false);
+// **Update Profile Image**
+export const updateProfileImage = async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ error: "No file uploaded" });
     }
-  },
-});
+
+    const userId = req.user.id; // ID user dari token JWT
+    const imagePath = '/uploads/profiles/' + req.file.filename; // Path gambar yang diunggah
+
+    // Cari user berdasarkan ID
+    const user = await Users.findOne({ where: { id: userId } });
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    // Update gambar profil di database
+    await user.update({ profile_image: imagePath });
+
+    // Kirim respons dengan URL gambar yang baru
+    return res.status(200).json({
+      status: "success",
+      message: "Profile image updated successfully",
+      data: {
+        profile_image: imagePath, // Kirim URL gambar yang baru
+      },
+    });
+  } catch (error) {
+    console.error("Error updating profile image:", error);
+    return res.status(500).json({ error: "An error occurred while updating profile image" });
+  }
+};
 
 // **GET Users**
 export const getUsers = async (req, res) => {
@@ -171,70 +201,3 @@ export const authLogin = async (req, res) => {
     return res.status(500).json({ error: "An error occurred" });
   }
 };
-
-// **Update Profile Image**
-export const updateProfileImage = async (req, res) => {
-    console.log("test",req.file)
-    console.log(req.files) 
-    // if (err) {
-    //   console.log('Upload Error:', err); // Log error upload
-    //   return res.status(400).json({ error: err.message });
-    // }
-    console.log('Uploaded file:', req.file); // Log file yang diupload
-    // Lanjutkan ke proses berikutnya...
-    try {
-      const userId = req.user.id; // Asumsikan userId tersedia dari JWT token
-      const imagePath = '/uploads/profiles/' + req.file.filename;
-
-      const user = await Users.findOne({ where: { id: userId } });
-      if (!user) {
-        return res.status(404).json({ error: "User not found" });
-      }
-
-      console.log("test2",user)
-      await user.update({ profile_image: imagePath });
-
-      return res.status(200).json({
-        status: "success",
-        message: "Profile image updated successfully",
-        data: {
-          profile_image: imagePath,
-        },
-      });
-    } catch (error) {
-      console.log(error);
-      return res.status(500).json({ error: "An error occurred while updating profile image" });
-    }
-  }
-
-// // **Delete Profile Image**
-// export const deleteProfileImage = async (req, res) => {
-//   try {
-//     const userId = req.user.id;
-
-//     const user = await Users.findOne({ where: { id: userId } });
-//     if (!user || !user.profile_image) {
-//       return res.status(404).json({ error: "Profile image not found" });
-//     }
-
-//     const __filename = fileURLToPath(import.meta.url);
-//     const __dirname = dirname(__filename);
-//     const imagePath = path.join(__dirname, '..', user.profile_image);
-
-//     fs.unlink(imagePath, async (err) => {
-//       if (err) {
-//         return res.status(500).json({ error: "Error deleting profile image from server" });
-//       }
-
-//       await user.update({ profile_image: null });
-
-//       return res.status(200).json({
-//         status: "success",
-//         message: "Profile image deleted successfully",
-//       });
-//     });
-//   } catch (error) {
-//     console.log(error);
-//     return res.status(500).json({ error: "An error occurred while deleting profile image" });
-//   }
-// };

@@ -6,12 +6,12 @@ import "../global.css";
 const Profile = () => {
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [profileImage, setProfileImage] = useState("https://via.placeholder.com/150");
-  const [name, setName] = useState("");
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState(""); // Default value is an empty string
+  const [username, setUsername] = useState(""); // Default value is an empty string
   const [newProfileImage, setNewProfileImage] = useState(null);
   const [userPosts, setUserPosts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [userId, setUserId] = useState(null); // Add state for the user ID
+  const [userId, setUserId] = useState(null);
 
   const token = localStorage.getItem("token");
   if (!token) {
@@ -31,10 +31,11 @@ const Profile = () => {
         });
         console.log('__User data__:', response);
 
-        setName(response.data.name);
-        setUsername(response.data.username);
+        // Use default values if response data is not available
+        setName(response.data.name || ""); // Default to empty string
+        setUsername(response.data.username || ""); // Default to empty string
         setProfileImage(response.data.profile_image || 'https://via.placeholder.com/150');
-        setUserId(response.data.id); // Store the user ID
+        setUserId(response.data.id || null); // Store the user ID
       } catch (error) {
         console.log('__Error fetching user data__', error);
         alert('Error fetching user data, please try again!');
@@ -44,7 +45,7 @@ const Profile = () => {
     };
 
     fetchUserProfile();
-  }, [token]); // added token as a dependency if it changes
+  }, [token]);
 
   // Fetch user posts on load
   useEffect(() => {
@@ -53,7 +54,7 @@ const Profile = () => {
 
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:5000/get-forum/${userId}`, { // Use userId here
+        const response = await axios.get(`http://localhost:5000/get-forum/${userId}`, {
           headers: {
             Authorization: token,
           },
@@ -72,10 +73,11 @@ const Profile = () => {
       } finally {
         setLoading(false);
       }
+
     };
 
     fetchUserPosts();
-  }, [token, userId]); // Add userId as a dependency
+  }, [token, userId]);
 
   // Open edit profile modal
   const handleEditClick = () => {
@@ -104,7 +106,7 @@ const Profile = () => {
     formData.append("username", username);
 
     if (newProfileImage) {
-      formData.append("profile_image", newProfileImage);
+      formData.append("profile_image", newProfileImage); // Menambahkan gambar baru
     }
 
     try {
@@ -115,37 +117,21 @@ const Profile = () => {
         },
       });
 
-      // Update state after successful save
-      setProfileImage(response.data.profile_image || profileImage);
+      // Update state dengan URL gambar profil baru dari backend
+      setProfileImage(response.data.data.profile_image); // Memperbarui URL gambar
       setName(name);
       setUsername(username);
-      handleCloseModal();
+      handleCloseModal(); // Tutup modal setelah menyimpan perubahan
     } catch (error) {
-      console.error("Error updating profile", error);
+      console.error("Error updating profile:", error);
       alert("Error updating profile, please try again!");
     } finally {
-      setLoading(false); // End loading
-    }
-  };
-
-  // Delete profile image
-  const handleDeleteProfileImage = async () => {
-    try {
-      await axios.delete("http://localhost:5000/profile-image", {
-        headers: {
-          Authorization: token,
-        },
-      });
-
-      setProfileImage("https://via.placeholder.com/150");
-    } catch (error) {
-      console.error("__Error deleting profile image__", error);
-      alert("Error deleting profile image, please try again!");
+      setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
+    <div className="min-h-screen  flex flex-col">
       {/* Header Section */}
       <div className="relative flex-shrink-0">
         <div className="h-[400px] relative">
@@ -229,8 +215,8 @@ const Profile = () => {
         </div>
       )}
 
-      {/* User's Forum Posts */}
-      <div className="my-10 mx-4">
+      
+      {/* <div className="my-10 mx-4">
         <h2 className="text-xl font-bold mb-4">Your Posts</h2>
         {loading ? (
           <p>Loading posts...</p>
@@ -241,7 +227,7 @@ const Profile = () => {
             <p>No posts available.</p>
           )
         )}
-      </div>
+      </div> */}
     </div>
   );
 };
