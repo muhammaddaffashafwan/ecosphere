@@ -7,13 +7,13 @@ export function Homepage() {
         <img className='vector-icon' alt='' src='/images/footerHP.png' />
 
         <img className='color-blur-icon' alt='' src='/images/Color BlurHP.png' />
-        <div className="">
-        <div className='home-page-item'></div>
-        <img className='home-page-icon' alt='' src='/images/homepage-plant.png' />
+        <div className=''>
+          <div className='home-page-item'></div>
+          <img className='home-page-icon' alt='' src='/images/homepage-plant.png' />
         </div>
         <div className='home-page-title'>Smart Living, Greener Future</div>
         <div className='at-ecosmophere'>
-          "At Ecosmophere, we empower you with the knowledge to create an eco-friendly home. Explore
+          "At Ecosphere, we empower you with the knowledge to create an eco-friendly home. Explore
           smart solutions, sustainable practices, and practical tips to reduce your environmental
           footprint while enhancing your living space. Start your journey toward greener living
           today."
@@ -25,37 +25,34 @@ export function Homepage() {
         </div>
         <img className='vector-icon2' alt='' src='/images/VectorgreenHP.png' />
 
-        <div  className='about-us'>
-          ABOUT US
-        </div>
+        <div className='about-us'>ABOUT US</div>
         <div className='detail-about-us'>
-          Ecosmophere was founded with a vision to promote greener living by making eco-friendly
-          home information easy to access. We offer practical tips, smart solutions, and valuable
+          Ecosphere was founded with a vision to promote greener living by making eco-friendly home
+          information easy to access. We offer practical tips, smart solutions, and valuable
           resources to help you adopt sustainable practices in your everyday life. Our passion is to
           inspire a community of environmentally conscious individuals who strive to make a positive
           impact on the world, starting from their homes.
         </div>
-        
-          <div id="about-us" className='frame-type-1'>
-            <img className='about-us-1' alt='' src='/images/aboutus1.jpg ' />
-          </div>
-          <div className='frame-type-2'>
-            <img className='about-us-2' alt='' src='/images/aboutus2.jpg' />
-          </div>
-          <div className='frame-type-3'>
-            <img className='about-us-3' alt='' src='/images/aboutus3.jpg' />
-          </div>
-          <div className='frame-type-4'>
-            <img className='about-us-4' alt='' src='/images/aboutus4.jpg' />
-          </div>
-          <img className='vector-icon3' alt='' src='/images/VectorgreenHP.png' />
-        
+
+        <div id='about-us' className='frame-type-1'>
+          <img className='about-us-1' alt='' src='/images/aboutus1.jpg ' />
+        </div>
+        <div className='frame-type-2'>
+          <img className='about-us-2' alt='' src='/images/aboutus2.jpg' />
+        </div>
+        <div className='frame-type-3'>
+          <img className='about-us-3' alt='' src='/images/aboutus3.jpg' />
+        </div>
+        <div className='frame-type-4'>
+          <img className='about-us-4' alt='' src='/images/aboutus4.jpg' />
+        </div>
+        <img className='vector-icon3' alt='' src='/images/VectorgreenHP.png' />
+
         <div className='section-3'>
           <div className='title'>
             <div className='title-1'>
               <div className='title-up'>
                 <div className='title-up-caption'>Find knowledge that matters</div>
-                
               </div>
               <div className='title-down'>Explore articles to elevate your eco-journey!</div>
             </div>
@@ -67,7 +64,7 @@ export function Homepage() {
                 href='https://powerstarelectricals.co.uk/blogs/beginners-guide-to-installing-solar-panels-at-home'
                 className='article-link'
               >
-                <img className="img-1" src='/images/homearticle1.jpg' alt='Solar Panels Guide' />
+                <img className='img-1' src='/images/homearticle1.jpg' alt='Solar Panels Guide' />
               </a>
               <div className='article-content'>
                 <div className='article-title'>
@@ -80,7 +77,7 @@ export function Homepage() {
                 </div>
 
                 <div className='article-time'>
-                  <img className="clock" src='/images/clock.png' />
+                  <img className='clock' src='/images/clock.png' />
                   <p>powerstarelectricals | Oct 24, 2024</p>
                 </div>
               </div>
@@ -91,7 +88,7 @@ export function Homepage() {
                 href="https://silvotherapy.co.uk/articles/biophilic-design#:~:text=Biophilic%20design%20doesn't%20just,for%20a%20healthier%20breathing%20environment."
                 className='article-link'
               >
-                <img className="img-2" src='/images/homearticle2.jpg' />
+                <img className='img-2' src='/images/homearticle2.jpg' />
               </a>
               <div className='article-content'>
                 <div className='article-title'>
@@ -106,7 +103,7 @@ export function Homepage() {
                   </div>
                 </div>
                 <div className='article-time'>
-                  <img className="clock-1" src='/images/clock.png' />
+                  <img className='clock-1' src='/images/clock.png' />
                   <p>silvotherapy | Jan 31, 2024</p>
                 </div>
               </div>
@@ -117,7 +114,7 @@ export function Homepage() {
                 href='https://www.forbes.com/sites/afdhelaziz/2022/05/31/how-greywater-systems-can-help-you-save-money-and-water-an-interview-with-leigh-jerrard-of-greywater-corps/'
                 className='article-link'
               >
-                <img className="img-3" src='/images/homearticle3.jpg' />
+                <img className='img-3' src='/images/homearticle3.jpg' />
               </a>
               <div className='article-content'>
                 <div className='article-title'>
@@ -132,7 +129,7 @@ export function Homepage() {
                   </div>
                 </div>
                 <div className='article-time'>
-                  <img className="clock-2" src='/images/clock.png' />
+                  <img className='clock-2' src='/images/clock.png' />
                   <p>forbes | May 31, 2022</p>
                 </div>
               </div>
@@ -153,7 +150,9 @@ export function Homepage() {
                   href='https://www.ecoluxlifestyle.co/5-inexpensive-ideas-to-make-your-home-more-eco-friendly/'
                   className='article-link'
                 >
-                  <b className="eco-friendly">5 Inexpensive Ideas To Make Your Home More Eco-Friendly</b>
+                  <b className='eco-friendly'>
+                    5 Inexpensive Ideas To Make Your Home More Eco-Friendly
+                  </b>
                   <div className='article-4-desc'>
                     Many assume that being more environmentally conscious means their living
                     expenses will increase. However, you do not have to break the bank to make your
@@ -165,7 +164,7 @@ export function Homepage() {
                 </a>
               </div>
               <div className='article-time-1'>
-                <img className="clock-3" src='/images/clock.png' />
+                <img className='clock-3' src='/images/clock.png' />
                 <p>ecoluxlifestyle | Nov 19, 2023</p>
               </div>
             </div>
