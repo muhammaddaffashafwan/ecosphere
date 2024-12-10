@@ -4,8 +4,12 @@ import ForumPost from "../../components/ForumPost/ForumPost";
 import "../global.css";
 
 const Profile = () => {
+  const localprofileimage= localStorage.getItem("profile_image")
   const [isEditOpen, setIsEditOpen] = useState(false);
-  const [profileImage, setProfileImage] = useState("https://via.placeholder.com/150");
+  const [profileImage, setProfileImage] = useState(
+    localprofileimage
+    ? `http://localhost:5000/${localprofileimage}`
+    : "https://via.placeholder.com/150");
   const [name, setName] = useState(""); // Default value is an empty string
   const [username, setUsername] = useState(""); // Default value is an empty string
   const [newProfileImage, setNewProfileImage] = useState(null);
@@ -34,7 +38,12 @@ const Profile = () => {
         // Use default values if response data is not available
         setName(response.data.name || ""); // Default to empty string
         setUsername(response.data.username || ""); // Default to empty string
-        setProfileImage(response.data.profile_image || 'https://via.placeholder.com/150');
+        // setProfileImage(response.data.profile_image || 'https://via.placeholder.com/150');
+        // setProfileImage(
+        //   response.data.profile_image ?
+        //   `https://localhost:5000/${response.data.profile_image}` : "https://via.placeholder.com/150"
+        // )
+        console.log(profileImage, response.data.profile_image)
         setUserId(response.data.id || null); // Store the user ID
       } catch (error) {
         console.log('__Error fetching user data__', error);
@@ -117,8 +126,12 @@ const Profile = () => {
         },
       });
 
+      console.log(response.data)
+
       // Update state dengan URL gambar profil baru dari backend
-      setProfileImage(response.data.data.profile_image); // Memperbarui URL gambar
+      // setProfileImage(response.data.data.profile_image); // Memperbarui URL gambar
+      setProfileImage(`http://localhost:5000/${response.data.data.profile_image}`)
+      localStorage.setItem("profile_image", response.data.data.profile_image)
       setName(name);
       setUsername(username);
       handleCloseModal(); // Tutup modal setelah menyimpan perubahan

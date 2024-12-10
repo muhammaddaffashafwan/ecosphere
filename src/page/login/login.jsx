@@ -31,6 +31,7 @@ export function Login() {
           localStorage.setItem('token', response.data.token); // Simpan token
           localStorage.setItem('id', JSON.stringify(response.data.id)); // Simpan id (format JSON)
           localStorage.setItem('username', response.data.username); // Simpan username
+          localStorage.setItem('profile_image',response.data.profile_image );
           console.log('Data successfully stored in localStorage');
 
           // Redirect ke halaman utama
