@@ -21,6 +21,13 @@ const ForumPost = ({ data }) => {
   const currentUserId = localStorage.getItem("id");
   const token = localStorage.getItem("token");
 
+  // Validasi token dan ambil gambar profil
+  const isTokenValid = token && token.trim() !== ""; // Sederhana: cek apakah token ada
+  const localProfileImage = isTokenValid ? localStorage.getItem("profile_image") : null;
+  const profileImageUrl = localProfileImage
+    ? `http://localhost:5000/${localProfileImage}`
+    : "https://via.placeholder.com/150";
+    
   useEffect(() => {
     if (!token) {
       alert("No token found, please log in again.");
@@ -101,7 +108,7 @@ const ForumPost = ({ data }) => {
       <div className="flex items-center mb-2">
         <img
           className="w-10 h-10 rounded-full mr-2"
-          src={data.profileImage || "https://via.placeholder.com/150"}
+          src={profileImageUrl || "https://via.placeholder.com/150"}
           alt="Profile"
         />
         <div className="flex flex-col">
