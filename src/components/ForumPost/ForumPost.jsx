@@ -84,17 +84,20 @@ const ForumPost = ({ data }) => {
         alert("Authorization token is missing.");
         return;
       }
-
+  
+      const updatedData = {
+        title,
+        caption,
+        hashtags,
+        image_url: typeof imageUrl === 'string' ? imageUrl : "", // Send the image URL or leave empty if no image
+      };
+  
       const response = await axios.put(
         `http://localhost:5000/update-forum/${id}`,
-        {
-          title,
-          caption,
-          hashtags,
-          image_url: imageUrl,
-        },
+        updatedData,
         { headers: { Authorization: token } }
       );
+  
       console.log(response.data.message);
       setIsUpdateModalOpen(false); // Close the update modal
     } catch (error) {
@@ -102,7 +105,7 @@ const ForumPost = ({ data }) => {
       alert("Failed to update the post.");
     }
   };
-
+  
   return (
     <div className="flex flex-col bg-softCream p-5 rounded-lg border border-black shadow-md mb-5">
       <div className="flex items-center mb-2">
