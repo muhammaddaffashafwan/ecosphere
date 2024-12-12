@@ -224,8 +224,8 @@ export function Forum1() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow p-5 flex">
-        <div className="flex-1">
+      <main className="flex-grow p-5 flex flex-col md:flex-row">
+        <div className="mobile:order-2 md:order-1 lg:order-1 flex-1">
           <h1 className="text-left font text-5xl font-bold mb-5 mt-[100px]">
             SHARING & DISCUSSIONS
           </h1>
@@ -236,7 +236,7 @@ export function Forum1() {
           </div>
         </div>
 
-        <div className="w-1/3 ml-5 pt-[195px]">
+        <div className="mobile:order-1 mobile:w-[324px] mobile:ml-1 mobile:mt-[100px] lg:w-1/3 lg:ml-5 lg:mt-[195px] sm:mt-[245px] sm:w-1/3 sm:ml-5">
           <div
             className="flex items-center bg-softCream p-3 rounded-lg mb-5 cursor-pointer border border-black shadow-md"
             onClick={handleQuestionClick} // Trigger overlay for new question
