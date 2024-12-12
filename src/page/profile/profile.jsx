@@ -167,18 +167,18 @@ console.log('LocalStorage Username:', localUsername);
         </div>
 
         {/* Profile Avatar and Details */}
-        <div className="absolute top-[355px] left-[55px] flex items-center">
-          <img className="w-24 h-24 rounded-full border-4 border-[#404d3c]" src={profileImage} alt="User Avatar" />
-          <div className="ml-4 text-white">
-            <h1 className="font text-2xl font-bold">{name}</h1>
-            <p className="text-sm text-black">{username}</p>
+        <div className=" absolute top-[355px] left-[55px] flex items-center">
+          <img className="mobile:ml-[-30px] mobile:w-20 mobile:h-20 md:w-24 md:h-24 rounded-full border-4 border-[#404d3c]" src={profileImage} alt="User Avatar" />
+          <div className="mobile:pt-[20px] md:pt-[10px]  ml-4 text-white">
+            <h1 className="mobile:text-[15px] md:font md:text-2xl font-bold">{name}</h1>
+            <p className="mobile:text-[13px] md:text-xl text-sm text-black">{username}</p>
           </div>
         </div>
 
         {/* Edit Profile Button */}
         <button
           onClick={handleEditClick}
-          className="absolute top-[410px] right-[55px] px-[40px] py-2 rounded-full shadow-md bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all"
+          className="mobile:px-[13px] mobile:text-[13px] mobile:ml-[330px] mobile:pb-[3px] md:absolute md:top-[410px] md:right-[55px] md:px-[40px] md:text-[17px] md:py-2 rounded-full shadow-md bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all"
         >
           Edit Profile
         </button>
