@@ -144,7 +144,7 @@ console.log("Filtered comments:", filteredComments);
 
   return (
     <div className="min-h-screen bg-gray-50 pt-[100px] pb-[100px]">
-      <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+      <div className="mobile:max-w-xs md:max-w-xl lg:max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
         {/* Header Section */}
         <div className="flex items-center mb-6 relative">
           <button onClick={() => navigate("/forum1")} className="absolute top-0 right-0 p-2 text-gray-700 hover:text-blue-500">
@@ -163,7 +163,7 @@ console.log("Filtered comments:", filteredComments);
           </div>
         </div>
 
-        <h1 className="font text-3xl font-bold mb-4">{post.title}</h1>
+        <h1 className="font text-3xl font-bold mb-4 text-left">{post.title}</h1>
 
         {post.imageUrl && (
           <img src={post.imageUrl} alt={post.title} className="w-full h-auto mb-6 rounded-lg" />

@@ -181,58 +181,96 @@ const ForumPost = ({ data }) => {
       {/* Update Modal */}
       {isUpdateModalOpen && (
         <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-4 rounded-lg w-1/3">
-            <h2 className="text-xl font-bold mb-4">Update Post</h2>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleUpdate(data.id, title, caption, hashtags, imageUrl);
-              }}
-            >
-              <input
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                className="w-full mb-3 p-2 border"
-                placeholder="Title"
-              />
-              <textarea
-                value={caption}
-                onChange={(e) => setCaption(e.target.value)}
-                className="w-full mb-3 p-2 border"
-                placeholder="Caption"
-              />
-              <input
-                type="text"
-                value={hashtags}
-                onChange={(e) => setHashtags(e.target.value)}
-                className="w-full mb-3 p-2 border"
-                placeholder="Hashtags"
-              />
-              <input
-                type="text"
-                value={imageUrl}
-                onChange={(e) => setImageUrl(e.target.value)}
-                className="w-full mb-3 p-2 border"
-                placeholder="Image URL"
-              />
-              <div className="flex justify-between mt-3">
-                <button
-                  type="button"
-                  className="bg-gray-300 px-4 py-2 rounded"
-                  onClick={() => setIsUpdateModalOpen(false)}
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="bg-blue-500 text-white px-4 py-2 rounded"
-                >
-                  Update
-                </button>
-              </div>
-            </form>
-          </div>
+          <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-[800px] max-h-[600px] mt-[70px] overflow-y-auto mx-auto">
+  <h2 className="text-2xl font-bold mb-4 text-left text-gray-800">Update Post</h2>
+  <form
+    onSubmit={(e) => {
+      e.preventDefault();
+      handleUpdate(data.id, title, caption, hashtags, imageUrl);
+    }}
+  >
+    <div className="mb-3">
+      <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="title">Title</label>
+      <input
+        id="title"
+        type="text"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#000000]"
+        placeholder="Enter the title here..."
+      />
+    </div>
+
+    <div className="mb-3">
+      <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="caption">Caption</label>
+      <textarea
+        id="caption"
+        value={caption}
+        onChange={(e) => setCaption(e.target.value)}
+        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#000000]"
+        placeholder="Write your caption here..."
+        
+      ></textarea>
+    </div>
+
+    <div className="mb-3">
+      <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="hashtags">Hashtags</label>
+      <input
+        id="hashtags"
+        type="text"
+        value={hashtags}
+        onChange={(e) => setHashtags(e.target.value)}
+        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#000000]"
+        placeholder="#green #sustainability"
+      />
+    </div>
+
+    <div className="mb-3">
+      <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="imageUpload">Upload Image</label>
+      <input
+        id="imageUpload"
+        type="file"
+        accept="image/*"
+        onChange={(e) => {
+          const file = e.target.files[0];
+          setImageUrl(file);
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = () => setImageUrl(reader.result);
+            reader.readAsDataURL(file);
+          }
+        }}
+        className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-[#000000]"
+      />
+      {imageUrl && (
+        <div className="mt-3">
+          <img
+            src={imageUrl}
+            alt="Preview"
+            className="w-full max-h-40 object-cover rounded-lg border"
+          />
+        </div>
+      )}
+    </div>
+
+    <div className="flex justify-end gap-3">
+      <button
+        type="button"
+        className="bg-gray-500 text-white rounded-full px-5 py-2 hover:bg-gray-600"
+        onClick={() => setIsUpdateModalOpen(false)}
+      >
+        Cancel
+      </button>
+      <button
+        type="submit"
+        className="bg-[#739646] text-white rounded-full px-5 py-2 hover:bg-[#5c7a3c]"
+      >
+        Update
+      </button>
+    </div>
+  </form>
+</div>
+
         </div>
       )}
 
