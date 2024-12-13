@@ -73,7 +73,7 @@ export const updateProfileImage = async (req, res) => {
     }
 
     const userId = req.user.id; // ID user dari token JWT
-    const imagePath = '/uploads/profiles/' + req.file.filename; // Path gambar yang diunggah
+    const imagePath = '/profiles/' + req.file.filename; // Path gambar yang diunggah
 
     // Cari user berdasarkan ID
     const user = await Users.findOne({ where: { id: userId } });
@@ -195,6 +195,7 @@ export const authLogin = async (req, res) => {
       token: `Bearer ${token}`,
       id: user.id,
       username: user.username,
+      profile_image : user.profile_image,
     });
   } catch (error) {
     console.log(error);

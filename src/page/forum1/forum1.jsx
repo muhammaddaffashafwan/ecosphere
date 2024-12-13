@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom"; // To get the id from the URL
+import { Link, useNavigate, useParams } from "react-router-dom"; // To get the id from the URL
 import ForumPost from "../../components/ForumPost/ForumPost";
 import "../global.css";
 
@@ -32,9 +32,64 @@ export function Forum1() {
   const [formCaption, setFormCaption] = useState(""); // Add if not already defined
   const [formHashtags, setFormHashtags] = useState(""); // Add for hashtags if needed
   const [formImageUrl, setFormImageUrl] = useState(""); // Add for image URL if needed
-  const [loading, setLoading] = useState(false); // Add the loading state
+
+
+  const navigate = useNavigate();
+
+  const localprofileimage= localStorage.getItem("profile_image")
+  const [isEditOpen, setIsEditOpen] = useState(false);
+  const [profileImage, setProfileImage] = useState(
+    localprofileimage
+    ? `http://localhost:5000/${localprofileimage}`
+    : "https://via.placeholder.com/150");
+  const [name, setName] = useState(""); // Default value is an empty string
+  const [username, setUsername] = useState(""); // Default value is an empty string
+  const [newProfileImage, setNewProfileImage] = useState(null);
+  const [userPosts, setUserPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [userId, setUserId] = useState(null);
+
   const token = localStorage.getItem("token");
-  console.log("token:", token);
+  if (!token) {
+    alert("No token found, please log in again.");
+    return;
+  }
+
+  console.log("profileImage", profileImage);
+
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get('http://localhost:5000/users', {
+          headers: {
+            Authorization: token,
+          },
+        });
+  
+        // Use default values if response data is not available
+        setName(response.data.name || ""); // Default to empty string
+        setUsername(response.data.username || ""); // Default to empty string
+        setProfileImage(
+          response.data.profile_image
+            ? `http://localhost:5000/${response.data.profile_image}`
+            : 'https://via.placeholder.com/150'
+        ); // Default profile image
+        setUserId(response.data.id || null); // Store the user ID
+  
+        console.log("Profile Image:", response.data.profile_image);
+      } catch (error) {
+        console.error("Error fetching user profile:", error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    if (token) {
+      fetchUserProfile();
+    }
+  }, [token]);
+  
 
   const handleQuestionClick = () => {
     setOverlayMode("add");
@@ -51,7 +106,7 @@ export function Forum1() {
     setSelectedQuestion(question); // Set selected question for answering
     setFormCaption("");
     setFormHashtags("");
-    setFormImageUrl("");
+    setFormImageUrl(null);
     setOverlayVisible(true); // Show the overlay when answering a question
   };
 
@@ -132,7 +187,7 @@ export function Forum1() {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    setFormImageUrl(file);
+    setFormImageUrl(file || " ");
   };
 
   // Correcting the fetch call to use token and id
@@ -169,8 +224,8 @@ export function Forum1() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow p-5 flex">
-        <div className="flex-1">
+      <main className="flex-grow p-5 flex flex-col md:flex-row">
+        <div className="mobile:order-2 md:order-1 lg:order-1 flex-1">
           <h1 className="text-left font text-5xl font-bold mb-5 mt-[100px]">
             SHARING & DISCUSSIONS
           </h1>
@@ -181,14 +236,14 @@ export function Forum1() {
           </div>
         </div>
 
-        <div className="w-1/3 ml-5 pt-[195px]">
+        <div className="mobile:order-1 mobile:w-[324px] mobile:ml-1 mobile:mt-[100px] lg:w-1/3 lg:ml-5 lg:mt-[195px] sm:mt-[245px] sm:w-1/3 sm:ml-5">
           <div
             className="flex items-center bg-softCream p-3 rounded-lg mb-5 cursor-pointer border border-black shadow-md"
             onClick={handleQuestionClick} // Trigger overlay for new question
           >
             <img
-              src="/images/forum1/muhammad sumbul.png"
-              alt="User Avatar"
+              src={profileImage}
+              alt="Profile"
               className="w-10 h-10 rounded-full mr-3"
             />
             <input
@@ -203,6 +258,9 @@ export function Forum1() {
             <h2 className="font text-xl font-bold mb-4">QUESTION FOR YOU</h2>
             {questions.map((question) => (
               <div
+                onClick={() => {
+                  setFormTitle(question.title); // Set the title for the answer form
+                }}
                 key={question.id}
                 className="bg-softCream p-4 rounded-lg mb-4 border border-black shadow-md"
               >

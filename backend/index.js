@@ -10,6 +10,7 @@ import bodyParser from "body-parser";
 const app = express();
 
 app.use(bodyParser())
+app.use(express.static('uploads'))
 
 app.use(
 	cors({

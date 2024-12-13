@@ -4,14 +4,24 @@ import ForumPost from "../../components/ForumPost/ForumPost";
 import "../global.css";
 
 const Profile = () => {
+  const localprofileimage= localStorage.getItem("profile_image")
+  const localName = localStorage.getItem("name");
+  const localUsername = localStorage.getItem("username");
+  
   const [isEditOpen, setIsEditOpen] = useState(false);
-  const [profileImage, setProfileImage] = useState("https://via.placeholder.com/150");
-  const [name, setName] = useState(""); // Default value is an empty string
-  const [username, setUsername] = useState(""); // Default value is an empty string
+  const [profileImage, setProfileImage] = useState(
+    localprofileimage
+    ? `http://localhost:5000/${localprofileimage}`
+    : "https://via.placeholder.com/150");
+  const [name, setName] = useState(localName || ""); // Default value is an empty string
+  const [username, setUsername] = useState(localUsername || "") // Default value is an empty string
   const [newProfileImage, setNewProfileImage] = useState(null);
   const [userPosts, setUserPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [userId, setUserId] = useState(null);
+
+  console.log('LocalStorage Name:', localName);  // Periksa apakah value di localStorage sudah benar
+console.log('LocalStorage Username:', localUsername);
 
   const token = localStorage.getItem("token");
   if (!token) {
@@ -22,30 +32,38 @@ const Profile = () => {
   // Fetch user profile data on load
   useEffect(() => {
     const fetchUserProfile = async () => {
-      setLoading(true);
+      setLoading(true); // Tampilkan indikator loading saat data sedang diambil
+  
       try {
         const response = await axios.get('http://localhost:5000/users', {
           headers: {
             Authorization: token,
           },
         });
+  
         console.log('__User data__:', response);
-
-        // Use default values if response data is not available
-        setName(response.data.name || ""); // Default to empty string
-        setUsername(response.data.username || ""); // Default to empty string
-        setProfileImage(response.data.profile_image || 'https://via.placeholder.com/150');
-        setUserId(response.data.id || null); // Store the user ID
+  
+        // Validasi jika response.data ada
+        if (response.data) {
+          setName(response.data.name || name); // Gunakan nilai dari response atau nilai saat ini
+          setUsername(response.data.username || username); // Sama seperti di atas
+          setProfileImage(
+            response.data.profile_image
+              ? `http://localhost:5000/${response.data.profile_image}`
+              : profileImage // Gunakan nilai saat ini jika data kosong
+          );
+          setUserId(response.data.id || userId); // Sama seperti di atas
+        }
       } catch (error) {
-        console.log('__Error fetching user data__', error);
+        console.error('__Error fetching user data__', error);
         alert('Error fetching user data, please try again!');
       } finally {
-        setLoading(false);
+        setLoading(false); // Matikan indikator loading setelah selesai
       }
     };
-
-    fetchUserProfile();
-  }, [token]);
+  
+    fetchUserProfile(); // Panggil fungsi untuk mengambil data pengguna
+  }, [token]); // Ketergantungan pada token
 
   // Fetch user posts on load
   useEffect(() => {
@@ -60,6 +78,10 @@ const Profile = () => {
           },
         });
         console.log('__User posts__:', response);
+
+        setName(response.data.name || ""); // Default to empty string
+      setUsername(response.data.username || ""); // Default to empty string
+      setUserId(response.data.id || null); // Store the user ID
 
         // Ensure the response contains posts as an array
         if (Array.isArray(response.data.replies)) {
@@ -117,10 +139,16 @@ const Profile = () => {
         },
       });
 
+      console.log(response.data)
+
       // Update state dengan URL gambar profil baru dari backend
-      setProfileImage(response.data.data.profile_image); // Memperbarui URL gambar
+      // setProfileImage(response.data.data.profile_image); // Memperbarui URL gambar
+      setProfileImage(`http://localhost:5000/${response.data.data.profile_image}`)
+      localStorage.setItem("profile_image", response.data.data.profile_image)
       setName(name);
       setUsername(username);
+      localStorage.setItem("name", name);
+      localStorage.setItem("username", username);
       handleCloseModal(); // Tutup modal setelah menyimpan perubahan
     } catch (error) {
       console.error("Error updating profile:", error);
@@ -139,18 +167,18 @@ const Profile = () => {
         </div>
 
         {/* Profile Avatar and Details */}
-        <div className="absolute top-[355px] left-[55px] flex items-center">
-          <img className="w-24 h-24 rounded-full border-4 border-[#404d3c]" src={profileImage} alt="User Avatar" />
-          <div className="ml-4 text-white">
-            <h1 className="font text-2xl font-bold">{name}</h1>
-            <p className="text-sm text-black">{username}</p>
+        <div className=" absolute top-[355px] left-[55px] flex items-center">
+          <img className="mobile:ml-[-30px] mobile:w-20 mobile:h-20 md:w-24 md:h-24 rounded-full border-4 border-[#404d3c]" src={profileImage} alt="User Avatar" />
+          <div className="mobile:pt-[20px] md:pt-[10px]  ml-4 text-white">
+            <h1 className="mobile:text-[15px] md:font md:text-2xl font-bold">{name}</h1>
+            <p className="mobile:text-[13px] md:text-xl text-sm text-black">{username}</p>
           </div>
         </div>
 
         {/* Edit Profile Button */}
         <button
           onClick={handleEditClick}
-          className="absolute top-[410px] right-[55px] px-[40px] py-2 rounded-full shadow-md bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all"
+          className="mobile:px-[13px] mobile:text-[13px] mobile:ml-[330px] mobile:pb-[3px] md:absolute md:top-[410px] md:right-[55px] md:px-[40px] md:text-[17px] md:py-2 rounded-full shadow-md bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all"
         >
           Edit Profile
         </button>

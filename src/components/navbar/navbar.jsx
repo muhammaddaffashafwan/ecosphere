@@ -8,7 +8,7 @@ export function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Misalkan id pengguna yang login adalah 1
+  // Assuming the loggedInUserId comes from authentication logic
   const loggedInUserId = 2;
   const loggedInUser = DataPost.find((user) => user.id === loggedInUserId);
 
@@ -16,7 +16,7 @@ export function Navbar() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token); // Set login berdasarkan token
+    setIsLoggedIn(!!token); // Set login status based on the presence of token
   }, []);
 
   const toggleMenu = () => {
@@ -33,6 +33,9 @@ export function Navbar() {
     setIsDropdownOpen(false);
     navigate("/");
   };
+
+  // Retrieve the profile image from localStorage
+  const profileImage = localStorage.getItem("profile_image");
 
   return (
     <header className="header">
@@ -63,12 +66,10 @@ export function Navbar() {
 
             {isLoggedIn ? (
               <div className="relative">
-                <button
-                  onClick={toggleDropdown}
-                  className="flex items-center focus:outline-none"
-                >
+                <button onClick={toggleDropdown} className="flex items-center focus:outline-none">
+                  {/* Use the profile image from localStorage */}
                   <img
-                    src={loggedInUser?.userAvatar || "/images/default-profile.png"}
+                    src={profileImage ? `http://localhost:5000/${profileImage}` : "/images/default-profile.png"}
                     alt="Profile"
                     className="w-10 h-10 rounded-full"
                   />

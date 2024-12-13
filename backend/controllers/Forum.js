@@ -96,28 +96,33 @@ export const getForumById = async (req, res) => {
 
 // Update an existing forum post
 export const updateForum = async (req, res) => {
-  const { id } = req.params;
+  const postId = req.params.id;
   const { title, caption, hashtags, image_url } = req.body;
   const user_id = req.user.id;
 
   try {
-    const forumPost = await Forum.findOne({ where: { id, user_id } });
+    // Find the post by ID and verify the user_id
+    const forumPost = await Forum.findOne({ where: { id: postId, user_id } });
 
     if (!forumPost) {
       return res.status(404).json({ message: "Forum post not found or not authorized" });
     }
 
+    // Update the fields if provided
     forumPost.title = title || forumPost.title;
     forumPost.caption = caption || forumPost.caption;
     forumPost.hashtags = hashtags || forumPost.hashtags;
     forumPost.image_url = image_url || forumPost.image_url;
 
+    // Save the updated post
     await forumPost.save();
+
     res.status(200).json({ message: "Forum post updated successfully", forumPost });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
+
 
 // Delete a forum post
 export const deleteForum = async (req, res) => {
