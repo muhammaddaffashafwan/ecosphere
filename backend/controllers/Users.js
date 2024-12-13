@@ -65,8 +65,10 @@ export const resetPassword = async (req, res) => {
   }
 };
 
-// **Update Profile Image**
+// **Update Profile Image, Name, and Username**
 export const updateProfileImage = async (req, res) => {
+  const { name, username } = req.body;
+
   try {
     if (!req.file) {
       return res.status(400).json({ error: "No file uploaded" });
@@ -81,22 +83,35 @@ export const updateProfileImage = async (req, res) => {
       return res.status(404).json({ error: "User not found" });
     }
 
-    // Update gambar profil di database
-    await user.update({ profile_image: imagePath });
+    // Update nama jika ada
+    if (name) user.name = name;
 
-    // Kirim respons dengan URL gambar yang baru
+    // Update username jika ada
+    if (username) user.username = username;
+
+    // Update gambar profil
+    user.profile_image = imagePath;
+
+    // Simpan perubahan ke database
+    await user.save();
+
+    // Kirim respons dengan data yang diperbarui
     return res.status(200).json({
       status: "success",
-      message: "Profile image updated successfully",
+      message: "Profile updated successfully",
       data: {
-        profile_image: imagePath, // Kirim URL gambar yang baru
+        id: user.id,
+        name: user.name,
+        username: user.username,
+        profile_image: imagePath,
       },
     });
   } catch (error) {
-    console.error("Error updating profile image:", error);
-    return res.status(500).json({ error: "An error occurred while updating profile image" });
+    console.error("Error updating profile:", error);
+    return res.status(500).json({ error: "An error occurred while updating profile" });
   }
 };
+
 
 // **GET Users**
 export const getUsers = async (req, res) => {
