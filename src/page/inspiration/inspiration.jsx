@@ -159,118 +159,115 @@ export function Inspiration() {
       <div className='components-1'>
         <img src='/images/comp1.png' />
         <div className='renew-title-wrapper1'>
-          <div className='renew-title1'>solar panels</div>
-        </div>
-        <div className='comp-type1'>
-          <div className='comp-type-container1'>
-            <b>Types:</b>
-            <ol className='renew-list'>
-              <li>Monocrystalline panels (high efficiency, durable)</li>
-              <li>Polycrystalline panels (slightly lower efficiency, more affordable)</li>
-              <li>
-                Thin-film panels (flexible, suitable for large areas but with lower efficiency)
-              </li>
-            </ol>
+          <div className='renew-title1'>Solar Panels</div>
+
+          <div className='comp-type1'>
+            <div className='comp-type-container1'>
+              <b>Types: </b>
+              <ol className='renew-list'>
+                <li>Monocrystalline panels (high efficiency, durable)</li>
+                <li>Polycrystalline panels (slightly lower efficiency, more affordable)</li>
+                <li>
+                  Thin-film panels (flexible, suitable for large areas but with lower efficiency)
+                </li>
+              </ol>
+            </div>
           </div>
-        </div>
-        <div className='renew-how1'>
-          <div className='renew-how-ben-container1'>
-            <b>How It Works:</b>
-            <span className='renew-how-ben-capture'>
-              {" "}
-              Solar panels capture sunlight and convert it into electricity through photovoltaic
-              cells that generate an electric current when exposed to light.
-            </span>
+          <div className='renew-how1'>
+            <div className='renew-how-ben-container1'>
+              <b>How It Works: </b>
+              <span className='renew-how-ben-capture'>
+                Solar panels capture sunlight and convert it into electricity through photovoltaic
+                cells that generate an electric current when exposed to light.
+              </span>
+            </div>
           </div>
-        </div>
-        <div className='renew-ben1'>
-          <div className='renew-ben-container1'>
-            <b>Benefits:</b>
-            <span className='renew-how-ben-capture'>
-              {" "}
-              Reduces electricity costs, produces eco-friendly energy with no carbon emissions, and
-              increases property value.
-            </span>
+          <div className='renew-ben1'>
+            <div className='renew-ben-container1'>
+              <b>Benefits: </b>
+              <span className='renew-how-ben-capture'>
+                Reduces electricity costs, produces eco-friendly energy with no carbon emissions,
+                and increases property value.
+              </span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className='components-2'>
+      <div className='components-1'>
         <img src='/images/comp2.png' />
-        <div className='renew-title-wrapper2'>
-          <div className='renew-title2'>Passive Solar Heating and Cooling</div>
-        </div>
-        <div className='comp-type2'>
-          <div className='comp-type-container2'>
-            <b>Types:</b>
-            <ol className='renew-list'>
-              <li>
-                Passive Solar Heating: Uses glass or windows to capture solar heat during the
-                winter.
-              </li>
-              <li>
-                Natural Ventilation: Building design that allows air to flow naturally to keep the
-                temperature cool in summer.
-              </li>
-            </ol>
+        <div className='renew-title-wrapper1'>
+          <div className='renew-title1'>Passive Solar Heating and Cooling</div>
+
+          <div className='comp-type1'>
+            <div className='comp-type-container1'>
+              <b>Types:</b>
+              <ol className='renew-list'>
+                <li>
+                  Passive Solar Heating: Uses glass or windows to capture solar heat during the
+                  winter.
+                </li>
+                <li>
+                  Natural Ventilation: Building design that allows air to flow naturally to keep the
+                  temperature cool in summer.
+                </li>
+              </ol>
+            </div>
           </div>
-        </div>
-        <div className='renew-how2'>
-          <div className='renew-how-ben-container2'>
-            <b>How It Works: </b>
-            <span className='renew-how-ben-capture'>
-              Utilizes house design and window orientation to maximize sunlight during winter and
-              minimize heat during summer. Heating or cooling occurs without additional energy.
-            </span>
+          <div className='renew-how1'>
+            <div className='renew-how-ben-container1'>
+              <b>How It Works: </b>
+              <span className='renew-how-ben-capture'>
+                Utilizes house design and window orientation to maximize sunlight during winter and
+                minimize heat during summer. Heating or cooling occurs without additional energy.
+              </span>
+            </div>
           </div>
-        </div>
-        <div className='renew-ben2'>
-          <div className='renew-ben-container2'>
-            <b>Benefits:</b>
-            <span className='renew-how-ben-capture'>
-              {" "}
-              Very low operational costs, reduces the use of AC and electric heating, and takes
-              advantage of energy-efficient, eco-friendly design.
-            </span>
+          <div className='renew-ben1'>
+            <div className='renew-ben-container1'>
+              <b>Benefits: </b>
+              <span className='renew-how-ben-capture'>
+                Very low operational costs, reduces the use of AC and electric heating, and takes
+                advantage of energy-efficient, eco-friendly design.
+              </span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className='components-3'>
+      <div className='components-1'>
         <img src='/images/comp3.png' />
-        <div className='renew-title-wrapper3'>
-          <div className='renew-title3'>
-            Rainwater Harvesting <br />
-            Systems
+        <div className='renew-title-wrapper1'>
+          <div className='renew-title1'>Rainwater Harvesting Systems</div>
+
+          <div className='comp-type1'>
+            <div className='comp-type-container1'>
+              <b>Types:</b>
+              <ol className='renew-list'>
+                <li>
+                  Roof Collection System: Channels rainwater from the roof into a storage tank.
+                </li>
+                <li>Filtration System: Adds filters to purify water for domestic use.</li>
+              </ol>
+            </div>
           </div>
-        </div>
-        <div className='comp-type3'>
-          <div className='comp-type-container3'>
-            <b>Types:</b>
-            <ol className='renew-list'>
-              <li>Roof Collection System: Channels rainwater from the roof into a storage tank</li>
-              <li>Filtration System: Adds filters to purify water for domestic use</li>
-            </ol>
+          <div className='renew-how1'>
+            <div className='renew-how-ben-container1'>
+              <b>How It Works: </b>
+              <span className='renew-how-ben-capture'>
+                Rainwater is collected from the roof and stored in a tank for non-potable uses, such
+                as watering plants, flushing toilets, and washing vehicles.
+              </span>
+            </div>
           </div>
-        </div>
-        <div className='renew-how3'>
-          <div className='renew-how-ben-container3'>
-            <b>How It Works:</b>
-            <span className='renew-how-ben-capture'>
-              {" "}
-              Rainwater is collected from the roof and stored in a tank for non-potable uses, such
-              as watering plants, flushing toilets, and washing vehicles.
-            </span>
-          </div>
-        </div>
-        <div className='renew-ben3'>
-          <div className='renew-ben-container3'>
-            <b>Benefits:</b>
-            <span className='renew-how-ben-capture'>
-              {" "}
-              Reduces the use of clean water, lowers water bills, and helps maintain water supply
-              during dry seasons.
-            </span>
+          <div className='renew-ben1'>
+            <div className='renew-ben-container1'>
+              <b>Benefits: </b>
+              <span className='renew-how-ben-capture'>
+                Reduces the use of clean water, lowers water bills, and helps maintain water supply
+                during dry seasons.
+              </span>
+            </div>
           </div>
         </div>
       </div>

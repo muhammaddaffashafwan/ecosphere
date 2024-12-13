@@ -3,7 +3,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  min-height: 650vh;
+  min-height: 630vh;
 }
 
 .eco-house-guide-cover {
@@ -233,179 +233,75 @@
 }
 /* 4. renewable */
 .renewable-title {
-  position: absolute;
-  /* top: 1900px; */
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 40px;
-  letter-spacing: -0.02em;
-  /* width: 1082.5px; */
   text-align: center;
-  font-family: "Optician Sans";
-  line-height: 45px;
+  font-size: 2.5rem;
+  font-family: "Optician Sans", sans-serif;
+  margin: 10vw;
 }
+
+.components-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* Tambah jarak antar komponen untuk ruang lebih */
+  width: 80%;
+  margin: 0 auto;
+}
+
 .components-1 {
-  position: absolute;
-  top: 2100px;
-  left: 120px;
-  width: 1200px;
-  height: 368px;
-  text-align: left;
-  font-size: 16px;
-  font-family: Poppins;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 5vw;
+  margin-right: 5vw;
+  font-family: "Poppins";
 }
+
 .components-1 img {
-  position: absolute;
-  height: 100%;
-  width: 49.05%;
-  top: 0%;
-  /* right: 50.95%; */
-  bottom: 0%;
-  left: 0%;
+  width: 80%;
   border-radius: 10px;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 10vw;
 }
+
 .renew-title-wrapper1 {
-  position: absolute;
-  height: 10.87%;
-  top: 0%;
-  bottom: 89.13%;
-  left: 50.78%;
-  font-size: 40px;
-  font-family: "Optician Sans";
-  line-height: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Jarak antar elemen dalam teks */
 }
 
-.renew-title-wrapper2 {
-  position: absolute;
-  height: 10.87%;
-  top: 0%;
-  bottom: 89.13%;
-  left: 50.78%;
-  font-size: 40px;
-  font-family: "Optician Sans";
-  line-height: 40px;
+.renew-title1 {
+  font-size: 35px;
+  font-family: "Optician Sans", sans-serif;
+  margin-bottom: 10px;
 }
 
-.renew-title-wrapper3 {
-  position: absolute;
-  height: 10.87%;
-  top: 0%;
-  bottom: 89.13%;
-  left: 50.78%;
-  font-size: 40px;
-  font-family: "Optician Sans";
-  line-height: 40px;
-}
-
-.renew-title1,
-.renew-title2,
-.renew-title3 {
-  top: 0px;
-  left: 0px;
-  letter-spacing: -0.02em;
-}
 .comp-type1,
-.comp-type2,
-.comp-type3 {
-  position: absolute;
-  height: 29.89%;
-  width: 49.22%;
-  top: 27.17%;
-  right: 0%;
-  bottom: 42.93%;
-  left: 50.78%;
-}
-.comp-type-container1,
-.comp-type-container2,
-.comp-type-container3 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  line-height: 140%;
-  display: inline-block;
-  width: 568px;
-}
-.renew-list {
-  margin: 0;
-  font-size: inherit;
-  font-weight: 500;
-  margin-left: -30px;
-}
 .renew-how1,
-.renew-how2,
-.renew-how3 {
-  position: absolute;
-  height: 18.21%;
-  width: 48.96%;
-  top: 63.32%;
-  right: 0%;
-  bottom: 18.48%;
-  left: 51.04%;
-  text-align: justify;
-}
-.renew-how-ben-container1,
-.renew-how-ben-container2,
-.renew-how-ben-container3,
-.renew-ben-container1,
-.renew-ben-container2,
-.renew-ben-container3 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  display: inline-block;
-  width: 565px;
-  line-height: 140%;
-}
-.renew-how-ben-capture {
-  font-weight: 500;
-}
-.renew-ben1,
-.renew-ben2,
-.renew-ben3 {
-  position: absolute;
-  height: 12.23%;
-  width: 48.96%;
-  top: 87.77%;
-  right: 0%;
-  bottom: 0%;
-  left: 51.04%;
-  text-align: justify;
+.renew-ben1 {
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-.components-2 {
-  position: absolute;
-  top: 2600px;
-  left: 120px;
-  width: 1200px;
-  height: 368px;
-  text-align: left;
-  font-size: 16px;
-  font-family: Poppins;
+.comp-type1 b,
+.renew-how1 b,
+.renew-ben1 b {
+  font-weight: bold;
 }
 
-.components-3 {
-  position: absolute;
-  top: 3100px;
-  left: 120px;
-  width: 1200px;
-  height: 368px;
-  text-align: left;
-  font-size: 16px;
-  font-family: Poppins;
+.renew-list {
+  margin-left: 20px;
+  list-style: decimal;
 }
 
 /* DIY Title */
 .diy-title {
   position: absolute;
   text-align: center;
-  font-size: 50px;
+  font-size: 2.5rem;
   font-family: "Optician Sans";
   margin: 4rem auto 2rem;
-  top: 3600px;
+  top: 240vw;
   left: 50%;
   transform: translateX(-50%);
   width: 100%; /* Menyesuaikan lebar */
@@ -423,7 +319,7 @@
   align-items: center;
   left: 50%;
   transform: translateX(-50%);
-  top: 1950px;
+  top: 125vw;
   justify-content: center;
 }
 
@@ -497,7 +393,7 @@
   text-align: center;
   overflow: hidden;
   position: absolute;
-  top: 4300px;
+  top: 290vw;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -521,6 +417,10 @@
 }
 
 @media (max-width: 768px) {
+  .body-inspiration1 {
+    min-height: 730vh;
+  }
+
   .eco-house-guide {
     font-size: 50px;
   }
@@ -570,74 +470,40 @@
   }
 
   .renewable-title {
-    position: relative;
-    font-size: 30px;
-    font-family: "Optician Sans", sans-serif;
-    text-align: center;
-    margin: 4rem auto 2rem;
-    padding: 50px;
+    font-size: 2rem;
+    margin: 8vw;
   }
 
   .components-1 {
-    width: 100vw;
-    height: 30vw;
-    left: 30vw;
-    top: 290vw;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 30px; /* Reduce spacing */
+    margin: 0 auto;
+  }
+
+  .components-1 img {
+    width: 60%; /* Make image take up more space */
+    margin: 0 auto; /* Center the image */
+  }
+
+  .renew-title-wrapper1 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 10vw;
   }
 
   .renew-title1 {
-    top: 200vw;
-  }
-
-  .comp-type {
-    left: -10vw;
+    font-size: 30px;
     text-align: center;
-    top: 35vw;
   }
 
-  .renew-how {
-    left: -40vw;
-    text-align: center;
-    top: 50uvw;
-    padding-right: -500vw;
+  .comp-type1,
+  .renew-how1,
+  .renew-ben1 {
+    font-size: 15px; /* Slightly smaller font size */
   }
-
-  .renew-ben {
-    left: -40vw;
-    text-align: center;
-    top: 58vw;
-    padding-right: -500vw;
-  }
-
-  .components-2 {
-    width: 49vw;
-    height: 30vw;
-    left: 30vw;
-    top: 375vw;
-  }
-
-  .components-3 {
-    width: 49vw;
-    height: 30vw;
-    left: 30vw;
-    top: 470vw;
-  }
-
-  .renew-title {
-    padding-top: 30vw;
-    padding-right: -10vw;
-    white-space: nowrap;
-  }
-
-  .renew-how-ben-container {
-    width: 100vw;
-    height: 30vw;
-    left: 30vw;
-  }
-
-  /* .renew-title-wrapper {
-    left: 10vw;
-  } */
 
   /* video-diy */
   .diy-title {
@@ -649,8 +515,8 @@
     top: 330vw;
   }
 
-  .diy-vid {
-    width: 100%; /* Lebar video mengisi layar */
+  .diy-vid h3 {
+    font-size: 20px;
   }
 
   .cta-button2 {
@@ -658,83 +524,20 @@
     font-size: 16px; /* Ukuran tombol lebih kecil */
   }
 
-  .renew-title-wrapper1 {
-    left: -15vw;
-    top: 33vw;
-  }
-
-  .renew-title-wrapper2 {
-    left: -15vw;
-    top: 33vw;
-  }
-
-  .renew-title-wrapper3 {
-    left: -15vw;
-    top: 33vw;
-  }
-
-  .comp-type1,
-  .comp-type2,
-  .comp-type3,
-  .renew-how1,
-  .renew-how2,
-  .renew-how3,
-  .renew-ben1,
-  .renew-ben2,
-  .renew-ben3 {
-    left: -15vw;
-  }
-
-  .comp-type1 {
-    top: 40vw;
-  }
-
-  .renew-how1 {
-    top: 56vw;
-  }
-
-  .renew-ben1 {
-    top: 66vw;
-  }
-
-  .comp-type2 {
-    top: 45vw;
-  }
-
-  .renew-how2 {
-    top: 62vw;
-  }
-
-  .renew-ben2 {
-    top: 73vw;
-  }
-
-  .comp-type3 {
-    top: 45vw;
-  }
-
-  .renew-how3 {
-    top: 59vw;
-  }
-
-  .renew-ben3 {
-    top: 70vw;
-  }
   .hover-more-1 {
-    padding: 5px 50x;
-    text-wrap: nowrap;
-    top: 640vw;
-  }
-
-  .body-inspiration1 {
-    min-height: 750vh;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    top: 620vw;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
 @media (max-width: 426px) {
   /* 1 */
   .body-inspiration1 {
-    min-height: 860vh;
+    min-height: 880vh;
   }
   .eco-house-guide {
     font-size: 40px;
@@ -795,7 +598,7 @@
   }
 
   .diy-title {
-    top: 669vw;
+    top: 960vw;
   }
 
   .diy-vid {
@@ -814,130 +617,42 @@
   }
 
   .renewable-title {
-    font-size: 22px;
-    width: 110%;
-    /* top: 2100px; */
-    line-height: 30px;
+    font-size: 1.8rem; /* Smaller title size */
+    margin: 10vw;
   }
 
   .components-1 {
-    top: 520vw;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px; /* Compact spacing */
+    margin: 0 auto;
   }
 
-  .components-2 {
-    left: 30vw;
-    top: 645vw;
+  .components-1 img {
+    width: 60%; /* Full-width image */
+    margin: 0 auto; /* Center the image */
   }
 
-  .components-3 {
-    width: 49vw;
-    height: 30vw;
-    left: 30vw;
-    top: 780vw;
+  .renew-title1 {
+    font-size: 25px; /* Adjust title size */
   }
 
-  .renew-title-wrapper1 {
-    left: -15vw;
-    top: 33vw;
-    font-size: 20px;
-  }
-
-  .renew-title-wrapper2 {
-    left: -15vw;
-    top: 33vw;
-    font-size: 20px;
-  }
-
-  .renew-title-wrapper3 {
-    left: -15vw;
-    top: 33vw;
-    font-size: 20px;
-  }
-
-  .comp-type1 {
-    width: 80%;
-    margin-top: 10px;
-  }
-  .comp-type2 {
-    width: 160%;
-    margin-top: 0px;
-  }
-
-  .comp-type3 {
-    width: 160%;
-    margin-top: 20px;
-  }
-
-  .comp-type-container1,
-  .comp-type-container2,
-  .comp-type-container3 {
-    width: 100%;
-    font-size: 14px;
-  }
-
-  .renew-how1 {
-    width: 80%;
-    margin-top: 85px;
-    text-align: justify;
-    font-size: 14px;
-  }
-  .renew-how2 {
-    width: 160%;
-    margin-top: 80px;
-    text-align: justify;
-    font-size: 14px;
-  }
-  .renew-how3 {
-    width: 160%;
-    margin-top: 80px;
-    text-align: justify;
-    font-size: 14px;
-  }
-
+  .comp-type1,
+  .renew-how1,
   .renew-ben1 {
-    width: 80%;
-    margin-top: 130px;
-    text-align: justify;
-    font-size: 14px;
-  }
-
-  .renew-ben2 {
-    width: 160%;
-    margin-top: 120px;
-    text-align: justify;
-    font-size: 14px;
-  }
-
-  .renew-ben3 {
-    width: 160%;
-    margin-top: 120px;
-    text-align: justify;
-    font-size: 14px;
-  }
-
-  .renew-how-ben-container1,
-  .renew-how-ben-container2,
-  .renew-how-ben-container3,
-  .renew-ben-container1,
-  .renew-ben-container2,
-  .renew-ben-container3 {
-    width: 100%;
-    font-size: 0.85rem;
-    line-height: 1.4;
+    font-size: 14px; /* Smaller font size */
   }
 
   .renew-list {
-    margin-left: 0;
-    font-size: 0.85rem;
+    margin-left: 15px; /* Adjust list margin for smaller screens */
   }
 
   .diy-title {
     font-size: 32px; /* Ukuran font lebih kecil lagi */
-    top: 890vw;
+    top: 960vw;
   }
   .diy-content {
     gap: 10px; /* Mengurangi jarak antar elemen */
-    top: 700vw;
+    top: 755vw;
   }
 
   .cta-button2 {
@@ -948,7 +663,7 @@
   .hover-more-1 {
     padding: 5px 50x;
     text-wrap: nowrap;
-    top: 1000vw;
+    top: 1050vw;
   }
   /* YouTube play icon */
   .youtube-icon-1:before {
