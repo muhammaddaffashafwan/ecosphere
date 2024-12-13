@@ -1114,5 +1114,127 @@ top: 95px;
     font-size: 30px;
     left: 50px;
   }
-} 
+  
+  .image-icon{
+    width: 320px;
+    height: 250px;
+  }
+
+  .how-technology-is{
+   padding-right:80vw;
+   font-size: 19px;
+  }
+
+  .recent-trends-show-container{
+    top: 204vw;
+    left: 12vw;
+  }
+.in-the-last-container{
+  top: 138vw;
+}
+
+.echnology-is-changing{
+  top: 16vw;
+}
+.t{
+  top: 12vw;
+}
+
+.main-list-article-parent{
+  top: 290vw;
+}
+
+.main-list-article-group{
+  top: 450vw;
+  left: 13vw;
+}
+
+.main-list-article-container{
+  top: 600vw
+}
+
+.latest-news-around{
+  top: 740vw;
+}
+.more-article img{
+  width: 10px;
+}
+
+.more-article,
+.more-article1,
+.more-article2{
+  top: 880px;
+}
+
+.more-article4,
+.more-article5{
+  top: 810px;
+}
+.more-article3{
+  left: -909px;
+  top: 1250px;
+}
+
+.more-article4{
+  left: 230px;
+}
+
+.more-article6,
+.more-article7,
+.more-article8{
+  top: 1200px;
+}
+
+.more-article9,
+.more-article10,
+.more-article11{
+  top: 1300px;
+}
+  .image-1,
+  .image-2,
+  .image-3,
+  .image-4,
+  .image-5,
+  .image-6,
+  .image-7,
+  .image-8,
+  .image-9,
+  .image-10,
+  .image-11,
+  .image-12,
+  .image-13,
+  .image-14,
+  .image-15,
+  .image-16 {
+    width: 140px;
+    height: 140px;
+  }
+
+
+  .desc-arc{
+    font-size: 1px;
+  }
+
+  .desc-arc .title-and-descriptions {
+    font-size: 14px;
+  }
+  .desc-arc a {
+    width: 120px;
+    line-height: 14px;
+  
+
+  }
+  .desc-arc .spacexs-starship-spacecraft {
+    width: 100px;
+    font-size: 8px;
+  }
+  .desc-arc .category-and-est-read-time1 {
+    top: 180px;
+  }
+
+  .title-and-descriptions{
+  font-size: 1px;
+  }
+}
+
 
