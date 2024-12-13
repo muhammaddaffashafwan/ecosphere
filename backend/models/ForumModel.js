@@ -121,6 +121,15 @@ const Reply = db.define(
       },
       onDelete: "CASCADE", // Jika user dihapus, reply terkait juga dihapus
     },
+    uname: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      references: {
+        model: "users", // Tabel users yang di-referensikan
+        key: "username",
+      },
+      onDelete: "CASCADE", // Jika user dihapus, reply terkait juga dihapus
+    },
     reply_text: {
       type: DataTypes.TEXT,
       allowNull: false,

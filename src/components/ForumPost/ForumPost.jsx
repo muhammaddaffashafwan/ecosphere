@@ -179,7 +179,7 @@ const ForumPost = ({ data }) => {
         )}
       </div>
 
-      {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
+      {isModalOpen && <Modal forumId={data.id} userId={currentUserId} username={data.uname} profileImage={profileImageUrl} onClose={() => setIsModalOpen(false)} />}
 
       {/* Update Modal */}
       {isUpdateModalOpen && (

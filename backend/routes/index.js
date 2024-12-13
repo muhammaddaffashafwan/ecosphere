@@ -16,7 +16,8 @@ import {
   likeForum, 
   unlikeForum, 
   replyToForum, 
-  deleteReply 
+  deleteReply,
+  getRepliesByForumId
 } from "../controllers/Forum.js";
 import { authMiddleware } from "../middleware/authMiddleware.js";
 import multer from "multer";
@@ -87,5 +88,7 @@ router.post("/reply-forum/:id/reply", authMiddleware, replyToForum);
 
 // Delete a reply to a forum post (requires authentication)
 router.delete("/reply-forum/:id/reply/:replyId", authMiddleware, deleteReply);
+
+router.get("/reply-forum/:id", authMiddleware, getRepliesByForumId)
 
 export default router;

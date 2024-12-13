@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom"; // To get the id from the URL
 import ForumPost from "../../components/ForumPost/ForumPost";
 import "../global.css";
+import axios from "axios";
 
 export function Forum1() {
   const [post, setPost] = useState([]);

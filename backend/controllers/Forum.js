@@ -210,41 +210,63 @@ export const unlikeForum = async (req, res) => {
 export const replyToForum = async (req, res) => {
   const { id: forum_id } = req.params; // Extract and rename `id` to `forum_id`
   const { reply_text } = req.body;     // Extract `reply_text` from the request body
-  const user_id = req.user.id;         // Extract `user_id` from the authenticated user
+  const user_id = req.user?.id;        // Extract `user_id` from the authenticated user (optional chaining)
+  const uname = req.user?.username;    // Extract `username` from the authenticated user (optional chaining)
 
   try {
-    // Debugging logs
-    console.log("req.params:", req.params); // Check route parameters
-    console.log("req.body:", req.body);     // Check the request body
-    console.log("forum_id:", forum_id);     // Log the extracted forum ID
-    console.log("reply_text:", reply_text); // Log the reply text
+    // Log request details for debugging
+    console.log("Request Parameters:", req.params);
+    console.log("Request Body:", req.body);
 
     // Validate `forum_id`
     if (!forum_id) {
       return res.status(400).json({ message: "Forum ID is required" });
     }
 
+    // Validate `user_id`
+    if (!user_id) {
+      return res.status(401).json({ message: "Unauthorized: User not authenticated" });
+    }
+
     // Validate `reply_text`
-    if (typeof reply_text !== 'string' || reply_text.trim().length === 0) {
+    if (typeof reply_text !== "string" || reply_text.trim().length === 0) {
       return res.status(400).json({ message: "Reply text is required and cannot be empty" });
     }
 
     // Check if the forum post exists
     const forumPost = await Forum.findOne({ where: { id: forum_id } });
-
     if (!forumPost) {
       return res.status(404).json({ message: "Forum post not found" });
     }
 
     // Create the reply
-    const reply = await Reply.create({ forum_id, user_id, reply_text });
+    const reply = await Reply.create({
+      forum_id,
+      user_id,
+      reply_text: reply_text.trim(), // Save trimmed reply text
+      uname, // Optionally include the username of the replying user
+    });
 
-    // Return success message and the created reply
-    res.status(201).json({ message: "Reply added successfully", reply });
+    // Send success response with the reply data
+    return res.status(201).json({
+      message: "Reply added successfully",
+      reply: {
+        id: reply.id,
+        forum_id: reply.forum_id,
+        user_id: reply.user_id,
+        reply_text: reply.reply_text,
+        username: reply.uname,
+        createdAt: reply.createdAt, // Include creation timestamp
+        updatedAt: reply.updatedAt, // Include update timestamp
+      },
+    });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error("Error adding reply:", error.message); // Log error for debugging
+    return res.status(500).json({ message: "Internal Server Error", error: error.message });
   }
 };
+
+
 
 // Delete a reply
 export const deleteReply = async (req, res) => {
@@ -280,5 +302,31 @@ export const deleteReply = async (req, res) => {
     // Handle server errors
     console.error("Error deleting reply:", error);
     res.status(500).json({ error: error.message });
+  }
+};
+
+// Controller untuk mendapatkan semua reply untuk sebuah forum berdasarkan forum_id
+export const getRepliesByForumId = async (req, res) => {
+  const { id: forum_id } = req.params; // Mengambil forum_id dari parameter URL
+
+  try {
+    // Menampilkan semua reply yang terkait dengan forum_id tertentu
+    const replies = await Reply.findAll({
+      where: {
+        forum_id: forum_id, // Memastikan hanya reply terkait forum ini yang diambil
+      },
+      order: [['createdAt', 'ASC']], // Mengurutkan reply berdasarkan waktu pembuatan, dari yang paling lama
+    });
+
+    // Jika tidak ada reply ditemukan
+    if (replies.length === 0) {
+      return res.status(404).json({ message: "No replies found for this forum post." });
+    }
+
+    // Menampilkan reply dalam response
+    res.status(200).json(replies);
+  } catch (error) {
+    console.error("Error fetching replies:", error.message); // Log error untuk debugging
+    res.status(500).json({ message: "Internal Server Error", error: error.message });
   }
 };

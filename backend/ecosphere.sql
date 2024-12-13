@@ -47,10 +47,12 @@ CREATE TABLE `replies` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `forum_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `uname` varchar(255) NOT NULL,
   `reply_text` text NOT NULL,
   `createdAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
   PRIMARY KEY (`id`),
   FOREIGN KEY (`forum_id`) REFERENCES `forum`(`id`) ON DELETE CASCADE,
   FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
+  FOREIGN KEY (`uname`) REFERENCES `users`(`username`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
