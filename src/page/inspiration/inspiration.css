@@ -418,7 +418,7 @@
 
 @media (max-width: 768px) {
   .body-inspiration1 {
-    min-height: 730vh;
+    min-height: 600vw;
   }
 
   .eco-house-guide {
@@ -508,11 +508,11 @@
   /* video-diy */
   .diy-title {
     font-size: 32px; /* Ukuran font lebih kecil lagi */
-    top: 550vw;
+    top: 540vw;
   }
   .diy-content {
     gap: 10px; /* Mengurangi jarak antar elemen */
-    top: 330vw;
+    top: 310vw;
   }
 
   .diy-vid h3 {
@@ -528,7 +528,7 @@
     text-align: center;
     overflow: hidden;
     position: absolute;
-    top: 620vw;
+    top: 600vw;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -597,25 +597,6 @@
     width: 120px; /* Lebar kartu lebih kecil untuk ponsel */
   }
 
-  .diy-title {
-    top: 990vw;
-  }
-
-  .diy-vid {
-    top: 220vw;
-  }
-
-  .diy-vid h3 {
-    font-size: 17px;
-    margin: 10px 10px;
-    font-family: "Optician Sans";
-    text-decoration: none;
-    padding: 0px;
-    font-weight: 300;
-    margin-top: 16px;
-    text-align: center;
-  }
-
   .renewable-title {
     font-size: 1.8rem; /* Smaller title size */
     margin: 10vw;
@@ -679,6 +660,21 @@
     margin-left: 15px; /* Adjust list margin for smaller screens */
   }
 
+  .diy-vid {
+    top: 220vw;
+  }
+
+  .diy-vid h3 {
+    font-size: 17px;
+    margin: 10px 10px;
+    font-family: "Optician Sans";
+    text-decoration: none;
+    padding: 0px;
+    font-weight: 300;
+    margin-top: 16px;
+    text-align: center;
+  }
+
   .diy-title {
     font-size: 32px; /* Ukuran font lebih kecil lagi */
     top: 990vw;
@@ -696,7 +692,7 @@
   .hover-more-1 {
     padding: 5px 50x;
     text-wrap: nowrap;
-    top: 1090vw;
+    top: 1100vw;
   }
   /* YouTube play icon */
   .youtube-icon-1:before {
