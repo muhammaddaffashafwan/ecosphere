@@ -47,32 +47,36 @@ export default function ProductDetail() {
   return (
     <>
       <div className="pb-10 pt-10">
-        <div className="flex px-24 py-4 gap-[40px] items-center">
+        <div className="flex items-center md:flex-row px-6 md:px-24 lg:py-4 md:py-4 mobile:pt-20 md:gap-[40px] items-left">
           <Link to="/Property">
-            <FontAwesomeIcon icon={faArrowLeftLong} className="mt-[50px] text-[black] text-[20px]" />
+            <FontAwesomeIcon icon={faArrowLeftLong} className="text-black lg:text-[20px] md:mt-[50px] lg:w-6 lg:h-6 mobile:w-4 mobile:h-4" />
           </Link>
-          <h1 className="text-[15px] text-[grey] font-bold mt-[50px] font-medium">{product.name ?? 'No Label'}</h1>
+          <h1 className="mobile:text-[10px] md:text-[12px] text-gray-400 mobile:ml-[20px] md:mt-[50px] md:ml-[1px] mobile:mt-3 font-medium">{product.name ?? 'No Label'}</h1>
         </div>
-        <div className="flex gap-[30px] px-24">
-          <div className="pt-10 pl-[100px]">
-            <img src={product.imageUrl ?? 'default-image.jpg'} alt={product.name ?? 'No Name'} className="rounded-lg shadow-lg block w-[350px] h-[400px] mr-[150px] object-cover" />
+        <div className="flex flex-col md:flex-row gap-4 md:gap-[30px] px-6 md:px-24 lg:gap-[30px] lg:px-24">
+          <div className="pt-6 md:pt-10 lg:pt-10 lg:pl-[100px] flex justify-center md:justify-start">
+            <img
+              src={product.imageUrl ?? 'default-image.jpg'}
+              alt={product.name ?? 'No Name'}
+              className="rounded-lg shadow-lg block mobile:w-[270px] mobile:h-[300px] md:w-[350px] md:h-[300px] lg:w-[350px] lg:h-[400px] lg:mr-[150px] object-cover"
+            />
           </div>
-          <div className="flex flex-col gap-[20px] pt-13">
-            <h1 className="text-[27px]">{product.name}</h1>
-            <span className="text-[25px] font-medium">{formatToIDRCurrency(product.price) ?? `Not For Sale`}</span>
+          <div className="flex flex-col gap-4 md:gap-[20px] pt-6 md:pt-13 lg:gap-[20px] lg:pt-13 mobile:px-10">
+            <h1 className="text-[16px] md:text-[20px] font-bold lg:text-[27px] mobile:text-center md:text-left">{product.name}</h1>
+            <span className="mobile:text-[14px] md:text-[16px] lg:text-[20px] font-medium mobile:text-center md:text-left lg:text-left">{formatToIDRCurrency(product.price) ?? 'Not For Sale'}</span>
 
             {/* Menampilkan Rating */}
-            <div className="flex items-center">
+            <div className="flex justify-center md:justify-start items-center">
               {renderStars(product.rating)} {/* Menampilkan bintang */}
-              <span className="ml-2 text-sm text-gray-600">({product.rating})</span> {/* Menampilkan nilai rating */}
+              <span className="ml-2 text-[12px] md:text-[14px] lg:text-sm text-gray-600">({product.rating})</span>
             </div>
 
-            <span className="text-grey-800">{product.category ?? 'Uncategorized'}</span>
+            <span className="mobile:text-[14px] md:text-[16px] lg:text-grey-800 mobile:text-center md:text-left lg:text-left">{product.category ?? 'Uncategorized'}</span>
 
-            <span className="font-medium">
+            <span className="text-[14px] md:text-[16px] lg:text-[15px] sm:text-center md:text-left lg:text-left ">
               <b>Description</b>
             </span>
-            <p className="max-w-[500px] text-justify">{product.description ?? 'No description.'}</p>
+            <p className="text-[14px] md:text-[16px] lg:text-[15px] md:max-w-[400px] lg:max-w-[530px] text-justify mx-auto md:mx-0 lg:mx-0">{product.description ?? 'No description.'}</p>
           </div>
         </div>
       </div>
