@@ -69,6 +69,7 @@ function AppContent() {
       {/* Footer only shown if not on login, signup, or forgotpassword page */}
       {showFooter && <Footer />}
       </AuthProvider>
+      <p>My Secret Key: {import.meta.env.VITE_SECRET_KEY}</p>
     </>
   );
 }

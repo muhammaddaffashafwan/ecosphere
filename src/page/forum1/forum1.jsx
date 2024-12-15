@@ -58,7 +58,7 @@ export function Forum1() {
 
   console.log("profileImage", profileImage);
 
-  useEffect(() => {
+useEffect(() => {
     const fetchUserProfile = async () => {
       setLoading(true);
       try {
@@ -155,8 +155,12 @@ export function Forum1() {
       caption: formCaption, // The caption or content of the forum post
       hashtags: formHashtags, // The hashtags related to the post
       image_url: formImageUrl, // The image URL if the post includes an image
+      user_id: localStorage.getItem("id"),
+      username: localStorage.getItem("username"),
     };
   
+    console.log("username: ", formData.username);
+    
     try {
       // Send a POST request to your backend API (adjust the URL as needed)
       const response = await fetch('http://localhost:5000/create-forum', {

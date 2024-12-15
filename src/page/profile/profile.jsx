@@ -4,24 +4,25 @@ import ForumPost from "../../components/ForumPost/ForumPost";
 import "../global.css";
 
 const Profile = () => {
-  const localprofileimage= localStorage.getItem("profile_image")
+  const localprofileimage = localStorage.getItem("profile_image");
   const localName = localStorage.getItem("name");
   const localUsername = localStorage.getItem("username");
-  
+
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [profileImage, setProfileImage] = useState(
     localprofileimage
-    ? `http://localhost:5000/${localprofileimage}`
-    : "https://via.placeholder.com/150");
-  const [name, setName] = useState(localName || ""); // Default value is an empty string
-  const [username, setUsername] = useState(localUsername || "") // Default value is an empty string
+      ? `http://localhost:5000/${localprofileimage}`
+      : "https://via.placeholder.com/150"
+  );
+  const [name, setName] = useState(localName || "");
+  const [username, setUsername] = useState(localUsername || "");
   const [newProfileImage, setNewProfileImage] = useState(null);
   const [userPosts, setUserPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [userId, setUserId] = useState(null);
 
   console.log('LocalStorage Name:', localName);  // Periksa apakah value di localStorage sudah benar
-console.log('LocalStorage Username:', localUsername);
+  console.log('LocalStorage Username:', localUsername);
 
   const token = localStorage.getItem("token");
   if (!token) {
@@ -33,26 +34,26 @@ console.log('LocalStorage Username:', localUsername);
   useEffect(() => {
     const fetchUserProfile = async () => {
       setLoading(true); // Tampilkan indikator loading saat data sedang diambil
-  
+
       try {
         const response = await axios.get('http://localhost:5000/users', {
           headers: {
             Authorization: token,
           },
         });
-  
-        console.log('__User data__:', response);
-  
+
+        console.log('__User data__:', response.data);
+
         // Validasi jika response.data ada
         if (response.data) {
-          setName(response.data.name || name); // Gunakan nilai dari response atau nilai saat ini
-          setUsername(response.data.username || username); // Sama seperti di atas
+          setName(response.data.name || ""); // Gunakan nilai dari response atau nilai default
+          setUsername(response.data.username || ""); // Sama seperti di atas
           setProfileImage(
             response.data.profile_image
               ? `http://localhost:5000/${response.data.profile_image}`
-              : profileImage // Gunakan nilai saat ini jika data kosong
+              : "https://via.placeholder.com/150" // Gambar placeholder jika tidak ada gambar profil
           );
-          setUserId(response.data.id || userId); // Sama seperti di atas
+          setUserId(response.data.id || null); // Menyimpan userId
         }
       } catch (error) {
         console.error('__Error fetching user data__', error);
@@ -61,7 +62,7 @@ console.log('LocalStorage Username:', localUsername);
         setLoading(false); // Matikan indikator loading setelah selesai
       }
     };
-  
+
     fetchUserProfile(); // Panggil fungsi untuk mengambil data pengguna
   }, [token]); // Ketergantungan pada token
 
@@ -79,15 +80,11 @@ console.log('LocalStorage Username:', localUsername);
         });
         console.log('__User posts__:', response);
 
-        setName(response.data.name || ""); // Default to empty string
-      setUsername(response.data.username || ""); // Default to empty string
-      setUserId(response.data.id || null); // Store the user ID
-
-        // Ensure the response contains posts as an array
+        // Memastikan posts ada di dalam response
         if (Array.isArray(response.data.replies)) {
           setUserPosts(response.data.replies);
         } else {
-          setUserPosts([]); // Default to empty array if no posts found
+          setUserPosts([]); // Default ke array kosong jika tidak ada post
         }
       } catch (error) {
         console.error('__Error fetching posts__', error);
@@ -95,7 +92,6 @@ console.log('LocalStorage Username:', localUsername);
       } finally {
         setLoading(false);
       }
-
     };
 
     fetchUserPosts();
@@ -139,12 +135,11 @@ console.log('LocalStorage Username:', localUsername);
         },
       });
 
-      console.log(response.data)
+      console.log(response.data);
 
       // Update state dengan URL gambar profil baru dari backend
-      // setProfileImage(response.data.data.profile_image); // Memperbarui URL gambar
-      setProfileImage(`http://localhost:5000/${response.data.data.profile_image}`)
-      localStorage.setItem("profile_image", response.data.data.profile_image)
+      setProfileImage(`http://localhost:5000/${response.data.data.profile_image}`);
+      localStorage.setItem("profile_image", response.data.data.profile_image);
       setName(name);
       setUsername(username);
       localStorage.setItem("name", name);
@@ -158,8 +153,12 @@ console.log('LocalStorage Username:', localUsername);
     }
   };
 
+  console.log(localStorage.getItem("name"));
+  console.log(localStorage.getItem("username"));
+  console.log(localStorage.getItem("profile_image"));
+
   return (
-    <div className="min-h-screen  flex flex-col">
+    <div className="min-h-screen flex flex-col">
       {/* Header Section */}
       <div className="relative flex-shrink-0">
         <div className="h-[400px] relative">
@@ -227,14 +226,10 @@ console.log('LocalStorage Username:', localUsername);
 
               {/* Modal Buttons */}
               <div className="flex justify-end">
-                <button type="button" onClick={handleCloseModal} className="px-4 py-2 bg-gray-200 rounded-full mr-2">
+                <button type="button" onClick={handleCloseModal} className="px-4 py-2 bg-gray-300 rounded-lg mr-2">
                   Cancel
                 </button>
-                <button
-                  type="button"
-                  onClick={handleSaveProfile}
-                  className="px-4 py-2 rounded-full bg-[#739646] border-[#5f7f33] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#739646] hover:ring-[#5f7f33] hover:ring-2 active:bg-[#ffffff] active:text-[#739646] active:ring-2 transition-all"
-                >
+                <button type="button" onClick={handleSaveProfile} className="px-4 py-2 bg-[#739646] rounded-lg text-white">
                   Save Changes
                 </button>
               </div>
@@ -243,19 +238,18 @@ console.log('LocalStorage Username:', localUsername);
         </div>
       )}
 
-      
-      {/* <div className="my-10 mx-4">
-        <h2 className="text-xl font-bold mb-4">Your Posts</h2>
-        {loading ? (
-          <p>Loading posts...</p>
-        ) : (
-          Array.isArray(userPosts) && userPosts.length > 0 ? (
-            userPosts.map((post) => <ForumPost key={post.id} post={post} />)
+      {/* User's Forum Posts */}
+      {loading ? (
+        <div className="text-center mt-10">Loading...</div>
+      ) : (
+        <div>
+          {userPosts.length === 0 ? (
+            <p className="text-center mt-10">No posts to show.</p>
           ) : (
-            <p>No posts available.</p>
-          )
-        )}
-      </div> */}
+            userPosts.map((post) => <ForumPost key={post.id} post={post} />)
+          )}
+        </div>
+      )}
     </div>
   );
 };

@@ -3,10 +3,11 @@ import { Forum, Like, Reply } from "../models/ForumModel.js";
 // Assuming you have a middleware to authenticate the user and populate req.user
 
 export const createForum = async (req, res) => {
-  const { title, caption, hashtags, image_url } = req.body;
+  const { title, caption, hashtags, image_url, username: uname } = req.body;
   const user_id = req.user.id; // assuming the user is authenticated and user_id is in req.user
-  const uname = req.user.username; // Ensure this is how you're accessing the username
 
+  console.log("ok")
+  console.log("req.body:", req.body);
   try {
     // Check if user is authenticated (ensure req.user is populated)
     if (!user_id || !uname) {
