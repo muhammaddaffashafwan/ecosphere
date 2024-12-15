@@ -418,7 +418,7 @@
 
 @media (max-width: 768px) {
   .body-inspiration1 {
-    min-height: 600vw;
+    min-height: 630vw;
   }
 
   .eco-house-guide {
@@ -508,11 +508,11 @@
   /* video-diy */
   .diy-title {
     font-size: 32px; /* Ukuran font lebih kecil lagi */
-    top: 540vw;
+    top: 580vw;
   }
   .diy-content {
     gap: 10px; /* Mengurangi jarak antar elemen */
-    top: 310vw;
+    top: 350vw;
   }
 
   .diy-vid h3 {
@@ -528,7 +528,7 @@
     text-align: center;
     overflow: hidden;
     position: absolute;
-    top: 600vw;
+    top: 640vw;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -692,7 +692,7 @@
   .hover-more-1 {
     padding: 5px 50x;
     text-wrap: nowrap;
-    top: 1100vw;
+    top: 1090vw;
   }
   /* YouTube play icon */
   .youtube-icon-1:before {
