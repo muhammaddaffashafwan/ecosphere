@@ -3,7 +3,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  min-height: 630vh;
+  min-height: 590vh;
 }
 
 .eco-house-guide-cover {
@@ -31,7 +31,7 @@
 .eco-house-guide {
   position: absolute;
   z-index: 1; /* Pastikan teks di atas gambar */
-  font-family: "Optician Sans", sans-serif;
+  font-family: 'Optician Sans', sans-serif;
   font-size: 5vw; /* Gunakan ukuran font responsif */
   color: #fff;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
@@ -54,7 +54,7 @@
   background-color: #455a2a; /* Warna latar */
   color: #fff; /* Warna teks */
   border-radius: 24px; /* Sudut membulat */
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.2rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
   z-index: 2; /* Pastikan di atas elemen lainnya */
@@ -71,9 +71,9 @@
 /* Judul */
 .benefits-title {
   font-size: 2.5rem; /* Ukuran judul besar */
-  font-family: "Optician Sans", sans-serif;
+  font-family: 'Optician Sans', sans-serif;
   margin-bottom: 2rem; /* Jarak dengan konten bawah */
-  margin-top: 10rem;
+  margin-top: 6rem;
   display: flex; /* Menggunakan flexbox */
   justify-content: center; /* Pusatkan teks horizontal */
   align-items: center; /* Pusatkan teks vertikal */
@@ -160,7 +160,7 @@
 .text-bif {
   color: #fff;
   font-size: 1rem;
-  font-family: "Optician Sans", sans-serif;
+  font-family: 'Optician Sans', sans-serif;
   text-align: center;
   line-height: 1.5;
 }
@@ -170,7 +170,7 @@
 .environmentally-title {
   position: relative;
   font-size: 40px; /* Ukuran judul besar */
-  font-family: "Optician Sans", sans-serif;
+  font-family: 'Optician Sans', sans-serif;
   text-align: center;
   margin: 4rem auto 2rem; /* Jarak atas dan bawah */
   padding: 50px;
@@ -229,13 +229,13 @@
   padding: 5px;
   box-sizing: border-box;
   width: 90%;
-  font-family: "Optician Sans", sans-serif;
+  font-family: 'Optician Sans', sans-serif;
 }
 /* 4. renewable */
 .renewable-title {
   text-align: center;
   font-size: 2.5rem;
-  font-family: "Optician Sans", sans-serif;
+  font-family: 'Optician Sans', sans-serif;
   margin: 10vw;
 }
 
@@ -254,7 +254,7 @@
   gap: 50px;
   margin-bottom: 5vw;
   margin-right: 5vw;
-  font-family: "Poppins";
+  font-family: 'Poppins';
 }
 
 .components-1 img {
@@ -272,7 +272,7 @@
 
 .renew-title1 {
   font-size: 35px;
-  font-family: "Optician Sans", sans-serif;
+  font-family: 'Optician Sans', sans-serif;
   margin-bottom: 10px;
 }
 
@@ -299,9 +299,9 @@
   position: absolute;
   text-align: center;
   font-size: 2.5rem;
-  font-family: "Optician Sans";
+  font-family: 'Optician Sans';
   margin: 4rem auto 2rem;
-  top: 240vw;
+  top: 230vw;
   left: 50%;
   transform: translateX(-50%);
   width: 100%; /* Menyesuaikan lebar */
@@ -319,7 +319,7 @@
   align-items: center;
   left: 50%;
   transform: translateX(-50%);
-  top: 125vw;
+  top: 115vw;
   justify-content: center;
 }
 
@@ -354,7 +354,7 @@
 .diy-vid h3 {
   font-size: 24px;
   margin: 10px 10px;
-  font-family: "Optician Sans";
+  font-family: 'Optician Sans';
   text-decoration: none;
   padding: 0px;
   font-weight: 300;
@@ -364,7 +364,7 @@
 
 /* YouTube play icon */
 .youtube-icon-1:before {
-  content: "▶";
+  content: '▶';
   position: absolute;
   top: 40%;
   left: 50%;
@@ -393,7 +393,7 @@
   text-align: center;
   overflow: hidden;
   position: absolute;
-  top: 290vw;
+  top: 275vw;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -407,7 +407,7 @@
   font-size: 18px;
   border: 2px solid #739646;
   transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   display: inline-block;
 }
 
@@ -418,7 +418,7 @@
 
 @media (max-width: 768px) {
   .body-inspiration1 {
-    min-height: 630vw;
+    min-height: 570vw;
   }
 
   .eco-house-guide {
@@ -433,6 +433,7 @@
 
   .benefits-title {
     font-size: 2rem;
+    margin-top: 4rem;
   }
 
   .card-wrapper {
@@ -508,11 +509,11 @@
   /* video-diy */
   .diy-title {
     font-size: 32px; /* Ukuran font lebih kecil lagi */
-    top: 580vw;
+    top: 512vw;
   }
   .diy-content {
     gap: 10px; /* Mengurangi jarak antar elemen */
-    top: 350vw;
+    top: 285vw;
   }
 
   .diy-vid h3 {
@@ -528,7 +529,7 @@
     text-align: center;
     overflow: hidden;
     position: absolute;
-    top: 640vw;
+    top: 575vw;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -537,7 +538,7 @@
 @media (max-width: 426px) {
   /* 1 */
   .body-inspiration1 {
-    min-height: 930vh;
+    min-height: 810vh;
   }
   .eco-house-guide {
     font-size: 40px;
@@ -550,6 +551,7 @@
 
   .benefits-title {
     font-size: 25px;
+    margin-top: 4rem;
   }
 
   .environmentally-title {
@@ -667,7 +669,7 @@
   .diy-vid h3 {
     font-size: 17px;
     margin: 10px 10px;
-    font-family: "Optician Sans";
+    font-family: 'Optician Sans';
     text-decoration: none;
     padding: 0px;
     font-weight: 300;
@@ -696,7 +698,7 @@
   }
   /* YouTube play icon */
   .youtube-icon-1:before {
-    content: "▶";
+    content: '▶';
     position: absolute;
     top: 20%;
     left: 50%;
