@@ -1108,7 +1108,7 @@ top: 95px;
 
  @media screen and (max-width:426px) {
   .articles-2 {
-    background-color: #ca1c1c;
+    height: 6000px;
     top: 10px; 
   }
 
@@ -1159,6 +1159,11 @@ top: 95px;
 .latest-news-around{
   top: 740vw;
 }
+
+  .more-article-parent {
+   top: 2360px;
+   left: -2px;
+  }
 
 .more-article,
 .more-article1,
@@ -1248,6 +1253,12 @@ left: -142vw;
 .more-article14{
   left: -142vw;
 }
+
+.more-article15{
+  left: -747px;
+  top: 623px;
+}
+
   .image-1,
   .image-2,
   .image-3,
