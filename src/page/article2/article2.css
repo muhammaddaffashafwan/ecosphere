@@ -1109,7 +1109,10 @@ top: 95px;
  @media screen and (max-width:426px) {
   .articles-2 {
     background-color: #ca1c1c;
+    top: 10px; 
   }
+
+
   .trending-news {
     font-size: 30px;
     left: 50px;
@@ -1156,9 +1159,6 @@ top: 95px;
 .latest-news-around{
   top: 740vw;
 }
-.more-article img{
-  width: 10px;
-}
 
 .more-article,
 .more-article1,
@@ -1166,29 +1166,87 @@ top: 95px;
   top: 880px;
 }
 
+.more-article1{
+  left: -140px;
+}
 .more-article4,
 .more-article5{
-  top: 810px;
-}
-.more-article3{
-  left: -909px;
-  top: 1250px;
+  top: 1060px;
 }
 
 .more-article4{
-  left: 230px;
+  left: 10px;
+}
+
+.more-article5{
+  left: -142px;
+}
+.more-article3{
+  left: -751px;
+  top: 1220px;
+}
+
+.more-article2{
+  top: 1219px;
+  left: -141vw;
 }
 
 .more-article6,
-.more-article7,
-.more-article8{
-  top: 1200px;
+.more-article7{
+  top: 1410px;
 }
 
+.more-article6{
+left: -142vw;
+}
+
+.more-article7{
+  left: -177vw;
+}
+/* .more-article4{
+  left: 162px;
+  top: 716px;
+} */
 .more-article9,
+.more-article8{
+  top: 1250px;
+}
+
+.more-article9{
+  left: -147px;
+}
+
+.more-article8{
+  left: 10px;
+}
+
 .more-article10,
 .more-article11{
-  top: 1300px;
+  top: 1600px;
+}
+
+.more-article10{
+  left: -600px
+}
+
+.more-article11{
+  left: -750px
+}
+.more-article12,
+.more-article13{
+  top: 1450px;
+}
+
+.more-article13{
+  left: -32vw;
+}
+.more-article14,
+.more-article15{
+  top: 1800px;
+}
+
+.more-article14{
+  left: -142vw;
 }
   .image-1,
   .image-2,
@@ -1206,13 +1264,8 @@ top: 95px;
   .image-14,
   .image-15,
   .image-16 {
-    width: 140px;
-    height: 140px;
-  }
-
-
-  .desc-arc{
-    font-size: 1px;
+    width: 129px;
+    height: 132px;
   }
 
   .desc-arc .title-and-descriptions {
@@ -1227,11 +1280,21 @@ top: 95px;
   .desc-arc .spacexs-starship-spacecraft {
     width: 100px;
     font-size: 8px;
+    top: 90px;
   }
   .desc-arc .category-and-est-read-time1 {
     top: 180px;
+    font-size: 7px;
   }
 
+  .desc-arc .mins-read{
+    left: 80px;
+  }
+
+  .desc-arc .line1{
+    left: 75px;
+    top: -2px;
+  }
   .title-and-descriptions{
   font-size: 1px;
   }
