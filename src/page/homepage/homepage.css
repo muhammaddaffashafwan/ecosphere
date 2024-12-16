@@ -401,7 +401,7 @@ body {
   color: #fff;
   padding: 5px;
   border-radius: 50px;
-  margin-left: 37px;
+  margin-left: 10px;
   text-decoration: none;
   font-weight: 600;
   font-size: 20px;
@@ -567,10 +567,23 @@ body {
   .cta-button-2 {
     padding: 3px;
     width: 555px;
+    margin-left: 35px;
   }
 }
 
 @media screen and (max-width: 426px) {
+  .home-page {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    height: 2550px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 16px;
+    color: #000;
+    font-family: Poppins;
+  }
+
   .home-page-title {
     font-size: 25px;
     left: -75px;
@@ -593,7 +606,7 @@ body {
     height: 400px;
     left: 6rem;
     padding-top: 100px;
-    bottom: 2420px;
+    bottom: 2070px;
   }
   .cta-buttons {
     padding: 3px 60px;
@@ -637,6 +650,10 @@ body {
     font-size: 13px;
     width: 380px;
     top: 1305px;
+  }
+  .title-up {
+    left: 90px;
+    line-height: 2vw;
   }
   .title-up-caption {
     font-size: 19px;
@@ -716,7 +733,8 @@ body {
     top: 2175px;
   }
   .cta-button-2 {
-    padding: 0;
+    padding: 8px;
     width: 380px;
+    font-size: 15px;
   }
 }
