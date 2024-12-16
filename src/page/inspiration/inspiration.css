@@ -319,7 +319,7 @@
   align-items: center;
   left: 50%;
   transform: translateX(-50%);
-  top: 115vw;
+  top: 1900px;
   justify-content: center;
 }
 
@@ -418,7 +418,7 @@
 
 @media (max-width: 768px) {
   .body-inspiration1 {
-    min-height: 570vw;
+    min-height: 4800px;
   }
 
   .eco-house-guide {
@@ -509,11 +509,11 @@
   /* video-diy */
   .diy-title {
     font-size: 32px; /* Ukuran font lebih kecil lagi */
-    top: 512vw;
+    top: 4400px;
   }
   .diy-content {
     gap: 10px; /* Mengurangi jarak antar elemen */
-    top: 285vw;
+    top: 2650px;
   }
 
   .diy-vid h3 {
@@ -523,6 +523,7 @@
   .cta-button2 {
     padding: 7px 60px;
     font-size: 16px; /* Ukuran tombol lebih kecil */
+    margin-top: 450px;
   }
 
   .hover-more-1 {
@@ -538,7 +539,7 @@
 @media (max-width: 426px) {
   /* 1 */
   .body-inspiration1 {
-    min-height: 810vh;
+    min-height: 4900px;
   }
   .eco-house-guide {
     font-size: 40px;
@@ -547,6 +548,7 @@
   .eco-frame {
     font-size: 0.5rem; /* Ukuran teks lebih kecil */
     padding: 1.5rem;
+    margin-bottom: 60px;
   }
 
   .benefits-title {
@@ -679,16 +681,17 @@
 
   .diy-title {
     font-size: 32px; /* Ukuran font lebih kecil lagi */
-    top: 990vw;
+    top: 4600px;
   }
   .diy-content {
     gap: 10px; /* Mengurangi jarak antar elemen */
-    top: 790vw;
+    top: 3730px;
   }
 
   .cta-button2 {
     padding: 7px 60px;
     font-size: 12px; /* Ukuran tombol lebih kecil */
+    margin-top: 350px;
   }
 
   .hover-more-1 {

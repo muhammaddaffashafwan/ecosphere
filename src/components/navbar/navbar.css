@@ -73,3 +73,17 @@
     color: #6ea54e;
   }
   
+  @media (max-width : 768px) {
+    .logo {
+    margin-left: -25px;
+    }
+  }
+
+  @media (max-width : 426px) {
+    .header {
+      padding-inline: 75px;
+    }
+    .logo {
+    margin-left: -65px;
+    }
+  }

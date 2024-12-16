@@ -107,7 +107,7 @@ export function Navbar() {
 
           {/* Mobile and Tablet Menu */}
           <div className="lg:hidden">
-            <button onClick={toggleMenu} className="text-[#5c7838]">
+            <button onClick={toggleMenu} className="text-[#5c7838] mobile:mr-[-100px]">
               MORE
             </button>
 

@@ -76,7 +76,7 @@ export default function Property() {
         <div className="discovery flex flex-col sm:flex-row items-center">
           <div className="mt-[-20px] tracking-[-0.02em] pt-[30px] leading-[20px] text-black px-4 sm:px-0">
           <h1 className="font text-[32px] sm:text-[35px] sm:text-center sm:pb-[15px] lg:text-left lg:w-[550px] lg:ml-[55px] lg:mt-[35px] lg:text-[45px]">DISCOVER ECO-FRIENDLY HOMES AND PRODUCTS</h1>
-          <img className="lg:absolute relative ml-0 mobile:w-[400px]  top-0 left-0 z-0 w-[200px] sm:w-[544px] lg:ml-[800px] lg:w-[600px] h-auto" alt="Eco Discovery" src="assets/prop_illus.jpg" />
+          <img className="lg:absolute relative ml-0 mobile:w-[400px]  top-0 left-0 z-0 w-[200px] sm:w-[544px] lg:ml-[800px] md:ml-[80px] lg:w-[600px] h-auto" alt="Eco Discovery" src="assets/prop_illus.jpg" />
           
             
             <p className="text-sm sm:text-base sm:text-[20px] sm:leading-[25px] sm:pt-[15px] sm:px-[50px] lg:ml-[5px] lg:w-[600px] lg:text-[18px]">
