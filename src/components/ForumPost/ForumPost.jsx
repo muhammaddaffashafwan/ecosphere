@@ -7,6 +7,7 @@ const ForumPost = ({ data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMoreOptionsOpen, setIsMoreOptionsOpen] = useState(false);
   const [isLiked, setIsLiked] = useState(data.isLiked);
+  const [isUnLiked, setIsUnLiked] = useState(data.isUnLiked);
   const [likeCount, setLikeCount] = useState(data.likeCount);
 
   // States for Update/Delete modals
@@ -36,34 +37,50 @@ const ForumPost = ({ data }) => {
 
   const handleLike = async () => {
     const postId = data.id;
-
+  
+    // Check if the user is logged in (token exists)
     if (!token) {
       alert("Please log in to like the post");
       return;
     }
-
+  
     try {
-      const response = await fetch(`http://localhost:5000/like-forum/${postId}/like`, {
-        method: isLiked ? "DELETE" : "POST",
+      const endpoint = isLiked
+        ? `http://localhost:5000/like-forum/${postId}/unlike`
+        : `http://localhost:5000/like-forum/${postId}/like`;
+  
+      const method = isLiked ? "DELETE" : "POST";
+  
+      const response = await fetch(endpoint, {
+        method,
         headers: {
           Authorization: token,
           "Content-Type": "application/json",
         },
       });
-
+  
       if (!response.ok) {
-        const error = await response.json();
-        throw new Error(`Failed to update like status: ${error.message}`);
+        const errorData = await response.json();
+        console.log("Error response data:", errorData);
+        throw new Error(errorData?.message || "Unexpected error occurred");
       }
-
+  
       const result = await response.json();
-      setIsLiked(result.isLiked);
-      setLikeCount(result.likeCount);
+      console.log("Success response data:", result);
+  
+      // Update the UI based on the result
+      setIsLiked(result.isLiked);  // Toggle the like status
+      setIsUnLiked(result.isUnLiked);
+      setLikeCount(result.likeCount);  // Update the like count
+  
     } catch (error) {
-      console.error("Error handling like:", error);
-      alert("An error occurred while handling the like.");
+      console.error("Error handling like/unlike:", error);
+      alert(error.message || "An error occurred while handling the like/unlike.");
     }
   };
+  
+  
+  
 
   const handleDelete = async (id) => {
     try {
@@ -132,14 +149,16 @@ const ForumPost = ({ data }) => {
 
       <div className="flex justify-between items-center mt-4">
         <div className="flex items-center gap-[30px]">
-          <button
-            type="button"
-            className="flex items-center bg-transparent border-none cursor-pointer"
-            onClick={handleLike}
-          >
-            <i className={`bi ${isLiked ? "bi-heart fill-red-500 text-red-500" : "bi-heart"} text-2xl`}></i>
-            <span className="ml-2">{likeCount}</span>
-          </button>
+        <button
+  type="button"
+  className="flex items-center bg-transparent border-none cursor-pointer"
+  onClick={handleLike}
+>
+  <i className={`bi ${isLiked ? "bi-heart text-black-500 transform scale-110" : "bi-heart-fill text-red-500 transform scale-100"} text-2xl transition-transform duration-300`}></i>
+  
+  <span className="ml-2">{(data.likes || []).length}</span>
+</button>
+
           <button
             type="button"
             className="flex items-center bg-transparent border-none cursor-pointer ml-4"

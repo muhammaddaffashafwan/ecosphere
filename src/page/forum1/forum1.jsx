@@ -37,12 +37,18 @@ export function Forum1() {
 
   const navigate = useNavigate();
 
-  const localprofileimage= localStorage.getItem("profile_image")
-  const [isEditOpen, setIsEditOpen] = useState(false);
-  const [profileImage, setProfileImage] = useState(
-    localprofileimage
-    ? `http://localhost:5000/${localprofileimage}`
-    : "https://via.placeholder.com/150");
+  const token = localStorage.getItem("token");
+  if (!token) {
+    alert("No token found, please log in again.");
+    return;
+  }
+  // Validasi token dan ambil gambar profil
+  const isTokenValid = token && token.trim() !== ""; // Sederhana: cek apakah token ada
+  const localProfileImage = isTokenValid ? localStorage.getItem("profile_image") : null;
+  const profileImage = localProfileImage
+    ? `http://localhost:5000/${localProfileImage}`
+    : "https://via.placeholder.com/150";
+    
   const [name, setName] = useState(""); // Default value is an empty string
   const [username, setUsername] = useState(""); // Default value is an empty string
   const [newProfileImage, setNewProfileImage] = useState(null);
@@ -50,15 +56,11 @@ export function Forum1() {
   const [loading, setLoading] = useState(false);
   const [userId, setUserId] = useState(null);
 
-  const token = localStorage.getItem("token");
-  if (!token) {
-    alert("No token found, please log in again.");
-    return;
-  }
+  
 
   console.log("profileImage", profileImage);
 
-  useEffect(() => {
+useEffect(() => {
     const fetchUserProfile = async () => {
       setLoading(true);
       try {
@@ -155,8 +157,12 @@ export function Forum1() {
       caption: formCaption, // The caption or content of the forum post
       hashtags: formHashtags, // The hashtags related to the post
       image_url: formImageUrl, // The image URL if the post includes an image
+      user_id: localStorage.getItem("id"),
+      username: localStorage.getItem("username"),
     };
   
+    console.log("username: ", formData.username);
+    
     try {
       // Send a POST request to your backend API (adjust the URL as needed)
       const response = await fetch('http://localhost:5000/create-forum', {
@@ -243,10 +249,10 @@ export function Forum1() {
             onClick={handleQuestionClick} // Trigger overlay for new question
           >
             <img
-              src={profileImage}
-              alt="Profile"
-              className="w-10 h-10 rounded-full mr-3"
-            />
+          className="w-10 h-10 rounded-full mr-2"
+          src={profileImage || "https://via.placeholder.com/150"}
+          alt="Profile"
+        />
             <input
               type="text"
               placeholder="What's Your Question?"

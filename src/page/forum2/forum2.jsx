@@ -18,7 +18,6 @@ export function Forum2() {
   const [comments, setComments] = useState(initialComments);
   const [isMoreOptionsOpen, setIsMoreOptionsOpen] = useState(false);
 
-  const [profileImage, setProfileImage] = useState("");
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [userId, setUserId] = useState(null);
@@ -30,38 +29,42 @@ export function Forum2() {
     return;
   }
 
+    // Validasi token dan ambil gambar profil
+    const isTokenValid = token && token.trim() !== ""; // Sederhana: cek apakah token ada
+    const localProfileImage = isTokenValid ? localStorage.getItem("profile_image") : null;
+    const profileImage = localProfileImage
+      ? `http://localhost:5000/${localProfileImage}`
+      : "https://via.placeholder.com/150";
+
   useEffect(() => {
-      const fetchUserProfile = async () => {
-        setLoading(true);
-        try {
-          const response = await axios.get('http://localhost:5000/users', {
-            headers: {
-              Authorization: token,
-            },
-          });
-    
-          // Use default values if response data is not available
-          setName(response.data.name || ""); // Default to empty string
-          setUsername(response.data.username || ""); // Default to empty string
-          setProfileImage(
-            response.data.profile_image
-              ? `http://localhost:5000/${response.data.profile_image}`
-              : 'https://via.placeholder.com/150'
-          ); // Default profile image
-          setUserId(response.data.id || null); // Store the user ID
-    
-          console.log("Profile Image:", response.data.profile_image);
-        } catch (error) {
-          console.error("Error fetching user profile:", error.message);
-        } finally {
-          setLoading(false);
-        }
-      };
-    
-      if (token) {
-        fetchUserProfile();
+    const fetchUserProfile = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get('http://localhost:5000/users', {
+          headers: {
+            Authorization: token,
+          },
+        });
+
+        setName(response.data.name || "");
+        setUsername(response.data.username || "");
+        setProfileImage(
+          response.data.profile_image
+            ? `http://localhost:5000/${response.data.profile_image}`
+            : 'https://via.placeholder.com/150'
+        );
+        setUserId(response.data.id || null);
+      } catch (error) {
+        console.error("Error fetching user profile:", error.message);
+      } finally {
+        setLoading(false);
       }
-    }, [token]);
+    };
+
+    if (token) {
+      fetchUserProfile();
+    }
+  }, [token]);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -94,7 +97,6 @@ export function Forum2() {
       setIsLiked(newLikeStatus);
       setLikeCount(newLikeCount);
 
-      // Update like status in backend (assuming this is handled by API)
       await axios.post(
         `http://localhost:5000/like-forum/${postId}`,
         { likeStatus: newLikeStatus },
@@ -105,7 +107,26 @@ export function Forum2() {
     }
   };
 
-  const filteredComments = comments.filter((comment) => comment.postId === parseInt(postId));
+  useEffect(() => {
+    const fetchComments = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/reply-forum/${postId}`, {
+          headers: { Authorization: token },
+        });
+        setComments(response.data);
+      } catch (error) {
+        console.error("Error fetching comments:", error.message);
+      }
+    };
+
+    if (postId) {
+      fetchComments();
+    }
+  }, [postId, token]);
+
+  if (loading) return <div className="text-center mt-10 text-2xl">Loading...</div>;
+  if (error) return <div className="text-center mt-10 text-2xl text-red-500">{error}</div>;
+  if (!post) return <div className="text-center mt-10 text-2xl">Post not found</div>;
 
   const currentUserId = parseInt(localStorage.getItem("userId"));
   const isUserPost = post?.userId === currentUserId;
@@ -141,54 +162,35 @@ export function Forum2() {
     }
   };
 
-useEffect(() => {
-    const fetchComments = async () => {
-      try {
-        const response = await axios.get(`http://localhost:5000/reply-forum/${postId}`, {
-          headers: { Authorization: token },
-        });
-        setComments(response.data);
-      } catch (error) {
-        console.error("Error fetching comments:", error.message);
-      }
-    };
-  })
-
-  if (loading) return <div className="text-center mt-10 text-2xl">Loading...</div>;
-  if (error) return <div className="text-center mt-10 text-2xl text-red-500">{error}</div>;
-  if (!post) return <div className="text-center mt-10 text-2xl">Post not found</div>;
-
-  
-
   return (
     <div className="min-h-screen bg-gray-50 pt-[100px] pb-[100px]">
       <div className="mobile:max-w-xs md:max-w-xl lg:max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
-        {/* Header Section */}
         <div className="flex items-center mb-6 relative">
           <button onClick={() => navigate("/forum1")} className="absolute top-0 right-0 p-2 text-gray-700 hover:text-blue-500">
             <i className="bi bi-x-lg text-2xl"></i>
           </button>
           <div className="flex items-center">
-            <img
-              src={profileImage}
-              alt="Profile"
-              className="w-14 h-14 rounded-full mr-4"
-            />
+          <img
+          className="w-10 h-10 rounded-full mr-2"
+          src={profileImage || "https://via.placeholder.com/150"}
+          alt="Profile"
+        />
             <div>
-              <h2 className="text-xl font-semibold">{post.uname}</h2>
-              <p className="text-gray-500 text-sm">{post.createdAt}</p>
+            <h2 className="text-xl font-semibold">
+      {typeof post.uname === "string" ? post.uname : JSON.stringify(post.uname)}
+    </h2>
+            <p className="text-gray-500 text-sm">{post.createdAt?.toString()}</p>
             </div>
           </div>
         </div>
 
         <h1 className="font text-3xl font-bold mb-4 text-left">{post.title}</h1>
 
-        {post.imageUrl && (
-          <img src={post.imageUrl} alt={post.title} className="w-full h-auto mb-6 rounded-lg" />
-        )}
+        {post.imageUrl && <img src={post.imageUrl} alt={post.title || 'Forum post'} />}
 
-        <p className="text-lg text-gray-700 leading-relaxed mb-4">{post.caption}</p>
-        <p className="text-sm text-gray-600 mb-6">{post.hashtags}</p>
+
+        <p className="text-lg text-gray-700 leading-relaxed mb-4">{post.caption?.toString()}</p>
+<p className="text-sm text-gray-600 mb-6">{post.hashtags?.toString()}</p>
 
         <div className="flex justify-between items-center mt-4">
           <div className="flex items-center gap-[30px]">
@@ -198,7 +200,7 @@ useEffect(() => {
               onClick={handleLike}
             >
               <i className={`bi ${isLiked ? "bi-heart-fill text-red-500" : "bi-heart"} text-2xl`}></i>
-              <span className="ml-2">{likeCount}</span>
+              <span className="ml-2">{(post.likes || []).length}</span>
             </button>
             <button
               type="button"
@@ -206,25 +208,27 @@ useEffect(() => {
               onClick={() => setIsModalOpen(true)}
             >
               <i className="bi bi-chat-text text-2xl"></i>
-              <span className="ml-2">{(data.replies || []).length}</span>
+              <span className="ml-2">{(post.replies || []).length}</span>
             </button>
           </div>
         </div>
 
         {isModalOpen && <Modal forumId={postId} userId={currentUserId} username={post.uname} profileImage={profileImage} onClose={() => setIsModalOpen(false)} />}
 
-        {/* Komentar Section */}
-<div className="mt-8">
-  {comments.length > 0 ? (
+        <div className="mt-8">
+  {Array.isArray(comments) && comments.length > 0 ? (
     comments.map((comment) => (
-      <ForumReply key={comment.id} comment={comment} />
+      comment && typeof comment === "object" && comment.id ? (
+        <ForumReply key={comment.id} comment={comment} />
+      ) : (
+        <p key={Math.random()} className="text-red-500">Invalid comment format</p>
+      )
     ))
   ) : (
     <p>No comments yet.</p>
   )}
 </div>
 
-        {/* Display "More options" for user who is the author of the post */}
         {isUserPost && (
           <div className="relative">
             <button

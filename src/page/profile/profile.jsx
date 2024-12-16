@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import ForumPost from "../../components/ForumPost/ForumPost";
 import "../global.css";
 
 const Profile = () => {
+  const [post, setPost] = useState([]);
+  const [error, setError] = useState(null);
+  const {id} = useParams();
+
   const localprofileimage= localStorage.getItem("profile_image")
   const localName = localStorage.getItem("name");
   const localUsername = localStorage.getItem("username");
@@ -28,6 +33,38 @@ console.log('LocalStorage Username:', localUsername);
     alert("No token found, please log in again.");
     return;
   }
+
+  // Correcting the fetch call to use token and id
+  useEffect(() => {
+    if (!token) {
+      alert("You need to log in to access this feature.");
+      window.location.href = "/login"; // Redirect if not logged in
+    }
+    setLoading(true);
+    fetch(`http://localhost:5000/get-forum`, {
+      headers: {
+        Authorization: token, // Include token in the request header
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (!data) {
+          throw new Error("Post not found.");
+        }
+        setPost(data);
+        console.log("Forum Data:", data); // Log the forum data
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(`Failed to fetch post data: ${error.message}`);
+        setLoading(false);
+      });
+  }, [id, token]);
 
   // Fetch user profile data on load
   useEffect(() => {
@@ -68,6 +105,7 @@ console.log('LocalStorage Username:', localUsername);
   // Fetch user posts on load
   useEffect(() => {
     const fetchUserPosts = async () => {
+      const userId = localStorage.getItem("id"); // Ambil user_id dari localStorage
       if (!userId) return; // Only fetch posts if the userId is available
 
       setLoading(true);
@@ -83,11 +121,11 @@ console.log('LocalStorage Username:', localUsername);
       setUsername(response.data.username || ""); // Default to empty string
       setUserId(response.data.id || null); // Store the user ID
 
-        // Ensure the response contains posts as an array
+         // Memastikan posts ada di dalam response
         if (Array.isArray(response.data.replies)) {
           setUserPosts(response.data.replies);
         } else {
-          setUserPosts([]); // Default to empty array if no posts found
+          setUserPosts([]); // Default ke array kosong jika tidak ada post
         }
       } catch (error) {
         console.error('__Error fetching posts__', error);
@@ -95,7 +133,6 @@ console.log('LocalStorage Username:', localUsername);
       } finally {
         setLoading(false);
       }
-
     };
 
     fetchUserPosts();
@@ -134,8 +171,8 @@ console.log('LocalStorage Username:', localUsername);
     try {
       const response = await axios.put("http://localhost:5000/profile-image", formData, {
         headers: {
+        'Content-Type': 'multipart/form-data',
           Authorization: token,
-          "Content-Type": "multipart/form-data",
         },
       });
 
@@ -151,8 +188,11 @@ console.log('LocalStorage Username:', localUsername);
       localStorage.setItem("username", username);
       handleCloseModal(); // Tutup modal setelah menyimpan perubahan
     } catch (error) {
-      console.error("Error updating profile:", error);
-      alert("Error updating profile, please try again!");
+      console.error("Error updating profile:",error.response || error);
+      alert(
+        error.response?.data?.message ||
+        "Error updating profile, please try again!"
+      );
     } finally {
       setLoading(false);
     }
@@ -183,6 +223,13 @@ console.log('LocalStorage Username:', localUsername);
           Edit Profile
         </button>
       </div>
+
+      <div className="flex flex-col mobile:px-[60px] mobile:pt-[80px] md:px-[100px] md:pt-[100px] lg:px-[250px] pt-[180px]">
+  {Array.isArray(post) &&
+    post
+      .filter((data) => data.user_id === parseInt(localStorage.getItem("id"))) // Filter berdasarkan user_id
+      .map((data, i) => <ForumPost key={i} data={data} />)}
+</div>
 
       {/* Modal for Edit Profile */}
       {isEditOpen && (
@@ -244,18 +291,7 @@ console.log('LocalStorage Username:', localUsername);
       )}
 
       
-      {/* <div className="my-10 mx-4">
-        <h2 className="text-xl font-bold mb-4">Your Posts</h2>
-        {loading ? (
-          <p>Loading posts...</p>
-        ) : (
-          Array.isArray(userPosts) && userPosts.length > 0 ? (
-            userPosts.map((post) => <ForumPost key={post.id} post={post} />)
-          ) : (
-            <p>No posts available.</p>
-          )
-        )}
-      </div> */}
+     
     </div>
   );
 };
