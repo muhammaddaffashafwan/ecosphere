@@ -91,7 +91,7 @@ body {
   left: 100px;
   font-size: 60px;
   letter-spacing: -0.02em;
-  font-family: "Optician Sans";
+  font-family: 'Optician Sans';
   display: inline-block;
   width: 588px;
   line-height: 70px;
@@ -123,7 +123,7 @@ body {
   font-size: 18px;
   border: 2px solid #739646;
   transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   display: inline-block;
   margin-bottom: 20px;
 }
@@ -140,7 +140,7 @@ body {
   left: 770px;
   font-size: 60px;
   letter-spacing: -0.02em;
-  font-family: "Optician Sans";
+  font-family: 'Optician Sans';
 }
 .detail-about-us {
   position: absolute;
@@ -229,7 +229,7 @@ body {
   height: 125px;
   text-align: center;
   font-size: 40px;
-  font-family: "Optician Sans";
+  font-family: 'Optician Sans';
 }
 .title-1 {
   position: absolute;
@@ -388,12 +388,18 @@ body {
   overflow: hidden;
   position: absolute;
   top: 2670px;
-  left: 700px;
+  left: 795px;
 }
+
+.article-time-1 {
+  display: flex;
+  align-items: center;
+}
+
 .cta-button-2 {
   background-color: #739646;
   color: #fff;
-  padding: 5px ;
+  padding: 5px;
   border-radius: 50px;
   margin-left: 37px;
   text-decoration: none;
@@ -401,7 +407,7 @@ body {
   font-size: 20px;
   border: 2px solid #739646;
   transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   display: flex;
   width: 560px;
   align-items: center;
@@ -413,12 +419,17 @@ body {
 }
 
 /* Responsive mode */
-@media screen and  (max-width:768px) {
+@media screen and (max-width: 768px) {
   .home-page-title {
     font-size: 27px;
     left: 50px;
     top: 250px;
   }
+  .article-time-1 {
+    display: flex;
+    align-items: center;
+  }
+
   .at-ecosmophere {
     left: 50px;
     font-size: 15px;
@@ -468,13 +479,13 @@ body {
   .about-us {
     left: 460px;
     font-size: 30px;
-    top: 905px;
+    top: 870px;
   }
   .detail-about-us {
     left: 460px;
     font-size: 15px;
-    width: 300px;
-    top: 950px;
+    width: 250px;
+    top: 920px;
   }
   .title-up-caption {
     font-size: 35px;
@@ -482,15 +493,14 @@ body {
     padding-left: -10vw;
     text-wrap: nowrap;
     text-align: center;
-
   }
 
-  .title-up{
+  .title-up {
     left: 30px;
     line-height: 2vw;
   }
   .title-down {
-    font-size: 35px;  
+    font-size: 35px;
     top: -345px;
     padding-left: 10px;
     line-height: 4vw;
@@ -510,8 +520,7 @@ body {
   }
   .clock,
   .clock-1,
-  .clock-2
-  {
+  .clock-2 {
     width: 20px;
   }
   .article-b {
@@ -548,20 +557,20 @@ body {
     top: 290px;
   }
   .clock-3 {
-    width: 17px;
-    height: 20px;
+    width: 20px;
+    height: 17px;
   }
   .click-me {
     left: 75px;
-    top: 2180px;
+    top: 2200px;
   }
   .cta-button-2 {
-    padding: 3px ;
+    padding: 3px;
     width: 555px;
   }
 }
 
-@media screen and  (max-width:426px) {
+@media screen and (max-width: 426px) {
   .home-page-title {
     font-size: 25px;
     left: -75px;
@@ -572,7 +581,6 @@ body {
     width: 250px;
     height: 220px;
     left: 4rem;
-    
   }
   .at-ecosmophere {
     font-size: 14px;
@@ -642,16 +650,15 @@ body {
     padding-left: 65px;
     padding-right: 65px;
     line-height: 6vw;
-    
   }
   .article-a {
     top: 150px;
     left: 410px;
-    font-size: 12PX;
+    font-size: 12px;
   }
   .img-1 {
     width: 110px;
-  } 
+  }
   .article-title {
     width: 250px;
   }
@@ -660,14 +667,13 @@ body {
   }
   .clock,
   .clock-1,
-  .clock-2
-  {
+  .clock-2 {
     width: 15px;
   }
   .article-b {
     top: 240px;
     left: 410px;
-    font-size: 12PX;
+    font-size: 12px;
   }
   .img-2 {
     width: 110px;
@@ -675,7 +681,7 @@ body {
   .article-c {
     top: 330px;
     left: 410px;
-    font-size: 12PX;
+    font-size: 12px;
   }
   .img-3 {
     width: 110px;
@@ -707,11 +713,10 @@ body {
   }
   .click-me {
     left: -10px;
-    top: 2145px;
+    top: 2175px;
   }
   .cta-button-2 {
     padding: 0;
     width: 380px;
   }
-} 
-
+}
