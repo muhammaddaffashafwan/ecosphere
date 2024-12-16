@@ -208,18 +208,21 @@ export function Forum2() {
               onClick={() => setIsModalOpen(true)}
             >
               <i className="bi bi-chat-text text-2xl"></i>
-              <span className="ml-2">{(data.replies || []).length}</span>
+              <span className="ml-2">{(post.replies || []).length}</span>
             </button>
           </div>
         </div>
 
         {isModalOpen && <Modal forumId={postId} userId={currentUserId} username={post.uname} profileImage={profileImage} onClose={() => setIsModalOpen(false)} />}
 
-        {/* Komentar Section */}
-<div className="mt-8">
-  {comments.length > 0 ? (
+        <div className="mt-8">
+  {Array.isArray(comments) && comments.length > 0 ? (
     comments.map((comment) => (
-      <ForumReply key={comment.id} comment={comment} />
+      comment && typeof comment === "object" && comment.id ? (
+        <ForumReply key={comment.id} comment={comment} />
+      ) : (
+        <p key={Math.random()} className="text-red-500">Invalid comment format</p>
+      )
     ))
   ) : (
     <p>No comments yet.</p>
