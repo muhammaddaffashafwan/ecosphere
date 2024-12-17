@@ -1047,9 +1047,9 @@ left: -38vw;
 .more-article11{
   left: -58vw;
 }
-.more-article15 .image-parent{
+/* .more-article15 .image-parent{
   top:280vw;
-}
+} */
 .more-article12,
 .more-article13,
 .more-article14{
@@ -1087,6 +1087,14 @@ top: 95px;
     width: 200px;
     height: 200px;
   }
+
+  .more-article15{
+    top: 70vw;
+    left: -117vw;
+  }
+  /* .image-parent{
+      top:300vw;
+  } */
   .desc-arc .title-and-descriptions {
     font-size: 14px;
   }
@@ -1101,9 +1109,9 @@ top: 95px;
     top: 190px;
   }
 
- /* .articles-2{
-  background-color: #5c7838;
- } */
+ .articles-2{
+  height: 600vw;
+ }
 } 
 
  @media screen and (max-width:426px) {

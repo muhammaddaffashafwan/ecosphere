@@ -671,6 +671,10 @@ a.eco-tech1 {
 
 
 @media (max-width: 768px) {
+  .article-1{
+    height: 357vw;
+    margin-bottom: -10vw;
+  }
 /* indepth */
   .in-depth-article {
   font-size: 30px;
