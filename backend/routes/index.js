@@ -4,13 +4,12 @@ import {
   authSignup, 
   authLogin, 
   updateProfileImage, 
-  // deleteProfileImage, 
   resetPassword 
 } from "../controllers/Users.js";
 import { 
   createForum, 
   getForum, 
-  getForumById, // Corrected import
+  getForumById, 
   updateForum, 
   deleteForum, 
   likeForum, 
@@ -20,21 +19,33 @@ import {
   getRepliesByForumId
 } from "../controllers/Forum.js";
 import { authMiddleware } from "../middleware/authMiddleware.js";
+import { upload, checkImageUrl } from "../middleware/checkImageUrl.js";
 import multer from "multer";
 import path from "path";
 
 const router = express.Router();
 
-// Konfigurasi untuk multer (untuk meng-handle upload gambar)
-const storage = multer.diskStorage({
+// Konfigurasi untuk multer (untuk meng-handle upload gambar profil)
+const profileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads/profiles/'); // Folder tempat menyimpan gambar
+    cb(null, 'uploads/profiles/'); // Folder tempat menyimpan gambar profil
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname)); // Nama file yang unik
   },
 }); 
-const upload = multer({ storage }); // Inisialisasi multer dengan konfigurasi penyimpanan
+const uploadProfile = multer({ storage: profileStorage }); // Inisialisasi multer untuk profil
+
+// Konfigurasi untuk multer (untuk meng-handle upload gambar untuk forum)
+const forumStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/forum_images/'); // Folder tempat menyimpan gambar forum
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname)); // Nama file yang unik
+  },
+});
+const uploadForumImage = multer({ storage: forumStorage }); // Inisialisasi multer untuk gambar forum
 
 // Tes Web: Untuk memastikan server berjalan
 router.get("/", (req, res) => {
@@ -51,42 +62,28 @@ router.post("/login", authLogin);
 router.get("/users", authMiddleware, getUsers);
 
 // Rute untuk mengupdate gambar profil (memerlukan otentikasi)
-router.put("/profile-image", authMiddleware, upload.single('profile_image'), updateProfileImage);
-
-// Rute untuk menghapus gambar profil (memerlukan otentikasi)
-// router.delete("/profile-image", authMiddleware, deleteProfileImage);
+router.put("/profile-image", authMiddleware, uploadProfile.single('profile_image'), updateProfileImage);
 
 // Rute untuk reset password (tanpa otentikasi, hanya memerlukan email)
 router.post("/forgot-password", resetPassword);
 
 // Forum CRUD Routes
+router.post("/create-forum", authMiddleware, uploadForumImage.single('image_url'), checkImageUrl, createForum); // Using multer for image_url
 
-
-// Create a new forum post (requires authentication)
-router.post("/create-forum", authMiddleware, createForum);
-
-// Get all forum posts
 router.get("/get-forum", getForum);
 
-// Get a single forum post by ID (optional, using getForumById)
 router.get("/get-forum/:id", getForumById); // Use getForumById for specific post
 
-// Update a forum post (requires authentication)
 router.put("/update-forum/:id", authMiddleware, updateForum);
 
-// Delete a forum post (requires authentication)
 router.delete("/delete-forum/:id", authMiddleware, deleteForum);
 
-// Like a forum post (requires authentication)
 router.post("/like-forum/:id/like", authMiddleware, likeForum);
 
-// Unlike a forum post (requires authentication)
 router.delete("/like-forum/:id/like", authMiddleware, unlikeForum);
 
-// Reply to a forum post (requires authentication)
 router.post("/reply-forum/:id/reply", authMiddleware, replyToForum);
 
-// Delete a reply to a forum post (requires authentication)
 router.delete("/reply-forum/:id/reply/:replyId", authMiddleware, deleteReply);
 
 router.get("/reply-forum/:id", authMiddleware, getRepliesByForumId)

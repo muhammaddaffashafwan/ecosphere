@@ -100,7 +100,7 @@ useEffect(() => {
     setFormTitle("");
     setFormCaption("");
     setFormHashtags("");
-    setFormImageUrl(null);
+    setFormImageUrl("");
     setOverlayVisible(true); // Show the overlay when button is clicked
   };
 
@@ -109,7 +109,7 @@ useEffect(() => {
     setSelectedQuestion(question); // Set selected question for answering
     setFormCaption("");
     setFormHashtags("");
-    setFormImageUrl(null);
+    setFormImageUrl("");
     setOverlayVisible(true); // Show the overlay when answering a question
   };
 
@@ -152,38 +152,49 @@ useEffect(() => {
   const handleAnswerSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission
   
-    const formData = {
-      title: formTitle, // The title of the forum post
-      caption: formCaption, // The caption or content of the forum post
-      hashtags: formHashtags, // The hashtags related to the post
-      image_url: formImageUrl, // The image URL if the post includes an image
-      user_id: localStorage.getItem("id"),
-      username: localStorage.getItem("username"),
-    };
+    const formData = new FormData();
+    formData.append("title", formTitle); // Judul post
+    formData.append("caption", formCaption); // Caption post
+    formData.append("hashtags", formHashtags); // Hashtags
+    formData.append("image_url", formImageUrl); // Gambar yang diunggah
+    formData.append("user_id", localStorage.getItem("id"));
+    formData.append("username", localStorage.getItem("username"));
+    
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("You are not logged in. Please log in first.");
+      return;
+    }
   
     console.log("username: ", formData.username);
-    
+  
     try {
       // Send a POST request to your backend API (adjust the URL as needed)
       const response = await fetch('http://localhost:5000/create-forum', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
           Authorization: token, // Assuming you're using token-based authentication
         },
-        body: JSON.stringify(formData),
+        body: formData,
       });
   
-      // Parse the response
+      // Check if the response is valid
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Server responded with:', errorText);
+        alert("An error occurred on the server.");
+        return;
+      }
+  
+      // Parse the JSON response
       const data = await response.json();
   
-      if (response.ok) {
-        // Handle the success case (e.g., show a success message)
+      // If the response was successful, handle it
+      if (data.forumPost) {
         alert("Forum post created successfully");
         console.log(data.forumPost); // The created forum post object
       } else {
-        // Handle error response
-        alert(`error: ${data.error}`);
+        alert(`Error: ${data.error || 'Unknown error'}`);
       }
     } catch (error) {
       // Handle network or other unexpected errors
@@ -191,10 +202,11 @@ useEffect(() => {
       alert("An error occurred while creating the post");
     }
   };
+  
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    setFormImageUrl(file || " ");
+    if (file) setFormImageUrl(file);
   };
 
   // Correcting the fetch call to use token and id

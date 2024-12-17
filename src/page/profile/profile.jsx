@@ -103,40 +103,40 @@ console.log('LocalStorage Username:', localUsername);
   }, [token]); // Ketergantungan pada token
 
   // Fetch user posts on load
-  useEffect(() => {
-    const fetchUserPosts = async () => {
-      const userId = localStorage.getItem("id"); // Ambil user_id dari localStorage
-      if (!userId) return; // Only fetch posts if the userId is available
+  // useEffect(() => {
+  //   const fetchUserPosts = async () => {
+  //     const userId = localStorage.getItem("id"); // Ambil user_id dari localStorage
+  //     if (!userId) return; // Only fetch posts if the userId is available
 
-      setLoading(true);
-      try {
-        const response = await axios.get(`http://localhost:5000/get-forum/${userId}`, {
-          headers: {
-            Authorization: token,
-          },
-        });
-        console.log('__User posts__:', response);
+  //     setLoading(true);
+  //     try {
+  //       const response = await axios.get(`http://localhost:5000/get-forum/${userId}`, {
+  //         headers: {
+  //           Authorization: token,
+  //         },
+  //       });
+  //       console.log('__User posts__:', response);
 
-        setName(response.data.name || ""); // Default to empty string
-      setUsername(response.data.username || ""); // Default to empty string
-      setUserId(response.data.id || null); // Store the user ID
+  //       setName(response.data.name || ""); // Default to empty string
+  //     setUsername(response.data.username || ""); // Default to empty string
+  //     setUserId(response.data.id || null); // Store the user ID
 
-         // Memastikan posts ada di dalam response
-        if (Array.isArray(response.data.replies)) {
-          setUserPosts(response.data.replies);
-        } else {
-          setUserPosts([]); // Default ke array kosong jika tidak ada post
-        }
-      } catch (error) {
-        console.error('__Error fetching posts__', error);
-        alert('Error fetching posts, please try again!');
-      } finally {
-        setLoading(false);
-      }
-    };
+  //        // Memastikan posts ada di dalam response
+  //       if (Array.isArray(response.data.replies)) {
+  //         setUserPosts(response.data.replies);
+  //       } else {
+  //         setUserPosts([]); // Default ke array kosong jika tidak ada post
+  //       }
+  //     } catch (error) {
+  //       console.error('__Error fetching posts__', error);
+  //       alert('Error fetching posts, please try again!');
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchUserPosts();
-  }, [token, userId]);
+  //   fetchUserPosts();
+  // }, [token, userId]);
 
   // Open edit profile modal
   const handleEditClick = () => {

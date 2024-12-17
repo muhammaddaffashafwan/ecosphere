@@ -3,11 +3,13 @@ import { Forum, Like, Reply } from "../models/ForumModel.js";
 // Assuming you have a middleware to authenticate the user and populate req.user
 
 export const createForum = async (req, res) => {
-  const { title, caption, hashtags, image_url, username: uname } = req.body;
+  const { title, caption, hashtags, username: uname } = req.body;
+  const image_url = req.file ? `/uploads/forum_images/${req.file.filename}` : null; // Image URL
   const user_id = req.user.id; // assuming the user is authenticated and user_id is in req.user
 
   console.log("ok")
   console.log("req.body:", req.body);
+  console.log("req.file:", req.file);
   try {
     // Check if user is authenticated (ensure req.user is populated)
     if (!user_id || !uname) {
@@ -22,7 +24,7 @@ export const createForum = async (req, res) => {
     // Create the forum post
     const forumPost = await Forum.create({
       user_id, 
-      uname, 
+      username: uname, 
       title, 
       caption, 
       hashtags, 
