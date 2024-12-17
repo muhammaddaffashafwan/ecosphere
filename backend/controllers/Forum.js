@@ -24,7 +24,7 @@ export const createForum = async (req, res) => {
     // Create the forum post
     const forumPost = await Forum.create({
       user_id, 
-      username: uname, 
+      uname, 
       title, 
       caption, 
       hashtags, 

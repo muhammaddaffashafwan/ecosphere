@@ -166,7 +166,8 @@ useEffect(() => {
       return;
     }
   
-    console.log("username: ", formData.username);
+    console.log("id", localStorage.getItem("id"));
+    console.log("username: ", localStorage.getItem("username"));
   
     try {
       // Send a POST request to your backend API (adjust the URL as needed)

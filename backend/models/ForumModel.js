@@ -48,7 +48,7 @@ const Forum = db.define(
       type: DataTypes.STRING,
       allowNull: true,
       validate: {
-        isUrl: true, // Validasi URL jika ada image
+        notEmpty: false,
       },
     },
   },
