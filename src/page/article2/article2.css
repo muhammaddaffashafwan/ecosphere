@@ -1169,8 +1169,8 @@ top: 95px;
 }
 
   .more-article-parent {
-   top: 2360px;
-   left: -2px;
+   display: auto;
+   flex: none;
   }
 
 .more-article,
@@ -1253,8 +1253,7 @@ left: -142vw;
 .more-article13{
   left: -32vw;
 }
-.more-article14,
-.more-article15{
+.more-article14{
   top: 1800px;
 }
 
@@ -1263,8 +1262,8 @@ left: -142vw;
 }
 
 .more-article15{
-  left: -747px;
-  top: 623px;
+  left: -751px;
+  top: 1800px;
 }
 
   .image-1,

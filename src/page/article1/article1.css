@@ -927,6 +927,9 @@ a.eco-tech1 {
 }
 
 @media (max-width: 426px) {
+  .article-1{
+    height: 409vw;
+  }
   /* indepth */
   .in-depth-article {
     font-size: 25px;
